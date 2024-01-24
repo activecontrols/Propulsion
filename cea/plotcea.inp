@@ -1,0 +1,9 @@
+problem rocket fr
+    p(psi) = 275
+    o/f = 3
+    pip = 18.7075
+reac
+    fuel = Jet-A(L) t(K) = 273.150
+    ox = O2(L) t(K) = 90.190
+outp trans
+end
