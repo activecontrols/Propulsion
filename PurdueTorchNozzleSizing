@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Application: PSP-AC Propulsion System
+% Matlab code
+% Author: Pavit Hooda
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Constants given from the universe
+
+R = 8.3144598; %J/mole/k - Universal Gas Constant
+g = 9.81; %m/s/s
+
+%% Constants given from literature
+% Given values from the 'nominal conditions' (sec. 2.1) use case of the 
+% Purdue Torch Ignitor, as given in:
+% "PURDUE IGNITOR DESIGN AND OPERATIONS MANUAL"
+
+O2_mdot = 0.03263;        %lbm/s
+H2_core_mdot = 0.00088;   %lbm/s
+H2_sleeve_mdot = 0.00869; %lbm/s
+
+Total_m_dot = O2_mdot + H2_core_mdot + H2_sleeve_mdot; %lbm/s
+Total_m_dot_kgs = Total_m_dot * 0.453592; %kg/s
+
+chamber_area = pi * (0.00635 / 2)^2;
+
+Core_OF = 36.9; %OF ratio of core stage
+Final_OF = 3.409613375; %OF ratio of final mix
+
+%% Getting values from NASA CEA
+% Access: https://cearun.grc.nasa.gov/cgi-bin/CEARUN/formInput5.cgi
+% Problem type: Rocket
+% Pressures: Enter 250 to 400 psi with an interval of 15 (these are our guesses) 
+% Fuel: H2
+% Oxidizer: O2
+% Oxid/Fuel: Enter Final_OF value in first field
+% Ignore exit conditions
+% Select frozen (small scale)
+% Select finite area combustor
+% for Mass Flux/Chamber Area (kg/sec-sqm) enter this value:
+% Total_m_dot_kgs/chamber_area
+
+% Tabulate results for insertion into a spreadsheet
+% Under parameters enter gam (gamma), p (pressure), t (temperature) 
+% > tabulated results > copy results into an excel > import into matlab
+
+%After you ran it, set following to true
+I_ran_NASA_CEA = true;
+
+if I_ran_NASA_CEA 
+
+NASA_CEA_raw = readtable("NASA CEA results.xlsx"); %change to file name
+NASA_CEA = table2array(NASA_CEA_raw);
+gammas = NASA_CEA(:, 1);
+p_cea = (NASA_CEA(:, 2) .* 14.5038); %to psi
+t_cea = NASA_CEA(:, 3);
+    
+%% Calculating the area of the throat with outputted CEA values
+% Formula from: https://www.grc.nasa.gov/WWW/K-12/airplane/mflchk.html
+
+M = 1; %Mach number
+
+%Throat area will be in m^2 
+exponent = -1 .* ((gammas + 1) ./ (2 .* (gammas - 1)));
+area_throat = (Total_m_dot_kgs .* sqrt(t_cea) ./ p_cea) ./ ...
+    power(((sqrt(gammas ./ R)) .* M .* (1 + ((gammas - 1) ./ 2) .* M^2)), exponent);
+
+throat_diameter = (2 * (sqrt(area_throat / pi))) * 39.3701; %in inches
+
+combined = [p_cea throat_diameter t_cea gammas]; %for visual review of data
+
+%%Plotting plot(s)
+figure(1)
+plot(p_cea, throat_diameter, '*k');
+xlim([240 410])
+ylim([0.17 0.215])
+hold on
+xlabel('Torch Chamber Pressure (PSI)');
+ylabel('Diameter of throat (in)');
+title('Nozzle Diameter of Torch');
+ax = gca;
+ax.FontSize = 15;
+end
