@@ -4,7 +4,7 @@
 clear;
 clc;
 fclose all;
-
+CEA_input_name = 'throttle1';
 
 
 %% System Constants
@@ -15,7 +15,7 @@ Pc_max = 250; %Max Throttle Chamber Pressure [psi]
 Pe_max = 17; %Max Throttle Exit Pressure [psi]
 cstar_eff = 0.92; %C* efficency
 cf_eff = 0.95; %Cf efficiency;
-throttle_pct = linspace(0.4,1,100);
+throttle_pct = linspace(0.4,1,200);
 thrust_max = 2446.52; %Max Thrust [N]
 g = 9.81; %Gravity [m/s^2]
 Pa = 14.7; %Atmospheric Pressure [P]
@@ -31,7 +31,7 @@ mdot = 1.2566; %Propellant mass flow rate [kg/s]
 %% Throttle Guess
 for i=1:length(throttle_pct)
     
-    Target_thrust(i) = throttle_pct(i)*thrust_max;
+    Target_thrust = throttle_pct(i)*thrust_max;
     converged = 0;
     Pc_Max = 300;%[psi]
     Pc_Min = 50;%[psi]
@@ -39,7 +39,7 @@ for i=1:length(throttle_pct)
     Pc_throttle_guess = Pc_max * throttle_pct(i); %Inital guess[psi]
     
     while ~(converged)
-        CEA_input_name = convertStringsToChars(append('Throttle',int2str(rand)));
+        
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Enter CEA Call
         [cstar_cea,cf_cea, ~, ~, ~, ~, Pe_cea, ~, ~, ~, ~, ~, ~, ~, ~] = RunCEA(Pc_throttle_guess,0, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, exp_ratio, 2, 1, 0, CEA_input_name);
@@ -53,10 +53,10 @@ for i=1:length(throttle_pct)
         mdot_guess = (Pc_throttle_guess_SI) * At / cstar_guess_actual; %Propellant mass flow guess
         thrust_guess = cf_guess_actual*(Pc_throttle_guess_SI)*At;
     
-        if abs(thrust_guess - Target_thrust(i)) > 1 && counter < 250 % check for tolerance
+        if abs(thrust_guess - Target_thrust) > 1 && counter < 250 % check for tolerance
             
             % convergence loop
-            if thrust_guess - Target_thrust(i) > 0
+            if thrust_guess - Target_thrust > 0
                 Pc_Max = Pc_throttle_guess;
             else 
                 Pc_Min = Pc_throttle_guess;
