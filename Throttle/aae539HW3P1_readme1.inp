@@ -1,0 +1,9 @@
+problem rocket fr
+    p(psi) = 2994
+    o/f = 6.03
+    sub = 2.9637, 2.9637, 2.9232, 2.8192, 2.6664, 2.4796
+reac
+    fuel = H2 t(K) = 800.000
+    ox = O2(L) t(K) = 90.000
+outp trans
+end
