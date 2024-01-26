@@ -8,7 +8,7 @@ CEA_input_name = 'throttle';
 
 
 %% System Constants
-breakpoints = 5;
+breakpoints = 10;
 
 R_t = 0.7335/39.37; % throat radius [m]
 At =  pi*R_t^2; % Throat Area [meters]
@@ -42,7 +42,7 @@ oxidizer_temp = 90.17; % [K]
 fuel = 'C3H8O,2propanol'; % fuel definition
 fuel_weight = 100; % 
 oxidizer = 'O2(L)'; % oxidizer definition
-OF = 0.5:0.1:2; % oxidizer/fuel ratio
+OF = linspace(0.5, 2, breakpoints); % oxidizer/fuel ratio
 mdot = 1.2566; % Propellant mass flow rate [kg/s]
 rho_FUEL = 49.06838 / 12^3; % fuel density [lbm/in^3]
 rho_OX = 56.34 / 12^3;      % oxidizer density [lbm/in^3]
@@ -138,18 +138,45 @@ Pe_cea = zeros(1,breakpoints);
 %% FIGURES
 
 
-f=figure('Name', 'Throttle Mass Flows vs OF');
+f=figure('Name', 'Throttle OF and Flow Rate Trend');
 set(gcf,'color','w')
+colormap jet
 hAxes.TickLabelInterpreter = 'latex';
-contourf(fuel_massflow_rate,ox_massflow_rate,fuel_massflow_rate./ox_massflow_rate)
-colorbar
-title("OF and Flowrate Trend",'Interpreter','latex')
+contourf(fuel_massflow_rate, ox_massflow_rate, fuel_massflow_rate./ox_massflow_rate)
+hbar = colorbar;
+title("Throttle OF and Flow Rate Trend",'Interpreter','latex')
 xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
 ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
-ylabel(hbar, "Ox Flow Rate [lb/s]",'Interpreter','latex')
+ylabel(hbar, "OF Ratio",'Interpreter','latex')
 exportgraphics(f,'OF_FlowRate_contour.png','Resolution',600)
 
+
+f=figure('Name', 'Throttle Thrust and Flow Rate Trend');
+set(gcf,'color','w')
+colormap jet
+hAxes.TickLabelInterpreter = 'latex';
+contourf(fuel_massflow_rate, ox_massflow_rate, throttle_thrust_actual * 0.224809)
+hbar = colorbar;
+title("Throttle Thrust and Flow Rate Trend",'Interpreter','latex')
+xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
+ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
+ylabel(hbar, "Thrust",'Interpreter','latex')
+exportgraphics(f,'Thrust_FlowRate_contour.png','Resolution',600)
+
+
+f=figure('Name', 'Chamber Temperature and Flow Rate Trend');
+set(gcf,'color','w')
+colormap jet
+hAxes.TickLabelInterpreter = 'latex';
+contourf(fuel_massflow_rate, ox_massflow_rate, throttle_thrust_actual * 0.224809)
+hbar = colorbar;
+title("Chamber Temperature and Flow Rate Trend",'Interpreter','latex')
+xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
+ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
+ylabel(hbar, "Thrust",'Interpreter','latex')
+exportgraphics(f,'Thrust_FlowRate_contour.png','Resolution',600)
  
+
 % % Throttle results for chamber
 % f=figure('Name', 'Throttle Chamber Results');
 % 

@@ -8,8 +8,12 @@ CEA_input_name = 'throttle';
 
 
 %% System Constants
-breakpoints = 5;
+breakpoints = 15;
+g = 9.81;   % Gravity [m/s^2]
+g_imperial = 32.2 * 12; % Gravity [in/s^2]
 
+
+%% Chamber Parameters
 R_t = 0.7335/39.37; % throat radius [m]
 At =  pi*R_t^2; % Throat Area [meters]
 exp_ratio = 2.8153; % Expansion ratio;
@@ -19,8 +23,6 @@ cstar_eff = 0.92;   % C* efficency
 cf_eff = 0.95;  % Cf efficiency;
 throttle_pct = linspace(0.4, 1, breakpoints);
 thrust_max = 2446.52;   % Max Thrust [N]
-g = 9.81;   % Gravity [m/s^2]
-g_imperial = 32.2 * 12;            % in/s^2
 Pa = 14.7;  % Atmospheric Pressure [P]
 
 
@@ -42,7 +44,7 @@ oxidizer_temp = 90.17; % [K]
 fuel = 'C3H8O,2propanol'; % fuel definition
 fuel_weight = 100; % 
 oxidizer = 'O2(L)'; % oxidizer definition
-OF = 0.5:0.1:2; % oxidizer/fuel ratio
+OF = linspace(0.8, 2, breakpoints); % oxidizer/fuel ratio
 mdot = 1.2566; % Propellant mass flow rate [kg/s]
 rho_FUEL = 49.06838 / 12^3; % fuel density [lbm/in^3]
 rho_OX = 56.34 / 12^3;      % oxidizer density [lbm/in^3]
@@ -66,6 +68,8 @@ OF_throttle = zeros(1,breakpoints);
 cstar_cea = zeros(1,breakpoints);
 cf_cea = zeros(1,breakpoints);
 Pe_cea = zeros(1,breakpoints);
+Tc_ns_throttle = zeros(1,breakpoints);
+
 
 %% Throttle Iteration
  for j = 1:length(OF)   
@@ -113,54 +117,70 @@ Pe_cea = zeros(1,breakpoints);
         end
     
         % Throttle results
-        
-        throttle_thrust_actual(i,j) = thrust_guess;   % N
-        Pc_throttle_actual(i,j) = Pc_throttle_guess;   % Psi
+        throttle_thrust_actual(i,j) = thrust_guess * 0.224809;   % [lbf]
+        Pc_throttle_actual(i,j) = Pc_throttle_guess;   % [Psi]
         Pe_throttle(i,j) = Pe_cea;
-        mdot_guess = mdot_guess * 2.20462; % lbm/s
-        mdot_throttle_actual(i,j) = mdot_guess;  % lbm/s
-        fuel_massflow_rate(i,j) = mdot_guess / (1 + OF(j));  % lbm/s
-        ox_massflow_rate(i,j)= mdot_guess - fuel_massflow_rate(i,j); % lbm/s
-        isp_throttle(i,j) = isp_actual; % s
-        Tc_ns(i,j) = (Tc_ns - 273.15) * 9/5 + 32; % F
+        mdot_guess = mdot_guess * 2.20462; % [lbm/s]
+        mdot_throttle_actual(i,j) = mdot_guess;  % [lbm/s]
+        fuel_massflow_rate(i,j) = mdot_guess / (1 + OF(j));  % [lbm/s]
+        ox_massflow_rate(i,j)= mdot_guess - fuel_massflow_rate(i,j); % [lbm/s]
+        isp_throttle(i,j) = isp_actual; % [s]
+        Tc_ns_throttle(i,j) = (Tc_ns - 273.15) * 9/5 + 32; % [F]
     
         % Injector pressure calculations
-        P_OX_manifold(i,j) = (ox_massflow_rate(i,j) / (cd_OX * A_OX)) ^ 2 / (2 * rho_OX * g_imperial) + Pc_throttle_actual(i,j);   % Psi
-        P_FUEL_manifold(i,j) = (fuel_massflow_rate(i,j) / (cd_FUEL * A_FUEL)) ^ 2 / (2 * rho_FUEL * g_imperial) + Pc_throttle_actual(i,j); % Psi
+        P_OX_manifold(i,j) = (ox_massflow_rate(i,j) / (cd_OX * A_OX)) ^ 2 / (2 * rho_OX * g_imperial) + Pc_throttle_actual(i,j);   % [Psi]
+        P_FUEL_manifold(i,j) = (fuel_massflow_rate(i,j) / (cd_FUEL * A_FUEL)) ^ 2 / (2 * rho_FUEL * g_imperial) + Pc_throttle_actual(i,j); % [Psi]
         OX_stiffness(i,j) = (P_OX_manifold(i,j) - Pc_throttle_actual(i,j)) / Pc_throttle_actual(i,j); 
         FUEL_stiffness(i,j) = (P_FUEL_manifold(i,j) - Pc_throttle_actual(i,j)) / Pc_throttle_actual(i,j);
-         % Seperation Pressure
-        P_sep(i,j) = 2/3 *(Pc_throttle_actual(i,j)/Pa)^-0.2 * Pa;
+        
+        % Seperation Pressure
+        P_sep(i,j) = 2/3 *(Pc_throttle_actual(i,j)/Pa)^-0.2 * Pa; % [Psi]
     end
  end
+
+save('data_40%_OF_08_2')
 
 
 %% FIGURES
 
-
-f=figure('Name', 'OF and Flow Rate Trend');
+% OF vs flow rate 
+f=figure('Name', 'Throttle OF and Flow Rate Trend');
 set(gcf,'color','w')
+colormap jet
 hAxes.TickLabelInterpreter = 'latex';
-contourf(fuel_massflow_rate, ox_massflow_rate, fuel_massflow_rate./ox_massflow_rate)
-colormap turbo
+contourf(fuel_massflow_rate, ox_massflow_rate, ox_massflow_rate./fuel_massflow_rate)
 hbar = colorbar;
-title("OF and Flow Rate Trend",'Interpreter','latex')
+title("Throttle OF and Flow Rate Trend",'Interpreter','latex')
 xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
 ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
 ylabel(hbar, "OF Ratio",'Interpreter','latex')
 exportgraphics(f,'OF_FlowRate_contour.png','Resolution',600)
 
-
-f=figure('Name', 'Thrust and Flow Rate Trend');
+% Thrust vs flow rate 
+f=figure('Name', 'Throttle Thrust and Flow Rate Trend');
 set(gcf,'color','w')
+colormap parula
 hAxes.TickLabelInterpreter = 'latex';
-contourf(fuel_massflow_rate, ox_massflow_rate, throttle_thrust_actual * 0.224809)
+contourf(fuel_massflow_rate, ox_massflow_rate, throttle_thrust_actual)
 hbar = colorbar;
-title("Thrust and Flow Rate Trend",'Interpreter','latex')
+title("Throttle Thrust and Flow Rate Trend",'Interpreter','latex')
 xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
 ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
-ylabel(hbar, "Thrust",'Interpreter','latex')
+ylabel(hbar, "Thrust [lbf]",'Interpreter','latex')
 exportgraphics(f,'Thrust_FlowRate_contour.png','Resolution',600)
+
+% Temperature vs flow rate 
+f=figure('Name', 'Chamber Temperature and Flow Rate Trend');
+set(gcf,'color','w')
+colormap hot
+hAxes.TickLabelInterpreter = 'latex';
+contourf(fuel_massflow_rate, ox_massflow_rate, Tc_ns_throttle)
+hbar = colorbar;
+title("Chamber Temperature and Flow Rate Trend",'Interpreter','latex')
+xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
+ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
+ylabel(hbar, "Temperature [F]",'Interpreter','latex')
+exportgraphics(f,'Temp_FlowRate_contour.png','Resolution',600)
  
 
 % % Throttle results for chamber
