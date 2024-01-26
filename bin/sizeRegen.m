@@ -53,12 +53,12 @@
 clc; 
 close all;
 u = convertUnits;
-CEA_input_name = 'AAAAAA';
+CEA_input_name = 'regenCEA';
 
 %% SIMULATION PARAMETERS (INPUTS)
-plots = 0; %Do ansys or not ???? DUmb name
-steps = 5000; % Number of steps along chamber (Change resolution of simulation)
-qdot_tolerance = 0.0001; % set heattransfer convergence tolerance
+plots = 0; % Do ansys or not ???? Dumb name
+steps = 100; % Number of steps along chamber (Change resolution of simulation)
+qdot_tolerance = 0.0001; % set heat transfer convergence tolerance
 
 
 %% ENGINE DEFINITION (INPUTS)
@@ -80,9 +80,10 @@ m_dot = 5 * u.LB2KG; % Coolant/fuel mass flow [kg/s], 1.2566
 fuel = 'C3H8O,2propanol'; % fuel definition
 oxidizer = 'O2(L)'; % oxidizer definition
 fuel_weight = 0; % ???  
-fuel_temp = 273.15; % [K]
+fuel_temp = 293.15; % [K]
 oxidizer_temp = 90.17; % [K]
 OF = 1.2; % oxidizer/fuel ratio
+cf_eff = 0.95;  % Cf efficiency;
 
 % material properties
 properties = readmatrix(pwd + "/bin/material_properties.xlsx");
@@ -362,14 +363,16 @@ deltaT2 = zeros(1,points);
 %call cea for all area ratios
 i = 1;
 for sub = subsonic_area_ratios
-    [c_star(i), ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, 0, 2, 0, 0, CEA_input_name);
+    [c_star, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, 0, 2, 0, 0, CEA_input_name);
     i = i + 1;
 end
 i = size(subsonic_area_ratios, 2) + 1;
 for sup = supersonic_area_ratios
-    [c_star(i), ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, sup, 2, 0, 0, CEA_input_name);
+    [c_star, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, sup, 2, 0, 0, CEA_input_name);
     i = i + 1;
 end
+
+c_star = c_star * cf_eff;
 
 % Steps 2 & 3: Set channel inlet properties
 P_l(1) = inlet_pressure;
@@ -389,7 +392,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
     while ~(converged)
         % Step 5: Calculate gas film coefficient and gas-side convective heat flux
         sigma(i) = (.5 * T_wg(i) / T_g(1) * (1 + (gamma(i) - 1) / 2 * M(i) ^ 2) + .5) ^ -.68 * (1 + (gamma(i) - 1) / 2 * M(i) ^ 2) ^ -.12; % film coefficient correction factor [N/A] (Huzel & Huang 86).
-        h_g(i) = heatflux_factor * (0.026 / D_t ^ 0.2) * (mu_g(i) ^ 0.2 * cp_g(i) / Pr_g(i) ^ 0.6) * (P_c / c_star(i)) ^ 0.8 * (D_t / R_of_curve) ^ 0.1 * (1 / A_ratio(i)) ^ .9 * sigma(i); % gas film coefficient [W/m^2-K] - bartz equation (Huzel & Huang 86).
+        h_g(i) = heatflux_factor * (0.026 / D_t ^ 0.2) * (mu_g(1) ^ 0.2 * cp_g(1) / Pr_g(1) ^ 0.6) * (P_c / c_star) ^ 0.8 * (D_t / R_of_curve) ^ 0.1 * (1 / A_ratio(i)) ^ .9 * sigma(i); % gas film coefficient [W/m^2-K] - bartz equation (Huzel & Huang 86).
         r = Pr_g(i) ^ (1 / 3); % recovery factor for a turbulent free boundary layer [N/A] - biased towards larger engines, very small engines should use Pr^.5 (Heister Table 6.2).
         T_r = T_g(i) * (1 + (gamma(i) - 1) / 2 * r * M(i) ^ 2); % recovery temperature [K] - corrects for compressible boundry layers (Heister EQ 6.15). 
         qdot_g(i) = h_g(i) * (T_r - T_wg(i)); % gas convective heat flux [W/m^2] (Heister EQ 6.16).
@@ -417,13 +420,13 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
         P_fin = 2 * rib_thickness(i) + 2 * deltax; % Fin perimeter (step distance & channel width)
         A_c_fin(i) = rib_thickness(i) * deltax; % Fin area at current step
         m_fin = sqrt(h_l(i) * P_fin / (k_w_current(i) * A_c_fin(i))); % Fin m
-        fin_q(i) = sqrt(h_l(i) * P_fin * k_w_current(i) * A_c_fin(i)) * (T_base - T_l(i)) * tanh(m_fin * h_c_x(i)); % Fin heat transfer rate
+        fin_q(i) = sqrt(h_l(i) * P_fin * k_w_current(i) * A_c_fin(i)) * (T_base - T_l(i)) * tanh(m_fin * h_c_x(i)) / (2 * deltax * h_c_x(i)); % Fin heat flux
 
         L_c = h_c_x + rib_thickness(i) / 2; % Corrected fin length (relate convection to adiabatic tip condition)
         eta_fin(i) = tanh(m_fin * L_c) / (m_fin * L_c);  % Fin efficiency
 
         % Step 8: Calculate liquid-side convective heat flux
-        qdot_l(i) = h_l(i) * (T_wl(i) - T_l(i)) + fin_q(i); % liquid convective heat flux [W/m^2] (Heister EQ 6.29).
+        qdot_l(i) = h_l(i) * (T_wl(i) - T_l(i)) + 2 * fin_q(i); % liquid convective heat flux [W/m^2] (Heister EQ 6.29).
 
         % Step 9: Check for convergence and continue loop / next step
         if abs(qdot_g(i) - qdot_l(i)) > qdot_tolerance && counter < 250 % check for tolerance
@@ -532,74 +535,6 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
 
             converged = 1;
         end
-    end
-end
-
-%% THROAT HEAT TRANSFER CALCULATION
-% determines heat transfer and temperature at the throat
-
-% Step 1: Prescribe initial properties
-     % ******
-
-% Steps 2 & 3: Set channel inlet properties
-
-P_l_t = (P_l(size(x_to_throat,2)) + P_l(size(x_to_throat,2) + 1) ) / 2; % coolant pressure at throat [Pa] (interpolated)
-T_l_t = (T_l(size(x_to_throat,2)) + T_l(size(x_to_throat,2) + 1) ) / 2; % coolant tepemperature at throat [K] (interpolated)
-
-% Step 4: Take hot wall temperature guess and initialize loop
-
-T_wg_t = (T_wg(size(x_to_throat,2)) + T_wg(size(x_to_throat,2) + 1) ) / 2; % initial guess of wall side temperature at throat [K] (interpolated) 
-T_wg_mn = 294.15; % minimum temperature bound
-T_wg_mx = 2000; % maximum temperature bound
-
-converged = 0; % wall temperature loop end condition
-counter = 0; % counter for loop
-
-
-% start loop to converge on wall temperature
-while ~(converged)
-    % Step 5: Calculate gas film coefficient and gas-side convective heat flux
-    sigma = (.5 * T_wg_t / T_g(1) * (1 + (gamma_t - 1) / 2 * M_t ^ 2) + .5) ^ -.68 * (1 + (gamma_t - 1) / 2 * M_t ^ 2) ^ -.12; % film coefficient correction factor [N/A] (Huzel & Huang 86).
-    h_g_t = (0.026 / D_t ^ 0.2) * (mu_g_t ^ 0.2 * cp_g_t / Pr_g_t ^ 0.6) * (P_c / c_star_t) ^ 0.8 * (D_t / R_of_curve) ^ 0.1 * (A_t / A_t) ^ .9 * sigma; % gas film coefficient [W/m^2-K] - bartz equation (Huzel & Huang 86).
-    r = Pr_g_t ^ (1 / 3); % recovery factor for a turbulent free boundary layer [N/A] - biased towards larger engines, very small engines should use Pr^.5 (Heister Table 6.2).
-    T_r = T_g_t * (1 + (gamma_t - 1) / 2 * r * M_t ^ 2); % recovery temperature [K] - corrects for compressible boundry layers (Heister EQ 6.15). 
-    qdot_g_l = h_g_t * (T_r - T_wg_t); % gas convective heat flux [W/m^2] (Heister EQ 6.16).
-
-    % Step 6: Calculate liquid wall temperature
-    T_wl_t = T_wg_t - qdot_g_l * t_w(2) / interp1(k_w(:,1), k_w(:,2), T_wg_t, 'nearest', 'extrap'); % liquid wall temperature calculated via conduction through wall [K] (Heister EQ 6.29).
-
-    % Step 7: Calculate liquid film coefficient
-    % run coolprop to get coolant properties
-    mu_lb = py.CoolProp.CoolProp.PropsSI('V','T', T_l_t, 'P', P_l_t, coolant); % viscosity of bulk coolant [Pa-s]
-    cp_l = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l_t, 'P', P_l_t, coolant); % specific heat of coolant [J/kg-k] 
-    k_l = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l_t, 'P', P_l_t, coolant); % thermal conductivity of coolant [W/m-K]
-    rho_l_t = py.CoolProp.CoolProp.PropsSI('D','T', T_l_t,'P', P_l_t,'Water'); % density of the coolant [???]
-    v_t = m_dot_CHANNEL / rho_l_t / A(2); % velocity at step [m/s]  
-
-    Re_l = (rho_l_t * v_t * hydraulic_D(2)) / mu_lb; % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
-    Pr_l = (cp_l * mu_lb) / k_l; % prantl number [N/A] (Huzel and Huang, pg 90)
-    Nu_l = 0.023 * (Re_l ^ .8) * (Pr_l ^ .4) * (T_wl_t / T_l_t) ^ -.3; % nusselt number [N/A] - applicable for Re > 10,000, .7 < Pr < 160 (Heister EQ 6.19).
-    h_l_t = (Nu_l * k_l) / hydraulic_D(2); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
-    
-    % Step 8: Calculate liquid-side convective heat flux
-    qdot_l = h_l_t * (T_wl_t - T_l_t); % liquid convective heat flux [W/m^2] (Heister EQ 6.29).
-
-    % Step 9: Check for convergence and continue loop / next step
-    if abs(qdot_g_l - qdot_l) > qdot_tolerance % check for tolerance
-
-        % convergence loop
-        if qdot_g_l - qdot_l > 0
-            T_wg_mn = T_wg_t;
-        else 
-            T_wg_mx = T_wg_t;
-        end 
-        T_wg_t = (T_wg_mx + T_wg_mn) / 2;
-
-        counter = counter + 1;
-    else 
-        fprintf("Gas Side Wall Temp [K]: %0.2f\n", T_wg_t)
-
-        converged = 1; % end loop
     end
 end
 
@@ -867,10 +802,6 @@ plot(x_plot.*1000, epsilon_toteff, x_plot.*1000, epsilon_cs)
 legend("total effective strain", "allowable cyclic strain")
 
 
-%         %Step 12: Structural Analysis Checks
-%         St = .5*(Pl- P_gas)*(width/wallthick)^2 + (E*a*gasheattransfer*wallthick)/(2*(1-v)kw); %Combined tangential stresses: Heister Eq 6.33 page 207
-%         Sl = E*a*(Twl-fuel_temp); %Longtudinal thermal stress (Huzel and Huang, EQ 2-28, pg 92) The temperatures used here may not right for determining the delta T in this equation.
-%         Sc = 4*Et*Ec*t_w/((((Et)^(1/2))*((Ec)^(1/2))^2)*(3*(1-v^2)*tube_radius)); %Critical Stress Buckling (Huzel and Huang, Eq 4-29, pg 93)
 
 %% THERMAL FEA
 L_seg = 0.0283;
