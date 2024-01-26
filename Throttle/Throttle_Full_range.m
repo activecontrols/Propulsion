@@ -155,7 +155,7 @@ hold on
 plot(throttle_pct*100, isp_throttle)
 title("Isp")
 xlabel("Throttle (%)")
-ylabel("Thrust")
+ylabel("Isp (s)")
 
 
 % Throttle results for injector
