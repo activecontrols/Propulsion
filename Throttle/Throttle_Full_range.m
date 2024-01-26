@@ -126,6 +126,7 @@ for i=1:length(throttle_pct)
 
 end
 
+[cstar_min, ~, ~, ~, ~, ~, ~, Tc_ns_min, ~, ~, ~, ~, ~, ~, ~] = throttleCEA(Pc_throttle_actual(1), Pe_throttle(1), fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, 0, 1, 1, 0, CEA_input_name);
 
 %% FIGURES
 
@@ -134,41 +135,45 @@ f=figure('Name', 'Throttle Chamber Results');
 
 subplot(2,2,1)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, throttle_thrust_actual * 0.224809)
-title("Thrust",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Thrust (lbf)",'Interpreter','latex')
+plot(throttle_pct*100, throttle_thrust_actual * 0.224809, "Linewidth", 2)
+title("Thrust","Interpreter","latex")
+xlabel("Throttle (%)","Interpreter","latex")
+ylabel("Thrust (lbf)","Interpreter","latex")
 
 subplot(2,2,2)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, Pe_throttle)
-plot(throttle_pct*100,P_sep)
+plot(throttle_pct*100, Pe_throttle, "Linewidth", 2)
+plot(throttle_pct*100,P_sep, "--", "Linewidth", 2)
 legend('$$P_{e}$$','$$P_{sep}$$','Interpreter','latex','Location','northwest')
-title("Exit Pressure",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Pressure (Psi)",'Interpreter','latex')
+title("Exit Pressure","Interpreter","latex")
+xlabel("Throttle (%)","Interpreter","latex")
+ylabel("Pressure (Psi)","Interpreter","latex")
 
 subplot(2,2,3)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, Pc_throttle_actual)
-title("Chamber Pressure",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Pressure (psi)",'Interpreter','latex')
+plot(throttle_pct*100, Pc_throttle_actual, "Linewidth", 2)
+title("Chamber Pressure","Interpreter","latex")
+xlabel("Throttle [%]","Interpreter","latex")
+ylabel("Pressure [psi]","Interpreter","latex")
 
 subplot(2,2,4)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, isp_throttle)
-title("Isp",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Isp (s)",'Interpreter','latex')
+plot(throttle_pct*100, isp_throttle, "Linewidth", 2)
+title("Isp","Interpreter","latex")
+xlabel("Throttle [%]","Interpreter","latex")
+ylabel("Isp [s]","Interpreter","latex")
 
 exportgraphics(f,'Chamber_throttle.png','Resolution',600)
 
@@ -177,71 +182,78 @@ f=figure('Name', 'Injector Throttle Results');
 
 subplot(2,2,1)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, P_OX_manifold)
+plot(throttle_pct*100, P_OX_manifold, "Linewidth", 2)
 title("Oxidizer Manifold Pressure",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Pressure (psi)",'Interpreter','latex')
+xlabel("Throttle [%]","Interpreter","latex")
+ylabel("Pressure [psi]","Interpreter","latex")
 
 subplot(2,2,2)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, P_FUEL_manifold)
-title("Fuel Manifold Pressure (psi)",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Pressure (psi)",'Interpreter','latex')
+plot(throttle_pct*100, P_FUEL_manifold, "Linewidth", 2)
+title("Fuel Manifold Pressure [psi]","Interpreter","latex")
+xlabel("Throttle [%]","Interpreter","latex")
+ylabel("Pressure [psi]","Interpreter","latex")
 
 subplot(2,2,3)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, OX_stiffness*100)
-title("Oxidizer Stiffness",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Stiffness $$(\%)$$",'Interpreter','latex')
+plot(throttle_pct*100, OX_stiffness*100, "Linewidth", 2)
+title("Oxidizer Stiffness","Interpreter","latex")
+xlabel("Throttle [%]","Interpreter","latex")
+ylabel("Stiffness [%]","Interpreter","latex")
 
 subplot(2,2,4)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, FUEL_stiffness*100)
-title("Fuel Stiffness",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Stiffness $$(\%)$$",'Interpreter','latex')
+plot(throttle_pct*100, FUEL_stiffness*100, "Linewidth", 2)
+title("Fuel Stiffness","Interpreter","latex")
+xlabel("Throttle [%]","Interpreter","latex")
+ylabel("Stiffness [%]","Interpreter","latex")
 
 exportgraphics(f,'Injector_throttle.png','Resolution',600)
 
-% Massflows
+% Mass flows
 f=figure('Name', 'Throttle Massflows');
 
 subplot(2,2,[1 2])
 hold on 
+grid on
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, mdot_throttle_actual)
-title("Total Mass Flow Rate",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Mass Flow (lbm/s)",'Interpreter','latex')
+plot(throttle_pct*100, mdot_throttle_actual, "Linewidth", 2)
+title("Total Mass Flow Rate","Interpreter","latex")
+ylabel("Mass Flow [lbm/s]","Interpreter","latex")
+xlabel("Throttle [%]","Interpreter","latex")
 
 subplot(2,2,3)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, fuel_massflow_rate)
-title("Fuel Massflow Rate",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Mass Flow (lbm/s)",'Interpreter','latex')
+plot(throttle_pct*100, fuel_massflow_rate, "Linewidth", 2)
+title("Fuel Massflow Rate","Interpreter","latex")
+ylabel("Mass Flow [lbm/s]","Interpreter","latex")
+xlabel("Throttle [%]","Interpreter","latex")
 
 subplot(2,2,4)
 hold on 
+grid on 
 set(gcf,'color','w')
 hAxes.TickLabelInterpreter = 'latex';
-plot(throttle_pct*100, ox_massflow_rate)
-title("Oxidizer Massflow Rate",'Interpreter','latex')
-xlabel("Throttle $$(\%)$$",'Interpreter','latex')
-ylabel("Mass Flow (lbm/s)",'Interpreter','latex')
+plot(throttle_pct*100, ox_massflow_rate, "Linewidth", 2)
+title("Oxidizer Massflow Rate","Interpreter","latex")
+ylabel("Mass Flow [lbm/s]","Interpreter","latex")
+xlabel("Throttle [%]","Interpreter","latex")
 exportgraphics(f,'MassFlow_throttle.png','Resolution',600)
 
 fclose all;
