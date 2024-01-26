@@ -20,18 +20,19 @@ cf_eff = 0.95;  % Cf efficiency;
 throttle_pct = linspace(0.4, 1, breakpoints);
 thrust_max = 2446.52;   % Max Thrust [N]
 g = 9.81;   % Gravity [m/s^2]
+g_imperial = 32.2 * 12;            % in/s^2
 Pa = 14.7;  % Atmospheric Pressure [P]
 
 
 %% Injector Geometry
 injector_type = "pintle";   % injector type (i.e. pintle, impinging, coax shear, ect.)
 pintle_center = "OX";       % which propellant is centered (injected through the holes on the pintle post)
-A_OX = 0.048759654633879;              % ox orifice area [in^2]
+hole_diameter = 0.031;  % in 
+hole_number = 66;           % number of holes on pintle tip
+A_OX = pi * hole_diameter ^ 2 / 4 * hole_number;              % ox orifice area [in^2]
 A_FUEL = 0.040310068980444;             % fuel orifice area [in^2]
 cd_OX = .7;                % ox orifice discharge coefficient [N/A]
 cd_FUEL = .7;              % fuel orifice discharge coefficient [N/A]
-hole_number = 66;           % number of holes on pintle tip
-hole_diameter = 0.031;      % hole diameter [in]
 annulus_width = 0.017;     % annulus width [in]
 
 
@@ -58,6 +59,9 @@ P_OX_manifold = zeros(1, breakpoints);
 P_FUEL_manifold = zeros(1, breakpoints);
 isp_throttle = zeros(1, breakpoints);
 Pe_throttle = zeros(1, breakpoints);
+OX_stiffness = zeros(1, breakpoints);
+FUEL_stiffness = zeros(1, breakpoints);
+
 
 %% Throttle Iteration
 
@@ -105,16 +109,20 @@ for i=1:length(throttle_pct)
     throttle_thrust_actual(i) = thrust_guess;   % N
     Pc_throttle_actual(i) = Pc_throttle_guess;   % Psi
     Pe_throttle(i) = Pe_cea;
-    mdot_throttle_actual(i) = mdot_guess * 2.20462;  % lbm/s
+    mdot_guess = mdot_guess * 2.20462; % lbm/s
+    mdot_throttle_actual(i) = mdot_guess;  % lbm/s
     fuel_massflow_rate(i) = mdot_guess / (1 + OF);  % lbm/s
     ox_massflow_rate(i)= mdot_guess - fuel_massflow_rate(i); % lbm/s
     isp_throttle(i) = isp_actual; % s
 
     % Injector pressure calculations
-    P_OX_manifold(i) = (ox_massflow_rate(i) / cd_OX * A_OX * hole_number) ^ 2 / rho_OX + Pc_throttle_actual(i);
-    P_FUEL_manifold(i) = (ox_massflow_rate(i) / cd_FUEL * A_FUEL) ^ 2 / rho_FUEL + Pc_throttle_actual(i);
+    P_OX_manifold(i) = (ox_massflow_rate(i) / (cd_OX * A_OX)) ^ 2 / (2 * rho_OX * g_imperial) + Pc_throttle_actual(i);   % Psi
+    P_FUEL_manifold(i) = (fuel_massflow_rate(i) / (cd_FUEL * A_FUEL)) ^ 2 / (2 * rho_FUEL * g_imperial) + Pc_throttle_actual(i); % Psi
+    OX_stiffness(i) = (P_OX_manifold(i) - Pc_throttle_actual(i)) / Pc_throttle_actual(i); 
+    FUEL_stiffness(i) = (P_FUEL_manifold(i) - Pc_throttle_actual(i)) / Pc_throttle_actual(i);
 
 end
+
 
 %% FIGURES
 
@@ -123,49 +131,88 @@ figure('Name', 'Throttle Chamber Results')
 
 subplot(2,2,1)
 hold on 
-plot(throttle_pct, throttle_thrust_actual * 0.224809)
+plot(throttle_pct*100, throttle_thrust_actual * 0.224809)
 title("Thrust")
-xlabel("Throttle %")
+xlabel("Throttle (%)")
 ylabel("Thrust (lbf)")
 
 subplot(2,2,2)
 hold on 
-plot(throttle_pct, Pe_throttle)
+plot(throttle_pct*100, Pe_throttle)
 title("Exit Pressure")
-xlabel("Throttle %")
+xlabel("Throttle (%)")
 ylabel("Pressure (Psi)")
 
 subplot(2,2,3)
 hold on 
-plot(throttle_pct, Pc_throttle_actual)
+plot(throttle_pct*100, Pc_throttle_actual)
 title("Chamber Pressure")
-xlabel("Throttle %")
+xlabel("Throttle (%)")
 ylabel("Pressure (psi)")
 
 subplot(2,2,4)
 hold on 
-plot(throttle_pct, isp_throttle)
+plot(throttle_pct*100, isp_throttle)
 title("Isp")
-xlabel("Throttle %")
+xlabel("Throttle (%)")
 ylabel("Thrust")
 
 
 % Throttle results for injector
-figure('Name', 'Throttle Injector Results')
+figure('Name', 'Injector Throttle Results')
 
-subplot(1,2,1)
+subplot(2,2,1)
 hold on 
-plot(throttle_pct, P_OX_manifold)
+plot(throttle_pct*100, P_OX_manifold)
 title("Oxidizer Manifold Pressure")
-xlabel("Throttle %")
+xlabel("Throttle (%)")
 ylabel("Pressure (psi)")
 
-subplot(1,2,2)
+subplot(2,2,2)
 hold on 
-plot(throttle_pct, P_FUEL_manifold)
+plot(throttle_pct*100, P_FUEL_manifold)
 title("Fuel Manifold Pressure (psi)")
-xlabel("Throttle %")
+xlabel("Throttle (%)")
 ylabel("Pressure (psi)")
+
+subplot(2,2,3)
+hold on 
+plot(throttle_pct*100, OX_stiffness*100)
+title("Oxidizer Stiffness")
+xlabel("Throttle (%)")
+ylabel("Stiffness (%)")
+
+subplot(2,2,4)
+hold on 
+plot(throttle_pct*100, FUEL_stiffness*100)
+title("Fuel Stiffness")
+xlabel("Throttle (%)")
+ylabel("Pressure (%)")
+
+
+% Massflows
+figure('Name', 'Throttle Massflows')
+
+subplot(2,2,[1 2])
+hold on 
+plot(throttle_pct*100, mdot_throttle_actual)
+title("Total Mass Flow Rate")
+xlabel("Throttle (%)")
+ylabel("Mass Flow (lbm/s)")
+
+subplot(2,2,3)
+hold on 
+plot(throttle_pct*100, fuel_massflow_rate)
+title("Fuel Massflow Rate")
+xlabel("Throttle (%)")
+ylabel("Mass Flow (lbm/s)")
+
+subplot(2,2,4)
+hold on 
+plot(throttle_pct*100, ox_massflow_rate)
+title("Oxidizer Massflow Rate")
+xlabel("Throttle (%)")
+ylabel("Mass Flow (lbm/s)")
 
 
 fclose all;
