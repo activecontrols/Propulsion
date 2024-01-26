@@ -132,7 +132,7 @@ if nozzle_pos == 2
     M = M(end);
 %     gamma = gamma(end);
     P = P(end);
-    T = T(end);
+    T = T(1);
     rho = rho(end);
     mu = mu(end);
     Pr = Pr(end);

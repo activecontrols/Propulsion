@@ -81,7 +81,7 @@ Pe_cea = zeros(1,breakpoints);
         while ~(converged)
             % Enter CEA Call
            
-            [cstar_cea, cf_cea, ~, ~, ~, ~, Pe_cea, ~, ~, ~, ~, ~, ~, ~, ~] = throttleCEA(Pc_throttle_guess, 0, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF(j), 0, exp_ratio, 2, 1, 0, CEA_input_name);
+            [cstar_cea, cf_cea, ~, ~, ~, ~, Pe_cea, Tc_ns, ~, ~, ~, ~, ~, ~, ~] = throttleCEA(Pc_throttle_guess, 0, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF(j), 0, exp_ratio, 2, 1, 0, CEA_input_name);
             
             Pc_throttle_guess_SI = Pc_throttle_guess * 6895; % [Pa]
            
@@ -122,6 +122,7 @@ Pe_cea = zeros(1,breakpoints);
         fuel_massflow_rate(i,j) = mdot_guess / (1 + OF(j));  % lbm/s
         ox_massflow_rate(i,j)= mdot_guess - fuel_massflow_rate(i,j); % lbm/s
         isp_throttle(i,j) = isp_actual; % s
+        Tc_ns(i,j) = (Tc_ns - 273.15) * 9/5 + 32; % F
     
         % Injector pressure calculations
         P_OX_manifold(i,j) = (ox_massflow_rate(i,j) / (cd_OX * A_OX)) ^ 2 / (2 * rho_OX * g_imperial) + Pc_throttle_actual(i,j);   % Psi
@@ -135,6 +136,32 @@ Pe_cea = zeros(1,breakpoints);
 
 
 %% FIGURES
+
+
+f=figure('Name', 'OF and Flow Rate Trend');
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
+contourf(fuel_massflow_rate, ox_massflow_rate, fuel_massflow_rate./ox_massflow_rate)
+colormap turbo
+hbar = colorbar;
+title("OF and Flow Rate Trend",'Interpreter','latex')
+xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
+ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
+ylabel(hbar, "OF Ratio",'Interpreter','latex')
+exportgraphics(f,'OF_FlowRate_contour.png','Resolution',600)
+
+
+f=figure('Name', 'Thrust and Flow Rate Trend');
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
+contourf(fuel_massflow_rate, ox_massflow_rate, throttle_thrust_actual * 0.224809)
+hbar = colorbar;
+title("Thrust and Flow Rate Trend",'Interpreter','latex')
+xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
+ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
+ylabel(hbar, "Thrust",'Interpreter','latex')
+exportgraphics(f,'Thrust_FlowRate_contour.png','Resolution',600)
+ 
 
 % % Throttle results for chamber
 % f=figure('Name', 'Throttle Chamber Results');
