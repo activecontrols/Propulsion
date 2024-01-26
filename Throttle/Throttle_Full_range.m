@@ -187,7 +187,7 @@ hold on
 plot(throttle_pct*100, FUEL_stiffness*100)
 title("Fuel Stiffness")
 xlabel("Throttle (%)")
-ylabel("Pressure (%)")
+ylabel("Stiffness (%)")
 
 
 % Massflows
