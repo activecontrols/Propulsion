@@ -3,7 +3,7 @@
 % First Created: 7/17/2022
 % Last Updated: 
 
-function [c_star,cf, isp, exp_ratio, M, gamma, P, T, rho, mu, Pr, Mw, k, son, cp] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, sup, nozzle_pos, imperial_inputs, imperial_ouputs, file_name)
+function [c_star,cf, isp, exp_ratio, M, gamma, P, T, rho, mu, Pr, Mw, k, son, cp] = throttleCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, sup, nozzle_pos, imperial_inputs, imperial_ouputs, file_name)
 
 %{ 
 Description: Sends engine performance and fuel properties to NASA CEA where
