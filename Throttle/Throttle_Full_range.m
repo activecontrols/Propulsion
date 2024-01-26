@@ -61,6 +61,7 @@ isp_throttle = zeros(1, breakpoints);
 Pe_throttle = zeros(1, breakpoints);
 OX_stiffness = zeros(1, breakpoints);
 FUEL_stiffness = zeros(1, breakpoints);
+P_sep = zeros(1, breakpoints);
 
 
 %% Throttle Iteration
@@ -120,6 +121,8 @@ for i=1:length(throttle_pct)
     P_FUEL_manifold(i) = (fuel_massflow_rate(i) / (cd_FUEL * A_FUEL)) ^ 2 / (2 * rho_FUEL * g_imperial) + Pc_throttle_actual(i); % Psi
     OX_stiffness(i) = (P_OX_manifold(i) - Pc_throttle_actual(i)) / Pc_throttle_actual(i); 
     FUEL_stiffness(i) = (P_FUEL_manifold(i) - Pc_throttle_actual(i)) / Pc_throttle_actual(i);
+     % Seperation Pressure
+    P_sep(i) = 2/3 *(Pc_throttle_actual(i)/Pa)^-0.2 * Pa;
 
 end
 
@@ -127,92 +130,118 @@ end
 %% FIGURES
 
 % Throttle results for chamber
-figure('Name', 'Throttle Chamber Results')
+f=figure('Name', 'Throttle Chamber Results');
 
 subplot(2,2,1)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, throttle_thrust_actual * 0.224809)
-title("Thrust")
-xlabel("Throttle (%)")
-ylabel("Thrust (lbf)")
+title("Thrust",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Thrust (lbf)",'Interpreter','latex')
 
 subplot(2,2,2)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, Pe_throttle)
-title("Exit Pressure")
-xlabel("Throttle (%)")
-ylabel("Pressure (Psi)")
+plot(throttle_pct*100,P_sep)
+legend('$$P_{e}$$','$$P_{sep}$$','Interpreter','latex','Location','northwest')
+title("Exit Pressure",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Pressure (Psi)",'Interpreter','latex')
 
 subplot(2,2,3)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, Pc_throttle_actual)
-title("Chamber Pressure")
-xlabel("Throttle (%)")
-ylabel("Pressure (psi)")
+title("Chamber Pressure",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Pressure (psi)",'Interpreter','latex')
 
 subplot(2,2,4)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, isp_throttle)
-title("Isp")
-xlabel("Throttle (%)")
-ylabel("Isp (s)")
+title("Isp",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Isp (s)",'Interpreter','latex')
 
+exportgraphics(f,'Chamber_throttle.png','Resolution',600)
 
 % Throttle results for injector
-figure('Name', 'Injector Throttle Results')
+f=figure('Name', 'Injector Throttle Results');
 
 subplot(2,2,1)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, P_OX_manifold)
-title("Oxidizer Manifold Pressure")
-xlabel("Throttle (%)")
-ylabel("Pressure (psi)")
+title("Oxidizer Manifold Pressure",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Pressure (psi)",'Interpreter','latex')
 
 subplot(2,2,2)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, P_FUEL_manifold)
-title("Fuel Manifold Pressure (psi)")
-xlabel("Throttle (%)")
-ylabel("Pressure (psi)")
+title("Fuel Manifold Pressure (psi)",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Pressure (psi)",'Interpreter','latex')
 
 subplot(2,2,3)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, OX_stiffness*100)
-title("Oxidizer Stiffness")
-xlabel("Throttle (%)")
-ylabel("Stiffness (%)")
+title("Oxidizer Stiffness",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Stiffness (%)",'Interpreter','latex')
 
 subplot(2,2,4)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, FUEL_stiffness*100)
-title("Fuel Stiffness")
-xlabel("Throttle (%)")
-ylabel("Stiffness (%)")
+title("Fuel Stiffness",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Stiffness (%)",'Interpreter','latex')
 
+exportgraphics(f,'Injector_throttle.png','Resolution',600)
 
 % Massflows
-figure('Name', 'Throttle Massflows')
+f=figure('Name', 'Throttle Massflows');
 
 subplot(2,2,[1 2])
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, mdot_throttle_actual)
-title("Total Mass Flow Rate")
-xlabel("Throttle (%)")
-ylabel("Mass Flow (lbm/s)")
+title("Total Mass Flow Rate",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Mass Flow (lbm/s)",'Interpreter','latex')
 
 subplot(2,2,3)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, fuel_massflow_rate)
-title("Fuel Massflow Rate")
-xlabel("Throttle (%)")
-ylabel("Mass Flow (lbm/s)")
+title("Fuel Massflow Rate",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Mass Flow (lbm/s)",'Interpreter','latex')
 
 subplot(2,2,4)
 hold on 
+set(gcf,'color','w')
+hAxes.TickLabelInterpreter = 'latex';
 plot(throttle_pct*100, ox_massflow_rate)
-title("Oxidizer Massflow Rate")
-xlabel("Throttle (%)")
-ylabel("Mass Flow (lbm/s)")
-
+title("Oxidizer Massflow Rate",'Interpreter','latex')
+xlabel("Throttle (%)",'Interpreter','latex')
+ylabel("Mass Flow (lbm/s)",'Interpreter','latex')
+exportgraphics(f,'MassFlow_throttle.png','Resolution',600)
 
 fclose all;
