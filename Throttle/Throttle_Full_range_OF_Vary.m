@@ -7,13 +7,13 @@ fclose all;
 CEA_input_name = 'throttle';
 
 
-%% System Constants
+%% SYSTEM CONSTANTS
 breakpoints = 15;
 g = 9.81;   % Gravity [m/s^2]
 g_imperial = 32.2 * 12; % Gravity [in/s^2]
 
 
-%% Chamber Parameters
+%% CHAMBER PARAMETERS
 R_t = 0.7335/39.37; % throat radius [m]
 At =  pi*R_t^2; % Throat Area [meters]
 exp_ratio = 2.8153; % Expansion ratio;
@@ -26,7 +26,7 @@ thrust_max = 2446.52;   % Max Thrust [N]
 Pa = 14.7;  % Atmospheric Pressure [P]
 
 
-%% Injector Geometry
+%% INJECTOR GEOMETRY
 injector_type = "pintle";   % injector type (i.e. pintle, impinging, coax shear, ect.)
 pintle_center = "OX";       % which propellant is centered (injected through the holes on the pintle post)
 hole_diameter = 0.031;  % in 
@@ -38,7 +38,7 @@ cd_FUEL = .7;              % fuel orifice discharge coefficient [N/A]
 annulus_width = 0.017;     % annulus width [in]
 
 
-%% Propellant Values
+%% PROPELLANT VALUES
 fuel_temp = 293.15; % [K]
 oxidizer_temp = 90.17; % [K]
 fuel = 'C3H8O,2propanol'; % fuel definition
@@ -50,8 +50,7 @@ rho_FUEL = 49.06838 / 12^3; % fuel density [lbm/in^3]
 rho_OX = 56.34 / 12^3;      % oxidizer density [lbm/in^3]
 
 
-%% Matrix Initialization
-
+%% MATRIX INITIALIZATION
 throttle_thrust_actual = zeros(1, breakpoints);
 Pc_throttle_actual = zeros(1, breakpoints);
 mdot_throttle_actual = zeros(1, breakpoints);
@@ -71,7 +70,8 @@ Pe_cea = zeros(1,breakpoints);
 Tc_ns_throttle = zeros(1,breakpoints);
 
 
-%% Throttle Iteration
+%% THROTTLE ITTERATION
+% Iterate over OF and throttle percent
  for j = 1:length(OF)   
     for i=1:length(throttle_pct)
         
@@ -140,6 +140,11 @@ Tc_ns_throttle = zeros(1,breakpoints);
 
 save('data_40%_OF_08_2')
 
+%% INJECTOR CALCULATIONS
+% Injection velocity
+
+% Momentum ratios
+
 
 %% FIGURES
 
@@ -156,6 +161,7 @@ ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
 ylabel(hbar, "OF Ratio",'Interpreter','latex')
 exportgraphics(f,'OF_FlowRate_contour.png','Resolution',600)
 
+
 % Thrust vs flow rate 
 f=figure('Name', 'Throttle Thrust and Flow Rate Trend');
 set(gcf,'color','w')
@@ -169,6 +175,7 @@ ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
 ylabel(hbar, "Thrust [lbf]",'Interpreter','latex')
 exportgraphics(f,'Thrust_FlowRate_contour.png','Resolution',600)
 
+
 % Temperature vs flow rate 
 f=figure('Name', 'Chamber Temperature and Flow Rate Trend');
 set(gcf,'color','w')
@@ -179,9 +186,9 @@ hbar = colorbar;
 title("Chamber Temperature and Flow Rate Trend",'Interpreter','latex')
 xlabel("Fuel Flow Rate [lb/s]",'Interpreter','latex')
 ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
-ylabel(hbar, "Temperature [F]",'Interpreter','latex')
+ylabel(hbar, "Chamber Temperature [F]",'Interpreter','latex')
 exportgraphics(f,'Temp_FlowRate_contour.png','Resolution',600)
- 
+
 
 % % Throttle results for chamber
 % f=figure('Name', 'Throttle Chamber Results');
