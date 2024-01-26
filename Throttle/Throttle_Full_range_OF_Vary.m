@@ -1,6 +1,29 @@
-%% Throttle Code
-% PSP Active Control
+% %% PSP Active Control Throttle Code 
+% % Authors: Yash Amin, Alex Suppiah
+% % First Created: 1/24/2024
+% % Last Updated: 
 
+   %{ 
+    Description:
+    Throttle calculations for different thrust percentages and OF values
+
+    Program Methodology
+    - 
+    
+    Inputs:
+    - 
+    
+    Outputs: 
+    - 
+    
+    Assumptions:
+    - Steady state
+    - Frozen chemistry
+
+   %}
+
+
+%% INITIALIZATION
 clear;
 clc;
 fclose all;
@@ -68,9 +91,15 @@ cstar_cea = zeros(1,breakpoints);
 cf_cea = zeros(1,breakpoints);
 Pe_cea = zeros(1,breakpoints);
 Tc_ns_throttle = zeros(1,breakpoints);
+annulus_velocity = zeros(1,breakpoints);
+radial_velocity = zeros(1,breakpoints);
+tmr = zeros(1,breakpoints);
+lmr = zeros(1,breakpoints);
+spray_angle = zeros(1,breakpoints);
+impingement_point = zeros(1,breakpoints);
 
 
-%% THROTTLE ITTERATION
+%% THROTTLE ITERATION
 % Iterate over OF and throttle percent
  for j = 1:length(OF)   
     for i=1:length(throttle_pct)
@@ -133,17 +162,26 @@ Tc_ns_throttle = zeros(1,breakpoints);
         OX_stiffness(i,j) = (P_OX_manifold(i,j) - Pc_throttle_actual(i,j)) / Pc_throttle_actual(i,j); 
         FUEL_stiffness(i,j) = (P_FUEL_manifold(i,j) - Pc_throttle_actual(i,j)) / Pc_throttle_actual(i,j);
         
-        % Seperation Pressure
+        % Separation Pressure
         P_sep(i,j) = 2/3 *(Pc_throttle_actual(i,j)/Pa)^-0.2 * Pa; % [Psi]
+
+        % Injection velocity
+        annulus_velocity(i,j) = fuel_flow_rate / (fuel_density * area_fuel);
+        radial_velocity(i,j) = ox_flow_rate / (ox_density * area_ox); % in/s
+
+        % Momentum ratios
+        tmr(i,j) = radial_velocity * ox_flow_rate / (annulus_velocity * fuel_flow_rate); % Total Momentum Ratio (radial / annulus)
+        lmr(i,j) = (ox_density * radial_velocity^2 * area_ox / hole_number) / (fuel_density * annulus_velocity^2 * hole_diameter * annular_thickness);
+
+        % Sprau calculations
+        spray_angle(i,j) = (0.67 * atan(1.8 * lmr) * 180 / pi) + 20; % blakely, freeberg, and hogge (2019) spray formation from pintle injector system
+        impingement_point(i,j) = ((chamber_diameter / 2 - shaft_radius) / tan(spray_angle / 180 * pi)) + shaft_length; % based only on simple trig
+
     end
  end
 
-save('data_40%_OF_08_2')
-
-%% INJECTOR CALCULATIONS
-% Injection velocity
-
-% Momentum ratios
+% Save workspace and data for post processing 
+save('data_40%_OF_08_2') % percent throttle and OF range for this run
 
 
 %% FIGURES
@@ -190,7 +228,7 @@ ylabel(hbar, "Chamber Temperature [F]",'Interpreter','latex')
 exportgraphics(f,'Temp_FlowRate_contour.png','Resolution',600)
 
 
-% % Throttle results for chamber
+% % Throttle results for chamber @ OF 1.2
 % f=figure('Name', 'Throttle Chamber Results');
 % 
 % subplot(2,2,1)
@@ -233,7 +271,7 @@ exportgraphics(f,'Temp_FlowRate_contour.png','Resolution',600)
 % 
 % exportgraphics(f,'Chamber_throttle.png','Resolution',600)
 % 
-% % Throttle results for injector
+% % Throttle results for injector @ OF 1.2
 % f=figure('Name', 'Injector Throttle Results');
 % 
 % subplot(2,2,1)
@@ -274,7 +312,7 @@ exportgraphics(f,'Temp_FlowRate_contour.png','Resolution',600)
 % 
 % exportgraphics(f,'Injector_throttle.png','Resolution',600)
 % 
-% % Massflows
+% % Massflows @ OF 1.2
 % f=figure('Name', 'Throttle Massflows');
 % 
 % subplot(2,2,[1 2])
