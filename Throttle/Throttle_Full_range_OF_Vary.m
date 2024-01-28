@@ -59,7 +59,9 @@ A_FUEL = 0.040310068980444;             % fuel orifice area [in^2]
 cd_OX = .7;                % ox orifice discharge coefficient [N/A]
 cd_FUEL = .7;              % fuel orifice discharge coefficient [N/A]
 annulus_width = 0.017;     % annulus width [in]
-
+shaft_length = 0.7500;     % Shaft length [in]
+shaft_radius = 0.3750;     % Shaft radius [in]
+chamber_diameter = 3.75;   % Chamber Diameter [in]
 
 %% PROPELLANT VALUES
 fuel_temp = 293.15; % [K]
@@ -166,16 +168,16 @@ impingement_point = zeros(1,breakpoints);
         P_sep(i,j) = 2/3 *(Pc_throttle_actual(i,j)/Pa)^-0.2 * Pa; % [Psi]
 
         % Injection velocity
-        annulus_velocity(i,j) = fuel_flow_rate / (fuel_density * area_fuel);
-        radial_velocity(i,j) = ox_flow_rate / (ox_density * area_ox); % in/s
+        annulus_velocity(i,j) = fuel_massflow_rate(i,j) / (rho_FUEL * A_FUEL);
+        radial_velocity(i,j) = ox_massflow_rate(i,j) / (rho_OX * A_OX); % in/s
 
         % Momentum ratios
-        tmr(i,j) = radial_velocity * ox_flow_rate / (annulus_velocity * fuel_flow_rate); % Total Momentum Ratio (radial / annulus)
-        lmr(i,j) = (ox_density * radial_velocity^2 * area_ox / hole_number) / (fuel_density * annulus_velocity^2 * hole_diameter * annular_thickness);
+        tmr(i,j) = radial_velocity(i,j) * ox_massflow_rate(i,j) / (annulus_velocity(i,j) * fuel_massflow_rate(i,j)); % Total Momentum Ratio (radial / annulus)
+        lmr(i,j) = (rho_OX * radial_velocity(i,j)^2 * A_OX / hole_number) / (rho_FUEL * annulus_velocity(i,j)^2 * hole_diameter * annulus_width);
 
         % Sprau calculations
-        spray_angle(i,j) = (0.67 * atan(1.8 * lmr) * 180 / pi) + 20; % blakely, freeberg, and hogge (2019) spray formation from pintle injector system
-        impingement_point(i,j) = ((chamber_diameter / 2 - shaft_radius) / tan(spray_angle / 180 * pi)) + shaft_length; % based only on simple trig
+        spray_angle(i,j) = (0.67 * atan(1.8 * lmr(i,j)) * 180 / pi) + 20; % blakely, freeberg, and hogge (2019) spray formation from pintle injector system
+        impingement_point(i,j) = ((chamber_diameter / 2 - shaft_radius) / tan(spray_angle(i,j) / 180 * pi)) + shaft_length; % based only on simple trig
 
     end
  end
