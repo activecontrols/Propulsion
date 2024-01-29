@@ -526,7 +526,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
                 MS_lowcycle(i) = epsilon_cs(i) / (2*epsilon_peff(i));
                 MS(i) = epsilon_cs_tot(i) / (2*epsilon_toteff(i));
 %                 num_fires(i) = 1/4 * ((elong(i)/(4*(epsilon_peff(i))))^(2));
-                num_fires(i) = 1/4 * (2 * ((epsilon_peff(i) - epsilon_emax(i)) / elong(i))) ^ (-2);
+                num_fires(i) = 1/4 * (2 * ((epsilon_peff(i) + 2*epsilon_emax(i)) / elong(i))) ^ 2;
                 sigma_eff(i) = E_current(i) * epsilon_toteff(i);
                 sigma_a(i) = E_current(i) * epsilon_tota(i);
                 sigma_t2(i) = E_current(i) * epsilon_tott(i);
