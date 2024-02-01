@@ -32,7 +32,7 @@ CEA_input_name = 'throttle';
 
 
 %% SYSTEM CONSTANTS
-breakpoints = 7;
+breakpoints = ;
 g = 9.81;   % Gravity [m/s^2]
 g_imperial = 32.2 * 12; % Gravity [in/s^2]
 
