@@ -68,15 +68,15 @@ contour = readmatrix('contour_100pts.xlsx'); % import engine contour
 r_contour = (contour(:,2) * u.IN2M)'; % contour radius [m]
 x_contour = (contour(:,1) * u.IN2M)'; % contour x-axis [m]
 [R_t, t_local] = min(r_contour); % throat radius, throat location [m]
-chamber_length = 0.0254 * 5.205; % chamber length (m) [conversion * in]
-converging_length = 0.0254 * 1.8251; %  converging length (m) [conversion * in]
-diverging_length = 0.0254 * 1.8557; % diverging length (m) [conversion * in]
+chamber_length = u.IN2M * 5.205; % chamber length (m) [conversion * in]
+converging_length = u.IN2M * 1.8251; %  converging length (m) [conversion * in]
+diverging_length = u.IN2M * 1.8557; % diverging length (m) [conversion * in]
 total_length = chamber_length + converging_length + diverging_length; % total length (mm) 
 
 % Propulsion Parameters
 P_c = 250; % chamber pressure [psi] 
 P_e = 17; % exit pressure [psi]
-m_dot = 5 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+m_dot = 2 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
 fuel = 'C3H8O,2propanol'; % fuel definition
 oxidizer = 'O2(L)'; % oxidizer definition
 fuel_weight = 0; % ???  
@@ -108,16 +108,18 @@ coolantdirection = 0; % 1: direction opposite of hot gas flow direction
 % channel geometry: (1: chamber) (min: throat) (2: nozzle end)
 %t_w = 0.0005; % inner wall thickness [m]
 t_w = [.001 .00075 .001];
-%inter_length = .02 ; % Length where wall thickness will interpolate between chamber and nozzle
-h_c = [.004 .003 .003]; % channel height [1 min 2] [m]    
-w_c = [.007 .003 .004];% channel width [1 min 2] [m]
-num_channels = 30; 
+h_c = [.003 .0025 .003]; % channel height [1 min 2] [m]    
+w_c = [.005 .002 .003];% channel width [1 min 2] [m]
+% t_w = [.001 .00075 .001];
+% h_c = [.0015 .001 .0023]; % channel height [1 min 2] [m]    
+% w_c = [.0031 .001 .0015];% channel width [1 min 2] [m]
+num_channels = 34; 
 
 
 %t_w_c = .001778 ; % channel width at torch igniter
 %t_h_c = .003 ; % channel height at torch igniter
-h_c_extra = h_c(2);
-w_c_extra = w_c(2);
+h_c_extra = .0025;
+w_c_extra = .003;
 offset_extra = 0.02;
 inter_length =  converging_length - offset_extra; % Length where wall thickness will interpolate between chamber and nozzle
 %extra_loc = [chamber_length, chamber_length + converging_length - .011547, chamber_length + converging_length];
@@ -358,17 +360,17 @@ deltaT1 = zeros(1,points);
 deltaT2 = zeros(1,points);
 
 %call cea for all area ratios
-i = 1;
-for sub = subsonic_area_ratios
-    [c_star, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, 0, 2, 0, 0, CEA_input_name);
-    i = i + 1;
-end
-i = size(subsonic_area_ratios, 2) + 1;
-for sup = supersonic_area_ratios
-    [c_star, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, sup, 2, 0, 0, CEA_input_name);
-    i = i + 1;
-end
-[~, ~, ~, ~, ~, P_g_tot, T_g_tot, ~, mu_g_tot, Pr_g_tot, ~, ~, ~, cp_g_tot] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, 0, 1, 0, 0, CEA_input_name);
+% i = 1;
+% for sub = subsonic_area_ratios
+%     [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, 0, 2, 0, 0, CEA_input_name);
+%     i = i + 1;
+% end
+% i = size(subsonic_area_ratios, 2) + 1;
+% for sup = supersonic_area_ratios
+%     [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, sup, 2, 0, 0, CEA_input_name);
+%     i = i + 1;
+% end
+[c_star, ~, ~, ~, ~, P_g_tot, T_g_tot, ~, mu_g_tot, Pr_g_tot, ~, ~, ~, cp_g_tot] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, 0, 1, 0, 0, CEA_input_name);
 c_star = c_star * cstar_eff;
 
 % Steps 2 & 3: Set channel inlet properties
@@ -429,10 +431,10 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
         P_fin = 2 * rib_thickness(i) + 2 * deltax; % Fin perimeter (step distance & channel width)
         A_c_fin(i) = rib_thickness(i) * deltax; % Fin area at current step
         m_fin = sqrt(h_l(i) * P_fin / (k_w_current(i) * A_c_fin(i))); % Fin m
-        fin_q(i) = sqrt(h_l(i) * P_fin * k_w_current(i) * A_c_fin(i)) * (T_base - T_l(i)) * tanh(m_fin * h_c_x(i)) / (2 * deltax * h_c_x(i)); % Fin heat flux
-
-        L_c = h_c_x + rib_thickness(i) / 2; % Corrected fin length (relate convection to adiabatic tip condition)
-        eta_fin(i) = tanh(m_fin * L_c) / (m_fin * L_c);  % Fin efficiency
+        eta_fin(i) = tanh(m_fin * h_c_x(i)) / (m_fin * h_c_x(i));  % Fin efficiency
+        M_fin = sqrt(h_l(i) * P_fin * k_w_current(i) * A_c_fin(i)) * (T_base - T_l(i));
+%         fin_q(i) = M_fin * tanh(m_fin * L_c) / A_c_fin(i); % Fin heat flux
+        fin_q(i) = eta_fin(i) * h_l(i) * (T_base - T_l(i));
 
         % Step 8: Calculate liquid-side convective heat flux
         qdot_l(i) = h_l(i) * (T_wl(i) - T_l(i)) + 2 * fin_q(i); % liquid convective heat flux [W/m^2] (Heister EQ 6.29).
@@ -452,7 +454,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
         else
             if i < points
                 % Step 10: End step & update fluid properties
-                wall_area = (w_c_x(i) + 2 * h_c_x(i) * eta_fin(i)) * deltax;
+                wall_area = (w_c_x(i) + 2 * h_c_x(i)) * deltax;
                 T_l(i+1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l)) * qdot_g(i) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
                 
                 cf = f/4; % friction coefficient
@@ -522,11 +524,18 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
                 end
                 epsilon_peff(i) = (2/sqrt(3)) * sqrt(((epsilon_pt(i)^2) + epsilon_pt(i)*epsilon_pa(i) + (epsilon_pa(i))^2));
                 epsilon_cs(i) = ((elong(i)*(N^(-1/2)))/2);
-                epsilon_cs_tot(i) = epsilon_cs(i) + 2*epsilon_emax(i);
+                epsilon_cs_tot(i) = epsilon_cs(i) + 2*epsilon_emax(i); % Total strain after N # of hotfires
                 MS_lowcycle(i) = epsilon_cs(i) / (2*epsilon_peff(i));
                 MS(i) = epsilon_cs_tot(i) / (2*epsilon_toteff(i));
 %                 num_fires(i) = 1/4 * ((elong(i)/(4*(epsilon_peff(i))))^(2));
-                num_fires(i) = 1/4 * (2 * ((epsilon_peff(i) + 2*epsilon_emax(i)) / elong(i))) ^ 2;
+
+                if sigma_vl(i) > yield(i)
+                    epsilon_eff_tot(i) = epsilon_peff(i) + epsilon_emax(i);
+                else 
+                    epsilon_eff_tot(i) = sigma_vl(i) / E_current(i); 
+                end
+
+                num_fires(i) = 1/4 * (((epsilon_eff_tot(i) - epsilon_emax(i)) / elong(i))) ^ (-2);
                 sigma_eff(i) = E_current(i) * epsilon_toteff(i);
                 sigma_a(i) = E_current(i) * epsilon_tota(i);
                 sigma_t2(i) = E_current(i) * epsilon_tott(i);
@@ -545,12 +554,19 @@ gas_h = [x; h_g]';
 liquid_h = [x; h_l]';
 gas_p = [x; P_g]';
 liquid_p = [x; P_l]';
+FEA_inputs = [x; T_g; h_g; P_g; T_l; h_l; P_l];
+
+delete('FEA_regen_large.xls');
+writematrix(h_c, 'FEA_regen_large.xls');
+writematrix(w_c, 'FEA_regen_large.xls', 'WriteMode', 'append');
+writematrix([h_c_extra w_c_extra], 'FEA_regen_large.xls', 'WriteMode', 'append');
+writematrix(FEA_inputs, 'FEA_regen_large.xls', 'WriteMode', 'append');
 
 %% PLOT OUTPUTS
 overall_MS = min(MS);
 Engine_life = min(num_fires);
 yield_SF = min(yield)/(max(sigma_vl)*.000001);
-fprintf("Margin of safety for engine life of %f hot fires: %.02f\n", N/4, overall_MS)
+fprintf("Margin of safety for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS)
 fprintf("Engine life (hot fires): %.02f\n", Engine_life)
 fprintf("Safety factor to yield: %.02f\n", yield_SF)
 
@@ -580,7 +596,7 @@ axis equal;
 legend('T_w_g', 'T_w_l', 'T_l', 'Chamber Contour', 'Location', 'southoutside', 'Orientation', 'horizontal','Location','best')
 title('Temperature Distribution')
 xlabel('Location [mm]')
-
+%%
 figure('Name', 'Heat Transfer Plots');
 subplot(2,2,[1,2])
 hold on;
@@ -799,8 +815,9 @@ legend("Definition1","Definition2")
 figure("Name","effl")
 plot(x_plot.*1000, epsilon_toteff, x_plot.*1000, epsilon_cs)
 legend("total effective strain", "allowable cyclic strain")
-
-
+%%
+figure
+plot(x_plot.*1000, epsilon_eff_tot)
 
 %% THERMAL FEA
 L_seg = 0.0283;
