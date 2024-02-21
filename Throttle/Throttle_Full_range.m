@@ -77,7 +77,7 @@ for i=1:length(throttle_pct)
     
     while ~(converged)
         % Enter CEA Call
-        [cstar_cea, cf_cea, ~, ~, ~, ~, Pe_cea, ~, ~, ~, ~, ~, ~, ~, ~] = throttleCEA(Pc_throttle_guess, 0, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, exp_ratio, 2, 1, 0, CEA_input_name);
+        [cstar_cea, cf_cea, ~, ~, ~, gamma, Pe_cea, T_chamber, ~, ~, ~, ~, ~, ~, ~] = throttleCEA(Pc_throttle_guess, 0, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, exp_ratio, 2, 1, 0, CEA_input_name);
         Pc_throttle_guess_SI = Pc_throttle_guess * 6895; % [Pa]
         Pe_cea = Pe_cea / 6895; % Convert the CEA Pa to PSI
         
@@ -115,6 +115,10 @@ for i=1:length(throttle_pct)
     fuel_massflow_rate(i) = mdot_guess / (1 + OF);  % lbm/s
     ox_massflow_rate(i)= mdot_guess - fuel_massflow_rate(i); % lbm/s
     isp_throttle(i) = isp_actual; % s
+    cstar_throttle(i) = cstar_cea * cstar_eff;
+    cf_throttle(i) = cf_cea * cf_eff;
+    gamma_throttle(i) = gamma;
+    t_throttle(i) = T_chamber;
 
     % Injector pressure calculations
     P_OX_manifold(i) = (ox_massflow_rate(i) / (cd_OX * A_OX)) ^ 2 / (2 * rho_OX * g_imperial) + Pc_throttle_actual(i);   % Psi

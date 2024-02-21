@@ -95,7 +95,7 @@ isp = squeeze(data_eq('isp'));
 c_star = squeeze(data_eq('cstar'));
 exp_ratio = data_eq('ae/at');
 M = squeeze(data_eq('mach'));
-gammas = squeeze(data_eq('gammas'));
+gamma = squeeze(data_eq('gammas'));
 % dlvdlp = squeeze(data_eq('(dlv/dlp)t'));
 % gamma = -gammas.*dlvdlp;
 % gammaC = gamma(index,1);
@@ -130,7 +130,7 @@ else
 end
 if nozzle_pos == 2
     M = M(end);
-%     gamma = gamma(end);
+    gamma = gamma(end);
     P = P(end);
     T = T(1);
     rho = rho(end);
@@ -143,7 +143,7 @@ if nozzle_pos == 2
     cf = cf(end);
 elseif nozzle_pos == 1
     M = M(1);
-%     gamma = gamma(1);
+    gamma = gamma(1);
     P = P(1);
     T = T(1);
     rho = rho(1);
@@ -155,5 +155,4 @@ elseif nozzle_pos == 1
     cp = cp(1);
     cf = cf(1);
 end
-gamma = 0;
 exp_ratio = exp_ratio(end); % select expansion ratio
