@@ -257,6 +257,27 @@ ylabel("Ox Flow Rate [lb/s]",'Interpreter','latex')
 ylabel(hbar, "Total Mixture Ratio",'Interpreter','latex','FontSize',11.5)
 exportgraphics(f,'MassFlow_Momentum_contour.png','Resolution',600)
 
+eqn_best_fit=polyfit(throttle_thrust_actual(:,3),mdot_throttle_actual(:,3),1);
+syms T Mdot
+Mdot_Polyfit =Mdot == eqn_best_fit(1)*T + eqn_best_fit(2);
+disp((Mdot_Polyfit))
+thrust_range = linspace(200,500);
+Mdot_fit = eqn_best_fit(1).*(thrust_range) + eqn_best_fit(2);
+
+% Momentum Ratio vs flow rate 
+f=figure('Name', 'Massflow and Thrust (Constant OF = 1.2)');
+set(gcf,'color','w')
+hold on
+hAxes.TickLabelInterpreter = 'latex';
+plot(mdot_throttle_actual(:,3), throttle_thrust_actual(:,3))
+plot(Mdot_fit,thrust_range)
+legend('Actual Thrust', 'Polyfit', 'Interpreter','latex')
+title("Total Mass Flow and Thrust",'Interpreter','latex','FontSize',12)
+xlabel("Total Flow Rate [lb/s]",'Interpreter','latex')
+ylabel("Thrust [lbf]",'Interpreter','latex')
+exportgraphics(f,'MassFlow_Thrust.png','Resolution',600)
+
+
 
 
 % % Throttle results for chamber @ OF 1.2
