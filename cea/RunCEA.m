@@ -91,6 +91,7 @@ data_eq = data('fr');
 % the output will still be a 3D array. The squeeze() MATLAB function must
 % be used to reduce the number of dimensions appropriately. Read the notes
 % at the top of cea_rocket_read.m for more details.
+
 isp = squeeze(data_eq('isp'));
 c_star = squeeze(data_eq('cstar'));
 exp_ratio = data_eq('ae/at');
