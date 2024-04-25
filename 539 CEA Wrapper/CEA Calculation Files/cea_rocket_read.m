@@ -292,6 +292,10 @@ while ischar(line)
                 conversion = 1e-4;
             elseif strcmp(key, 'k')
                 conversion = 1e-1;
+            elseif strcmp(key, 'isp')
+                conversion = 1/9.81;
+            elseif strcmp(key, 'ivac')
+                conversion = 1/9.81;
             end
             
             % If this is a finite area combustor, then do not record the
