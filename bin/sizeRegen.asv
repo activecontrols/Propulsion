@@ -76,7 +76,7 @@ total_length = chamber_length + converging_length + diverging_length; % total le
 % Propulsion Parameters
 P_c = 250; % chamber pressure [psi] 
 P_e = 17; % exit pressure [psi]
-m_dot = 1.5 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+m_dot = 5 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
 fuel = 'C3H8O,2propanol'; % fuel definition
 oxidizer = 'O2(L)'; % oxidizer definition
 fuel_weight = 0; % ???  
@@ -96,7 +96,7 @@ roughness_table = readmatrix(pwd + "/bin/surface_roughness.xlsx",'Range','A12:E1
 e = [roughness_table(2,2), roughness_table(5,2)] .* 0.001; %Surface roughness (mm) [micrometer*conversion] [45, 90]
 yield_strength = properties(1:8,1:2);
 elongation_break = [properties(1:8,1) properties(1:8,5)];
-N = 557*4;
+N = 20*4;
 
 % Cooling channel inlet initialization
 coolant = 'Water'; %coolant definition
@@ -575,16 +575,23 @@ FEA_inputs = [x; T_g; h_g; P_g; T_l; h_l; P_l];
 
 %% PLOT OUTPUTS
 overall_MS = min(MS);
+Engine_life = min(num_fires);
+yield_SF = min(yield)/(max(sigma_vl)*.000001);
+fprintf("Margin of safety for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS)
+fprintf("Engine life (hot fires): %.02f\n", Engine_life)
+fprintf("Safety factor to yield: %.02f\n", yield_SF)
+fprintf("Max Wall Temp: %.02f\n", max(T_wg))
+
+overall_MS = min(MS);
 overall_MS_lowcycle = min(MS_lowcycle);
 Engine_life = min(num_fires);
 Engine_life_lowcycle = min(num_fires_lowcycle);
 yield_SF = min(yield)/(max(sigma_vl)*.000001);
 fprintf("Margin of safety for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS)
 fprintf("Engine life (hot fires): %.02f\n", Engine_life)
-fprintf("Lowcycle Margin of safety for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS_lowcycle)
 fprintf("Engine life (hot fires) Lowcycle: %.02f\n", Engine_life_lowcycle)
+fprintf("Lowcycle Margin of saftey for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS_lowcycle)
 fprintf("Safety factor to yield: %.02f\n", yield_SF)
-fprintf("Max Wall Temp: %.02f\n", max(T_wg))
 
 figure('Name', 'Temperature Plot');
 hold on;
