@@ -188,7 +188,8 @@ for i = 1:length(ps)
         for k = 1:length(ratios)
             % Print out the current progress
             if ~isKey(inp_cpy, 'verbose') || inp_cpy('verbose')
-                fprintf('Running CEA call number %i of %i\n', m, ...
+                if i == 1
+                    fprintf('Running CEA %i Times\n',...
                     length(ps)*length(ofs)*length(ratios));
             end
             
