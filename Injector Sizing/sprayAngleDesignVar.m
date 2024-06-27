@@ -1,4 +1,4 @@
-function [sprayAngles] = sprayAngleDesignVar(pintleTipAngles, mDotFuel, Ufuel, mDotOx, Uox)
+function [sprayAngles, TMR] = sprayAngleDesignVar(pintleTipAngles, mDotFuel, Ufuel, mDotOx, Uox)
 
 % calculate total mometum ratio
 TMR = (mDotFuel .* Ufuel .* cosd(pintleTipAngles)) ./ ... 
