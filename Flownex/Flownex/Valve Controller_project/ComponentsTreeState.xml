@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TreeState xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExpandedNodes>
+    <string />
+    <string>Project Database</string>
+    <string>Master Database</string>
+    <string>Master Database\Visualisation</string>
+    <string>Master Database\Visualisation\Graphs</string>
+    <string>Master Database\Visualisation\Graphs\Line Graph</string>
+  </ExpandedNodes>
+  <SelectedItem>Master Database\Visualisation\Graphs\Line Graph</SelectedItem>
+  <TopItem>Project Database</TopItem>
+</TreeState>

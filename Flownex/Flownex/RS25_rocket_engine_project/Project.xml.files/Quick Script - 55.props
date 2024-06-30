@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<IPS>
+  <Library Name="IPS" Version="8.12.7.4334" />
+  <Library Name="CapeOpenFluidGenerator" Version="1.0.7738.0" />
+  <Library Name="DCS" Version="8.12.7.0" />
+  <Library Name="Flownex" Version="8.12.7.0" />
+  <Library Name="ForceCalculations" Version="1.0.7738.0" />
+  <Library Name="IPS.Actions" Version="8.12.7.0" />
+  <Library Name="IPS.Alarms" Version="8.12.7.0" />
+  <Library Name="IPS.Backtracking" Version="8.12.7.0" />
+  <Library Name="IPS.CAESAR2Importer" Version="8.12.7.0" />
+  <Library Name="IPS.DataTransfer" Version="8.12.7.0" />
+  <Library Name="IPS.Designer" Version="8.12.7.0" />
+  <Library Name="IPS.Excel" Version="8.12.7.0" />
+  <Library Name="IPS.ExcelInputSheets" Version="8.12.7.0" />
+  <Library Name="IPS.ExcelReporting" Version="8.12.7.0" />
+  <Library Name="IPS.Exposers" Version="8.12.7.0" />
+  <Library Name="IPS.GAOptimiser" Version="8.12.7.0" />
+  <Library Name="IPS.GlobalParameters" Version="8.12.7.0" />
+  <Library Name="IPS.Logger" Version="8.12.7.0" />
+  <Library Name="IPS.OPCDriver" Version="8.12.7.0" />
+  <Library Name="IPS.ParameterDisplay" Version="8.12.7.0" />
+  <Library Name="IPS.PropertyMonitor" Version="8.12.7.0" />
+  <Library Name="IPS.Relap" Version="8.12.7.0" />
+  <Library Name="IPS.ROHR2Importer" Version="8.12.7.0" />
+  <Library Name="IPS.ScaleDrawing" Version="8.12.7.0" />
+  <Library Name="IPS.Scheduler" Version="8.12.7.0" />
+  <Library Name="IPS.Scripting" Version="8.12.7.0" />
+  <Library Name="IPS.SensitivityAnalysis" Version="8.12.7.0" />
+  <Library Name="IPS.Tools" Version="8.12.7.0" />
+  <Library Name="IPS.Visualisation" Version="8.12.7.0" />
+  <Library Name="NistFluidGenerator" Version="1.0.7738.0" />
+  <Script>
+    <Properties>fluid T_crit T_crit_extra </Properties>
+    <Values>  "O2 - Oxygen - New| General (Two Phase Fluids) {Project}" "-181.4242 Temperature °F" "131.431 Temperature °C" </Values>
+  </Script>
+</IPS>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TreeState xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExpandedNodes>
+    <string />
+    <string>Project Database</string>
+    <string>Master Database</string>
+    <string>Master Database\Flow Solver</string>
+    <string>Master Database\Flow Solver\Differential Flow Meters</string>
+    <string>Master Database\Flow Solver\Differential Flow Meters\Miller</string>
+    <string>Master Database\Flow Solver\Nodes and Boundaries</string>
+    <string>Master Database\Flow Solver\Piping</string>
+    <string>Master Database\Flow Solver\Restrictors</string>
+    <string>Master Database\Flow Solver\Restrictors\Restrictor with Loss Coefficient</string>
+  </ExpandedNodes>
+  <SelectedItem>Master Database\Flow Solver\Differential Flow Meters\Miller\Orifice Differential Flow Meter</SelectedItem>
+  <TopItem>Master Database\Flow Solver\Piping\Bend</TopItem>
+</TreeState>

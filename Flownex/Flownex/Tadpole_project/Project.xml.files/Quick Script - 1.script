@@ -1,0 +1,2 @@
+SineResult.Value = Math.Sin(Time);
+AbsoluteResult.Value = Math.Abs(Input);

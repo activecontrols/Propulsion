@@ -1,0 +1,63 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 02/03/2024 10:50:47 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 10:51:19 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 10:51:25 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 61 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 10:51:27 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 10:51:36 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 60 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 10:51:50 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 11:10:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 11:11:05 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 11:11:19 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 175 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:11:22 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 61 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:11:23 Simulation Time: 00h  00m  00s  000ms Select Node - 154 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:11:42 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 83 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:11:44 Simulation Time: 00h  00m  00s  000ms Select Node - 3 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:11:48 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 11:12:43 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 11:14:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 11:20:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 11:20:57 Simulation Time: 00h  00m  00s  000ms Select Node - 137 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:01 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 219 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:07 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 27 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:08 Simulation Time: 00h  00m  00s  000ms Select Flow Resistance - 0 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:11 Simulation Time: 00h  00m  00s  000ms Select Node - 1 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:16 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:40 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 27 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:41 Simulation Time: 00h  00m  00s  000ms Select Node - 0 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:21:49 Simulation Time: 00h  00m  00s  000ms Select Node - 30 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:22:02 Simulation Time: 00h  00m  00s  000ms Select Node - 0 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:51:31 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 62 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 11:52:53 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 12:46:44 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 8 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 12:46:52 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 12:46:58 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 62 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 12:47:02 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 60 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 12:47:12 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 13:15:15 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 13:15:15 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 61 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:15:16 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 62 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:15:16 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 62 
+User:  Time: 02/03/2024 13:15:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 13:15:25 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 60 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:16:00 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 62 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:38:58 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 13:38:59 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 61 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:39:47 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 13:39:47 Simulation Time: 00h  00m  00s  000ms Select Flow Resistance - 142 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:40:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 13:40:07 Simulation Time: 00h  00m  00s  000ms Select Node - 127 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:40:10 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 60 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:40:16 Simulation Time: 00h  00m  00s  000ms Select Flow Resistance - 142 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:40:21 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 60 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:40:23 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 62 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 13:40:31 Simulation Time: 00h  00m  00s  000ms Select Node - 127 - View1 on Pages\RS-25.page
+User:  Time: 02/03/2024 15:21:09 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 15:21:09 Simulation Time: 00h  00m  00s  000ms Select DataTransferLink - 9 -  on Pages\RS-25.page
+User:  Time: 02/03/2024 15:21:44 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 02/03/2024 21:43:32 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Instructions.page
+User:  Time: 02/03/2024 21:43:32 Simulation Time: 00h  00m  00s  000ms Close page: Pages\Instructions.page
+User:  Time: 02/03/2024 21:43:32 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 02/03/2024 21:43:32 Simulation Time: 00h  00m  00s  000ms Close page: Pages\RS-25.page

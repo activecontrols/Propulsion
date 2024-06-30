@@ -1,0 +1,9 @@
+problem
+	hp	p,bar=17.5581756153478
+react
+	fuel=C2H5OH	wt=0.435820816862172	t,k=569.059642539535
+	fuel=O2	wt=0.564179183137828	t,k=569.059642539535
+output massf
+output short
+output trace = 1E-05
+end

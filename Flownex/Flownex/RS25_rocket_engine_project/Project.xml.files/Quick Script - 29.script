@@ -1,0 +1,7 @@
+if (_fluid.Value != null)
+{
+	TwoPhaseFluids oxygen = (TwoPhaseFluids)_fluid.Value;
+	
+	T_crit.Value = oxygen.GetCriticalTemperature();
+	T_crit_extra.Value = T_crit + 250.0;
+}

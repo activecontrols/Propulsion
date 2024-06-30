@@ -1,0 +1,310 @@
+//script using directives
+//css_ref IPS.Core.dll;
+//css_ref IPS.PluginInterface.dll;
+//css_ref IPS.Units.dll;
+//css_ref Flownex.dll;
+
+using System;
+using IPS.Properties;
+using IPS.Scripting;
+using Flownex.DataReferences.Materials;
+
+//script must be derived from IComponentScript
+public class Script: IPS.Scripting.IComponentScript
+{
+	IPS.Properties.DataReferenceProperty  _FluidDataReference;
+	IPS.Properties.Double _Temperature;
+	IPS.Properties.Double _Pressure;
+	IPS.Properties.Double _EnthalpyInput;
+
+	IPS.Properties.Double _Density;
+	IPS.Properties.Double _Conductivity;
+	IPS.Properties.Double _GasConstant;
+	IPS.Properties.Double _Enthalpy;
+	IPS.Properties.Double _MolarMass;
+	IPS.Properties.Double _SpecificHeat;
+	IPS.Properties.Double _Viscosity;
+	IPS.Properties.Double _TemperatureFromPH;
+	IPS.Properties.Double _Prandtl;
+	IPS.Properties.Double _Cv;
+	IPS.Properties.Double _HeatCapacityRatio;	
+	IPS.Properties.List<IPS.Properties.Double> _MassFractions;
+
+	//do pre simulation initialisation here
+	public override void Initialise()
+	{
+ 	 }
+  
+	//do post simulation cleanup here
+	public override void Cleanup()
+	{
+  	}
+  
+  //script main execution function - called every cycle
+	public override void Execute(double Time)
+	{
+		if (_FluidDataReference.Value != null)
+		{
+			List<double> fractions = new List<double>();
+			foreach(IPS.Properties.Double val in _MassFractions)
+			{
+				fractions.Add(val.Value);
+			}
+			double[] MassFractions = fractions.ToArray();
+			MixedFluids fluid = (MixedFluids)_FluidDataReference.Value;
+			_Density.Value = fluid.GetDensity(Temperature.Value, Pressure.Value, MassFractions, Parent.Identifier.Value);
+			_Conductivity.Value = fluid.GetConductivity(Temperature.Value, Pressure.Value, MassFractions, Parent.Identifier.Value);
+			_GasConstant.Value = fluid.GetGasConstant(Temperature.Value, Pressure.Value, MassFractions, Parent.Identifier.Value);
+			_Enthalpy.Value = fluid.GetEnthalpy(Temperature.Value, Pressure.Value, MassFractions, Parent.Identifier.Value);
+			_MolarMass.Value = fluid.GetMolarMass(MassFractions, Parent.Identifier.Value);
+			_SpecificHeat.Value = fluid.GetSpecificHeat(Temperature.Value, Pressure.Value, MassFractions, Parent.Identifier.Value);
+			_Viscosity.Value = fluid.GetViscosity(Temperature.Value, Pressure.Value, MassFractions, Parent.Identifier.Value);
+			_TemperatureFromPH.Value = fluid.GetTemperatureFromPH(Pressure.Value, EnthalpyInput.Value, MassFractions, Parent.Identifier.Value);
+			if ( _Conductivity.Value != 0.0 )
+			{
+				_Prandtl.Value = (_SpecificHeat.Value*_Viscosity.Value)/_Conductivity.Value;
+			 }
+			 else
+			 {
+			 	_Prandtl.Value = 0.0;
+			 }
+
+			_Cv.Value = _SpecificHeat.Value - _GasConstant.Value;
+			_HeatCapacityRatio.Value = _SpecificHeat.Value/_Cv.Value;
+			}
+	}
+  
+  //any processing you want to do before steady state
+	public override void ExecuteBeforeSteadyState()
+	{
+    		Execute(0.0);
+	}	
+   //any processing you want to do while solving steady state
+	public override void ExecuteSteadyState()
+	{
+    		Execute(0.0);
+	}	  
+  
+  //any processing you want to do after steady state
+	public override void ExecuteAfterSteadyState()
+	{
+    		Execute(0.0);
+	}	
+  
+	//constructer initialises parameters
+	public Script()
+	{
+		_Temperature = new IPS.Properties.Double();
+		_Pressure = new IPS.Properties.Double();
+		 _EnthalpyInput = new IPS.Properties.Double();
+		 _MassFractions = new IPS.Properties.List<IPS.Properties.Double>();
+
+
+		_Density = new IPS.Properties.Double();
+		_Conductivity = new IPS.Properties.Double();
+		_GasConstant = new IPS.Properties.Double();
+		_Enthalpy = new IPS.Properties.Double();
+		_MolarMass = new IPS.Properties.Double();
+		_SpecificHeat = new IPS.Properties.Double();
+		_Viscosity = new IPS.Properties.Double();
+		_TemperatureFromPH = new IPS.Properties.Double();
+		_Prandtl = new IPS.Properties.Double();
+		_Cv = new IPS.Properties.Double();
+		_HeatCapacityRatio = new IPS.Properties.Double();	
+		
+		_FluidDataReference = new IPS.Properties.DataReferenceProperty(null);
+		_FluidDataReference.Types = new Type[]{typeof(MixedFluids)};
+		_Temperature.Value = 0;
+		_Pressure.Value = 0;
+		 _EnthalpyInput.Value = 0;
+
+		_Density.Value = 0;
+		_Conductivity.Value = 0;
+		_GasConstant.Value = 0;
+		_Enthalpy.Value = 0;
+		_MolarMass.Value = 0;
+		_SpecificHeat.Value = 0;
+		_Viscosity.Value = 0;
+		_TemperatureFromPH.Value = 0;
+		_Prandtl.Value = 0;
+		_Cv.Value = 0;
+		_HeatCapacityRatio.Value = 0;
+		
+		_Temperature.DisplayUnitGroup = IPS.Units.UnitGroup.Temperature;	
+		_Pressure.DisplayUnitGroup = IPS.Units.UnitGroup.Pressure_Stress;
+		 _EnthalpyInput.DisplayUnitGroup = IPS.Units.UnitGroup.Specific_Energy;
+
+		_Density.DisplayUnitGroup = IPS.Units.UnitGroup.Density;
+		_Conductivity.DisplayUnitGroup = IPS.Units.UnitGroup.Thermal_Conductivity;
+		_GasConstant.DisplayUnitGroup = IPS.Units.UnitGroup.Specific_Heat_Gas_Constant;
+		_Enthalpy.DisplayUnitGroup = IPS.Units.UnitGroup.Specific_Energy;
+		_MolarMass.DisplayUnitGroup = IPS.Units.UnitGroup.Molar_Mass;
+		_SpecificHeat.DisplayUnitGroup = IPS.Units.UnitGroup.Specific_Heat_Gas_Constant;
+		_Viscosity.DisplayUnitGroup = IPS.Units.UnitGroup.Viscosity_Dynamic;
+		_TemperatureFromPH.DisplayUnitGroup = IPS.Units.UnitGroup.Temperature;
+		_Cv.DisplayUnitGroup = IPS.Units.UnitGroup.Specific_Heat_Gas_Constant;
+	}
+
+	//property declarations to make
+	//parameters visible to outside world
+	[PropertyUsage(UseProperty.STATIC)]
+	[DisplayName("Fluid")]	[GridOrder(11)]
+	public IPS.Properties.DataReferenceProperty FluidDataReference
+	{
+		get
+		{
+			return _FluidDataReference;
+		}
+	}
+	
+
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	[GridOrder(12)]
+	public IPS.Properties.Double Temperature
+	{
+		get
+		{
+			return _Temperature;
+		}
+	}
+	
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	[GridOrder(13)]
+	public IPS.Properties.Double Pressure
+	{
+		get
+		{
+			return _Pressure;
+		}
+	}
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	[DisplayName("Mass fractions")]
+	[GridOrder(15)]
+	public IPS.Properties.List<IPS.Properties.Double> MassFractions
+	{
+		get
+		{
+			return _MassFractions;
+		}
+	}
+	
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	[DisplayName("Enthalpy")]
+	[GridOrder(14)]
+	public IPS.Properties.Double EnthalpyInput
+	{
+		get
+		{
+			return _EnthalpyInput;
+		}
+	}	
+	[PropertyUsage(UseProperty.RESULT)]
+	[GridOrder(16)]
+	public IPS.Properties.Double Density
+	{
+		get
+		{
+			return _Density;
+		}
+	}	
+	[PropertyUsage(UseProperty.RESULT)]
+	[GridOrder(17)]
+	public IPS.Properties.Double Conductivity
+	{
+		get
+		{
+			return _Conductivity;
+		}
+	}	
+	[PropertyUsage(UseProperty.RESULT)]
+	[DisplayName("Gas constant")]
+	[GridOrder(18)]
+	public IPS.Properties.Double GasConstant
+	{
+		get
+		{
+			return _GasConstant;
+		}
+	}	
+	[PropertyUsage(UseProperty.RESULT)]
+	[GridOrder(19)]
+	public IPS.Properties.Double Enthalpy
+	{
+		get
+		{
+			return _Enthalpy;
+		}
+	}	
+	[PropertyUsage(UseProperty.RESULT)]
+	[DisplayName("Molar mass")]
+	[GridOrder(20)]
+	public IPS.Properties.Double MolarMass
+	{
+		get
+		{
+			return _MolarMass;
+		}
+	}	
+	[PropertyUsage(UseProperty.RESULT)]
+	[DisplayName("Specific heat")]
+	[GridOrder(21)]
+	public IPS.Properties.Double SpecificHeat
+	{
+		get
+		{
+			return _SpecificHeat;
+		}
+	}	
+	[PropertyUsage(UseProperty.RESULT)]
+	[GridOrder(22)]
+	public IPS.Properties.Double Viscosity
+	{
+		get
+		{
+			return _Viscosity;
+		}
+	}	
+	
+	[PropertyUsage(UseProperty.RESULT)]
+	[DisplayName("Temperature from P H")]
+	[GridOrder(23)]
+	public IPS.Properties.Double TemperatureFromPH
+	{
+		get
+		{
+			return _TemperatureFromPH;
+		}
+	}
+		
+	[PropertyUsage(UseProperty.RESULT)]
+	[DisplayName("Prandtl number")]
+	[GridOrder(26)]
+	public IPS.Properties.Double Prandtl
+	{
+		get
+		{
+			return _Prandtl;
+		}
+	}
+			
+	[PropertyUsage(UseProperty.RESULT)]
+	[GridOrder(27)]
+	public IPS.Properties.Double Cv
+	{
+		get
+		{
+			return _Cv;
+		}
+	}
+			
+	[PropertyUsage(UseProperty.RESULT)]
+	[DisplayName("Heat capacity ratio")]
+	[GridOrder(28)]
+	public IPS.Properties.Double HeatCapacityRatio
+	{
+		get
+		{
+			return _HeatCapacityRatio;
+		}
+	}	
+	}

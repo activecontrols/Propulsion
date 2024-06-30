@@ -1,0 +1,6 @@
+Shaft - 132
+
+{Shaft Results}Speed
+Sample based. Number of Samples : 100, SampleRate: 10
+Run  Time [s]          (rad/s)
+000, 0.00000000E+000,  2.33001455E+003

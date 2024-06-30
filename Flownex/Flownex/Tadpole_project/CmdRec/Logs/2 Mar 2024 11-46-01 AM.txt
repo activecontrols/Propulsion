@@ -1,0 +1,214 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 02/03/2024 11:46:30 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:46:32 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 11:46:32 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 11:46:38 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:46:38 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:02 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:04 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:08 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:22 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:22 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:35 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:36 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:36 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 45 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:37 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:38 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:47 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:47:54 Simulation Time: 00h  00m  00s  000ms Set property value: Flow Solver SolverConfiguration.LevelOfDetailShown All
+User:  Time: 02/03/2024 11:48:04 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 11:48:05 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 11:48:12 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:48:14 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 39 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:49:13 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:49:13 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:49:40 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:49:40 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:49:43 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:49:47 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:50:01 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:50:01 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:50:06 Simulation Time: 00h  00m  00s  000ms Select Pipe - 23 Copy(001) - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:50:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:50:07 Simulation Time: 00h  00m  00s  000ms Select Pipe - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:50:11 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 38 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:51:49 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:52:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:52:03 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:52:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:52:23 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:52:45 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:53:14 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:53:14 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 0 
+User:  Time: 02/03/2024 11:53:16 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 0 
+User:  Time: 02/03/2024 11:53:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:53:20 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 1 
+User:  Time: 02/03/2024 11:53:23 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 1 
+User:  Time: 02/03/2024 11:53:29 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 bNodeMassFracFlag True
+User:  Time: 02/03/2024 11:53:39 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 pNodeMassFractionList.[0] 1
+User:  Time: 02/03/2024 11:53:39 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:53:39 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:53:41 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 0 bNodeMassFracFlag True
+User:  Time: 02/03/2024 11:53:44 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 0 pNodeMassFractionList.[1] 1
+User:  Time: 02/03/2024 11:53:44 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:53:44 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 11:53:49 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 11:53:49 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:19:35 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:19:35 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:19:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:19:41 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:19:52 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:19:52 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:22:55 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:04 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:05 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:15 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:32 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:32 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:35 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:35 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:37 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:27:38 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:31:30 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:31:32 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:31:35 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:31:42 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:31:45 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:31:46 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:31:46 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:31:57 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 0 cSpecifyTemperature Fixed on user value
+User:  Time: 02/03/2024 12:32:00 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 0 dTemperature 100
+User:  Time: 02/03/2024 12:32:02 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:32:02 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:33:05 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:33:05 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 39 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:33:10 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:33:21 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:33:21 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 39 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:33:28 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 45 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:33:30 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:33:31 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:33:45 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 cSpecifyQuality Fixed on user value
+User:  Time: 02/03/2024 12:34:18 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:34:20 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:34:21 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:34:30 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 pNodeMassFractionList Flownex.Components.NodeMassFractionList
+User:  Time: 02/03/2024 12:34:33 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:34:33 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:34:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:34:55 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:35:41 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.03
+User:  Time: 02/03/2024 12:35:41 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.03
+User:  Time: 02/03/2024 12:35:41 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:35:41 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:36:29 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:36:30 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:36:58 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 45 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:37:10 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:37:10 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:37:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:38:01 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:38:01 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:38:02 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:38:44 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:38:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:38:56 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:38:59 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:38:59 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:39:00 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:39:05 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 cSpecifyQuality Not specified
+User:  Time: 02/03/2024 12:39:07 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 cSpecifyTemperature Fixed on user value
+User:  Time: 02/03/2024 12:39:11 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 dTemperature -190
+User:  Time: 02/03/2024 12:39:11 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:39:11 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:39:13 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:39:13 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:39:21 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:39:22 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:39:25 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:42:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:42:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:42:07 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:42:07 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:42:15 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:43:18 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:43:29 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:43:39 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:43:39 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:43:58 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:43:58 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:44:15 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:44:15 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:44:27 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:44:27 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:45:10 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:11 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:12 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:16 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:16 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:19 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:19 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:20 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:20 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:21 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:22 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:25 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:33 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:45:51 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:46:03 Simulation Time: 00h  00m  00s  000ms Set property value: Flow Solver SolverConfiguration.GiveErrorForMaterialPropertiesSmallerThanZero False
+User:  Time: 02/03/2024 12:46:06 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:46:06 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:46:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:49:49 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:49:49 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:50:45 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:50:53 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:50:53 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:07 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 cSpecifyQuality Fixed on user value
+User:  Time: 02/03/2024 12:51:10 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:51:13 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:51:36 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:36 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:39 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:39 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:42 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:43 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:43 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:54 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:56 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:58 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:51:59 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:52:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:52:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:53:16 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:53:26 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:53:26 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:54:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:54:03 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:54:05 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 and 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:54:09 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.1
+User:  Time: 02/03/2024 12:54:09 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.1
+User:  Time: 02/03/2024 12:54:09 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.1
+User:  Time: 02/03/2024 12:54:09 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0.1
+User:  Time: 02/03/2024 12:54:11 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:54:11 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:54:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:54:25 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:55:47 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:55:48 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:55:51 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:56:14 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:56:17 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 dTemperature -17
+User:  Time: 02/03/2024 12:56:19 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 dTemperature -170
+User:  Time: 02/03/2024 12:56:22 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 02/03/2024 12:56:25 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 02/03/2024 12:56:36 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:56:36 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:57:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:58:28 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 12:58:40 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page

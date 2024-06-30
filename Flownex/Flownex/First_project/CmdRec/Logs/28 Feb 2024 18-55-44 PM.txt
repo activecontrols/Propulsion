@@ -1,0 +1,6 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 28/02/2024 18:55:49 Simulation Time: 00h  00m  00s  000ms Close page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 18:55:50 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 28/02/2024 18:56:31 Simulation Time: 00h  00m  00s  000ms Close page: Pages\Drawing Page(1).page

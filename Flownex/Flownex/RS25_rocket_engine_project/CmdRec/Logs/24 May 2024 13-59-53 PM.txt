@@ -1,0 +1,14 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 24/05/2024 14:05:33 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 24/05/2024 14:06:00 Simulation Time: 00h  00m  00s  000ms Select Simple PID - 17 - View1 on Pages\RS-25.page
+User:  Time: 24/05/2024 14:06:02 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 24/05/2024 14:06:03 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 24/05/2024 14:06:04 Simulation Time: 00h  00m  00s  000ms Select Simple PID - 17 - View1 on Pages\RS-25.page
+User:  Time: 24/05/2024 14:06:16 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 24/05/2024 14:06:58 Simulation Time: 00h  00m  00s  000ms Select DataTransferLink - 2 -  on Pages\RS-25.page
+User:  Time: 24/05/2024 14:08:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Instructions.page
+User:  Time: 24/05/2024 14:08:04 Simulation Time: 00h  00m  00s  000ms Close page: Pages\Instructions.page
+User:  Time: 24/05/2024 14:08:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 24/05/2024 14:08:04 Simulation Time: 00h  00m  00s  000ms Close page: Pages\RS-25.page

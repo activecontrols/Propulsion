@@ -1,0 +1,11 @@
+Flow Interface Primary - 60
+ERROR, A value less than or equal to zero was calculated for Specific Heat. Please check material specification O2 - Oxygen - New. This can be changed to a warning on the Flow Solver settings., 0.5
+Flow Solver
+INFORMATION,    at CFNSolver.PCIMSolverBase(CFNSolver* , Boolean bTransient, Int32 iTimeStep, Double dDeltat, Boolean bIsLastIterationOfExternalSolver) in E:\BUILDS\20221006\1705\SVN Checkouts\Flownex\Flownex Source\FNSolver\src\CFNSolver.cpp:line 4719
+   at CFNSolver.PCIMSolver(CFNSolver* , Boolean bTransient, Int32 iTimeStep, Double dDeltat) in E:\BUILDS\20221006\1705\SVN Checkouts\Flownex\Flownex Source\FNSolver\src\CFNSolver.cpp:line 4197
+   at CFNSolverNIT.RunApplicableSolver(CFNSolverNIT* , Boolean bTransient, Int32 iTimeStep, Double dDeltat) in E:\BUILDS\20221006\1705\SVN Checkouts\Flownex\Flownex Source\FNSolver\src\CFNSolverNIT.cpp:line 81
+   at CFNSolver.RunSolver(CFNSolver* , Boolean btransient, Int32 iTimeStep, Double dDeltat) in E:\BUILDS\20221006\1705\SVN Checkouts\Flownex\Flownex Source\FNSolver\src\CFNSolver.cpp:line 4128
+   at CFNSolver.TransientSolverIntegrator(CFNSolver* ) in E:\BUILDS\20221006\1705\SVN Checkouts\Flownex\Flownex Source\FNSolver\src\CFNSolver.cpp:line 3933
+   at ￴￾￼(CFNSolver* ￹￹￼)
+   at Flownex.Solver.FlowSolver.DoStep(Boolean bDetermineTimeStep), 0.5
+ERROR, One or more errors occurred., 0.5

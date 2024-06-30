@@ -1,0 +1,733 @@
+<?xml version="1.0" standalone="yes"?>
+<IPS>
+  <Library Name="IPS" Version="8.14.1.4845" />
+  <Library Name="CapeOpenFluidGenerator" Version="1.0.8314.0" />
+  <Library Name="DCS" Version="8.14.1.0" />
+  <Library Name="ElectricalNetworkSolver" Version="8.14.1.0" />
+  <Library Name="Flownex" Version="8.14.1.0" />
+  <Library Name="ForceCalculations" Version="1.0.8314.0" />
+  <Library Name="IPS.Actions" Version="8.14.1.0" />
+  <Library Name="IPS.Alarms" Version="8.14.1.0" />
+  <Library Name="IPS.Ansys" Version="8.14.1.0" />
+  <Library Name="IPS.Backtracking" Version="8.14.1.0" />
+  <Library Name="IPS.CAESAR2Importer" Version="8.14.1.0" />
+  <Library Name="IPS.DataTransfer" Version="8.14.1.0" />
+  <Library Name="IPS.Designer" Version="8.14.1.0" />
+  <Library Name="IPS.EES" Version="8.14.1.0" />
+  <Library Name="IPS.Excel" Version="8.14.1.0" />
+  <Library Name="IPS.ExcelInputSheets" Version="8.14.1.0" />
+  <Library Name="IPS.ExcelReporting" Version="8.14.1.0" />
+  <Library Name="IPS.Exposers" Version="8.14.1.0" />
+  <Library Name="IPS.FMI" Version="8.14.1.0" />
+  <Library Name="IPS.GAOptimiser" Version="8.14.1.0" />
+  <Library Name="IPS.GlobalParameters" Version="8.14.1.0" />
+  <Library Name="IPS.Logger" Version="8.14.1.0" />
+  <Library Name="IPS.Mathcad" Version="8.14.1.0" />
+  <Library Name="IPS.OPCDriver" Version="8.14.1.0" />
+  <Library Name="IPS.ParameterDisplay" Version="8.14.1.0" />
+  <Library Name="IPS.PropertyMonitor" Version="8.14.1.0" />
+  <Library Name="IPS.Relap" Version="8.14.1.0" />
+  <Library Name="IPS.ROHR2Importer" Version="8.14.1.0" />
+  <Library Name="IPS.ROMBuilder" Version="8.14.1.0" />
+  <Library Name="IPS.ScaleDrawing" Version="8.14.1.0" />
+  <Library Name="IPS.Scheduler" Version="8.14.1.0" />
+  <Library Name="IPS.Scripting" Version="8.14.1.0" />
+  <Library Name="IPS.SensitivityAnalysis" Version="8.14.1.0" />
+  <Library Name="IPS.SixSigma" Version="8.14.1.0" />
+  <Library Name="IPS.TextFileLink" Version="8.14.1.0" />
+  <Library Name="IPS.Tools" Version="8.14.1.0" />
+  <Library Name="IPS.VideoRecorder" Version="1.0.0.0" />
+  <Library Name="IPS.Visualisation" Version="8.14.1.0" />
+  <Library Name="NistFluidGenerator" Version="1.0.8314.0" />
+  <IPS.Server.ProjectImpl>
+    <Properties>HasErrors HasWarnings PluginElementManager.Content PropertyProvider.HistoryManager SimulationTime </Properties>
+    <Values>  "True" "True" "" "PropertyHistories" "0.014000000000000005" </Values>
+    <List Name="PluginElementManager.ManagedComponents">
+      <IPS.Core.ComponentList>
+        <ListItems>
+          <DCS.Components.Analog.Controllers.SimplePID>
+            <Properties>AutoManual DerivativeTerm Error ExecutionSequenceNumber Identifier IntegralError IntegralTerm Kd Ki KiPre Kp ManualValue MaxDerivative Output OutputHighLimit OutputLowLimit OwnerTaskID PersistedIdentifierWithTemplate ProportionalTerm PV ReverseActing SP TID UserDescription WorldPosition.X WorldPosition.Y WorldPosition.Z </Properties>
+            <Item Index="0" Identifier="Simple PID - 24">
+              <Values>  "1" "0" "299.9999" "0" "{COMPONENT}Simple PID - 24" "2261.93375325744" "0.0226193375325744" "0" "1E-05" "1E-05" "0.0001" "0.0526193275325744" "10" "0.0526193275325744" "1" "0" "" "Simple PID - 24" "0.02999999" "0.0001" "False" "300" "" "" "0" "0" "0" </Values>
+            </Item>
+          </DCS.Components.Analog.Controllers.SimplePID>
+          <Flownex.Components.BoundaryCondition>
+            <Properties>bMassSourceConditionFlag bNodeMassFracFlag bNodeMassSourceFracFlag bTraceElementsFlag bTraceElementsSourceFlag cMassSourceConditionOption cNodeSSContinuityOption cSpecifyEnthalpy cSpecifyMassSource cSpecifyPressure cSpecifyQuality cSpecifyTemperature cSpecifyVolFlowSource dEnthalpy dMassSource dMassSourceConditionPressure dMassSourceConditionQuality dMassSourceConditionTemperature dPressure dQuality dSolverEnthalpy dSolverMassSource dSolverPressure dSolverQuality dSolverStaticPressure dSolverTemperature dStaticPressure dTemperature dVolFlowSource Identifier OwnerTaskID PersistedIdentifierWithTemplate TID UserDescription WorldPosition.X WorldPosition.Y WorldPosition.Z </Properties>
+            <Item Index="0" Identifier="Boundary Condition - 0">
+              <Values>  "False" "False" "False" "False" "False" "SpecifyTemperatureAndPressure" "CalculateMassSource" "NotSpecified" "NotSpecified" "FixOnUserValue" "NotSpecified" "FixOnUserValue" "NotSpecified" "0 Specific_Energy kJ/kg" "0 Flow_Rate_Mass kg/s" "0 Pressure_Stress kPa" "0" "0 Temperature °C" "60 Pressure_Stress psi" "0" "88.9370217370667 Specific_Energy kJ/kg" "0.223406206032075 Flow_Rate_Mass kg/s" "413.664827329655 Pressure_Stress kPa" "-0.244283759471565" "412.106443863472 Pressure_Stress kPa" "21.1111111111111 Temperature °C" "0 Pressure_Stress kPa" "70 Temperature °F" "0 Flow_Rate_Volume m³/s" "{COMPONENT}Boundary Condition - 0" "" "Boundary Condition - 0" "" "" "0" "0" "0" </Values>
+            </Item>
+            <Item Index="1" Identifier="Boundary Condition - 19">
+              <Values>  "False" "False" "False" "False" "False" "SpecifyTemperatureAndPressure" "CalculateMassSource" "NotSpecified" "NotSpecified" "FixedStatic" "NotSpecified" "NotSpecified" "NotSpecified" "0 Specific_Energy kJ/kg" "0 Flow_Rate_Mass kg/s" "0 Pressure_Stress kPa" "0" "0 Temperature °C" "14 Pressure_Stress psi" "0" "41195104.6808932 Specific_Energy kJ/kg" "-1.32187346020024 Flow_Rate_Mass kg/s" "45227679613.6329 Pressure_Stress kPa" "-0.167573566842036" "96.5217930435861 Pressure_Stress kPa" "-273.15 Temperature °C" "14 Pressure_Stress psi" "0 Temperature °C" "0 Flow_Rate_Volume m³/s" "{COMPONENT}Boundary Condition - 19" "" "Boundary Condition - 19" "" "" "0" "0" "0" </Values>
+            </Item>
+          </Flownex.Components.BoundaryCondition>
+          <Flownex.Components.Node>
+            <Properties>AirFraction1 AirFraction2 bIsCondensing bIsFlashing bNodeScalarFlag bRadialPressure bRelaxPressureAtAmbient bScalarStreamChoice1 bScalarStreamChoice2 bSpecifyInitialConditions bSpecifyInitialIncondensableConc bSpecifyInitialPressure bSpecifyInitialQuality bSpecifyInitialSwirlRatio bSpecifyInitialTemperature bSpecifyNodeSolidVolume bTraceElementDecayFlag bTraceElementsAdditionFlag bTraceElementsRemovalFlag bUseDifferentEndCapMajorRadius bUseEndCapsOnCylindricalTank bUseExplicitPressureCalculation cConnectionSpecificationOption cElevationOption cGeometryOption cGeometryTableOption cHeatInputOption cNodeSSContinuityOption Conductivity cTPFixedMassFlowDirection cTPTankSSEnergyOption cVesselShapeOption cVolumeOrGeometryOption dDeltaTSubCooled dDeltaTSuperHeat dDewPointTemperature dEndCapMajorRadius dEndCapMinorRadius dEnergySourceSolid dEnthalpy dGaugePressureStatic dHeat dHeight dHumidityRatio dInitialIncondensableConc dInitialPressure dInitialQuality dInitialSwirlRatio dInitialTemperature dMolarMass dNodeTotalVolume dNodeVolume dPAmbient dRadPresGradDuctRadius dRadPresGradDuctWidth dRelativeHumidity dRho dScalarValue1 dScalarValue2 dSolidMCp dSolidVolume dSwirlBoundaryPower dSwirlResult dTimeStepChangeConcentration dTimeStepChangeEnthalpy dTimeStepChangePressure dTPTankSSInitialPressure dTPTankSSQuality dTraceElementsAdditionFlowRate dTraceElementsRemovalFlowRate dUserSolidVolume dUserVolume dVesselArea dVesselDiam dVesselHeight dVesselLength dVoidFraction dVolFlowSource dVolumetricHeatInputUser dWetBulbTemperature EnergyConvergence EnergyLine EnergySource Entropy EntropyGeneration FluidDataReference HeatTransfer HydraulicGradeLine Identifier iGlobalNodeIndex IncondensablePartialPressure Irreversibility IrreversibilityContribution iUsernumber LiquidDensity LiquidVolumeFraction MachNumber MassConvergence MassSource OwnerTaskID PersistedIdentifierWithTemplate PrandtlNumber PrecedingElement.ID QualityResult SelectedTPFixedMassFlowElement sNODE_HAS_PREC_RADPRESGRAD_ELEM sNODE_HAS_SUCC_RADPRESGRAD_ELEM SolidConductivity SolidDataReference SolidDensity SolidVolumeFraction SpecificHeat SpecificVolume StaticPressure StaticTemperature SuccedingElement.ID TankHeight TemperatureSolid TID TotalGasMassFraction TotalMass TotalPressure TotalTemperature TPFixedMassFlowElement TPFixedMassFlowElementOption TPFixedMassFlowElementRef.ID TraceElementsDataReference TwoPhaseFluidMassFraction TwoPhaseLevel UserDescription Velocity Viscosity WorkReversible WorldPosition.X WorldPosition.Y WorldPosition.Z </Properties>
+            <Item Index="0" Identifier="Node - 2">
+              <Values>  "0" "0" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "SpecifyHeightFractions" "CalculateFromWorldCoordinates" "NotSpecified" "NoTable" "Source" "CalculateLevel" "0.599666449927074 Thermal_Conductivity W/m.K" "InflowToTank" "CalculateEnthalpy" "CylindricalVertical" "Volume" "123.575139172775 DifferentialTemperature °C" "0 DifferentialTemperature °C" "-273.15 Temperature °C" "0 Length m" "0 Length m" "0 Power kW" "88.9370217370667 Specific_Energy kJ/kg" "310.781443863472 Pressure_Stress kPa" "0 Power kW" "0 Length m" "0" "0" "0 Pressure_Stress kPa" "0" "0" "15 Temperature °C" "18.015268 Molar_Mass kg/kmol" "9.65277747680733E-06 Volume m³" "0 Volume m³" "101.325 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Efficiency 0-1" "997.934006346564 Density kg/m³" "0" "0" "0 Energy kJ" "0 Volume m³" "0 Power kW" "0 Diffusion_Coefficient m²/s" "0" "0 Specific_Energy kJ/kg" "0 Pressure_Stress kPa" "100 Pressure_Stress kPa" "0" "0 Flow_Rate_Mass kg/s" "0 Flow_Rate_Mass kg/s" "0 Volume m³" "0 Volume m³" "0 Area m²" "0 Length m" "0 Length m" "0 Length m" "0 Efficiency 0-1" "0.000223868717381388 Flow_Rate_Volume m³/s" "0 Power_Density kW/m³" "-273.15 Temperature °C" "0" "0 Length m" "5.79437901072763 Power kW" "0.312182263466989 Specific_Heat_Gas_Constant kJ/kg.K" "0 AU kW/K" "H2O - Water| General (Two Phase Fluids) {Master}" "0 Power kW" "0 Length m" "{COMPONENT}Node - 2" "6" "0 Pressure_Stress kPa" "0 Power kW" "0" "1" "0 Density kg/m³" "0 Efficiency 0-1" "0" "0" "0.223406206032075 Flow_Rate_Mass kg/s" "" "Node - 2" "6.91424599453085" "" "-0.244283759471565" "&amp;lt;Undefined Element&amp;gt;" "" "" "0 Thermal_Conductivity W/m.K" "Click here to select..." "0 Density kg/m³" "0" "4.18346348893483 Specific_Heat_Gas_Constant kJ/kg.K" "0.00100207027081981 Specific_Volume m³/kg" "412.106443863472 Pressure_Stress kPa" "21.1110923420255 Temperature °C" "" "0 Length m" "-273.15 Temperature °C" "" "0" "0 Mass kg" "413.664827329655 Pressure_Stress kPa" "21.1111111111111 Temperature °C" "" "SelectNeighbour" "" "Click here to select..." "1" "0 Length m" "" "1.76726327523594 Velocity m/s" "0.000991102554242324 Viscosity_Dynamic kg/m.s" "0 Power kW" "0" "0" "0" </Values>
+              <List Name="Connections">
+                <IPS.Plugin.ConnectInfoList>
+                  <ListItems>
+                    <IPS.Plugin.ConnectInfo>
+                      <Properties>FiberName HubName ParentName </Properties>
+                      <Item Index="0">
+                        <Values>  "BoundaryConditionFiber" "NodeBoundaryConditionHub" "Boundary Condition - 0" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "UpstreamFiber" "NodeFlowHub" "Pipe - 1" </Values>
+                      </Item>
+                    </IPS.Plugin.ConnectInfo>
+                  </ListItems>
+                </IPS.Plugin.ConnectInfoList>
+              </List>
+              <List Name="pNodeVolumeFractionList">
+                <IPS.Properties.List_HEX60_1>
+                  <ListItems>
+                    <Flownex.Components.NodeVolumeFraction>
+                      <Properties>bApplyDynamicHeight bSpecify cConnectionSpecificationOption dFraction dHeight flowElement.ID sAttachedComponentDescription </Properties>
+                      <Item Index="0">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}Pipe - 1" "Pipe - 1" </Values>
+                      </Item>
+                    </Flownex.Components.NodeVolumeFraction>
+                  </ListItems>
+                </IPS.Properties.List_HEX60_1>
+              </List>
+            </Item>
+            <Item Index="1" Identifier="Node - 4">
+              <Values>  "0" "0" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "SpecifyHeightFractions" "CalculateFromWorldCoordinates" "NotSpecified" "NoTable" "Source" "CalculateLevel" "0.600076286819071 Thermal_Conductivity W/m.K" "InflowToTank" "CalculateEnthalpy" "CylindricalVertical" "Volume" "88.8741730483697 DifferentialTemperature °C" "0 DifferentialTemperature °C" "-273.15 Temperature °C" "0 Length m" "0 Length m" "0 Power kW" "88.6740501911192 Specific_Energy kJ/kg" "42.3277370972607 Pressure_Stress kPa" "0 Power kW" "0 Length m" "0" "0" "0 Pressure_Stress kPa" "0" "0" "15 Temperature °C" "18.015268 Molar_Mass kg/kmol" "9.65277747680733E-06 Volume m³" "0 Volume m³" "101.325 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Efficiency 0-1" "997.9625187634 Density kg/m³" "0" "0" "0 Energy kJ" "0 Volume m³" "0 Power kW" "0 Diffusion_Coefficient m²/s" "0" "0.0214545711774845 Specific_Energy kJ/kg" "325.512645535214 Pressure_Stress kPa" "100 Pressure_Stress kPa" "0" "0 Flow_Rate_Mass kg/s" "0 Flow_Rate_Mass kg/s" "0 Volume m³" "0 Volume m³" "0 Area m²" "0 Length m" "0 Length m" "0 Length m" "0 Efficiency 0-1" "0 Flow_Rate_Volume m³/s" "0 Power_Density kW/m³" "-273.15 Temperature °C" "0" "0 Length m" "0 Power kW" "0.313295427174537 Specific_Heat_Gas_Constant kJ/kg.K" "-0.000880427011402529 AU kW/K" "H2O - Water| General (Two Phase Fluids) {Master}" "0 Power kW" "0 Length m" "{COMPONENT}Node - 4" "1" "0 Pressure_Stress kPa" "-0.253695043335639 Power kW" "0" "3" "0 Density kg/m³" "0 Efficiency 0-1" "0" "0" "0 Flow_Rate_Mass kg/s" "" "Node - 4" "6.79172507422695" "" "-0.167150879036346" "&amp;lt;Undefined Element&amp;gt;" "" "" "0 Thermal_Conductivity W/m.K" "Click here to select..." "0 Density kg/m³" "0" "4.18321058888725 Specific_Heat_Gas_Constant kJ/kg.K" "0.00100204164104192 Specific_Volume m³/kg" "143.652737097261 Pressure_Stress kPa" "21.1826533292219 Temperature °C" "" "0 Length m" "-273.15 Temperature °C" "" "0" "0 Mass kg" "479.090085712883 Pressure_Stress kPa" "21.0313068931009 Temperature °C" "" "SelectNeighbour" "" "Click here to select..." "1" "0 Length m" "" "1.60773958430136 Velocity m/s" "0.000974264402195014 Viscosity_Dynamic kg/m.s" "-0.253695043335639 Power kW" "0" "0" "0" </Values>
+              <List Name="Connections">
+                <IPS.Plugin.ConnectInfoList>
+                  <ListItems>
+                    <IPS.Plugin.ConnectInfo>
+                      <Properties>FiberName HubName ParentName </Properties>
+                      <Item Index="0">
+                        <Values>  "DownstreamFiber" "NodeFlowHub" "Pipe - 1" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "UpstreamFiber" "NodeFlowHub" "Ansi Control Valve - 3" </Values>
+                      </Item>
+                    </IPS.Plugin.ConnectInfo>
+                  </ListItems>
+                </IPS.Plugin.ConnectInfoList>
+              </List>
+              <List Name="pNodeVolumeFractionList">
+                <IPS.Properties.List_HEX60_1>
+                  <ListItems>
+                    <Flownex.Components.NodeVolumeFraction>
+                      <Properties>bApplyDynamicHeight bSpecify cConnectionSpecificationOption dFraction dHeight flowElement.ID sAttachedComponentDescription </Properties>
+                      <Item Index="0">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}Pipe - 1" "Pipe - 1" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}Ansi Control Valve - 3" "Ansi Control Valve - 3" </Values>
+                      </Item>
+                    </Flownex.Components.NodeVolumeFraction>
+                  </ListItems>
+                </IPS.Properties.List_HEX60_1>
+              </List>
+            </Item>
+            <Item Index="2" Identifier="Node - 11">
+              <Values>  "0" "0" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "SpecifyHeightFractions" "CalculateFromWorldCoordinates" "NotSpecified" "NoTable" "Source" "CalculateLevel" "0.5581331204533 Thermal_Conductivity W/m.K" "InflowToTank" "CalculateEnthalpy" "CylindricalVertical" "Volume" "4.78320316688041E-09 DifferentialTemperature °C" "0 DifferentialTemperature °C" "-273.15 Temperature °C" "0 Length m" "0 Length m" "0 Power kW" "-2629.27686429375 Specific_Energy kJ/kg" "-101.3249 Pressure_Stress kPa" "0 Power kW" "0 Length m" "0" "0" "0 Pressure_Stress kPa" "0" "0" "15 Temperature °C" "18.015268 Molar_Mass kg/kmol" "9.65277747680733E-06 Volume m³" "0 Volume m³" "101.325 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Efficiency 0-1" "999.851492119866 Density kg/m³" "0" "0" "0 Energy kJ" "0 Volume m³" "0 Power kW" "0 Diffusion_Coefficient m²/s" "0" "0.0932106662816368 Specific_Energy kJ/kg" "0 Pressure_Stress kPa" "100 Pressure_Stress kPa" "0" "0 Flow_Rate_Mass kg/s" "0 Flow_Rate_Mass kg/s" "0 Volume m³" "0 Volume m³" "0 Area m²" "0 Length m" "0 Length m" "0 Length m" "0 Efficiency 0-1" "0 Flow_Rate_Volume m³/s" "0 Power_Density kW/m³" "-273.15 Temperature °C" "0" "0 Length m" "0 Power kW" "0.01541410738162 Specific_Heat_Gas_Constant kJ/kg.K" "0.192972304337484 AU kW/K" "H2O - Water| General (Two Phase Fluids) {Master}" "0 Power kW" "0 Length m" "{COMPONENT}Node - 11" "2" "0 Pressure_Stress kPa" "55.604969494846 Power kW" "0" "7" "0 Density kg/m³" "0 Efficiency 0-1" "0" "3.46944695195361E-18" "0 Flow_Rate_Mass kg/s" "" "Node - 11" "13.0745638284854" "" "-8.12307513699824E-12" "&amp;lt;Undefined Element&amp;gt;" "" "" "0 Thermal_Conductivity W/m.K" "Click here to select..." "0 Density kg/m³" "0" "4.216567018571 Specific_Heat_Gas_Constant kJ/kg.K" "0.001000148529938 Specific_Volume m³/kg" "0.0001 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "" "0 Length m" "-273.15 Temperature °C" "" "0" "0 Mass kg" "0.0001 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "" "SelectNeighbour" "" "Click here to select..." "1" "0 Length m" "" "0 Velocity m/s" "0.00173063705047702 Viscosity_Dynamic kg/m.s" "55.604969494846 Power kW" "0" "0" "0" </Values>
+              <List Name="Connections">
+                <IPS.Plugin.ConnectInfoList>
+                  <ListItems>
+                    <IPS.Plugin.ConnectInfo>
+                      <Properties>FiberName HubName ParentName </Properties>
+                      <Item Index="0">
+                        <Values>  "DownstreamFiber" "NodeFlowHub" "Ansi Control Valve - 3" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "UpstreamFiber" "NodeFlowHub" "Pipe - 10" </Values>
+                      </Item>
+                    </IPS.Plugin.ConnectInfo>
+                  </ListItems>
+                </IPS.Plugin.ConnectInfoList>
+              </List>
+              <List Name="pNodeVolumeFractionList">
+                <IPS.Properties.List_HEX60_1>
+                  <ListItems>
+                    <Flownex.Components.NodeVolumeFraction>
+                      <Properties>bApplyDynamicHeight bSpecify cConnectionSpecificationOption dFraction dHeight flowElement.ID sAttachedComponentDescription </Properties>
+                      <Item Index="0">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}Ansi Control Valve - 3" "Ansi Control Valve - 3" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}Pipe - 10" "Pipe - 10" </Values>
+                      </Item>
+                    </Flownex.Components.NodeVolumeFraction>
+                  </ListItems>
+                </IPS.Properties.List_HEX60_1>
+              </List>
+            </Item>
+            <Item Index="3" Identifier="Node - 16">
+              <Values>  "0" "0" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "SpecifyHeightFractions" "CalculateFromWorldCoordinates" "NotSpecified" "NoTable" "Source" "CalculateLevel" "0.5581331204533 Thermal_Conductivity W/m.K" "InflowToTank" "CalculateEnthalpy" "CylindricalVertical" "Volume" "4.78320316688041E-09 DifferentialTemperature °C" "0 DifferentialTemperature °C" "-273.15 Temperature °C" "0 Length m" "0 Length m" "0 Power kW" "-120.145003020752 Specific_Energy kJ/kg" "-101.3249 Pressure_Stress kPa" "0 Power kW" "0 Length m" "0" "0" "0 Pressure_Stress kPa" "0" "0" "15 Temperature °C" "18.015268 Molar_Mass kg/kmol" "9.65277747680733E-06 Volume m³" "0 Volume m³" "101.325 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Efficiency 0-1" "999.851492119866 Density kg/m³" "0" "0" "0 Energy kJ" "0 Volume m³" "0 Power kW" "0 Diffusion_Coefficient m²/s" "0" "0.1612713017934 Specific_Energy kJ/kg" "0 Pressure_Stress kPa" "100 Pressure_Stress kPa" "0" "0 Flow_Rate_Mass kg/s" "0 Flow_Rate_Mass kg/s" "0 Volume m³" "0 Volume m³" "0 Area m²" "0 Length m" "0 Length m" "0 Length m" "0 Efficiency 0-1" "0 Flow_Rate_Volume m³/s" "0 Power_Density kW/m³" "-273.15 Temperature °C" "0" "0 Length m" "0 Power kW" "0.01541410738162 Specific_Heat_Gas_Constant kJ/kg.K" "-857024.455181191 AU kW/K" "H2O - Water| General (Two Phase Fluids) {Master}" "0 Power kW" "0 Length m" "{COMPONENT}Node - 16" "3" "0 Pressure_Stress kPa" "-246951596.76046 Power kW" "0" "9" "0 Density kg/m³" "0 Efficiency 0-1" "0" "3.46944695195361E-18" "0 Flow_Rate_Mass kg/s" "" "Node - 16" "13.0745638284854" "" "-8.12307513699824E-12" "&amp;lt;Undefined Element&amp;gt;" "" "" "0 Thermal_Conductivity W/m.K" "Click here to select..." "0 Density kg/m³" "0" "4.216567018571 Specific_Heat_Gas_Constant kJ/kg.K" "0.001000148529938 Specific_Volume m³/kg" "0.0001 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "" "0 Length m" "-273.15 Temperature °C" "" "0" "0 Mass kg" "0.0001 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "" "SelectNeighbour" "" "Click here to select..." "1" "0 Length m" "" "0 Velocity m/s" "0.00173063705047702 Viscosity_Dynamic kg/m.s" "-246951596.76046 Power kW" "0" "0" "0" </Values>
+              <List Name="Connections">
+                <IPS.Plugin.ConnectInfoList>
+                  <ListItems>
+                    <IPS.Plugin.ConnectInfo>
+                      <Properties>FiberName HubName ParentName </Properties>
+                      <Item Index="0">
+                        <Values>  "DownstreamFiber" "NodeFlowHub" "Pipe - 10" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "UpstreamFiber" "NodeFlowHub" "DFM R3 - 12" </Values>
+                      </Item>
+                    </IPS.Plugin.ConnectInfo>
+                  </ListItems>
+                </IPS.Plugin.ConnectInfoList>
+              </List>
+              <List Name="pNodeVolumeFractionList">
+                <IPS.Properties.List_HEX60_1>
+                  <ListItems>
+                    <Flownex.Components.NodeVolumeFraction>
+                      <Properties>bApplyDynamicHeight bSpecify cConnectionSpecificationOption dFraction dHeight flowElement.ID sAttachedComponentDescription </Properties>
+                      <Item Index="0">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}Pipe - 10" "Pipe - 10" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}DFM R3 - 12" "DFM R3 - 12" </Values>
+                      </Item>
+                    </Flownex.Components.NodeVolumeFraction>
+                  </ListItems>
+                </IPS.Properties.List_HEX60_1>
+              </List>
+            </Item>
+            <Item Index="4" Identifier="Node - 18">
+              <Values>  "0" "0" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "SpecifyHeightFractions" "CalculateFromWorldCoordinates" "NotSpecified" "NoTable" "Source" "CalculateLevel" "0.5581331204533 Thermal_Conductivity W/m.K" "InflowToTank" "CalculateEnthalpy" "CylindricalVertical" "Volume" "4.78320316688041E-09 DifferentialTemperature °C" "0 DifferentialTemperature °C" "-273.15 Temperature °C" "0 Length m" "0 Length m" "0 Power kW" "309849706.506337 Specific_Energy kJ/kg" "-101.3249 Pressure_Stress kPa" "0 Power kW" "0 Length m" "0" "0" "0 Pressure_Stress kPa" "0" "0" "15 Temperature °C" "18.015268 Molar_Mass kg/kmol" "9.65277747680733E-06 Volume m³" "0 Volume m³" "101.325 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Efficiency 0-1" "999.851492119866 Density kg/m³" "0" "0" "0 Energy kJ" "0 Volume m³" "0 Power kW" "0 Diffusion_Coefficient m²/s" "0" "11.4529908561394 Specific_Energy kJ/kg" "0 Pressure_Stress kPa" "100 Pressure_Stress kPa" "0" "0 Flow_Rate_Mass kg/s" "0 Flow_Rate_Mass kg/s" "0 Volume m³" "0 Volume m³" "0 Area m²" "0 Length m" "0 Length m" "0 Length m" "0 Efficiency 0-1" "0 Flow_Rate_Volume m³/s" "0 Power_Density kW/m³" "-273.15 Temperature °C" "0" "0 Length m" "0 Power kW" "0.01541410738162 Specific_Heat_Gas_Constant kJ/kg.K" "39215.0169662523 AU kW/K" "H2O - Water| General (Two Phase Fluids) {Master}" "0 Power kW" "0 Length m" "{COMPONENT}Node - 18" "4" "0 Pressure_Stress kPa" "11299807.1388256 Power kW" "0" "11" "0 Density kg/m³" "0 Efficiency 0-1" "0" "0" "0 Flow_Rate_Mass kg/s" "" "Node - 18" "13.0745638284854" "" "-8.12307513699824E-12" "&amp;lt;Undefined Element&amp;gt;" "" "" "0 Thermal_Conductivity W/m.K" "Click here to select..." "0 Density kg/m³" "0" "4.216567018571 Specific_Heat_Gas_Constant kJ/kg.K" "0.001000148529938 Specific_Volume m³/kg" "0.0001 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "" "0 Length m" "-273.15 Temperature °C" "" "0" "0 Mass kg" "340180848139.43 Pressure_Stress kPa" "-273.15 Temperature °C" "" "SelectNeighbour" "" "Click here to select..." "1" "0 Length m" "" "0 Velocity m/s" "0.00173063705047702 Viscosity_Dynamic kg/m.s" "11299807.1388256 Power kW" "0" "0" "0" </Values>
+              <List Name="Connections">
+                <IPS.Plugin.ConnectInfoList>
+                  <ListItems>
+                    <IPS.Plugin.ConnectInfo>
+                      <Properties>FiberName HubName ParentName </Properties>
+                      <Item Index="0">
+                        <Values>  "DownstreamFiber" "NodeFlowHub" "DFM R3 - 12" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "UpstreamFiber" "NodeFlowHub" "Pipe - 17" </Values>
+                      </Item>
+                    </IPS.Plugin.ConnectInfo>
+                  </ListItems>
+                </IPS.Plugin.ConnectInfoList>
+              </List>
+              <List Name="pNodeVolumeFractionList">
+                <IPS.Properties.List_HEX60_1>
+                  <ListItems>
+                    <Flownex.Components.NodeVolumeFraction>
+                      <Properties>bApplyDynamicHeight bSpecify cConnectionSpecificationOption dFraction dHeight flowElement.ID sAttachedComponentDescription </Properties>
+                      <Item Index="0">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}DFM R3 - 12" "DFM R3 - 12" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}Pipe - 17" "Pipe - 17" </Values>
+                      </Item>
+                    </Flownex.Components.NodeVolumeFraction>
+                  </ListItems>
+                </IPS.Properties.List_HEX60_1>
+              </List>
+            </Item>
+            <Item Index="5" Identifier="Node - 20">
+              <Values>  "0" "0" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "SpecifyHeightFractions" "CalculateFromWorldCoordinates" "NotSpecified" "NoTable" "Source" "CalculateLevel" "0.574854587995617 Thermal_Conductivity W/m.K" "InflowToTank" "CalculateEnthalpy" "CylindricalVertical" "Volume" "90.3902536252905 DifferentialTemperature °C" "0 DifferentialTemperature °C" "-273.15 Temperature °C" "0 Length m" "0 Length m" "0 Power kW" "41195104.6808932 Specific_Energy kJ/kg" "-4.80320695641391 Pressure_Stress kPa" "0 Power kW" "0 Length m" "0" "0" "0 Pressure_Stress kPa" "0" "0" "15 Temperature °C" "18.015268 Molar_Mass kg/kmol" "9.65277747680733E-06 Volume m³" "0 Volume m³" "101.325 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Efficiency 0-1" "999.740774953126 Density kg/m³" "0" "0" "0 Energy kJ" "0 Volume m³" "0 Power kW" "0 Diffusion_Coefficient m²/s" "0" "22.7110278027614 Specific_Energy kJ/kg" "0 Pressure_Stress kPa" "100 Pressure_Stress kPa" "0" "0 Flow_Rate_Mass kg/s" "0 Flow_Rate_Mass kg/s" "0 Volume m³" "0 Volume m³" "0 Area m²" "0 Length m" "0 Length m" "0 Length m" "0 Efficiency 0-1" "-0.00132221621175971 Flow_Rate_Volume m³/s" "0 Power_Density kW/m³" "-273.15 Temperature °C" "0" "0 Length m" "0 Power kW" "0.124716966504635 Specific_Heat_Gas_Constant kJ/kg.K" "-2.21878894755262E-05 AU kW/K" "H2O - Water| General (Two Phase Fluids) {Master}" "0 Power kW" "0 Length m" "{COMPONENT}Node - 20" "5" "0 Pressure_Stress kPa" "-0.00639344035237286 Power kW" "0" "12" "0 Density kg/m³" "0 Efficiency 0-1" "0" "0" "-1.32187346020024 Flow_Rate_Mass kg/s" "" "Node - 20" "10.0955526627341" "" "-0.167573566842036" "&amp;lt;Undefined Element&amp;gt;" "" "" "0 Thermal_Conductivity W/m.K" "Click here to select..." "0 Density kg/m³" "0" "4.19874788314707 Specific_Heat_Gas_Constant kJ/kg.K" "0.00100025929226192 Specific_Volume m³/kg" "96.5217930435861 Pressure_Stress kPa" "8.22897732349423 Temperature °C" "" "0 Length m" "-273.15 Temperature °C" "" "0" "0 Mass kg" "45227679613.6329 Pressure_Stress kPa" "-273.15 Temperature °C" "" "SelectNeighbour" "" "Click here to select..." "1" "0 Length m" "" "10.4377054052556 Velocity m/s" "0.0013821917695554 Viscosity_Dynamic kg/m.s" "-0.00639344035237286 Power kW" "0" "0" "0" </Values>
+              <List Name="Connections">
+                <IPS.Plugin.ConnectInfoList>
+                  <ListItems>
+                    <IPS.Plugin.ConnectInfo>
+                      <Properties>FiberName HubName ParentName </Properties>
+                      <Item Index="0">
+                        <Values>  "BoundaryConditionFiber" "NodeBoundaryConditionHub" "Boundary Condition - 19" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "DownstreamFiber" "NodeFlowHub" "Pipe - 17" </Values>
+                      </Item>
+                    </IPS.Plugin.ConnectInfo>
+                  </ListItems>
+                </IPS.Plugin.ConnectInfoList>
+              </List>
+              <List Name="pNodeVolumeFractionList">
+                <IPS.Properties.List_HEX60_1>
+                  <ListItems>
+                    <Flownex.Components.NodeVolumeFraction>
+                      <Properties>bApplyDynamicHeight bSpecify cConnectionSpecificationOption dFraction dHeight flowElement.ID sAttachedComponentDescription </Properties>
+                      <Item Index="0">
+                        <Values>  "True" "False" "SpecifyHeightFractions" "0" "0 Length m" "{COMPONENT}Pipe - 17" "Pipe - 17" </Values>
+                      </Item>
+                    </Flownex.Components.NodeVolumeFraction>
+                  </ListItems>
+                </IPS.Properties.List_HEX60_1>
+              </List>
+            </Item>
+          </Flownex.Components.Node>
+          <Flownex.Components.Pipe>
+            <Properties>AbsMaxVelocity Area1 Area2 bApplyPsuedoStaticPresCalc bCheck bCrossSectionalOption bDifferentReverseAndForwardK bFixMass bIsCheckValveActive bIsChoking bIsCondensing bIsFlashing bKBasedOnMinimumArea bMomentumAddition bSpecifyAdavancedInputs bSpecifyTEAdmissionForward bSpecifyTEAdmissionReverse bSpecifyTEFilterForward bSpecifyTEFilterReverse bUseHeatInputCurve bVariableArea cExternalPressureOption cFixMassFlowDesignOption cFlowDomain cHeatOption cObstructionTypeForAxialForceCalculation Conductivity Convergence cPipeGeometryOption cPipeLengthOption cPipeProfileOption cPipeWallModel cPressureOptionForAreaChangeAxialForce cRestraintCoefficientOption cRestraintType cSettlingSlurrySolutionOption cSlurryDepositionVelocityCorrelation cSwirlOption cYoungsModulusOption d50PercentileTerminalSettlingVelocity dApparentShearRate dArea1AxialForce dArea2AxialForce dAreaInlet dAreaOutlet dAxialForce dAxialRestraintConstant dAxialRestraintConstantResult dBetaZeroGradient dCbFree dCircumferenceInlet dCircumferenceOutlet dCLim dCLower dCourantPressure dCourantScalar dCriticalMassflux dCUpper dCutOffDiameter dCvdCoarse dCVi dD10 dD50 dD90 dDampingViscosity dDeltaPExcludingHeight dDeltaPZeroGradient dDepositionVelocityGS dDepositionVelocityLimit dDepositionVelocityLimitConc dDepositionVelocityMultiplicationFactor dDepositionVelocityNotScaled dDepositionVelocityThomas dDepositionVelocityTwoLayer dDiameterInlet dDiameterInletFromSchedule dDiameterOutlet dDiameterResult dEnthalpy dEnthalpyTotalAbsoluteNode1 dEnthalpyTotalAbsoluteNode2 dEntropy dEntropyGeneration dExternalPressureUser dFinesConcentration dFinesMassFraction dFixedExitQuality dFixedExitTemperature dFlowInclinationAngle dForce_P dForce_P_ParIn dForce_P_ParOut dForce_P_PerpIn dForce_P_PerpOut dForce_V dForce_V_ParIn dForce_V_ParOut dForce_V_PerpIn dForce_V_PerpOut dFrictionFactorResult dHeatInputCoeffA0 dHeatInputCoeffA1 dHeatInputCoeffA2 dHeatInputCoeffA3 dHeatInputCoeffA4 dHeatInputCoeffA5 dHeatTransferFixed dHumidityRatio dIncondensableMassFlowRate dIrreversibility dIrreversibilityContribution dKForward dKReverse dLength dLengthEquivalentLoss dLocalElementSolidVolumeFraction dLocalTransientRhoRelax dMassFlow dMassFlux dMassFluxRatio dMuFines dNode1VortexPressureLoss dNode2VortexPressureLoss dOrificeRatio dPCrit dPoissonsRatio dPrandtlNumber dPressureRelativeNode1 dPressureRelativeNode2 dPressureTotalAbsoluteNode1 dPressureTotalAbsoluteNode2 dPRiseExcludingHeight dRadius1Swirl dRadius2Swirl dRhoFines dRhoLower dRhoNode1 dRhoNode2 dRhoUpper dSlatterReynoldsNumber dSlidingBedFrictionCoeff dSlidingBedHalfAngle dSpringConstant1 dSpringConstant2 dStaticEnthalpyNode1 dStaticEnthalpyNode2 dSwirlFactor dSwirlSpeed dTemperatureRelativeNode1 dTemperatureRelativeNode2 dTemperatureTotalAbsoluteNode1 dTemperatureTotalAbsoluteNode2 dThroughFlowTime dTotalEnthalpyNode1 dTotalEnthalpyNode2 dTotalGasMassFraction dVelocityTangentialAbsoluteNode1 dVelocityTangentialAbsoluteNode2 dVelocityTotalAbsoluteNode1 dVelocityTotalAbsoluteNode2 dViscoElasticArea dViscoElasticDiameter dVLower dVoidFraction dVolFlowBasedOnAmbDensity dVUpper dVZeroGradient dWallShearStress dWallShearStressNewtonian dWallThick dWallThickFromSchedule dWallThickResult dWorkReversible dYoungMod FluidDataReference FroudeNumberLiquid FroudeNumberVapourAndGas GasConstant HeightNode1 HeightNode2 Identifier iNumberOfIncrements iNumberParallel iUsernumber JunctionLossFactorNode1 JunctionLossFactorNode2 JunctionPressureLossNode1 JunctionPressureLossNode2 KFactorConfigForward.ActiveSheet KFactorConfigReverse.ActiveSheet MachNode1 MachNode2 MachNumber MaximumVelocity MeanDensity MeanPressure OwnerTaskID PersistedIdentifierWithTemplate pPrimaryLossSpecification.cFrictionalTwoPhaseFlowRegime pPrimaryLossSpecification.Chart pPrimaryLossSpecification.cPipeRoughnessOption pPrimaryLossSpecification.cPrimaryLossType pPrimaryLossSpecification.cTwoPhaseMultiplierOption pPrimaryLossSpecification.dCL pPrimaryLossSpecification.dFrictionFactorInput pPrimaryLossSpecification.dFrM pPrimaryLossSpecification.dGasDensity pPrimaryLossSpecification.dGasFrictionFactor pPrimaryLossSpecification.dGasVelocity pPrimaryLossSpecification.dLamFricFact pPrimaryLossSpecification.dLiquidDensity pPrimaryLossSpecification.dLiquidFrictionFactor pPrimaryLossSpecification.dLiquidHoldUp pPrimaryLossSpecification.dLiquidVelocity pPrimaryLossSpecification.dReNS pPrimaryLossSpecification.dRoughCoefficient pPrimaryLossSpecification.dRoughness pPrimaryLossSpecification.dTurbFricFact pPrimaryLossSpecification.dTwoPhaseFrictionalMultiplier pPrimaryLossSpecification.dVoidFractionNonHomogenous pPrimaryLossSpecification.Script.SelectedScript pPrimaryLossSpecification.sPipeRoughness PressureDifferenceInv PressureHead PressureRatioDownUp PressureRatioUpDown Quality QualityNode1 QualityNode2 ReynoldsNumber sDownstreamNode SonicVelocity SpecificHeat SpecificVolume sSchedule StaticPressure StaticPressureNode1 StaticPressureNode2 StaticTemperature StaticTemperatureNode1 StaticTemperatureNode2 sUpstreamNode TID TotalHeatTransfer TotalMass TotalMassFlow TotalNonDimensionalMassFlow TotalPower TotalPressureDrop TotalPressureNode1 TotalPressureNode2 TotalTemperature TotalTemperatureNode1 TotalTemperatureNode2 TotalVolume TotalVolumeFlow TraceElementsDataReference UserDescription Velocity VelocityNode1 VelocityNode2 Viscosity WallMaterialDataReference WorldPosition.X WorldPosition.Y WorldPosition.Z </Properties>
+            <Item Index="0" Identifier="Pipe - 1">
+              <Values>  "1.33501586210817 Velocity m/s" "0.000126676869774374 Area m²" "0.000126676869774374 Area m²" "False" "False" "Diameter" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "UseAmbient" "NoDesgin" "NotApplicable" "FixedHeatTransfer" "FlowPathObstructed" "0.599881735169819 Thermal_Conductivity W/m.K" "268.714324943804 Pressure_Stress kPa" "Geometry" "CalculateFromWorldCoordinates" "SpecifyLength" "Elastic" "UseUpAndDownPressures" "Calculate" "RigidPipe" "PositiveGradient" "None" "DoNotTransfer" "SpecifyYoungsModulus" "0 Velocity m/s" "840.954873768928" "0 Area m²" "0 Area m²" "0 Area m²" "0 Area m²" "0.0779282670087346 Force N" "0" "0" "0 Angle °" "0.61" "0 Length m" "0 Length m" "0 Efficiency 0-1" "0 Efficiency 0-1" "0.154541569296276" "0.0115959165559868" "23503.1239224072 Flux_Mass kg/m².s" "0 Efficiency 0-1" "0 Length m" "0 Efficiency 0-1" "0 Efficiency 0-1" "0 Length m" "0 Length m" "0 Length m" "0 Viscosity_Dynamic kg/m.s" "268.722310214748 Pressure_Stress kPa" "0 Pressure_Stress kPa" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "1" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0.5 Length in" "0 Length m" "0 Length m" "0.0127 Length m" "88.9646598921859 Specific_Energy kJ/kg" "88.9370217370667 Specific_Energy kJ/kg" "88.9954211056446 Specific_Energy kJ/kg" "0.31273878703518 Specific_Heat_Gas_Constant kJ/kg.K" "0.000203409938556489 AU kW/K" "0 Pressure_Stress kPa" "0 Efficiency 0-1" "0 Efficiency 0-1" "0" "0 Temperature °C" "0 Angle °" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0.0328971659931542" "0" "0" "0" "0" "0" "0" "0 Power kW" "0" "0 Flow_Rate_Mass kg/s" "0.0586125737950524 Power kW" "0" "0" "0" "6 Length in" "0 Length m" "0 Efficiency 0-1" "1" "0 Flow_Rate_Mass kg/s" "1763.59114674989 Flux_Mass kg/m².s" "0.0750364569651325" "0 Viscosity_Dynamic kg/m.s" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "1" "2.51004637557694 Pressure_Stress kPa" "0" "6.8533189214489" "413.664827329655 Pressure_Stress kPa" "144.942517114906 Pressure_Stress kPa" "413.664827329655 Pressure_Stress kPa" "144.942517114906 Pressure_Stress kPa" "-268.722310214748 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Density kg/m³" "0 Density kg/m³" "997.922076909222 Density kg/m³" "997.961999196585 Density kg/m³" "998.023347993551 Density kg/m³" "0" "0.55" "0 Angle °" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "88.9354601271322 Specific_Energy kJ/kg" "88.9938596206484 Specific_Energy kJ/kg" "0" "0 Velocity_Angular rpm" "21.1111110404689 Temperature °C" "21.1827831985719 Temperature °C" "21.1111110404689 Temperature °C" "21.1827831985719 Temperature °C" "0.0862372538791436 Time s" "88.9370217370667 Specific_Energy kJ/kg" "88.9954211056446 Specific_Energy kJ/kg" "0" "0 Velocity m/s" "0 Velocity m/s" "1.76726338431376 Velocity m/s" "1.76719268684253 Velocity m/s" "0.000126676869774374 Area m²" "0.0127 Length m" "0 Velocity m/s" "0 Efficiency 0-1" "0.00022362872145563 Flow_Rate_Volume m³/s" "0 Velocity m/s" "0 Velocity m/s" "0.0128161168299597 Pressure_Stress kPa" "0.0128161168299597 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Length m" "0.0586125737950524 Power kW" "0 Pressure_Stress kPa" "H2O - Water| General (Two Phase Fluids) {Master}" "5.01160300319516" "0" "0 Specific_Heat_Gas_Constant kJ/kg.K" "0 Length m" "0 Length m" "{COMPONENT}Pipe - 1" "1" "1" "13" "0" "0" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "" "" "0" "0" "0" "1.33501586210817 Velocity m/s" "997.9478836042 Density kg/m³" "279.303672222281 Pressure_Stress kPa" "" "Pipe - 1" "SinglePhase" "Click here to select..." "Roughness" "DarcyWeisbach" "LockhartMartinelli" "0" "0" "0" "0 Density kg/m³" "0" "0 Velocity m/s" "1" "0 Density kg/m³" "0" "0" "0 Velocity m/s" "0" "0" "50 Length µm" "1" "1" "0" "" "" "65.425258383228 Pressure_Stress kPa" "6.6856816961925 Length m" "1.15816007081281" "0.863438504919433" "-0.212484265553621" "-0.244283605712988" "-0.167033980310193" "22790.7912071182" "Node - 4" "23.5521351607524 Velocity m/s" "4.18335145910052 Specific_Heat_Gas_Constant kJ/kg.K" "0.00100205633623711 Specific_Volume m³/kg" "" "277.742552533256 Pressure_Stress kPa" "412.10570710738 Pressure_Stress kPa" "143.384216399865 Pressure_Stress kPa" "21.1469779352425 Temperature °C" "21.1110925096315 Temperature °C" "21.1826335844117 Temperature °C" "Node - 2" "" "0 Power kW" "0.0192659377077643 Mass kg" "0.223406206032075 Flow_Rate_Mass kg/s" "0.926430987053296" "0 Power kW" "-65.425258383228 Pressure_Stress kPa" "413.664827329655 Pressure_Stress kPa" "144.942517114906 Pressure_Stress kPa" "21.1471119939711 Temperature °C" "21.1111111111111 Temperature °C" "21.1827831985719 Temperature °C" "1.93055549536147E-05 Volume m³" "0.000223865604309134 Flow_Rate_Volume m³/s" "Click here to select..." "" "1.76721768313239 Velocity m/s" "1.76726338415731 Velocity m/s" "1.76719268686723 Velocity m/s" "0.000982748135427969 Viscosity_Dynamic kg/m.s" "Click here to select..." "0" "0" "0" </Values>
+            </Item>
+            <Item Index="1" Identifier="Pipe - 10">
+              <Values>  "0.365901435744241 Velocity m/s" "0.000126676869774374 Area m²" "0.000126676869774374 Area m²" "False" "False" "Diameter" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "UseAmbient" "NoDesgin" "NotApplicable" "FixedHeatTransfer" "FlowPathObstructed" "0.5581331204533 Thermal_Conductivity W/m.K" "-0.0079745938577447 Pressure_Stress kPa" "Geometry" "CalculateFromWorldCoordinates" "SpecifyLength" "Elastic" "UseUpAndDownPressures" "Calculate" "RigidPipe" "PositiveGradient" "None" "DoNotTransfer" "SpecifyYoungsModulus" "0 Velocity m/s" "230.489093382199" "0 Area m²" "0 Area m²" "0 Area m²" "0 Area m²" "0.00303437756094907 Force N" "0" "0" "0 Angle °" "0.61" "0 Length m" "0 Length m" "0 Efficiency 0-1" "0 Efficiency 0-1" "0.00480391733053409" "0.00240195866526705" "732.008276029541 Flux_Mass kg/m².s" "0 Efficiency 0-1" "0 Length m" "0 Efficiency 0-1" "0 Efficiency 0-1" "0 Length m" "0 Length m" "0 Length m" "0 Viscosity_Dynamic kg/m.s" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "1" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0.5 Length in" "0 Length m" "0 Length m" "0.0127 Length m" "-1374.71093365725 Specific_Energy kJ/kg" "-2636.40408939826 Specific_Energy kJ/kg" "-2712.33051539662 Specific_Energy kJ/kg" "0.01541410738162 Specific_Heat_Gas_Constant kJ/kg.K" "0.0122168052892897 AU kW/K" "0 Pressure_Stress kPa" "0 Efficiency 0-1" "0 Efficiency 0-1" "0" "0 Temperature °C" "0 Angle °" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0.0297978241233338" "0" "0" "0" "0" "0" "0" "0 Power kW" "0" "0 Flow_Rate_Mass kg/s" "3.52027244410882 Power kW" "0" "0" "0" "6 Length in" "0 Length m" "0 Efficiency 0-1" "1" "0 Flow_Rate_Mass kg/s" "366.00413801477 Flux_Mass kg/m².s" "0.5" "0 Viscosity_Dynamic kg/m.s" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "1" "0.657559383777005 Pressure_Stress kPa" "0" "13.0745638284854" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Density kg/m³" "0 Density kg/m³" "999.851492119866 Density kg/m³" "999.851492119866 Density kg/m³" "998.38381691142 Density kg/m³" "0" "0.55" "0 Angle °" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "-2629.27686429375 Specific_Energy kJ/kg" "-120.145003020752 Specific_Energy kJ/kg" "0" "0 Velocity_Angular rpm" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "0.416326897902226 Time s" "-2629.27686429375 Specific_Energy kJ/kg" "-120.145003020752 Specific_Energy kJ/kg" "0" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0.000126676869774374 Area m²" "0.0127 Length m" "0 Velocity m/s" "0 Efficiency 0-1" "4.64104379195552E-05 Flow_Rate_Volume m³/s" "0 Velocity m/s" "0 Velocity m/s" "0.000499035059036697 Pressure_Stress kPa" "0.000499035059036697 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Length m" "3.52027244410882 Power kW" "0 Pressure_Stress kPa" "H2O - Water| General (Two Phase Fluids) {Master}" "1.03685359548009" "0" "0 Specific_Heat_Gas_Constant kJ/kg.K" "0 Length m" "0 Length m" "{COMPONENT}Pipe - 10" "1" "1" "6" "0" "0" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "" "" "0" "0" "0" "0.365901435744241 Velocity m/s" "999.851492119866 Density kg/m³" "0.0001 Pressure_Stress kPa" "" "Pipe - 10" "SinglePhase" "Click here to select..." "Roughness" "DarcyWeisbach" "LockhartMartinelli" "0" "0" "0" "0 Density kg/m³" "0" "0 Velocity m/s" "1" "0 Density kg/m³" "0" "0" "0 Velocity m/s" "0" "0" "40 Length µm" "1" "1" "0" "" "" "0 Pressure_Stress kPa" "0 Length m" "1" "1" "-8.12307513699824E-12" "-8.12307513699824E-12" "-8.12307513699824E-12" "2685.86215203609" "Node - 16" "0.732117001173395 Velocity m/s" "4.216567018571 Specific_Heat_Gas_Constant kJ/kg.K" "0.001000148529938 Specific_Volume m³/kg" "" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "Node - 11" "" "0 Power kW" "0.0193026879265737 Mass kg" "0.0463642585281792 Flow_Rate_Mass kg/s" "767689.08262708" "0 Power kW" "0 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "1.93055549536147E-05 Volume m³" "4.63711450086238E-05 Flow_Rate_Volume m³/s" "Click here to select..." "" "0.365901435744241 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0.00173063705047702 Viscosity_Dynamic kg/m.s" "Click here to select..." "0" "0" "0" </Values>
+            </Item>
+            <Item Index="2" Identifier="Pipe - 17">
+              <Values>  "1891690125.47291 Velocity m/s" "0.000126676869774374 Area m²" "0.000126676869774374 Area m²" "False" "False" "Diameter" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "False" "UseAmbient" "NoDesgin" "NotApplicable" "FixedHeatTransfer" "FlowPathObstructed" "0.5581331204533 Thermal_Conductivity W/m.K" "-96.5296886863343 Pressure_Stress kPa" "Geometry" "CalculateFromWorldCoordinates" "SpecifyLength" "Elastic" "UseUpAndDownPressures" "Calculate" "RigidPipe" "PositiveGradient" "None" "DoNotTransfer" "SpecifyYoungsModulus" "0 Velocity m/s" "1191615827069.55" "0 Area m²" "0 Area m²" "0 Area m²" "0 Area m²" "2.3527112931134 Force N" "0" "0" "0 Angle °" "0.61" "0 Length m" "0 Length m" "0 Efficiency 0-1" "0 Efficiency 0-1" "0.136886231094122" "0.0684813544391732" "20870.0051170295 Flux_Mass kg/m².s" "0 Efficiency 0-1" "0 Length m" "0 Efficiency 0-1" "0 Efficiency 0-1" "0 Length m" "0 Length m" "0 Length m" "0 Viscosity_Dynamic kg/m.s" "-96.5216930435861 Pressure_Stress kPa" "0 Pressure_Stress kPa" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "1" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0.5 Length in" "0 Length m" "0 Length m" "0.0127 Length m" "-42.6451897158981 Specific_Energy kJ/kg" "-119.868493397027 Specific_Energy kJ/kg" "34.6736434299725 Specific_Energy kJ/kg" "0.0152396166721121 Specific_Heat_Gas_Constant kJ/kg.K" "-0.564469638991927 AU kW/K" "0 Pressure_Stress kPa" "0 Efficiency 0-1" "0 Efficiency 0-1" "0" "0 Temperature °C" "0 Angle °" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0.0284230183368111" "0" "0" "0" "0" "0" "0" "0 Power kW" "0" "0 Flow_Rate_Mass kg/s" "-162.651926475524 Power kW" "0" "0" "0" "6 Length in" "0 Length m" "0 Efficiency 0-1" "1" "0 Flow_Rate_Mass kg/s" "10435.0025585148 Flux_Mass kg/m².s" "0.5" "0 Viscosity_Dynamic kg/m.s" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "1" "0.489993814684182 Pressure_Stress kPa" "0" "13.0745638284854" "0.0001 Pressure_Stress kPa" "96.5217930435861 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "96.5217930435861 Pressure_Stress kPa" "96.5216930435861 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Density kg/m³" "0 Density kg/m³" "999.851492119866 Density kg/m³" "999.741175908165 Density kg/m³" "998.744285829289 Density kg/m³" "0" "0.55" "0 Angle °" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "-119.868493397027 Specific_Energy kJ/kg" "34.6191705966603 Specific_Energy kJ/kg" "0" "0 Velocity_Angular rpm" "1.01000000000005 Temperature °C" "8.22852436105171 Temperature °C" "1.01000000000005 Temperature °C" "8.22852436105171 Temperature °C" "0.0146025149208786 Time s" "-119.868493397027 Specific_Energy kJ/kg" "34.6736434299725 Specific_Energy kJ/kg" "0" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "10.4377040877584 Velocity m/s" "0.000126676869774374 Area m²" "0.0127 Length m" "0 Velocity m/s" "0 Efficiency 0-1" "0.00132319006298449 Flow_Rate_Volume m³/s" "0 Velocity m/s" "0 Velocity m/s" "0.386927926888548 Pressure_Stress kPa" "0.386927926888548 Pressure_Stress kPa" "0 Length m" "0 Length m" "0 Length m" "-162.651926475524 Power kW" "0 Pressure_Stress kPa" "H2O - Water| General (Two Phase Fluids) {Master}" "29.5740384199994" "0" "0 Specific_Heat_Gas_Constant kJ/kg.K" "0 Length m" "0 Length m" "{COMPONENT}Pipe - 17" "1" "1" "10" "0" "0" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "" "" "0" "0" "0" "1891690125.47291 Velocity m/s" "999.850922310485 Density kg/m³" "48.260946521793 Pressure_Stress kPa" "" "Pipe - 17" "SinglePhase" "Click here to select..." "Roughness" "DarcyWeisbach" "LockhartMartinelli" "0" "0" "0" "0 Density kg/m³" "0" "0 Velocity m/s" "1" "0 Density kg/m³" "0" "0" "0 Velocity m/s" "0" "0" "40 Length µm" "1" "1" "0" "" "" "-294953168525.797 Pressure_Stress kPa" "-30083331227.6911 Length m" "0.13295186916312" "7.52151892481546" "-8.12307513699824E-12" "-8.12307513699824E-12" "-0.124428677492798" "76575.5780257966" "Node - 20" "20.8614616187442 Velocity m/s" "4.216567018571 Specific_Heat_Gas_Constant kJ/kg.K" "0.00100014909991699 Specific_Volume m³/kg" "" "0.489993814684187 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "42.0641425894605 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "8.22897966125805 Temperature °C" "Node - 18" "" "0 Power kW" "0.0193026769260874 Mass kg" "1.32187346020024 Flow_Rate_Mass kg/s" "0" "0 Power kW" "294953168525.797 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "96.5217930435861 Pressure_Stress kPa" "0.980581510230593 Temperature °C" "1.01000000000005 Temperature °C" "8.22852436105171 Temperature °C" "1.93055549536147E-05 Volume m³" "0.00132207055142342 Flow_Rate_Volume m³/s" "Click here to select..." "" "10.43655841653 Velocity m/s" "0 Velocity m/s" "10.4377040877953 Velocity m/s" "0.00173063705047702 Viscosity_Dynamic kg/m.s" "Click here to select..." "0" "0" "0" </Values>
+            </Item>
+          </Flownex.Components.Pipe>
+          <Flownex.Components.SecondaryPressureLoss>
+            <Properties>AbsMaxVelocity Area1 Area2 bCheck bDifferentForwardAndReverseLoss bFixMass bIsCheckValveActive bIsChoking bIsCondensing bIsFlashing bMomentumAddition bSpecifyAdavancedInputs bSpecifyMultipleAreas bSpecifyTEAdmissionForward bSpecifyTEAdmissionReverse bSpecifyTEFilterForward bSpecifyTEFilterReverse cAreaDefinitionOption cFixMassFlowDesignOption cLossDefinitionOption cObstructionTypeForAxialForceCalculation Conductivity Convergence cPressureOptionForAreaChangeAxialForce cSwirlOption dArea1AxialForce dArea2AxialForce dAreaForSingleElement1 dAreaForSingleElement2 dAreaForSingleElementUser dAxialForce dCriticalMassflux dDeltaPExcludingHeight dDiameter1 dDiameter2 dDiameterResult dDiameterUser dEnthalpy dEnthalpyTotalAbsoluteNode1 dEnthalpyTotalAbsoluteNode2 dEntropy dEntropyGeneration dForce_P dForce_P_ParIn dForce_P_ParOut dForce_P_PerpIn dForce_P_PerpOut dForce_V dForce_V_ParIn dForce_V_ParOut dForce_V_PerpIn dForce_V_PerpOut dFrictionFactorResult dHumidityRatio dIncondensableMassFlowRate dIrreversibility dIrreversibilityContribution dLocalTransientRhoRelax dLossCoeffForward dLossCoeffReverse dMassFlow dMassFlux dMassFluxRatio dNode1VortexPressureLoss dNode2VortexPressureLoss dPCrit dPrandtlNumber dPressureRelativeNode1 dPressureRelativeNode2 dPressureTotalAbsoluteNode1 dPressureTotalAbsoluteNode2 dPRiseExcludingHeight dRadius1Swirl dRadius2Swirl dRhoNode1 dRhoNode2 dStaticEnthalpyNode1 dStaticEnthalpyNode2 dSwirlFactor dSwirlSpeed dTemperatureRelativeNode1 dTemperatureRelativeNode2 dTemperatureTotalAbsoluteNode1 dTemperatureTotalAbsoluteNode2 dThroughFlowTime dTotalEnthalpyNode1 dTotalEnthalpyNode2 dTotalGasMassFraction dVelocityTangentialAbsoluteNode1 dVelocityTangentialAbsoluteNode2 dVelocityTotalAbsoluteNode1 dVelocityTotalAbsoluteNode2 dVoidFraction dVolFlowBasedOnAmbDensity dWorkReversible FluidDataReference FroudeNumberLiquid FroudeNumberVapourAndGas GasConstant HeightNode1 HeightNode2 Identifier iNumberInParallel iUsernumber JunctionLossFactorNode1 JunctionLossFactorNode2 JunctionPressureLossNode1 JunctionPressureLossNode2 LossCoeffConfigForward.ActiveSheet LossCoeffConfigReverse.ActiveSheet MachNode1 MachNode2 MachNumber MaximumVelocity MeanDensity MeanPressure OwnerTaskID PersistedIdentifierWithTemplate PressureDifferenceInv PressureHead PressureRatioDownUp PressureRatioUpDown Quality QualityNode1 QualityNode2 ReynoldsNumber sDownstreamNode SonicVelocity SpecificHeat SpecificVolume StaticPressure StaticPressureNode1 StaticPressureNode2 StaticTemperature StaticTemperatureNode1 StaticTemperatureNode2 sUpstreamNode TID TotalHeatTransfer TotalMass TotalMassFlow TotalNonDimensionalMassFlow TotalPower TotalPressureDrop TotalPressureNode1 TotalPressureNode2 TotalTemperature TotalTemperatureNode1 TotalTemperatureNode2 TotalVolume TotalVolumeFlow TraceElementsDataReference UserDescription Velocity VelocityNode1 VelocityNode2 Viscosity WorldPosition.X WorldPosition.Y WorldPosition.Z </Properties>
+            <Item Index="0" Identifier="DFM R3 - 12">
+              <Values>  "0 Velocity m/s" "0.000126676869774374 Area m²" "0.000126676869774374 Area m²" "False" "False" "False" "False" "False" "False" "False" "False" "False" "True" "False" "False" "False" "False" "Diameter" "NoDesgin" "AreaUser" "FlowPathObstructed" "0.5581331204533 Thermal_Conductivity W/m.K" "-126.225257035347 Pressure_Stress kPa" "UseUpAndDownPressures" "DoNotTransfer" "0 Area m²" "0 Area m²" "0 Area m²" "0 Area m²" "0 Area m²" "0 Force N" "143512946922.886 Flux_Mass kg/m².s" "0 Pressure_Stress kPa" "0.0127 Length m" "0.0127 Length m" "0 Length m" "0.00127 Length m" "-120.145003020752 Specific_Energy kJ/kg" "-2712.33051539662 Specific_Energy kJ/kg" "-119.868493397027 Specific_Energy kJ/kg" "0.01541410738162 Specific_Heat_Gas_Constant kJ/kg.K" "817809.571343714 AU kW/K" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0" "0" "0 Flow_Rate_Mass kg/s" "235651827.982691 Power kW" "0" "1" "0.01" "0" "0 Flow_Rate_Mass kg/s" "-71756473461.443 Flux_Mass kg/m².s" "0.5" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "0.657559383777005 Pressure_Stress kPa" "13.0745638284854" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0 Pressure_Stress kPa" "0 Length m" "0 Length m" "999.851492119866 Density kg/m³" "999.851492119866 Density kg/m³" "-2712.33051539662 Specific_Energy kJ/kg" "-119.868493397027 Specific_Energy kJ/kg" "0" "0 Velocity_Angular rpm" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "0 Time s" "-120.145003020752 Specific_Energy kJ/kg" "309849706.506337 Specific_Energy kJ/kg" "0" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0 Efficiency 0-1" "-90.9893908569449 Flow_Rate_Volume m³/s" "235651827.982691 Power kW" "H2O - Water| General (Two Phase Fluids) {Master}" "0" "0" "0 Specific_Heat_Gas_Constant kJ/kg.K" "0 Length m" "0 Length m" "{COMPONENT}DFM R3 - 12" "1" "8" "0" "0" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "" "" "0" "0" "0" "0 Velocity m/s" "999.851492119866 Density kg/m³" "170090424069.715 Pressure_Stress kPa" "" "DFM R3 - 12" "340180848139.43 Pressure_Stress kPa" "34696244664.4619 Length m" "3.4018084813943E+15" "2.93961287200427E-16" "-8.12307513699824E-12" "-8.12307513699824E-12" "-8.12307513699824E-12" "0" "Node - 18" "0 Velocity m/s" "4.216567018571 Specific_Heat_Gas_Constant kJ/kg.K" "0.001000148529938 Specific_Volume m³/kg" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "Node - 16" "DFM R3" "0 Power kW" "0 Mass kg" "-90898.8544414357 Flow_Rate_Mass kg/s" "0" "0 Power kW" "-340180848139.43 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "340180848139.43 Pressure_Stress kPa" "1.01000000000005 Temperature °C" "1.01000000000005 Temperature °C" "-28967276430321 Temperature °C" "0 Volume m³" "-90.9123556426502 Flow_Rate_Volume m³/s" "Click here to select..." "" "71767131.4459973 Velocity m/s" "0 Velocity m/s" "0 Velocity m/s" "0.00173063705047702 Viscosity_Dynamic kg/m.s" "0" "0" "0" </Values>
+            </Item>
+          </Flownex.Components.SecondaryPressureLoss>
+          <Flownex.Components.ValveAnsiControl>
+            <Properties>AbsMaxVelocity Area1 Area2 bCheck bDifferentDiameters bDisableChokingCorrection bDisableLaminarFlowCorrection bFixMass bIsCheckValveActive bIsChoking bIsCondensing bIsFlashing bMomentumAddition bObtainValveDiameterFromPipe1 bSpecifyAdavancedInputs bSpecifyTEAdmissionForward bSpecifyTEAdmissionReverse bSpecifyTEFilterForward bSpecifyTEFilterReverse bZeroFlowWhenClosed cFdDataTypeOption cFixMassFlowDesignOption cFlDataTypeOption cFlowBehaviour Chart cObstructionTypeForAxialForceCalculation Conductivity Convergence cPipeDiamOption cPressureOptionForAreaChangeAxialForce cSwirlOption Cv cxTDataTypeOption dArea1AxialForce dArea2AxialForce dAxialForce dCriticalMassflux dCvMax dDeltaPExcludingHeight dDeltaStaticPressureElement dDiameterResult dEnthalpy dEnthalpyTotalAbsoluteNode1 dEnthalpyTotalAbsoluteNode2 dEntropy dEntropyGeneration dFdConstant dFlConstant dForce_P dForce_P_ParIn dForce_P_ParOut dForce_P_PerpIn dForce_P_PerpOut dForce_V dForce_V_ParIn dForce_V_ParOut dForce_V_PerpIn dForce_V_PerpOut dFrictionFactorResult dHumidityRatio dIncondensableMassFlowRate dInitDiameter dInitFractionOpen dIrreversibility dIrreversibilityContribution dLocalTransientRhoRelax dMassFlow dMassFlux dMassFluxRatio dNode1VortexPressureLoss dNode2VortexPressureLoss dPCrit dPipeDiameterInlet dPipeDiameterOutlet dPrandtlNumber dPressureRelativeNode1 dPressureRelativeNode2 dPressureTotalAbsoluteNode1 dPressureTotalAbsoluteNode2 dPRiseExcludingHeight dRadius1Swirl dRadius2Swirl dRangeability dRhoNode1 dRhoNode2 dStaticEnthalpyNode1 dStaticEnthalpyNode2 dSwirlFactor dSwirlSpeed dTemperatureRelativeNode1 dTemperatureRelativeNode2 dTemperatureTotalAbsoluteNode1 dTemperatureTotalAbsoluteNode2 dThroughFlowTime dTotalEnthalpyNode1 dTotalEnthalpyNode2 dTotalGasMassFraction dVelocityTangentialAbsoluteNode1 dVelocityTangentialAbsoluteNode2 dVelocityTotalAbsoluteNode1 dVelocityTotalAbsoluteNode2 dVoidFraction dVolFlowBasedOnAmbDensity dWorkReversible dxTConstant Fl FluidDataReference Fp Fr FroudeNumberLiquid FroudeNumberVapourAndGas GasConstant HeightNode1 HeightNode2 Identifier iNumParall iUsernumber JunctionLossFactorNode1 JunctionLossFactorNode2 JunctionPressureLossNode1 JunctionPressureLossNode2 MachNode1 MachNode2 MachNumber MaximumVelocity MeanDensity MeanPressure OwnerTaskID PersistedIdentifierWithTemplate PressureDifferenceInv PressureHead PressureRatioDownUp PressureRatioUpDown Quality QualityNode1 QualityNode2 ReynoldsNumber sDownstreamNode SonicVelocity SpecificHeat SpecificVolume StaticPressure StaticPressureNode1 StaticPressureNode2 StaticTemperature StaticTemperatureNode1 StaticTemperatureNode2 sUpstreamNode TID TotalHeatTransfer TotalMass TotalMassFlow TotalNonDimensionalMassFlow TotalPower TotalPressureDrop TotalPressureNode1 TotalPressureNode2 TotalTemperature TotalTemperatureNode1 TotalTemperatureNode2 TotalVolume TotalVolumeFlow TraceElementsDataReference UserDescription Velocity VelocityNode1 VelocityNode2 Viscosity WorldPosition.X WorldPosition.Y WorldPosition.Z xT z </Properties>
+            <Item Index="0" Identifier="Ansi Control Valve - 3">
+              <Values>  "3.8048464156002 Velocity m/s" "0.000126676869774374 Area m²" "0.000126676869774374 Area m²" "False" "False" "False" "True" "False" "False" "True" "False" "False" "False" "True" "False" "False" "False" "False" "False" "False" "Constant" "NoDesgin" "Constant" "Linear" "finetrol, rotary control valve, flow to close fi-ftc| NELLIS (ANSI Control Valve Charts) {Master}" "FlowPathObstructed" "0.599848914249908 Thermal_Conductivity W/m.K" "-45.9323715579574 Pressure_Stress kPa" "Specify" "UseUpAndDownPressures" "DoNotTransfer" "0.273064350697461 Flow_Coefficient m³/sqrt(bar).h" "Constant" "0 Area m²" "0 Area m²" "18.3583180504654 Force N" "11531.1555840849 Flux_Mass kg/m².s" "6 Flow_Coefficient gal (U.S.)/min.sqrt(psi)" "144.942417114906 Pressure_Stress kPa" "144.922416248236 Pressure_Stress kPa" "0 Length m" "88.6731781865374 Specific_Energy kJ/kg" "88.9954211056446 Specific_Energy kJ/kg" "-2636.40408939826 Specific_Energy kJ/kg" "0.31106553178737 Specific_Heat_Gas_Constant kJ/kg.K" "0.231835745677579 AU kW/K" "1" "0.85" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0 Force N" "0" "0" "0 Flow_Rate_Mass kg/s" "0 Length m" "0.0526193275325744 Efficiency 0-1" "66.8034701169944 Power kW" "0" "1" "0 Flow_Rate_Mass kg/s" "3797.0717571553 Flux_Mass kg/m².s" "0.329288051788665" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "41.9558652356304 Pressure_Stress kPa" "0 Length m" "0 Length m" "6.85187400906208" "144.942517114906 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "144.942517114906 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "-144.942417114906 Pressure_Stress kPa" "0 Length m" "0 Length m" "50" "998.079805234474 Density kg/m³" "999.851492119866 Density kg/m³" "88.6731781865374 Specific_Energy kJ/kg" "-2629.27686429375 Specific_Energy kJ/kg" "0" "0 Velocity_Angular rpm" "21.1827831985719 Temperature °C" "1.01000000000005 Temperature °C" "21.1827831985719 Temperature °C" "1.01000000000005 Temperature °C" "0 Time s" "88.6740501911192 Specific_Energy kJ/kg" "-2629.27686429375 Specific_Energy kJ/kg" "0" "0 Velocity m/s" "0 Velocity m/s" "0.200196989491463 Velocity m/s" "0 Velocity m/s" "0 Efficiency 0-1" "2.53337224183828E-05 Flow_Rate_Volume m³/s" "66.8034701169944 Power kW" "0.7" "0.85" "H2O - Water| General (Two Phase Fluids) {Master}" "1" "1" "0" "0" "0 Specific_Heat_Gas_Constant kJ/kg.K" "0 Length m" "0 Length m" "{COMPONENT}Ansi Control Valve - 3" "1" "2" "0" "0" "0 Pressure_Stress kPa" "0 Pressure_Stress kPa" "0" "0" "0" "3.8048464156002 Velocity m/s" "998.079805234474 Density kg/m³" "239.545092856441 Pressure_Stress kPa" "" "Ansi Control Valve - 3" "-479.089985712883 Pressure_Stress kPa" "-48.9508159973302 Length m" "2.087290114785E-07" "4790900.85712883" "-0.257518474463482" "-0.257518474463482" "-8.12307513699824E-12" "0" "Node - 11" "0 Velocity m/s" "4.18260159207091 Specific_Heat_Gas_Constant kJ/kg.K" "0.00100192388900713 Specific_Volume m³/kg" "478.219821802077 Pressure_Stress kPa" "478.219821802077 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "21.0313354057839 Temperature °C" "21.0313354057839 Temperature °C" "1.01000000000005 Temperature °C" "Node - 4" "" "0 Power kW" "0 Mass kg" "0.0253085148156319 Flow_Rate_Mass kg/s" "0.0906060114738147" "0 Power kW" "479.089985712883 Pressure_Stress kPa" "479.090085712883 Pressure_Stress kPa" "0.0001 Pressure_Stress kPa" "21.0313068931009 Temperature °C" "21.0313068931009 Temperature °C" "1.01000000000005 Temperature °C" "0 Volume m³" "2.53603350263162E-05 Flow_Rate_Volume m³/s" "Click here to select..." "" "1.32060939029284 Velocity m/s" "1.32060939101542 Velocity m/s" "0 Velocity m/s" "0.000982663324354075 Viscosity_Dynamic kg/m.s" "0" "0" "0" "0" "0" </Values>
+            </Item>
+          </Flownex.Components.ValveAnsiControl>
+          <IPS.Plugin.CompoundBase>
+            <Properties>AssemblyName Identifier LibraryName OwnerTaskID PersistedIdentifierWithTemplate RevisionNumber TemplateTypeName TID UserDescription WorldPosition.X WorldPosition.Y WorldPosition.Z </Properties>
+            <Item Index="0" Identifier="7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 15">
+              <Values>  "Flownex" "{COMPONENT}7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 15" "7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter" "" "7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 15" "76" "Flownex.7 Deg FM" "" "" "0" "0" "0" </Values>
+              <List Name="ComponentNames">
+                <System.Collections.Generic.List_HEX60_1>
+                  <ListItems>
+                    <System.String>
+                      <Properties>Value </Properties>
+                      <Item Index="0">
+                        <Values>  "DFM R3 - 12" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "7 Degree - DFM S3 - 13" </Values>
+                      </Item>
+                    </System.String>
+                  </ListItems>
+                </System.Collections.Generic.List_HEX60_1>
+              </List>
+              <List Name="ExposedFiberConnections">
+                <IPS.Plugin.ConnectInfoList>
+                  <ListItems>
+                    <IPS.Plugin.ConnectInfo>
+                      <Properties>FiberName HubName ParentName </Properties>
+                      <Item Index="0">
+                        <Values>  "DFM S3 Downstream Fiber" "NodeFlowHub" "Node - 18" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "DFM R3 Upstream Fiber" "NodeFlowHub" "Node - 16" </Values>
+                      </Item>
+                    </IPS.Plugin.ConnectInfo>
+                  </ListItems>
+                </IPS.Plugin.ConnectInfoList>
+              </List>
+              <List Name="LinkNames">
+                <System.Collections.Generic.List_HEX60_1>
+                  <ListItems>
+                    <System.String>
+                      <Properties>Value </Properties>
+                      <Item Index="0">
+                        <Values>  "7 Degree - DFM 3 DTL 1 - 14" </Values>
+                      </Item>
+                    </System.String>
+                  </ListItems>
+                </System.Collections.Generic.List_HEX60_1>
+              </List>
+              <List Name="Properties">
+                <IPS.Core.CompositePropertyList>
+                  <ListItems>
+                    <IPS.Properties.CompositeProperty>
+                      <Properties>Value </Properties>
+                      <Item Index="0">
+                        <Values>  "Connected Nodes@Upstream node@Node - 16" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "Connected Nodes@Downstream node@Node - 18" </Values>
+                      </Item>
+                      <Item Index="2">
+                        <Values>  "Fluids@Fluid Data Reference@H2O - Water| General (Two Phase Fluids) {Master}" </Values>
+                      </Item>
+                      <Item Index="3">
+                        <Values>  "Trace Elements@Trace Elements Data Reference@Click here to select..." </Values>
+                      </Item>
+                      <Item Index="4">
+                        <Values>  "Differential Flow Meter Input Data@Pipe diameter@0.5 Length in" </Values>
+                      </Item>
+                      <Item Index="5">
+                        <Values>  "Differential Flow Meter Input Data@Throat diameter@0.05 Length in" </Values>
+                      </Item>
+                      <Item Index="6">
+                        <Values>  "Differential Flow Meter Input Data@Number in parallel@1" </Values>
+                      </Item>
+                      <Item Index="7">
+                        <Values>  "Fixed Options@Fixed mass flow@False" </Values>
+                      </Item>
+                      <Item Index="8">
+                        <Values>  "Fixed Options@Check valve@False" </Values>
+                      </Item>
+                      <Item Index="9">
+                        <Values>  "Fixed Options@Mass flow@0 Flow_Rate_Mass kg/s" </Values>
+                      </Item>
+                      <Item Index="10">
+                        <Values>  "Fixed Options@Local transient density relaxation@1" </Values>
+                      </Item>
+                      <Item Index="11">
+                        <Values>  "Differential Flow Meter Results@Secondary loss factor (K) Pipe Area@100" </Values>
+                      </Item>
+                      <Item Index="12">
+                        <Values>  "Differential Flow Meter Results@Secondary loss factor (K) Throat Area@0.01" </Values>
+                      </Item>
+                      <Item Index="13">
+                        <Values>  "Flow Element Results|Generic@Mean pressure@170090424069.715 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="14">
+                        <Values>  "Flow Element Results|Generic@Total temperature@1.01000000000005 Temperature °C" </Values>
+                      </Item>
+                      <Item Index="15">
+                        <Values>  "Flow Element Results|Generic@Static pressure@0.0001 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="16">
+                        <Values>  "Flow Element Results|Generic@Static temperature@1.01000000000005 Temperature °C" </Values>
+                      </Item>
+                      <Item Index="17">
+                        <Values>  "Flow Element Results|Generic@Quality@-8.12307513699824E-12" </Values>
+                      </Item>
+                      <Item Index="18">
+                        <Values>  "Flow Element Results|Generic@Pressure drop including elevation@-340180848139.43 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="19">
+                        <Values>  "Flow Element Results|Generic@Pressure drop excluding elevation@0 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="20">
+                        <Values>  "Flow Element Results|Generic@Pressure rise including elevation@340180848139.43 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="21">
+                        <Values>  "Flow Element Results|Generic@Pressure head@34696244664.4619 Length m" </Values>
+                      </Item>
+                      <Item Index="22">
+                        <Values>  "Flow Element Results|Generic@Pressure ratio (up/down)@2.93961287200427E-16" </Values>
+                      </Item>
+                      <Item Index="23">
+                        <Values>  "Flow Element Results|Generic@Pressure ratio (down/up)@3.4018084813943E+15" </Values>
+                      </Item>
+                      <Item Index="24">
+                        <Values>  "Flow Element Results|Generic@Total mass flow@-90898.8544414357 Flow_Rate_Mass kg/s" </Values>
+                      </Item>
+                      <Item Index="25">
+                        <Values>  "Flow Element Results|Generic@Total volume flow@-90.9123556426502 Flow_Rate_Volume m³/s" </Values>
+                      </Item>
+                      <Item Index="26">
+                        <Values>  "Flow Element Results|Generic@Incondensable mass flow rate@0 Flow_Rate_Mass kg/s" </Values>
+                      </Item>
+                      <Item Index="27">
+                        <Values>  "Flow Element Results|Generic@Volume flow based on ambient conditions@-90.9893908569449 Flow_Rate_Volume m³/s" </Values>
+                      </Item>
+                      <Item Index="28">
+                        <Values>  "Flow Element Results|Generic@Abs val of maximum velocity@0 Velocity m/s" </Values>
+                      </Item>
+                      <Item Index="29">
+                        <Values>  "Flow Element Results|Generic@Maximum velocity@0 Velocity m/s" </Values>
+                      </Item>
+                      <Item Index="30">
+                        <Values>  "Flow Element Results|Generic@Total volume@0 Volume m³" </Values>
+                      </Item>
+                      <Item Index="31">
+                        <Values>  "Flow Element Results|Generic@Total mass@0 Mass kg" </Values>
+                      </Item>
+                      <Item Index="32">
+                        <Values>  "Flow Element Results|Generic@Mass flux@-71756473461.443 Flux_Mass kg/m².s" </Values>
+                      </Item>
+                      <Item Index="33">
+                        <Values>  "Flow Element Results|Generic@Critical mass flux@143512946922.886 Flux_Mass kg/m².s" </Values>
+                      </Item>
+                      <Item Index="34">
+                        <Values>  "Flow Element Results|Generic@Check valve active@False" </Values>
+                      </Item>
+                      <Item Index="35">
+                        <Values>  "Flow Element Results|Generic@Flashing/cavitating@False" </Values>
+                      </Item>
+                      <Item Index="36">
+                        <Values>  "Flow Element Results|Generic@Condensing@False" </Values>
+                      </Item>
+                      <Item Index="37">
+                        <Values>  "Flow Element Results|Generic@Element is choked@False" </Values>
+                      </Item>
+                      <Item Index="38">
+                        <Values>  "Flow Element Results|Energy and Heat Transfer Variables@Total heat transfer@0 Power kW" </Values>
+                      </Item>
+                      <Item Index="39">
+                        <Values>  "Flow Element Results|Energy and Heat Transfer Variables@Total power@0 Power kW" </Values>
+                      </Item>
+                      <Item Index="40">
+                        <Values>  "Flow Element Results|Fluid Variables@Density@999.851492119866 Density kg/m³" </Values>
+                      </Item>
+                      <Item Index="41">
+                        <Values>  "Flow Element Results|Fluid Variables@Specific volume@0.001000148529938 Specific_Volume m³/kg" </Values>
+                      </Item>
+                      <Item Index="42">
+                        <Values>  "Flow Element Results|Fluid Variables@Conductivity@0.5581331204533 Thermal_Conductivity W/m.K" </Values>
+                      </Item>
+                      <Item Index="43">
+                        <Values>  "Flow Element Results|Fluid Variables@Viscosity@0.00173063705047702 Viscosity_Dynamic kg/m.s" </Values>
+                      </Item>
+                      <Item Index="44">
+                        <Values>  "Flow Element Results|Fluid Variables@Static enthalpy@-120.145003020752 Specific_Energy kJ/kg" </Values>
+                      </Item>
+                      <Item Index="45">
+                        <Values>  "Flow Element Results|Fluid Variables@Specific heat@4.216567018571 Specific_Heat_Gas_Constant kJ/kg.K" </Values>
+                      </Item>
+                      <Item Index="46">
+                        <Values>  "Flow Element Results|Fluid Variables@Total gas mass fraction - Incondensable + Vapour@0" </Values>
+                      </Item>
+                      <Item Index="47">
+                        <Values>  "Flow Element Results|Fluid Variables@Gas constant@0 Specific_Heat_Gas_Constant kJ/kg.K" </Values>
+                      </Item>
+                      <Item Index="48">
+                        <Values>  "Flow Element Results|Fluid Variables@Entropy@0.01541410738162 Specific_Heat_Gas_Constant kJ/kg.K" </Values>
+                      </Item>
+                      <Item Index="49">
+                        <Values>  "Flow Element Results|Fluid Variables@Void fraction@0 Efficiency 0-1" </Values>
+                      </Item>
+                      <Item Index="50">
+                        <Values>  "Flow Element Results|Non-Dimensional Variables@Reynolds number@0" </Values>
+                      </Item>
+                      <Item Index="51">
+                        <Values>  "Flow Element Results|Non-Dimensional Variables@Prandtl number@13.0745638284854" </Values>
+                      </Item>
+                      <Item Index="52">
+                        <Values>  "Flow Element Results|Non-Dimensional Variables@Total non-dimensional mass flow@0" </Values>
+                      </Item>
+                      <Item Index="53">
+                        <Values>  "Flow Element Results|Non-Dimensional Variables@Mach number@0" </Values>
+                      </Item>
+                      <Item Index="54">
+                        <Values>  "Flow Element Results|Non-Dimensional Variables@Friction factor@0" </Values>
+                      </Item>
+                      <Item Index="55">
+                        <Values>  "Flow Element Results|Non-Dimensional Variables@Froude number gas@0" </Values>
+                      </Item>
+                      <Item Index="56">
+                        <Values>  "Flow Element Results|Non-Dimensional Variables@Froude number liquid@0" </Values>
+                      </Item>
+                      <Item Index="57">
+                        <Values>  "Flow Element Results|Convergence@Pressure convergence@-126.225257035347 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="58">
+                        <Values>  "Flow Element Results|Second Law Properties@Reversible work@235651827.982691 Power kW" </Values>
+                      </Item>
+                      <Item Index="59">
+                        <Values>  "Flow Element Results|Second Law Properties@Irreversibility@235651827.982691 Power kW" </Values>
+                      </Item>
+                      <Item Index="60">
+                        <Values>  "Flow Element Results|Second Law Properties@Irreversibility contribution@0" </Values>
+                      </Item>
+                      <Item Index="61">
+                        <Values>  "Flow Element Results|Second Law Properties@Entropy generation@817809.571343714 AU kW/K" </Values>
+                      </Item>
+                      <Item Index="62">
+                        <Values>  "Flow Element Results|Forces|Forces From Pressure Difference@Magnitude@0 Force N" </Values>
+                      </Item>
+                      <Item Index="63">
+                        <Values>  "Flow Element Results|Forces|Forces From Pressure Difference@Parallel to inlet@0 Force N" </Values>
+                      </Item>
+                      <Item Index="64">
+                        <Values>  "Flow Element Results|Forces|Forces From Pressure Difference@Perpendicular to inlet@0 Force N" </Values>
+                      </Item>
+                      <Item Index="65">
+                        <Values>  "Flow Element Results|Forces|Forces From Pressure Difference@Parallel to outlet@0 Force N" </Values>
+                      </Item>
+                      <Item Index="66">
+                        <Values>  "Flow Element Results|Forces|Forces From Pressure Difference@Perpendicular to outlet@0 Force N" </Values>
+                      </Item>
+                      <Item Index="67">
+                        <Values>  "Flow Element Results|Forces|Forces From Velocity Change@Magnitude@0 Force N" </Values>
+                      </Item>
+                      <Item Index="68">
+                        <Values>  "Flow Element Results|Forces|Forces From Velocity Change@Parallel to inlet@0 Force N" </Values>
+                      </Item>
+                      <Item Index="69">
+                        <Values>  "Flow Element Results|Forces|Forces From Velocity Change@Perpendicular to inlet@0 Force N" </Values>
+                      </Item>
+                      <Item Index="70">
+                        <Values>  "Flow Element Results|Forces|Forces From Velocity Change@Parallel to outlet@0 Force N" </Values>
+                      </Item>
+                      <Item Index="71">
+                        <Values>  "Flow Element Results|Forces|Forces From Velocity Change@Perpendicular to outlet@0 Force N" </Values>
+                      </Item>
+                      <Item Index="72">
+                        <Values>  "Flow Element Results|Upstream@Total pressure@0.0001 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="73">
+                        <Values>  "Flow Element Results|Upstream@Static pressure@0.0001 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="74">
+                        <Values>  "Flow Element Results|Upstream@Total temperature@1.01000000000005 Temperature °C" </Values>
+                      </Item>
+                      <Item Index="75">
+                        <Values>  "Flow Element Results|Upstream@Static temperature@1.01000000000005 Temperature °C" </Values>
+                      </Item>
+                      <Item Index="76">
+                        <Values>  "Flow Element Results|Upstream@Elevation@0 Length m" </Values>
+                      </Item>
+                      <Item Index="77">
+                        <Values>  "Flow Element Results|Upstream@Quality@-8.12307513699824E-12" </Values>
+                      </Item>
+                      <Item Index="78">
+                        <Values>  "Flow Element Results|Upstream@Mach number@0" </Values>
+                      </Item>
+                      <Item Index="79">
+                        <Values>  "Flow Element Results|Upstream@Area@0.000126676869774374 Area m²" </Values>
+                      </Item>
+                      <Item Index="80">
+                        <Values>  "Flow Element Results|Upstream@Total enthalpy@-120.145003020752 Specific_Energy kJ/kg" </Values>
+                      </Item>
+                      <Item Index="81">
+                        <Values>  "Flow Element Results|Upstream@Static enthalpy@-2712.33051539662 Specific_Energy kJ/kg" </Values>
+                      </Item>
+                      <Item Index="82">
+                        <Values>  "Flow Element Results|Upstream@Velocity@0 Velocity m/s" </Values>
+                      </Item>
+                      <Item Index="83">
+                        <Values>  "Flow Element Results|Upstream@Junction pressure loss@0 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="84">
+                        <Values>  "Flow Element Results|Downstream@Total pressure@340180848139.43 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="85">
+                        <Values>  "Flow Element Results|Downstream@Static pressure@0.0001 Pressure_Stress kPa" </Values>
+                      </Item>
+                      <Item Index="86">
+                        <Values>  "Flow Element Results|Downstream@Total temperature@-28967276430321 Temperature °C" </Values>
+                      </Item>
+                      <Item Index="87">
+                        <Values>  "Flow Element Results|Downstream@Static temperature@1.01000000000005 Temperature °C" </Values>
+                      </Item>
+                      <Item Index="88">
+                        <Values>  "Flow Element Results|Downstream@Elevation@0 Length m" </Values>
+                      </Item>
+                      <Item Index="89">
+                        <Values>  "Flow Element Results|Downstream@Quality@-8.12307513699824E-12" </Values>
+                      </Item>
+                      <Item Index="90">
+                        <Values>  "Flow Element Results|Downstream@Mach number@0" </Values>
+                      </Item>
+                      <Item Index="91">
+                        <Values>  "Flow Element Results|Downstream@Area@0.000126676869774374 Area m²" </Values>
+                      </Item>
+                      <Item Index="92">
+                        <Values>  "Flow Element Results|Downstream@Total enthalpy@309849706.506337 Specific_Energy kJ/kg" </Values>
+                      </Item>
+                      <Item Index="93">
+                        <Values>  "Flow Element Results|Downstream@Static enthalpy@-119.868493397027 Specific_Energy kJ/kg" </Values>
+                      </Item>
+                      <Item Index="94">
+                        <Values>  "Flow Element Results|Downstream@Velocity@0 Velocity m/s" </Values>
+                      </Item>
+                      <Item Index="95">
+                        <Values>  "Flow Element Results|Downstream@Junction pressure loss@0 Pressure_Stress kPa" </Values>
+                      </Item>
+                    </IPS.Properties.CompositeProperty>
+                  </ListItems>
+                </IPS.Core.CompositePropertyList>
+              </List>
+            </Item>
+          </IPS.Plugin.CompoundBase>
+          <IPS.Scripting.ScriptComponent>
+            <Properties>bEncrypted bUseRepositoryScript ExecuteAfterSteadyState ExecuteBeforeSteadyState ExecuteDuringSteadyState Identifier OwnerTaskID Password PersistedIdentifierWithTemplate RepositoryScript ScriptWrapper TID UserDescription WorldPosition.X WorldPosition.Y WorldPosition.Z </Properties>
+            <Item Index="0" Identifier="7 Degree - DFM S3 - 13">
+              <Values>  "False" "True" "False" "True" "False" "{COMPONENT}7 Degree - DFM S3 - 13" "" "" "7 Degree - DFM S3 - 13" "7 Deg| Generated (Component Scripts) {Master}" "7 Deg" "7 Degree - DFM S3" "" "0" "0" "0" </Values>
+            </Item>
+          </IPS.Scripting.ScriptComponent>
+          <IPS.Visualisation.Graphing.Graphs.LineGraph>
+            <Properties>AdvancedGraphFormatting AdvancedLineFormatting GraphFormat.AutoScaleText GraphFormat.BackColor GraphFormat.BorderColor GraphFormat.EntireNameInLegend GraphFormat.ForegroundColor GraphFormat.GraphFont GraphFormat.Image GraphFormat.LegendBackColor GraphFormat.LegendBorderColor GraphFormat.LegendForegroundColor GraphFormat.TitleFont GraphProps.DrawMode GraphProps.MaxVideoFrameRate GraphProps.RecordGraphAsVideo GraphProps.RunBasedLength GraphProps.SampleBasedLength GraphProps.SampleBasedRate GraphProps.ShowLegend GraphProps.StopVideoOnDeactivate GraphProps.TimeBasedLength GraphProps.TimeBasedRate GraphProps.TitleText GraphProps.VideoEndTime GraphProps.VideoQuality GraphProps.VideoStartTime GraphProps.XAxisAutoScaling GraphProps.XAxisDecimalPlaces GraphProps.XAxisLogScale GraphProps.XAxisMax GraphProps.XAxisMin GraphProps.XAxisTitle GraphProps.XAxisUnit GraphProps.XAxisUnitGroup GraphProps.XFlowPathPointsSpacing GraphProps.XGrid GraphProps.YAxesDisplayed GraphProps.YAxisAutoScaling GraphProps.YAxisAutoZoomPan GraphProps.YAxisLogScale GraphProps.YAxisMax GraphProps.YAxisMin GraphProps.YAxisTitle GraphProps.YAxisUnitGroup GraphProps.YAxisUnitH GraphProps.YGrid Identifier OwnerTaskID PersistedIdentifierWithTemplate RefreshOnPropertyChanged TID UserDescription WorldPosition.X WorldPosition.Y WorldPosition.Z </Properties>
+            <Item Index="0" Identifier="Line Graph - 27">
+              <Values>  "False" "False" "False" "White" "White" "False" "DarkSlateGray" "Arial, 8pt" "" "White" "Transparent" "DarkSlateGray" "Arial, 12pt" "SampleBased" "10" "False" "50" "10000" "1" "True" "True" "100 Time s" "0.1 Time s" "" "0 Time s" "70 Efficiency %" "0 Time s" "True" "6" "False" "10" "0" "Time" "s" "Time" "BasedOnComponentLength" "False" "One" "True" "True" "False" "10" "-10" "" "None" "" "True" "{COMPONENT}Line Graph - 27" "" "Line Graph - 27" "True" "" "" "0" "0" "0" </Values>
+              <List Name="Items">
+                <IPS.Visualisation.Graphing.Graphs.LineGraphItemList>
+                  <ListItems>
+                    <IPS.Visualisation.Graphing.LineGraphItem>
+                      <Properties>AddComponentToName Axis.AutoScale Axis.CustomAxisTitle Axis.Grid Axis.LogScale Axis.Max Axis.Min Axis.TitleVisible Axis.VisibleOnGraph Legend.DecimalPlaces Legend.ShowLastValue Legend.ValueFormat Legend.VisibleOnGraph Name SpecificProperty Style.Color Style.DashStyle Style.LineType Style.SolidSymbol Style.Symbol Style.SymbolSize Style.Width ValueDecimalPlaces Visible </Properties>
+                      <Item Index="0">
+                        <Values>  "False" "True" "" "False" "False" "10" "-10" "True" "True" "5" "False" "Fixed" "True" "Pressure" "{COMPONENT}Node - 16|:|TotalPressure" "SteelBlue" "Solid" "ScatterLine" "True" "None" "5" "1" "10" "True" </Values>
+                      </Item>
+                    </IPS.Visualisation.Graphing.LineGraphItem>
+                  </ListItems>
+                </IPS.Visualisation.Graphing.Graphs.LineGraphItemList>
+              </List>
+            </Item>
+            <Item Index="1" Identifier="Line Graph - 28">
+              <Values>  "False" "False" "False" "White" "White" "False" "DarkSlateGray" "Arial, 8pt" "" "White" "Transparent" "DarkSlateGray" "Arial, 12pt" "SampleBased" "10" "False" "50" "10000" "1" "True" "True" "100 Time s" "0.1 Time s" "Mass Flow" "0 Time s" "70 Efficiency %" "0 Time s" "True" "6" "False" "10" "0" "Time" "s" "Time" "BasedOnComponentLength" "False" "One" "True" "True" "False" "10" "-10" "" "None" "" "True" "{COMPONENT}Line Graph - 28" "" "Line Graph - 28" "True" "" "" "0" "0" "0" </Values>
+              <List Name="Items">
+                <IPS.Visualisation.Graphing.Graphs.LineGraphItemList>
+                  <ListItems>
+                    <IPS.Visualisation.Graphing.LineGraphItem>
+                      <Properties>AddComponentToName Axis.AutoScale Axis.CustomAxisTitle Axis.Grid Axis.LogScale Axis.Max Axis.Min Axis.TitleVisible Axis.VisibleOnGraph Legend.DecimalPlaces Legend.ShowLastValue Legend.ValueFormat Legend.VisibleOnGraph Name SpecificProperty Style.Color Style.DashStyle Style.LineType Style.SolidSymbol Style.Symbol Style.SymbolSize Style.Width ValueDecimalPlaces Visible </Properties>
+                      <Item Index="0">
+                        <Values>  "False" "True" "" "False" "False" "10" "-10" "True" "True" "5" "False" "Fixed" "True" "" "{COMPONENT}Node - 2|:|MassSource" "SteelBlue" "Solid" "ScatterLine" "True" "None" "5" "1" "10" "True" </Values>
+                      </Item>
+                    </IPS.Visualisation.Graphing.LineGraphItem>
+                  </ListItems>
+                </IPS.Visualisation.Graphing.Graphs.LineGraphItemList>
+              </List>
+            </Item>
+          </IPS.Visualisation.Graphing.Graphs.LineGraph>
+        </ListItems>
+      </IPS.Core.ComponentList>
+    </List>
+    <List Name="PluginElementManager.ManagedLinks">
+      <IPS.Core.LinkList>
+        <ListItems>
+          <IPS.DataTransfer.DataTransferLink>
+            <Properties>EndPortName EndPortParentUserName Identifier PersistedIdentifierWithTemplate StartPortName StartPortParentUserName TID TransferAfterSteadyStateIterations TransferAfterTransientIterations UserDescription </Properties>
+            <Item Index="0" Identifier="7 Degree - DFM 3 DTL 1 - 14">
+              <Values>  "DATATRANSFER" "DFM R3 - 12" "{LINK}7 Degree - DFM 3 DTL 1 - 14" "7 Degree - DFM 3 DTL 1 - 14" "DATATRANSFER" "7 Degree - DFM S3 - 13" "7 Degree - DFM 3 DTL 1" "False" "False" "" </Values>
+              <List Name="PropertyAssociations">
+                <IPS.DataTransfer.PropertyAssociationList>
+                  <ListItems>
+                    <IPS.DataTransfer.PropertyAssociation>
+                      <Properties>Value </Properties>
+                      <Item Index="0">
+                        <Values>  "ScriptWrapper.CompiledScript.Pipe_Diameter#dDiameter1#1#0#####False" </Values>
+                      </Item>
+                      <Item Index="1">
+                        <Values>  "ScriptWrapper.CompiledScript.Pipe_Diameter#dDiameter2#1#0#####False" </Values>
+                      </Item>
+                      <Item Index="2">
+                        <Values>  "ScriptWrapper.CompiledScript.Orifice_Throat_Diameter#dDiameterUser#1#0#####False" </Values>
+                      </Item>
+                      <Item Index="3">
+                        <Values>  "ScriptWrapper.CompiledScript.Loss_Factor_Orifice_Area#dLossCoeffForward#1#0#####False" </Values>
+                      </Item>
+                    </IPS.DataTransfer.PropertyAssociation>
+                  </ListItems>
+                </IPS.DataTransfer.PropertyAssociationList>
+              </List>
+            </Item>
+            <Item Index="1" Identifier="DataTransferLink - 25">
+              <Values>  "DATATRANSFER" "Simple PID - 24" "{LINK}DataTransferLink - 25" "DataTransferLink - 25" "DATATRANSFER" "Node - 16" "" "True" "False" "" </Values>
+              <List Name="PropertyAssociations">
+                <IPS.DataTransfer.PropertyAssociationList>
+                  <ListItems>
+                    <IPS.DataTransfer.PropertyAssociation>
+                      <Properties>Value </Properties>
+                      <Item Index="0">
+                        <Values>  "TotalPressure#PV#1#0#Pressure Stress#kPa###False" </Values>
+                      </Item>
+                    </IPS.DataTransfer.PropertyAssociation>
+                  </ListItems>
+                </IPS.DataTransfer.PropertyAssociationList>
+              </List>
+            </Item>
+            <Item Index="2" Identifier="DataTransferLink - 26">
+              <Values>  "DATATRANSFER" "Ansi Control Valve - 3" "{LINK}DataTransferLink - 26" "DataTransferLink - 26" "DATATRANSFER" "Simple PID - 24" "" "True" "False" "" </Values>
+              <List Name="PropertyAssociations">
+                <IPS.DataTransfer.PropertyAssociationList>
+                  <ListItems>
+                    <IPS.DataTransfer.PropertyAssociation>
+                      <Properties>Value </Properties>
+                      <Item Index="0">
+                        <Values>  "Output#dInitFractionOpen#1#0###Efficiency#0-1#False" </Values>
+                      </Item>
+                    </IPS.DataTransfer.PropertyAssociation>
+                  </ListItems>
+                </IPS.DataTransfer.PropertyAssociationList>
+              </List>
+            </Item>
+          </IPS.DataTransfer.DataTransferLink>
+        </ListItems>
+      </IPS.Core.LinkList>
+    </List>
+  </IPS.Server.ProjectImpl>
+</IPS>

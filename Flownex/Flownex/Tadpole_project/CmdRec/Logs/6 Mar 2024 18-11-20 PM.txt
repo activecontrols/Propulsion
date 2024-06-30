@@ -1,0 +1,227 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 06/03/2024 18:12:52 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:12:53 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 2 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:12:59 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:13:06 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 18:13:07 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 18:14:58 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:21:50 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:21:50 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:23:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:23:25 Simulation Time: 00h  00m  00s  000ms Insert Element Ansi Control Valve - 0 
+User:  Time: 06/03/2024 18:24:35 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:24:41 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:24:42 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:24:50 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:24:50 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:25:08 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:27:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:28:15 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:28:15 Simulation Time: 00h  00m  00s  000ms Insert Element Quick Script - 1 
+User:  Time: 06/03/2024 18:30:26 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:31:35 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:31:38 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:31:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:31:57 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:32:30 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 37 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:32:31 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 39 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:32:32 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:32:39 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 37 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:32:39 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:32:41 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 39 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:32:46 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 37 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:32:48 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 8 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:33:40 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:33:51 Simulation Time: 00h  00m  00s  000ms Select Pipe - 23 Copy(001) - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:34:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:35:04 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 18:35:04 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 18:35:09 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:35:09 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:35:10 Simulation Time: 00h  00m  00s  000ms Delete Ansi Control Valve - 0 
+User:  Time: 06/03/2024 18:35:12 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 18:35:12 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 18:35:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:35:53 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:35:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:35:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:35:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:53:16 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:53:17 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:53:28 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamThroat 3.75
+User:  Time: 06/03/2024 18:54:07 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamExit 1.468
+User:  Time: 06/03/2024 18:54:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:12 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 18:54:13 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 18:54:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:20 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:23 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:25 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:26 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:47 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:48 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:48 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:50 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:54:54 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:56:35 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:56:35 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:56:38 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 18:56:39 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 18:56:55 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:56:55 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 8 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:02 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:12 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 9 pNodeMassFractionList.[3] 1
+User:  Time: 06/03/2024 18:57:12 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:12 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 8 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:16 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 8 pNodeMassFractionList.[3] 1
+User:  Time: 06/03/2024 18:57:19 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 8 pNodeMassFractionList.[2] 0
+User:  Time: 06/03/2024 18:57:21 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 18:57:22 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 18:57:34 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:34 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:37 Simulation Time: 00h  00m  00s  000ms Select Node - 49 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:41 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:57:44 Simulation Time: 00h  00m  00s  000ms Select Node - 49 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:58:08 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 18:58:08 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:00:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:00:07 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 45 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:00:10 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:00:11 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 8 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:00:15 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:00:24 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 2 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:56:34 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:56:34 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:56:36 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:56:39 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 37 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:56:40 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 39 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:56:40 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:56:41 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:58:28 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:58:29 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:58:40 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:58:40 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:58:42 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:58:44 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:03 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 19:59:05 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 19:59:10 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:10 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:11 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:16 Simulation Time: 00h  00m  00s  000ms Delete Ansi Control Valve - 0 
+User:  Time: 06/03/2024 19:59:17 Simulation Time: 00h  00m  00s  000ms Delete Ansi Control Valve - 0 
+User:  Time: 06/03/2024 19:59:18 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:24 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:27 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:28 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:34 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 19:59:35 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 19:59:36 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:37 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:37 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 45 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:38 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:40 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:41 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:43 Simulation Time: 00h  00m  00s  000ms Select Quick Script - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:44 Simulation Time: 00h  00m  00s  000ms Delete Quick Script - 1 
+User:  Time: 06/03/2024 19:59:49 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 19:59:50 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 19:59:51 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:51 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:51 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:52 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 19:59:55 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:00:06 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:00:06 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:00:21 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 20:00:22 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 20:00:33 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:00:44 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 8 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:00:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:03 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:08 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 39 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:13 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:13 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:19 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 8 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:23 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:24 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 8 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:25 Simulation Time: 00h  00m  00s  000ms Delete Boundary Condition - 8 
+User:  Time: 06/03/2024 20:01:25 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:26 Simulation Time: 00h  00m  00s  000ms Delete Boundary Condition - 9 
+User:  Time: 06/03/2024 20:01:27 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:30 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:30 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:01:41 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 3 
+User:  Time: 06/03/2024 20:01:43 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 3 
+User:  Time: 06/03/2024 20:03:59 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:01 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:02 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:06 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:06 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 5 
+User:  Time: 06/03/2024 20:04:07 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 5 
+User:  Time: 06/03/2024 20:04:12 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 5 bNodeMassFracFlag True
+User:  Time: 06/03/2024 20:04:13 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:13 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:15 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 bNodeMassFracFlag True
+User:  Time: 06/03/2024 20:04:24 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 pNodeMassFractionList.[5] 1
+User:  Time: 06/03/2024 20:04:26 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:26 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 5 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:30 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 5 pNodeMassFractionList.[0] 1
+User:  Time: 06/03/2024 20:04:33 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 5 cSpecifyTemperature Fixed on user value
+User:  Time: 06/03/2024 20:04:34 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 5 dTemperature 300
+User:  Time: 06/03/2024 20:04:36 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:36 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:38 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 cSpecifyTemperature Fixed on user value
+User:  Time: 06/03/2024 20:04:41 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dTemperature 300
+User:  Time: 06/03/2024 20:04:42 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 20:04:43 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 20:04:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:04:54 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:00 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:04 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:07 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 44 dDiameterInlet 3.75
+User:  Time: 06/03/2024 20:05:10 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:10 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:16 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamThroat 1.468
+User:  Time: 06/03/2024 20:05:33 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamExit 2.462
+User:  Time: 06/03/2024 20:05:33 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:33 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:05:34 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 06/03/2024 20:05:36 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 06/03/2024 20:06:19 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:06:20 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:06:27 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 StaticPressureNode1 1858.25357756551
+User:  Time: 06/03/2024 20:06:31 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 StaticPressureNode1 269.530323314335
+User:  Time: 06/03/2024 20:06:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:06:56 Simulation Time: 00h  00m  00s  000ms Insert Element IO Box - 6 
+User:  Time: 06/03/2024 20:06:57 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:06:58 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:07:10 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dThrust 3117.1379369335
+User:  Time: 06/03/2024 20:07:12 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dThrust 700.795399490445
+User:  Time: 06/03/2024 20:07:16 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:07:16 Simulation Time: 00h  00m  00s  000ms Insert Element IO Box - 7 
+User:  Time: 06/03/2024 20:07:18 Simulation Time: 00h  00m  00s  000ms Move elements IO Box - 7 
+User:  Time: 06/03/2024 20:07:19 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:07:34 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamExit 2.462
+User:  Time: 06/03/2024 20:07:47 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:07:50 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:07:52 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:08:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:08:03 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:08:06 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:08:13 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 06/03/2024 20:08:13 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 07/03/2024 00:46:53 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 07/03/2024 00:46:53 Simulation Time: 00h  00m  00s  000ms Close page: Pages\Drawing Page(1).page

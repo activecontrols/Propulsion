@@ -1,0 +1,24 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 06/03/2024 18:38:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 06/03/2024 18:38:58 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 61 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:00 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 60 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:01 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 61 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:06 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:10 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 61 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:20 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 60 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:26 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:26 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:27 Simulation Time: 00h  00m  00s  000ms Select Node - 6 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:29 Simulation Time: 00h  00m  00s  000ms Select Node - 3 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:39:53 Simulation Time: 00h  00m  00s  000ms Select Node - 6 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:40:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 06/03/2024 18:40:03 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 60 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:40:08 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 06/03/2024 18:40:08 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 06/03/2024 18:40:34 Simulation Time: 00h  00m  00s  000ms Select Basic Valve - 271 - View1 on Pages\RS-25.page
+User:  Time: 06/03/2024 18:40:42 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 06/03/2024 18:40:42 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 06/03/2024 18:41:05 Simulation Time: 00h  00m  00s  000ms Select Flow Resistance - 228 - View1 on Pages\RS-25.page

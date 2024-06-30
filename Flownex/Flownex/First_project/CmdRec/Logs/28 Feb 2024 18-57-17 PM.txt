@@ -1,0 +1,528 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 28/02/2024 18:58:39 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 18:58:39 Simulation Time: 00h  00m  00s  000ms Insert Element Restrictor with Discharge Coefficient - 0 
+User:  Time: 28/02/2024 18:58:45 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 0 dArea 0
+User:  Time: 28/02/2024 19:01:14 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 0 dArea 0.0099
+User:  Time: 28/02/2024 19:02:12 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:02:16 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 0 dCd 0.8
+User:  Time: 28/02/2024 19:04:13 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:04:13 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 1 Node - 2 
+User:  Time: 28/02/2024 19:04:15 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:04:15 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 3 Node - 4 
+User:  Time: 28/02/2024 19:04:16 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:04:17 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 cSpecifyTemperature Fixed on user value
+User:  Time: 28/02/2024 19:04:21 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 cSpecifyPressure Fixed on user total value
+User:  Time: 28/02/2024 19:04:24 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 dTemperature 50
+User:  Time: 28/02/2024 19:04:28 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 dPressure 20000
+User:  Time: 28/02/2024 19:04:29 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:04:30 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:04:33 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 cSpecifyPressure Fixed on user total value
+User:  Time: 28/02/2024 19:04:41 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 cSpecifyPressure Fixed on user static value
+User:  Time: 28/02/2024 19:04:51 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dStaticPressure 10000
+User:  Time: 28/02/2024 19:04:55 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:04:56 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:04:58 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:04:58 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:05:01 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:27 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:05:27 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:05:30 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:30 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:38 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:42 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:43 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:55 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:55 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:59 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:05:59 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:06:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:06:24 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:06:24 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:06:32 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dStaticPressure 8000
+User:  Time: 28/02/2024 19:06:32 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:06:37 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:06:37 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:06:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:07:01 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dStaticPressure 12000
+User:  Time: 28/02/2024 19:07:01 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:07:03 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:07:03 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:07:29 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:07:29 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:07:30 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:07:43 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:07:57 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 0 dArea 0.00099
+User:  Time: 28/02/2024 19:07:58 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:08:00 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:08:00 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:08:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:08:25 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:08:26 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:08:43 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:08:43 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:02 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:02 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:05 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:06 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:22 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 cSpecifyPressure Fixed on user static value
+User:  Time: 28/02/2024 19:09:28 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 dStaticPressure 20000
+User:  Time: 28/02/2024 19:09:28 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:29 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:44 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:09:44 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:09:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:09:54 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:10:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:10:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:10:09 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:10:10 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:10:16 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dStaticPressure 8000
+User:  Time: 28/02/2024 19:10:17 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:10:17 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:10:19 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:10:19 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:10:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:15:29 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:00 Simulation Time: 00h  00m  00s  000ms Select Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:04 Simulation Time: 00h  00m  00s  000ms Insert Element Restrictor with Loss Coefficient - 5 
+User:  Time: 28/02/2024 19:16:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:38 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:39 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 0 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:40 Simulation Time: 00h  00m  00s  000ms Delete Restrictor with Discharge Coefficient - 0 
+User:  Time: 28/02/2024 19:16:41 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Loss Coefficient - 5 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:42 Simulation Time: 00h  00m  00s  000ms Move elements Restrictor with Loss Coefficient - 5 
+User:  Time: 28/02/2024 19:16:42 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:44 Simulation Time: 00h  00m  00s  000ms Select Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:46 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:46 Simulation Time: 00h  00m  00s  000ms Select Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:47 Simulation Time: 00h  00m  00s  000ms Move elements 
+User:  Time: 28/02/2024 19:16:47 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:48 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Loss Coefficient - 5 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:16:54 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Loss Coefficient - 5 dArea 0.0099
+User:  Time: 28/02/2024 19:16:56 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Loss Coefficient - 5 dArea 15.3450306900614
+User:  Time: 28/02/2024 19:17:03 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Loss Coefficient - 5 dArea 0.00099
+User:  Time: 28/02/2024 19:17:18 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Loss Coefficient - 5 dCc 0.1
+User:  Time: 28/02/2024 19:17:22 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Loss Coefficient - 5 dcL 0.8
+User:  Time: 28/02/2024 19:17:24 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:17:25 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:17:25 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:17:29 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:17:30 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:17:30 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:17:31 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:17:31 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:17:50 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:17:50 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Loss Coefficient - 5 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:17:59 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Loss Coefficient - 5 dCc 1
+User:  Time: 28/02/2024 19:18:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:18:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:18:02 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:18:02 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:18:33 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:18:42 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:18:42 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:18:43 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Loss Coefficient - 5 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:19 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:19 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:42 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:43 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Loss Coefficient - 5 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:44 Simulation Time: 00h  00m  00s  000ms Delete Restrictor with Loss Coefficient - 5 
+User:  Time: 28/02/2024 19:19:46 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:46 Simulation Time: 00h  00m  00s  000ms Insert Element Restrictor with Discharge Coefficient - 6 
+User:  Time: 28/02/2024 19:19:48 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:49 Simulation Time: 00h  00m  00s  000ms Select Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:51 Simulation Time: 00h  00m  00s  000ms Move elements 
+User:  Time: 28/02/2024 19:19:52 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:52 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:19:55 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bFixMass True
+User:  Time: 28/02/2024 19:20:03 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cFixMassFlowDesignOption Change design
+User:  Time: 28/02/2024 19:20:10 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cFixMassFlowDesignOption No design
+User:  Time: 28/02/2024 19:20:46 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dMassFlow 0
+User:  Time: 28/02/2024 19:20:49 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dMassFlow 1
+User:  Time: 28/02/2024 19:20:56 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dArea 0.0009
+User:  Time: 28/02/2024 19:20:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:20:57 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:20:57 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:21:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:21:07 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:21:11 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dStaticPressure 8000
+User:  Time: 28/02/2024 19:21:12 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 cSpecifyPressure Not specified
+User:  Time: 28/02/2024 19:21:12 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:21:12 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:21:15 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:21:15 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:22:02 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:24:15 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:45 Simulation Time: 00h  00m  00s  000ms Select Node - 2 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:48 Simulation Time: 00h  00m  00s  000ms Move elements Node - 2 
+User:  Time: 28/02/2024 19:31:49 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:49 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 1 
+User:  Time: 28/02/2024 19:31:50 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:52 Simulation Time: 00h  00m  00s  000ms Move elements Restrictor with Discharge Coefficient - 6 
+User:  Time: 28/02/2024 19:31:53 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:53 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:53 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:54 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:54 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:54 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:54 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:55 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:31:57 Simulation Time: 00h  00m  00s  000ms Cut Restrictor with Discharge Coefficient - 6 
+User:  Time: 28/02/2024 19:32:01 Simulation Time: 00h  00m  00s  000ms Paste Restrictor with Discharge Coefficient - 6 
+User:  Time: 28/02/2024 19:32:04 Simulation Time: 00h  00m  00s  000ms Move Fiber 
+User:  Time: 28/02/2024 19:32:05 Simulation Time: 00h  00m  00s  000ms Select Node - 2 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:07 Simulation Time: 00h  00m  00s  000ms Move Fiber 
+User:  Time: 28/02/2024 19:32:09 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:10 Simulation Time: 00h  00m  00s  000ms Move elements Restrictor with Discharge Coefficient - 6 
+User:  Time: 28/02/2024 19:32:11 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 and Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:14 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 3 Node - 4 
+User:  Time: 28/02/2024 19:32:15 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:15 Simulation Time: 00h  00m  00s  000ms Select Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:16 Simulation Time: 00h  00m  00s  000ms Move elements Node - 4 
+User:  Time: 28/02/2024 19:32:17 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:17 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:17 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:59 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:32:59 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 7 Node - 8 
+User:  Time: 28/02/2024 19:33:01 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:01 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:01 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:02 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:02 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:02 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:02 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:03 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:06 Simulation Time: 00h  00m  00s  000ms Move Fiber 
+User:  Time: 28/02/2024 19:33:08 Simulation Time: 00h  00m  00s  000ms Move Fiber 
+User:  Time: 28/02/2024 19:33:09 Simulation Time: 00h  00m  00s  000ms Select Node - 2 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:09 Simulation Time: 00h  00m  00s  000ms Move elements Node - 2 
+User:  Time: 28/02/2024 19:33:10 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:11 Simulation Time: 00h  00m  00s  000ms Select Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:12 Simulation Time: 00h  00m  00s  000ms Move elements Node - 4 
+User:  Time: 28/02/2024 19:33:13 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:14 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:16 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:17 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:30 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:31 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:55 Simulation Time: 00h  00m  00s  000ms Select Node - 8 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:33:57 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:03 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:06 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:06 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:06 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:07 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:14 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 7 dLength 100
+User:  Time: 28/02/2024 19:34:16 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 7 dDiameterInlet 0
+User:  Time: 28/02/2024 19:34:20 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 7 dDiameterInlet 0.5
+User:  Time: 28/02/2024 19:34:21 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:21 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:23 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:34:23 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:34:38 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:39 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:39 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:42 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:43 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:44 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:48 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bFixMass False
+User:  Time: 28/02/2024 19:34:50 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:34:56 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:35:01 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 7 pPrimaryLossSpecification.dRoughness 40
+User:  Time: 28/02/2024 19:35:02 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:35:09 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:35:09 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:35:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:35:21 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:35:26 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:35:26 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:35:33 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 cSpecifyPressure Fixed on user static value
+User:  Time: 28/02/2024 19:35:36 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:35:36 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:36:08 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:38:07 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dStaticPressure 1000
+User:  Time: 28/02/2024 19:38:20 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:38:20 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:40:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:25 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:28 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:32 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dStaticPressure 12
+User:  Time: 28/02/2024 19:40:34 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:35 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:40:35 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:40:45 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:52 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:53 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:54 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:55 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:40:59 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dCd 0.8
+User:  Time: 28/02/2024 19:41:01 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:41:01 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:41:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:41:20 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:41:21 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:41:21 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:41:22 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:42:17 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:42:28 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:42:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:42:44 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 3 dStaticPressure 10
+User:  Time: 28/02/2024 19:42:46 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:42:47 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:42:47 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:42:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:42:57 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:03 Simulation Time: 00h  00m  00s  000ms Select Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:04 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:04 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:05 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:05 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:06 Simulation Time: 00h  00m  00s  000ms Select Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:07 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 3 - View1 and Node - 4 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:07 Simulation Time: 00h  00m  00s  000ms Delete Boundary Condition - 3 Node - 4 
+User:  Time: 28/02/2024 19:43:13 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:13 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 9 Node - 10 
+User:  Time: 28/02/2024 19:43:16 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:19 Simulation Time: 00h  00m  00s  000ms Select Pipe - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:23 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 9 dDiameterInlet 0.5
+User:  Time: 28/02/2024 19:43:26 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 9 dLength 100
+User:  Time: 28/02/2024 19:43:34 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:35 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:35 Simulation Time: 00h  00m  00s  000ms Insert Element Node - 11 
+User:  Time: 28/02/2024 19:43:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:37 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 12 
+User:  Time: 28/02/2024 19:43:37 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:43:39 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:44:48 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:44:52 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:44:53 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:44:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:44:56 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:44:57 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:45:02 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 cSpecifyPressure Fixed on user static value
+User:  Time: 28/02/2024 19:46:07 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dStaticPressure 10000
+User:  Time: 28/02/2024 19:46:09 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:09 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:10 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:10 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:11 Simulation Time: 00h  00m  00s  000ms Select Node - 2 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:12 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:13 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:14 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:17 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:17 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:17 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:46:17 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:46:21 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:24 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:27 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 9 pPrimaryLossSpecification.dRoughness 40
+User:  Time: 28/02/2024 19:46:28 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:46:28 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:46:48 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:50 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 9 dDiameterInlet 19.6850393700787
+User:  Time: 28/02/2024 19:46:54 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 9 dDiameterInlet 0.5
+User:  Time: 28/02/2024 19:46:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:57 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:46:58 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:46:58 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:50:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:50:46 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:51:05 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:51:06 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:51:34 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:51:34 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:51:41 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dStaticPressure 5000
+User:  Time: 28/02/2024 19:51:42 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 cSpecifyPressure Fixed on user total value
+User:  Time: 28/02/2024 19:51:49 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dPressure 5000
+User:  Time: 28/02/2024 19:51:49 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:51:51 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:51:51 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:54:58 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:54:58 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:55:04 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cRestrictionArea1Option Obtain from neighbouring element
+User:  Time: 28/02/2024 19:55:10 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cRestrictionArea2Option Obtain from neighbouring element
+User:  Time: 28/02/2024 19:55:19 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dArea 1.39500279000558
+User:  Time: 28/02/2024 19:56:16 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dArea 0.0099
+User:  Time: 28/02/2024 19:56:17 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:56:17 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:56:25 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:56:27 Simulation Time: 00h  00m  00s  000ms Select Pipe - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:56:32 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:56:32 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:56:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:56:37 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:56:40 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cRestrictionArea1Option Stagnant volume (Area irrelevant)
+User:  Time: 28/02/2024 19:56:41 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cRestrictionArea2Option Stagnant volume (Area irrelevant)
+User:  Time: 28/02/2024 19:56:44 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:56:44 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:56:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:57:14 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dArea 0.00099
+User:  Time: 28/02/2024 19:57:14 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 19:57:14 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 19:57:51 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:09 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:10 Simulation Time: 00h  00m  00s  000ms Select Node - 2 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:11 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:13 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:15 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:18 Simulation Time: 00h  00m  00s  000ms Select Pipe - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:22 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 19:58:40 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bFixMass True
+User:  Time: 28/02/2024 19:58:41 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bCheck True
+User:  Time: 28/02/2024 19:58:42 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bCheck False
+User:  Time: 28/02/2024 19:58:43 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bCheck True
+User:  Time: 28/02/2024 19:58:43 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bCheck False
+User:  Time: 28/02/2024 19:58:50 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cFixMassFlowDesignOption Change operation
+User:  Time: 28/02/2024 20:03:33 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:03:33 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:03:38 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 cSpecifyPressure Fixed on user static value
+User:  Time: 28/02/2024 20:03:42 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dStaticPressure 11
+User:  Time: 28/02/2024 20:03:42 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:03:43 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:03:49 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:03:49 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:04:02 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:04:02 Simulation Time: 00h  00m  00s  000ms Select Pipe - 9 - View1 and Node - 10 - View1 and Node - 11 - View1 and Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:04:03 Simulation Time: 00h  00m  00s  000ms Delete Pipe - 9 Node - 10 Node - 11 Boundary Condition - 12 
+User:  Time: 28/02/2024 20:05:46 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:05:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:01 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:02 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:08 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cRestrictionArea1Option Specify area
+User:  Time: 28/02/2024 20:06:11 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dRestrictionArea1User 0
+User:  Time: 28/02/2024 20:06:16 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dRestrictionArea1User 0.5
+User:  Time: 28/02/2024 20:06:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:37 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:41 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:43 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:45 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:53 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dStaticPressure 8000
+User:  Time: 28/02/2024 20:06:53 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:06:54 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:06:55 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:07:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:07:04 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:07:07 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bFixMass False
+User:  Time: 28/02/2024 20:07:10 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:07:10 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:07:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:07:27 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 cRestrictionArea2Option Specify area
+User:  Time: 28/02/2024 20:07:30 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dRestrictionArea2User 0
+User:  Time: 28/02/2024 20:07:34 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dRestrictionArea2User 0.5
+User:  Time: 28/02/2024 20:07:34 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:07:34 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:08:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:08:25 Simulation Time: 00h  00m  00s  000ms Select Pipe - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:08:30 Simulation Time: 00h  00m  00s  000ms Select Pipe - 7 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:08:32 Simulation Time: 00h  00m  00s  000ms Select Pipe - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:08:33 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:08:38 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bSpecifyOpening True
+User:  Time: 28/02/2024 20:08:41 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 bSpecifyOpening False
+User:  Time: 28/02/2024 20:08:46 Simulation Time: 00h  00m  00s  000ms Set property value: Restrictor with Discharge Coefficient - 6 dArea 9.9E-05
+User:  Time: 28/02/2024 20:08:46 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:08:46 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:08:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:08:58 Simulation Time: 00h  00m  00s  000ms Select Pipe - 9 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:09:22 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:09:22 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:11:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:11:41 Simulation Time: 00h  00m  00s  000ms Insert Element 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 
+User:  Time: 28/02/2024 20:11:47 Simulation Time: 00h  00m  00s  000ms Select Restrictor with Discharge Coefficient - 6 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:11:48 Simulation Time: 00h  00m  00s  000ms Delete Restrictor with Discharge Coefficient - 6 
+User:  Time: 28/02/2024 20:11:50 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:11:51 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 
+User:  Time: 28/02/2024 20:11:52 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:11:54 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:11:55 Simulation Time: 00h  00m  00s  000ms Connect Fiber 
+User:  Time: 28/02/2024 20:11:56 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:11:56 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:12:02 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Pipe_Diameter 0
+User:  Time: 28/02/2024 20:12:02 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Pipe diameter 0
+User:  Time: 28/02/2024 20:12:06 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Pipe_Diameter 0.5
+User:  Time: 28/02/2024 20:12:06 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Pipe diameter 0.5
+User:  Time: 28/02/2024 20:12:08 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0
+User:  Time: 28/02/2024 20:12:08 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0
+User:  Time: 28/02/2024 20:12:17 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 9E-05
+User:  Time: 28/02/2024 20:12:17 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 9E-05
+User:  Time: 28/02/2024 20:12:17 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:12:17 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:13:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:13:00 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:13:02 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 cSpecifyPressure Fixed on user total value
+User:  Time: 28/02/2024 20:13:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:13:18 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:13:18 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:13:26 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:13:26 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:13:58 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:13:58 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:13:58 Simulation Time: 00h  00m  00s  000ms Insert Element Nozzle Differential Flow Meter - 20 
+User:  Time: 28/02/2024 20:14:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:14:03 Simulation Time: 00h  00m  00s  000ms Insert Element Orifice Differential Flow Meter - 24 
+User:  Time: 28/02/2024 20:14:05 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:14:06 Simulation Time: 00h  00m  00s  000ms Select Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:14:06 Simulation Time: 00h  00m  00s  000ms Select Orifice Differential Flow Meter - 24 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:14:07 Simulation Time: 00h  00m  00s  000ms Delete Orifice Differential Flow Meter - 24 
+User:  Time: 28/02/2024 20:17:31 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:17:42 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:17:45 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dPressure 5000
+User:  Time: 28/02/2024 20:17:49 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 cSpecifyPressure Fixed on user static value
+User:  Time: 28/02/2024 20:17:58 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dStaticPressure 5000
+User:  Time: 28/02/2024 20:17:58 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:17:58 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:18:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:18:04 Simulation Time: 00h  00m  00s  000ms Select Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:18:05 Simulation Time: 00h  00m  00s  000ms Delete Nozzle Differential Flow Meter - 20 
+User:  Time: 28/02/2024 20:18:07 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:18:07 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:18:18 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:18:18 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:20:02 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:20:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:20:04 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:20:06 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:20:07 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 1 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:20:11 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 1 dStaticPressure 19999
+User:  Time: 28/02/2024 20:20:13 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:20:13 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:20:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:20:25 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:20:41 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.005
+User:  Time: 28/02/2024 20:20:41 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.005
+User:  Time: 28/02/2024 20:20:43 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:20:43 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:21:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:21:24 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.05
+User:  Time: 28/02/2024 20:21:24 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.05
+User:  Time: 28/02/2024 20:21:24 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:21:24 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:21:49 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:21:49 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 12 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:22:01 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:22:05 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dStaticPressure 10000
+User:  Time: 28/02/2024 20:22:06 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:22:06 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:23:11 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:25:29 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 12 dStaticPressure 5000
+User:  Time: 28/02/2024 20:25:29 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:25:29 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:25:30 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 28/02/2024 20:25:30 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 28/02/2024 20:29:24 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:34:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:34:24 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:36:12 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:37:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:38:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 28/02/2024 20:38:04 Simulation Time: 00h  00m  00s  000ms Insert Element Quick Script - 25 
+User:  Time: 28/02/2024 20:39:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page

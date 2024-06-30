@@ -76,7 +76,7 @@ total_length = chamber_length + converging_length + diverging_length; % total le
 % Propulsion Parameters
 P_c = 250; % chamber pressure [psi] 
 P_e = 17; % exit pressure [psi]
-m_dot = 5 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+m_dot = 3 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
 fuel = 'C3H8O,2propanol'; % fuel definition
 oxidizer = 'O2(L)'; % oxidizer definition
 fuel_weight = 0; % ???  
@@ -362,15 +362,15 @@ deltaT2 = zeros(1,points);
 
 % call cea for all area ratios
 i = 1;
-% for sub = subsonic_area_ratios
-%     [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, 0, 2, 0, 0, CEA_input_name);
-%     i = i + 1;
-% end
-% i = size(subsonic_area_ratios, 2) + 1;
-% for sup = supersonic_area_ratios
-%     [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, sup, 2, 0, 0, CEA_input_name);
-%     i = i + 1;
-% end
+for sub = subsonic_area_ratios
+    [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, 0, 2, 0, 0, CEA_input_name);
+    i = i + 1;
+end
+i = size(subsonic_area_ratios, 2) + 1;
+for sup = supersonic_area_ratios
+    [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, sup, 2, 0, 0, CEA_input_name);
+    i = i + 1;
+end
 [c_star, ~, ~, ~, ~, P_g_tot, T_g_tot, ~, mu_g_tot, Pr_g_tot, ~, ~, ~, cp_g_tot] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, 0, 1, 0, 0, CEA_input_name);
 % c_star = c_star * cstar_eff;
 
@@ -575,23 +575,16 @@ FEA_inputs = [x; T_g; h_g; P_g; T_l; h_l; P_l];
 
 %% PLOT OUTPUTS
 overall_MS = min(MS);
-Engine_life = min(num_fires);
-yield_SF = min(yield)/(max(sigma_vl)*.000001);
-fprintf("Margin of safety for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS)
-fprintf("Engine life (hot fires): %.02f\n", Engine_life)
-fprintf("Safety factor to yield: %.02f\n", yield_SF)
-fprintf("Max Wall Temp: %.02f\n", max(T_wg))
-
-overall_MS = min(MS);
 overall_MS_lowcycle = min(MS_lowcycle);
 Engine_life = min(num_fires);
 Engine_life_lowcycle = min(num_fires_lowcycle);
 yield_SF = min(yield)/(max(sigma_vl)*.000001);
 fprintf("Margin of safety for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS)
 fprintf("Engine life (hot fires): %.02f\n", Engine_life)
+fprintf("Lowcycle Margin of safety for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS_lowcycle)
 fprintf("Engine life (hot fires) Lowcycle: %.02f\n", Engine_life_lowcycle)
-fprintf("Lowcycle Margin of saftey for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS_lowcycle)
 fprintf("Safety factor to yield: %.02f\n", yield_SF)
+fprintf("Max Wall Temp [K]: %.02f\n", max(T_wg))
 
 figure('Name', 'Temperature Plot');
 hold on;

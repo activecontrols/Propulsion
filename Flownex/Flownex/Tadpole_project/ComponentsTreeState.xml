@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TreeState xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExpandedNodes>
+    <string />
+    <string>Project Database</string>
+    <string>Master Database</string>
+    <string>Master Database\Distributed Control System</string>
+    <string>Master Database\Distributed Control System\Analog components</string>
+    <string>Master Database\Distributed Control System\Analog components\Controllers</string>
+    <string>Master Database\Distributed Control System\Analog components\Filters</string>
+    <string>Master Database\Distributed Control System\Analog components\Filters\Integrator</string>
+  </ExpandedNodes>
+  <SelectedItem>Master Database\Distributed Control System\Analog components\Filters\Rate Limiter</SelectedItem>
+  <TopItem>Project Database</TopItem>
+</TreeState>

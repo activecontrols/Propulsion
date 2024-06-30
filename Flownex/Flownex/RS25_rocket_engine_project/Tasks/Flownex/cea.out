@@ -1,0 +1,73 @@
+
+ *******************************************************************************
+
+         NASA-GLENN CHEMICAL EQUILIBRIUM PROGRAM CEA2, MAY 21, 2004
+                   BY  BONNIE MCBRIDE AND SANFORD GORDON
+      REFS: NASA RP-1311, PART I, 1994 AND NASA RP-1311, PART II, 1996
+
+ *******************************************************************************
+
+
+
+ problem
+ 	hp	p,bar=201.69326998341
+ react
+ 	fuel=H2	wt=0.126411615497293	t,k=510.54593577915
+ 	fuel=H2O	wt=0.0939704332678419	t,k=510.54593577915
+ 	fuel=O2	wt=0.779617951234865	t,k=510.54593577915
+ output massf
+ output short
+ output trace = 1E-05
+ end
+
+
+
+
+         THERMODYNAMIC EQUILIBRIUM COMBUSTION PROPERTIES AT ASSIGNED
+
+                                   PRESSURES
+
+ CASE =                
+
+             REACTANT                    WT FRACTION      ENERGY      TEMP
+                                          (SEE NOTE)     KJ/KG-MOL      K  
+ FUEL        H2                           0.1264116      6191.074    510.546
+ FUEL        H2O                          0.0939704   -234529.186    510.546
+ FUEL        O2                           0.7796180      6413.957    510.546
+
+ O/F=    0.00000  %FUEL=100.000000  R,EQ.RATIO= 1.259156  PHI,EQ.RATIO= 0.000000
+
+ THERMODYNAMIC PROPERTIES
+
+ P, BAR            201.69
+ T, K             3680.78
+ RHO, KG/CU M    9.2486 0
+ H, KJ/KG         -678.84
+ U, KJ/KG        -2859.65
+ G, KJ/KG        -62822.4
+ S, KJ/(KG)(K)    16.8833
+
+ M, (1/n)          14.033
+ (dLV/dLP)t      -1.02524
+ (dLV/dLT)p        1.4288
+ Cp, KJ/(KG)(K)    8.0558
+ GAMMAs            1.1427
+ SON VEL,M/SEC     1578.6
+
+ MASS FRACTIONS
+
+ *H              2.0646-3
+ HO2             1.4858-4
+ *H2             3.1395-2
+ H2O             8.9287-1
+ H2O2            6.2926-5
+ *O              3.9674-3
+ *OH             5.9862-2
+ *O2             9.6288-3
+
+  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
+
+ NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+
+
+

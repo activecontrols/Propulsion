@@ -1,0 +1,6 @@
+Boundary Condition - 142
+
+{Boundary Conditions}Temperature
+Sample based. Number of Samples : 100, SampleRate: 10
+Run  Time [s]          (K)
+000, 0.00000000E+000,  9.03722222E+001

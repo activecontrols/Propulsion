@@ -1,0 +1,1 @@
+Valvelift.Value = ((Thrust/MaxThrust)/Ref)*StartFrac;

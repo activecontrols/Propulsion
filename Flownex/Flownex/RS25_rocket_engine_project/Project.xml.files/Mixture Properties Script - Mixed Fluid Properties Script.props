@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<IPS>
+  <Library Name="IPS" Version="8.12.7.4334" />
+  <Library Name="CapeOpenFluidGenerator" Version="1.0.7738.0" />
+  <Library Name="DCS" Version="8.12.7.0" />
+  <Library Name="ElectricalNetworkSolver" Version="8.12.7.0" />
+  <Library Name="Flownex" Version="8.12.7.0" />
+  <Library Name="ForceCalculations" Version="1.0.7738.0" />
+  <Library Name="IPS.Actions" Version="8.12.7.0" />
+  <Library Name="IPS.Alarms" Version="8.12.7.0" />
+  <Library Name="IPS.Ansys" Version="8.12.7.0" />
+  <Library Name="IPS.Backtracking" Version="8.12.7.0" />
+  <Library Name="IPS.CAESAR2Importer" Version="8.12.7.0" />
+  <Library Name="IPS.DataTransfer" Version="8.12.7.0" />
+  <Library Name="IPS.Designer" Version="8.12.7.0" />
+  <Library Name="IPS.EES" Version="8.12.7.0" />
+  <Library Name="IPS.Excel" Version="8.12.7.0" />
+  <Library Name="IPS.ExcelInputSheets" Version="8.12.7.0" />
+  <Library Name="IPS.ExcelReporting" Version="8.12.7.0" />
+  <Library Name="IPS.Exposers" Version="8.12.7.0" />
+  <Library Name="IPS.FMI" Version="8.12.7.0" />
+  <Library Name="IPS.GAOptimiser" Version="8.12.7.0" />
+  <Library Name="IPS.GlobalParameters" Version="8.12.7.0" />
+  <Library Name="IPS.Logger" Version="8.12.7.0" />
+  <Library Name="IPS.Mathcad" Version="8.12.7.0" />
+  <Library Name="IPS.OPCDriver" Version="8.12.7.0" />
+  <Library Name="IPS.ParameterDisplay" Version="8.12.7.0" />
+  <Library Name="IPS.PropertyMonitor" Version="8.12.7.0" />
+  <Library Name="IPS.Relap" Version="8.12.7.0" />
+  <Library Name="IPS.ROHR2Importer" Version="8.12.7.0" />
+  <Library Name="IPS.ScaleDrawing" Version="8.12.7.0" />
+  <Library Name="IPS.Scheduler" Version="8.12.7.0" />
+  <Library Name="IPS.Scripting" Version="8.12.7.0" />
+  <Library Name="IPS.SensitivityAnalysis" Version="8.12.7.0" />
+  <Library Name="IPS.SixSigma" Version="8.12.7.0" />
+  <Library Name="IPS.TextFileLink" Version="8.12.7.0" />
+  <Library Name="IPS.Tools" Version="8.12.7.0" />
+  <Library Name="IPS.Visualisation" Version="8.12.7.0" />
+  <Library Name="NistFluidGenerator" Version="1.0.7738.0" />
+  <Script>
+    <Properties>Conductivity Cv Density Enthalpy EnthalpyInput FluidDataReference GasConstant HeatCapacityRatio MolarMass Prandtl Pressure SpecificHeat Temperature TemperatureFromPH Viscosity </Properties>
+    <Values>  "0 Thermal_Conductivity W/m.K" "0 Specific_Heat_Gas_Constant kJ/kg.K" "0 Density kg/m³" "0 Specific_Energy kJ/kg" "0 Specific_Energy kJ/kg" "Click here to select..." "0 Specific_Heat_Gas_Constant kJ/kg.K" "0" "0 Molar_Mass kg/kmol" "0" "0 Pressure_Stress kPa" "0 Specific_Heat_Gas_Constant kJ/kg.K" "-273.15 Temperature °C" "-273.15 Temperature °C" "0 Viscosity_Dynamic kg/m.s" </Values>
+  </Script>
+</IPS>

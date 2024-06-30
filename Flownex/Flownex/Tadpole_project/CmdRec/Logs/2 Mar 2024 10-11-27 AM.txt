@@ -1,0 +1,528 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 02/03/2024 10:11:32 Simulation Time: 00h  00m  00s  000ms Close page: Pages\Drawing Page(1).page
+User:  Time: 02/03/2024 10:11:32 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:12:13 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:14:51 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:14:51 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 0 
+User: Engineer Time: 02/03/2024 10:15:02 Simulation Time: 00h  00m  00s  000ms Rotate shape Pipe - 0 
+User: Engineer Time: 02/03/2024 10:15:05 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:15:06 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:15:06 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:15:07 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:15:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:16:09 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:16:09 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 1 
+User: Engineer Time: 02/03/2024 10:16:15 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:16:16 Simulation Time: 00h  00m  00s  000ms Select Pipe - 1 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:16:16 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:17:53 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:18:18 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:18:18 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 2 Node - 3 
+User: Engineer Time: 02/03/2024 10:18:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:18:20 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 4 Node - 5 
+User: Engineer Time: 02/03/2024 10:18:22 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 4 - View1 and Node - 5 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:18:24 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 4 Node - 5 
+User: Engineer Time: 02/03/2024 10:18:25 Simulation Time: 00h  00m  00s  000ms Select Pipe - 1 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:18:29 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 4 - View1 and Node - 5 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:18:31 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 4 Node - 5 
+User: Engineer Time: 02/03/2024 10:18:33 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:03 Simulation Time: 00h  00m  00s  000ms Insert Element Ansi Control Valve - 6 
+User: Engineer Time: 02/03/2024 10:19:06 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:06 Simulation Time: 00h  00m  00s  000ms Insert Element Control Valve with Loss Coefficient - 7 
+User: Engineer Time: 02/03/2024 10:19:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:09 Simulation Time: 00h  00m  00s  000ms Select Control Valve with Loss Coefficient - 7 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:28 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:28 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:30 Simulation Time: 00h  00m  00s  000ms Select Control Valve with Loss Coefficient - 7 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:33 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:35 Simulation Time: 00h  00m  00s  000ms Select Control Valve with Loss Coefficient - 7 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:19:59 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:39 Simulation Time: 00h  00m  00s  000ms Select Control Valve with Loss Coefficient - 7 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:40 Simulation Time: 00h  00m  00s  000ms Delete Control Valve with Loss Coefficient - 7 
+User: Engineer Time: 02/03/2024 10:22:41 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:42 Simulation Time: 00h  00m  00s  000ms Move elements Ansi Control Valve - 6 
+User: Engineer Time: 02/03/2024 10:22:44 Simulation Time: 00h  00m  00s  000ms Paste Ansi Control Valve - 6 Copy(001) 
+User: Engineer Time: 02/03/2024 10:22:49 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:49 Simulation Time: 00h  00m  00s  000ms Move elements Ansi Control Valve - 6 Node - 8 
+User: Engineer Time: 02/03/2024 10:22:50 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:51 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:52 Simulation Time: 00h  00m  00s  000ms Move elements Ansi Control Valve - 6 Copy(001) Node - 9 
+User: Engineer Time: 02/03/2024 10:22:53 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:55 Simulation Time: 00h  00m  00s  000ms Select Node - 9 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:55 Simulation Time: 00h  00m  00s  000ms Move elements Node - 9 
+User: Engineer Time: 02/03/2024 10:22:56 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:22:58 Simulation Time: 00h  00m  00s  000ms Move elements Ansi Control Valve - 6 Copy(001) 
+User: Engineer Time: 02/03/2024 10:22:59 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:04 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:07 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 4 - View1 and Node - 5 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:09 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 4 Node - 5 
+User: Engineer Time: 02/03/2024 10:23:10 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:18 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:19 Simulation Time: 00h  00m  00s  000ms Move elements Ansi Control Valve - 6 Copy(001) 
+User: Engineer Time: 02/03/2024 10:23:21 Simulation Time: 00h  00m  00s  000ms Select Pipe - 1 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:22 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 1 
+User: Engineer Time: 02/03/2024 10:23:22 Simulation Time: 00h  00m  00s  000ms Select Node - 9 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:24 Simulation Time: 00h  00m  00s  000ms Resize shape Node - 9 
+User: Engineer Time: 02/03/2024 10:23:25 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:26 Simulation Time: 00h  00m  00s  000ms Select Node - 9 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:28 Simulation Time: 00h  00m  00s  000ms Move elements Node - 9 
+User: Engineer Time: 02/03/2024 10:23:30 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:31 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:31 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:31 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:31 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:53 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:53 Simulation Time: 00h  00m  00s  000ms Insert Element 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 
+User: Engineer Time: 02/03/2024 10:23:55 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:55 Simulation Time: 00h  00m  00s  000ms Insert Element 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 
+User: Engineer Time: 02/03/2024 10:23:58 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:23:59 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:02 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 Node - 21 
+User: Engineer Time: 02/03/2024 10:24:05 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 
+User: Engineer Time: 02/03/2024 10:24:06 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:07 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:08 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 Node - 22 
+User: Engineer Time: 02/03/2024 10:24:10 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 
+User: Engineer Time: 02/03/2024 10:24:11 Simulation Time: 00h  00m  00s  000ms Select Node - 22 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:12 Simulation Time: 00h  00m  00s  000ms Move elements Node - 22 
+User: Engineer Time: 02/03/2024 10:24:14 Simulation Time: 00h  00m  00s  000ms Select Node - 9 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:17 Simulation Time: 00h  00m  00s  000ms Move elements Node - 9 
+User: Engineer Time: 02/03/2024 10:24:18 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:18 Simulation Time: 00h  00m  00s  000ms Select Pipe - 1 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:21 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 1 
+User: Engineer Time: 02/03/2024 10:24:22 Simulation Time: 00h  00m  00s  000ms Select Node - 5 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:25 Simulation Time: 00h  00m  00s  000ms Move elements Node - 5 
+User: Engineer Time: 02/03/2024 10:24:26 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:33 Simulation Time: 00h  00m  00s  000ms Select Node - 21 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:39 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:43 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:45 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 
+User: Engineer Time: 02/03/2024 10:24:46 Simulation Time: 00h  00m  00s  000ms Select Node - 21 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:47 Simulation Time: 00h  00m  00s  000ms Resize shape Node - 21 
+User: Engineer Time: 02/03/2024 10:24:48 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:49 Simulation Time: 00h  00m  00s  000ms Select Node - 21 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:51 Simulation Time: 00h  00m  00s  000ms Move elements Node - 21 
+User: Engineer Time: 02/03/2024 10:24:52 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:52 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:54 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 
+User: Engineer Time: 02/03/2024 10:24:55 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:57 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:24:59 Simulation Time: 00h  00m  00s  000ms Move elements Ansi Control Valve - 6 Copy(001) 
+User: Engineer Time: 02/03/2024 10:25:00 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:25:01 Simulation Time: 00h  00m  00s  000ms Select Node - 22 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:25:03 Simulation Time: 00h  00m  00s  000ms Move elements Node - 22 
+User: Engineer Time: 02/03/2024 10:25:04 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:25:04 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:25:06 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 
+User: Engineer Time: 02/03/2024 10:25:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:06 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:08 Simulation Time: 00h  00m  00s  000ms Select Node - 8 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:10 Simulation Time: 00h  00m  00s  000ms Delete Node - 8 
+User: Engineer Time: 02/03/2024 10:35:11 Simulation Time: 00h  00m  00s  000ms Select Node - 9 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:12 Simulation Time: 00h  00m  00s  000ms Delete Node - 9 
+User: Engineer Time: 02/03/2024 10:35:22 Simulation Time: 00h  00m  00s  000ms Select Node - 21 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:29 Simulation Time: 00h  00m  00s  000ms Delete Node - 21 
+User: Engineer Time: 02/03/2024 10:35:30 Simulation Time: 00h  00m  00s  000ms Select Node - 22 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:31 Simulation Time: 00h  00m  00s  000ms Delete Node - 22 
+User: Engineer Time: 02/03/2024 10:35:37 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:37 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 23 Node - 24 
+User: Engineer Time: 02/03/2024 10:35:38 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:38 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:39 Simulation Time: 00h  00m  00s  000ms Select Pipe - 23 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:40 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:42 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:43 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 Node - 25 
+User: Engineer Time: 02/03/2024 10:35:44 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:45 Simulation Time: 00h  00m  00s  000ms Select Node - 25 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:47 Simulation Time: 00h  00m  00s  000ms Move elements Node - 25 
+User: Engineer Time: 02/03/2024 10:35:48 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:50 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 
+User: Engineer Time: 02/03/2024 10:35:51 Simulation Time: 00h  00m  00s  000ms Select Pipe - 23 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:54 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 23 
+User: Engineer Time: 02/03/2024 10:35:55 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:57 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:35:58 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 
+User: Engineer Time: 02/03/2024 10:36:00 Simulation Time: 00h  00m  00s  000ms Select Node - 25 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:03 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 
+User: Engineer Time: 02/03/2024 10:36:04 Simulation Time: 00h  00m  00s  000ms Resize shape Node - 25 
+User: Engineer Time: 02/03/2024 10:36:08 Simulation Time: 00h  00m  00s  000ms Move elements Node - 25 
+User: Engineer Time: 02/03/2024 10:36:08 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:09 Simulation Time: 00h  00m  00s  000ms Select Pipe - 23 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:11 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 23 
+User: Engineer Time: 02/03/2024 10:36:11 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:14 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:15 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 
+User: Engineer Time: 02/03/2024 10:36:17 Simulation Time: 00h  00m  00s  000ms Select Pipe - 23 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:18 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:19 Simulation Time: 00h  00m  00s  000ms Paste Pipe - 23 Copy(001) 
+User: Engineer Time: 02/03/2024 10:36:23 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:24 Simulation Time: 00h  00m  00s  000ms Select Pipe - 23 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:25 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 23 Copy(001) Node - 26 
+User: Engineer Time: 02/03/2024 10:36:26 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:27 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 Node - 27 
+User: Engineer Time: 02/03/2024 10:36:30 Simulation Time: 00h  00m  00s  000ms Move elements 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 
+User: Engineer Time: 02/03/2024 10:36:31 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:33 Simulation Time: 00h  00m  00s  000ms Select Node - 26 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:36:34 Simulation Time: 00h  00m  00s  000ms Resize shape Node - 26 
+User: Engineer Time: 02/03/2024 10:36:38 Simulation Time: 00h  00m  00s  000ms Move elements Node - 26 
+User: Engineer Time: 02/03/2024 10:36:39 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:10 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:10 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:14 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:14 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 28 
+User: Engineer Time: 02/03/2024 10:37:19 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:19 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 29 Node - 30 
+User: Engineer Time: 02/03/2024 10:37:20 Simulation Time: 00h  00m  00s  000ms Select Pipe - 28 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:20 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 28 
+User: Engineer Time: 02/03/2024 10:37:20 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:21 Simulation Time: 00h  00m  00s  000ms Select Pipe - 28 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:23 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 28 Node - 31 
+User: Engineer Time: 02/03/2024 10:37:25 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 28 
+User: Engineer Time: 02/03/2024 10:37:27 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:27 Simulation Time: 00h  00m  00s  000ms Select Node - 31 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:29 Simulation Time: 00h  00m  00s  000ms Move elements Node - 31 
+User: Engineer Time: 02/03/2024 10:37:30 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:30 Simulation Time: 00h  00m  00s  000ms Select Pipe - 29 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:32 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:32 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:35 Simulation Time: 00h  00m  00s  000ms Select Node - 30 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:38 Simulation Time: 00h  00m  00s  000ms Move elements Node - 30 
+User: Engineer Time: 02/03/2024 10:37:39 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:40 Simulation Time: 00h  00m  00s  000ms Select Pipe - 29 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:44 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 29 
+User: Engineer Time: 02/03/2024 10:37:44 Simulation Time: 00h  00m  00s  000ms Select Pipe - 28 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:48 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 28 
+User: Engineer Time: 02/03/2024 10:37:48 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:49 Simulation Time: 00h  00m  00s  000ms Select Pipe - 29 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:37:50 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 29 
+User: Engineer Time: 02/03/2024 10:37:51 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:43:16 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:43:18 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:43:18 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Primary - 32 
+User: Engineer Time: 02/03/2024 10:43:35 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:43:36 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 32 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:43:37 Simulation Time: 00h  00m  00s  000ms Delete Flow Interface Primary - 32 
+User: Engineer Time: 02/03/2024 10:52:28 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:52:28 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Primary - 33 
+User: Engineer Time: 02/03/2024 10:52:30 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:52:30 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Primary - 34 
+User: Engineer Time: 02/03/2024 10:52:36 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:52:36 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Secondary - 35 
+User: Engineer Time: 02/03/2024 10:52:37 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:52:37 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 35 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:52:39 Simulation Time: 00h  00m  00s  000ms Move elements Flow Interface Secondary - 35 
+User: Engineer Time: 02/03/2024 10:52:40 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:52:43 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:52:43 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Secondary - 36 
+User: Engineer Time: 02/03/2024 10:52:46 Simulation Time: 00h  00m  00s  000ms Move elements Flow Interface Secondary - 36 
+User: Engineer Time: 02/03/2024 10:52:47 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:52:56 Simulation Time: 00h  00m  00s  000ms Select Pipe - 23 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:53:25 Simulation Time: 00h  00m  00s  000ms Select Node - 26 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:56:11 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:56:33 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 35 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:56:35 Simulation Time: 00h  00m  00s  000ms Move elements Flow Interface Secondary - 35 
+User: Engineer Time: 02/03/2024 10:56:38 Simulation Time: 00h  00m  00s  000ms Move elements Flow Interface Secondary - 35 
+User: Engineer Time: 02/03/2024 10:56:40 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 10:59:49 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 35 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:00:07 Simulation Time: 00h  00m  00s  000ms Select Pipe - 29 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:00:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:00:07 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 34 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:44 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:45 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 33 - View1 and Flow Interface Secondary - 35 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:46 Simulation Time: 00h  00m  00s  000ms Delete Flow Interface Primary - 33 Flow Interface Secondary - 35 
+User: Engineer Time: 02/03/2024 11:01:48 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 34 - View1 and Flow Interface Secondary - 36 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:48 Simulation Time: 00h  00m  00s  000ms Delete Flow Interface Primary - 34 Flow Interface Secondary - 36 
+User: Engineer Time: 02/03/2024 11:01:51 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:51 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Secondary - 37 
+User: Engineer Time: 02/03/2024 11:01:52 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:52 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Secondary - 38 
+User: Engineer Time: 02/03/2024 11:01:53 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:55 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:55 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Primary - 39 
+User: Engineer Time: 02/03/2024 11:01:57 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:57 Simulation Time: 00h  00m  00s  000ms Insert Element Flow Interface Primary - 40 
+User: Engineer Time: 02/03/2024 11:01:58 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:01:59 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:02:08 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:05:48 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:05:52 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Secondary - 37 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:05:59 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:05:59 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 41 
+User: Engineer Time: 02/03/2024 11:06:00 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:01 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:01 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 41 
+User: Engineer Time: 02/03/2024 11:06:05 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:05 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 42 
+User: Engineer Time: 02/03/2024 11:06:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:08 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:09 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 42 
+User: Engineer Time: 02/03/2024 11:06:10 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:29 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:38 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:40 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 42 
+User: Engineer Time: 02/03/2024 11:06:40 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:48 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:48 Simulation Time: 00h  00m  00s  000ms Insert Element Node - 43 
+User: Engineer Time: 02/03/2024 11:06:48 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:50 Simulation Time: 00h  00m  00s  000ms Select Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:50 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:51 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:06:51 Simulation Time: 00h  00m  00s  000ms Move elements Node - 43 
+User: Engineer Time: 02/03/2024 11:06:54 Simulation Time: 00h  00m  00s  000ms Move elements Node - 43 
+User: Engineer Time: 02/03/2024 11:06:58 Simulation Time: 00h  00m  00s  000ms Resize shape Node - 43 
+User: Engineer Time: 02/03/2024 11:07:00 Simulation Time: 00h  00m  00s  000ms Move elements Node - 43 
+User: Engineer Time: 02/03/2024 11:07:01 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:20:20 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:23:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:25:51 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:25:51 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:26:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:26:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:15 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:19 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:19 Simulation Time: 00h  00m  00s  000ms Insert Element Pipe - 44 
+User: Engineer Time: 02/03/2024 11:27:21 Simulation Time: 00h  00m  00s  000ms Cut Pipe - 44 
+User: Engineer Time: 02/03/2024 11:27:26 Simulation Time: 00h  00m  00s  000ms Rotate right Pipe - 44 
+User: Engineer Time: 02/03/2024 11:27:29 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:30 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:31 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 44 
+User: Engineer Time: 02/03/2024 11:27:32 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:32 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:44 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:45 Simulation Time: 00h  00m  00s  000ms Select Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:27:45 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 44 
+User: Engineer Time: 02/03/2024 11:27:47 Simulation Time: 00h  00m  00s  000ms Move elements Pipe - 44 
+User: Engineer Time: 02/03/2024 11:27:47 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:02 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:02 Simulation Time: 00h  00m  00s  000ms Insert Element CEA Adiabatic Flame - 45 
+User: Engineer Time: 02/03/2024 11:28:03 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:08 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:08 Simulation Time: 00h  00m  00s  000ms Insert Element Node - 46 
+User: Engineer Time: 02/03/2024 11:28:09 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:10 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:11 Simulation Time: 00h  00m  00s  000ms Move elements Node - 46 
+User: Engineer Time: 02/03/2024 11:28:15 Simulation Time: 00h  00m  00s  000ms Move elements Node - 46 
+User: Engineer Time: 02/03/2024 11:28:16 Simulation Time: 00h  00m  00s  000ms Select CEA Adiabatic Flame - 45 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:21 Simulation Time: 00h  00m  00s  000ms Move elements CEA Adiabatic Flame - 45 
+User: Engineer Time: 02/03/2024 11:28:22 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:32 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:32 Simulation Time: 00h  00m  00s  000ms Insert Element Exit Thrust Nozzle - 47 
+User: Engineer Time: 02/03/2024 11:28:33 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:34 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:36 Simulation Time: 00h  00m  00s  000ms Move elements 
+User: Engineer Time: 02/03/2024 11:28:37 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:38 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:38 Simulation Time: 00h  00m  00s  000ms Move elements Exit Thrust Nozzle - 47 
+User: Engineer Time: 02/03/2024 11:28:39 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:43 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:43 Simulation Time: 00h  00m  00s  000ms Insert Element Boundary Condition - 48 Node - 49 
+User: Engineer Time: 02/03/2024 11:28:44 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:28:49 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 48 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:00 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 48 cSpecifyPressure Fixed on user static value
+User: Engineer Time: 02/03/2024 11:29:03 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 48 dStaticPressure 0
+User: Engineer Time: 02/03/2024 11:29:06 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 48 dStaticPressure 14.7
+User: Engineer Time: 02/03/2024 11:29:08 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:08 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:12 Simulation Time: 00h  00m  00s  000ms Select Node - 49 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:14 Simulation Time: 00h  00m  00s  000ms Move elements Node - 49 
+User: Engineer Time: 02/03/2024 11:29:15 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:15 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 48 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:16 Simulation Time: 00h  00m  00s  000ms Move elements Boundary Condition - 48 
+User: Engineer Time: 02/03/2024 11:29:17 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:41 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:48 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:29:48 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 39 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:30:29 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:30:40 Simulation Time: 00h  00m  00s  000ms Select Flow Interface Primary - 40 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:30:44 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:30:46 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:30:46 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:31:18 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:31:19 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 2 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:31:25 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 2 cSpecifyPressure Fixed on user total value
+User: Engineer Time: 02/03/2024 11:31:30 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 2 dPressure 0
+User: Engineer Time: 02/03/2024 11:31:32 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 2 dPressure 2000
+User: Engineer Time: 02/03/2024 11:31:34 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:31:34 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 4 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:31:37 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 4 cSpecifyPressure Fixed on user total value
+User: Engineer Time: 02/03/2024 11:31:41 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 4 dPressure 0
+User: Engineer Time: 02/03/2024 11:31:46 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 4 dPressure 2000
+User: Engineer Time: 02/03/2024 11:31:50 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 4 cSpecifyTemperature Fixed on user value
+User: Engineer Time: 02/03/2024 11:31:58 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 4 dTemperature 20
+User: Engineer Time: 02/03/2024 11:32:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:32:00 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 2 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:32:03 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 2 cSpecifyTemperature Fixed on user value
+User: Engineer Time: 02/03/2024 11:32:23 Simulation Time: 00h  00m  00s  000ms Set property value: Boundary Condition - 2 dTemperature -190
+User: Engineer Time: 02/03/2024 11:32:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:33:04 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:33:12 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:33:12 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:33:17 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:33:18 Simulation Time: 00h  00m  00s  000ms Select Boundary Condition - 2 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:33:20 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:33:34 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:33:34 Simulation Time: 00h  00m  00s  000ms Select Pipe - 1 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:33:52 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:33:52 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:20 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:27 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:28 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 and Pipe - 23 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:29 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 and Pipe - 23 - View1 and Pipe - 23 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:29 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 and Pipe - 23 - View1 and Pipe - 23 Copy(001) - View1 and Pipe - 1 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:31 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 and Pipe - 23 - View1 and Pipe - 23 Copy(001) - View1 and Pipe - 1 - View1 and Pipe - 28 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:32 Simulation Time: 00h  00m  00s  000ms Select Pipe - 0 - View1 and Pipe - 23 - View1 and Pipe - 23 Copy(001) - View1 and Pipe - 1 - View1 and Pipe - 28 - View1 and Pipe - 29 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:41 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:34:41 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 23 dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:34:41 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 23 Copy(001) dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:34:41 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 1 dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:34:41 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 28 dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:34:41 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 29 dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:34:50 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:34:50 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 23 dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:34:50 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 23 Copy(001) dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:34:50 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 1 dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:34:50 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 28 dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:34:50 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 29 dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:34:52 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 dLength 2
+User: Engineer Time: 02/03/2024 11:34:52 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 23 dLength 2
+User: Engineer Time: 02/03/2024 11:34:52 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 23 Copy(001) dLength 2
+User: Engineer Time: 02/03/2024 11:34:52 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 1 dLength 2
+User: Engineer Time: 02/03/2024 11:34:52 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 28 dLength 2
+User: Engineer Time: 02/03/2024 11:34:52 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 29 dLength 2
+User: Engineer Time: 02/03/2024 11:34:57 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 pPrimaryLossSpecification.dRoughness 40
+User: Engineer Time: 02/03/2024 11:34:57 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 pPrimaryLossSpecification.dRoughness 40
+User: Engineer Time: 02/03/2024 11:34:57 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 pPrimaryLossSpecification.dRoughness 40
+User: Engineer Time: 02/03/2024 11:34:57 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 pPrimaryLossSpecification.dRoughness 40
+User: Engineer Time: 02/03/2024 11:34:57 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 pPrimaryLossSpecification.dRoughness 40
+User: Engineer Time: 02/03/2024 11:34:57 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 0 pPrimaryLossSpecification.dRoughness 40
+User: Engineer Time: 02/03/2024 11:34:59 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:34:59 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:35:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:35:03 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 and 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:35:10 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Pipe_Diameter 0
+User: Engineer Time: 02/03/2024 11:35:10 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Pipe diameter 0
+User: Engineer Time: 02/03/2024 11:35:10 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Pipe_Diameter 0
+User: Engineer Time: 02/03/2024 11:35:10 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Pipe diameter 0
+User: Engineer Time: 02/03/2024 11:35:15 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Pipe_Diameter 0.5
+User: Engineer Time: 02/03/2024 11:35:15 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Pipe diameter 0.5
+User: Engineer Time: 02/03/2024 11:35:15 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Pipe_Diameter 0.5
+User: Engineer Time: 02/03/2024 11:35:15 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Pipe diameter 0.5
+User: Engineer Time: 02/03/2024 11:35:16 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0
+User: Engineer Time: 02/03/2024 11:35:16 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0
+User: Engineer Time: 02/03/2024 11:35:16 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0
+User: Engineer Time: 02/03/2024 11:35:16 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0
+User: Engineer Time: 02/03/2024 11:35:22 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.01
+User: Engineer Time: 02/03/2024 11:35:22 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.01
+User: Engineer Time: 02/03/2024 11:35:22 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.01
+User: Engineer Time: 02/03/2024 11:35:22 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0.01
+User: Engineer Time: 02/03/2024 11:35:25 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:35:26 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:35:27 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:35:28 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 and Ansi Control Valve - 6 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:35:43 Simulation Time: 00h  00m  00s  000ms Set property value: Ansi Control Valve - 6 dCvMax 1
+User: Engineer Time: 02/03/2024 11:35:43 Simulation Time: 00h  00m  00s  000ms Set property value: Ansi Control Valve - 6 Copy(001) dCvMax 1
+User: Engineer Time: 02/03/2024 11:35:53 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:35:54 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:35:54 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:36:04 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:36:04 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:36:05 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 and 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:36:12 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.05
+User: Engineer Time: 02/03/2024 11:36:12 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.05
+User: Engineer Time: 02/03/2024 11:36:12 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.05
+User: Engineer Time: 02/03/2024 11:36:12 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0.05
+User: Engineer Time: 02/03/2024 11:36:13 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:36:13 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:36:19 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:36:22 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.001
+User: Engineer Time: 02/03/2024 11:36:22 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.001
+User: Engineer Time: 02/03/2024 11:36:22 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.001
+User: Engineer Time: 02/03/2024 11:36:22 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0.001
+User: Engineer Time: 02/03/2024 11:36:25 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:36:25 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:36:27 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:36:33 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.05
+User: Engineer Time: 02/03/2024 11:36:33 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.05
+User: Engineer Time: 02/03/2024 11:36:33 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.05
+User: Engineer Time: 02/03/2024 11:36:33 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0.05
+User: Engineer Time: 02/03/2024 11:36:37 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:36:37 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:36:59 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:37:19 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.1
+User: Engineer Time: 02/03/2024 11:37:19 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.1
+User: Engineer Time: 02/03/2024 11:37:19 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.1
+User: Engineer Time: 02/03/2024 11:37:19 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0.1
+User: Engineer Time: 02/03/2024 11:37:20 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:37:21 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:37:27 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:37:30 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.001
+User: Engineer Time: 02/03/2024 11:37:30 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.001
+User: Engineer Time: 02/03/2024 11:37:30 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.001
+User: Engineer Time: 02/03/2024 11:37:30 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0.001
+User: Engineer Time: 02/03/2024 11:37:31 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:37:31 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:37:48 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:37:48 Simulation Time: 00h  00m  00s  000ms Select Node - 43 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:11 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:39:11 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:39:23 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:23 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:25 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 and Pipe - 42 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:26 Simulation Time: 00h  00m  00s  000ms Select Pipe - 41 - View1 and Pipe - 42 - View1 and Pipe - 44 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:30 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 41 dLength 0
+User: Engineer Time: 02/03/2024 11:39:30 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 42 dLength 0
+User: Engineer Time: 02/03/2024 11:39:30 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 44 dLength 0
+User: Engineer Time: 02/03/2024 11:39:31 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 41 dLength 2
+User: Engineer Time: 02/03/2024 11:39:31 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 42 dLength 2
+User: Engineer Time: 02/03/2024 11:39:31 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 44 dLength 2
+User: Engineer Time: 02/03/2024 11:39:34 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 41 dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:39:34 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 42 dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:39:34 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 44 dDiameterInlet 0
+User: Engineer Time: 02/03/2024 11:39:36 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 41 dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:39:36 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 42 dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:39:36 Simulation Time: 00h  00m  00s  000ms Set property value: Pipe - 44 dDiameterInlet 0.5
+User: Engineer Time: 02/03/2024 11:39:40 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:40 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:42 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:39:43 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:39:52 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:52 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:39:59 Simulation Time: 00h  00m  00s  000ms Delete Ansi Control Valve - 6 
+User: Engineer Time: 02/03/2024 11:40:00 Simulation Time: 00h  00m  00s  000ms Select Ansi Control Valve - 6 Copy(001) - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:40:01 Simulation Time: 00h  00m  00s  000ms Delete Ansi Control Valve - 6 Copy(001) 
+User: Engineer Time: 02/03/2024 11:40:03 Simulation Time: 00h  00m  00s  000ms Select Node - 8 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:40:04 Simulation Time: 00h  00m  00s  000ms Delete Node - 8 
+User: Engineer Time: 02/03/2024 11:40:05 Simulation Time: 00h  00m  00s  000ms Select Node - 9 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:40:05 Simulation Time: 00h  00m  00s  000ms Delete Node - 9 
+User: Engineer Time: 02/03/2024 11:40:06 Simulation Time: 00h  00m  00s  000ms Select Node - 26 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:40:07 Simulation Time: 00h  00m  00s  000ms Move elements Node - 26 
+User: Engineer Time: 02/03/2024 11:40:08 Simulation Time: 00h  00m  00s  000ms Select Node - 24 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:40:09 Simulation Time: 00h  00m  00s  000ms Move elements Node - 24 
+User: Engineer Time: 02/03/2024 11:40:10 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:40:28 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:41:46 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:41:47 Simulation Time: 00h  00m  00s  000ms Select 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 - View1 and 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:42:09 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.1
+User: Engineer Time: 02/03/2024 11:42:09 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16 {Differential Flow Meter Input Data}Throat diameter 0.1
+User: Engineer Time: 02/03/2024 11:42:09 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 ScriptWrapper.CompiledScript.Orifice_Throat_Diameter 0.1
+User: Engineer Time: 02/03/2024 11:42:09 Simulation Time: 00h  00m  00s  000ms Set property value: 7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20 {Differential Flow Meter Input Data}Throat diameter 0.1
+User: Engineer Time: 02/03/2024 11:42:12 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:42:12 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:42:43 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:42:43 Simulation Time: 00h  00m  00s  000ms Select Exit Thrust Nozzle - 47 - View1 on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:42:48 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamThroat 0
+User: Engineer Time: 02/03/2024 11:42:55 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamThroat 0.5
+User: Engineer Time: 02/03/2024 11:42:57 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamExit 0
+User: Engineer Time: 02/03/2024 11:43:06 Simulation Time: 00h  00m  00s  000ms Set property value: Exit Thrust Nozzle - 47 dDiamExit 3
+User: Engineer Time: 02/03/2024 11:43:07 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:43:07 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:43:16 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User: Engineer Time: 02/03/2024 11:43:17 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User: Engineer Time: 02/03/2024 11:43:56 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User: Engineer Time: 02/03/2024 11:44:01 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page

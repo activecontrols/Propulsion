@@ -1,0 +1,21 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 29/05/2024 15:48:24 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 29/05/2024 15:48:26 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Instructions.page
+User:  Time: 29/05/2024 15:48:32 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 29/05/2024 15:48:33 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Instructions.page
+User:  Time: 29/05/2024 15:48:43 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 29/05/2024 15:48:47 Simulation Time: 00h  00m  00s  000ms Execute server command: Run
+User:  Time: 29/05/2024 15:48:56 Simulation Time: 00h  00m  00s  500ms Execute server command: Deactivate
+User:  Time: 29/05/2024 15:48:59 Simulation Time: 00h  00m  00s  500ms Execute server command: ResetTime
+User:  Time: 29/05/2024 15:49:00 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 29/05/2024 15:49:02 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 29/05/2024 15:49:04 Simulation Time: 00h  00m  00s  000ms Execute server command: Run
+User:  Time: 29/05/2024 15:49:16 Simulation Time: 00h  00m  01s  300ms Open page: Pages\RS-25.page
+User:  Time: 29/05/2024 15:49:16 Simulation Time: 00h  00m  01s  300ms Select Track Bar - 0 - View1 on Pages\RS-25.page
+User:  Time: 29/05/2024 15:49:31 Simulation Time: 00h  00m  04s  800ms Execute server command: Deactivate
+User:  Time: 29/05/2024 16:02:27 Simulation Time: 00h  00m  04s  800ms Open page: Pages\Instructions.page
+User:  Time: 29/05/2024 16:02:27 Simulation Time: 00h  00m  04s  800ms Close page: Pages\Instructions.page
+User:  Time: 29/05/2024 16:02:27 Simulation Time: 00h  00m  04s  800ms Open page: Pages\RS-25.page
+User:  Time: 29/05/2024 16:02:27 Simulation Time: 00h  00m  04s  800ms Close page: Pages\RS-25.page

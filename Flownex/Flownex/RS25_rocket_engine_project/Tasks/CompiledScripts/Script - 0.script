@@ -1,0 +1,90 @@
+//script using directives
+//css_ref IPS.Core.dll;
+//css_ref IPS.PluginInterface.dll;
+//css_ref IPS.Units.dll;
+//css_ref IPS.Utilities.CSharp.dll;
+//css_ref Flownex.dll;
+
+using System;
+using IPS.Properties;
+using IPS.Scripting;
+using Flownex.Components;
+using Flownex.DataReferences.Materials;
+
+//script must be derived from IComponentScript
+public class Script: IPS.Scripting.IComponentScript
+{
+	IPS.Properties.Double _Input;
+	IPS.Properties.Double _Output;
+
+	//do pre simulation initialisation here
+	public override void Initialise()
+	{
+	}
+
+	//do post simulation cleanup here
+	public override void Cleanup()
+	{
+	}
+
+	//script main execution function - called every cycle
+	public override void Execute(double Time)
+	{
+		//calculates the base 10 logarithm of the input
+		_Output.Value = Math.Log10(_Input.Value);
+	}
+
+	//any processing you want to do before steady state
+	public override void ExecuteBeforeSteadyState()
+	{
+		Execute(0.0);
+	}	
+	
+	//any processing you want to do while solving steady state
+	public override void ExecuteSteadyState()
+	{
+		Execute(0.0);
+	}
+
+	//any processing you want to do after steady state
+	public override void ExecuteAfterSteadyState()
+	{
+		Execute(0.0);
+	}
+	
+	//add code here that you want to execute
+	//when an associated button is pushed
+	public override void HandleObjectEvent(object sender)
+	{
+	}
+
+
+	//constructer initialises parameters
+	public Script()
+	{
+		_Input = new IPS.Properties.Double();
+		_Output = new IPS.Properties.Double();
+		_Input.Value = 0;
+		_Output.Value = 0;
+	}
+
+	//property declarations to make
+	//parameters visible to outside world
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double Input
+	{
+		get
+		{
+			return _Input;
+		}
+	}
+	
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double Output
+	{
+		get
+		{
+			return _Output;
+		}
+	}
+}

@@ -1,0 +1,6 @@
+Shaft - 175
+
+{Shaft Results}Excess power
+Sample based. Number of Samples : 100, SampleRate: 10
+Run  Time [s]          (W)
+000, 0.00000000E+000,  2.16419893E+002

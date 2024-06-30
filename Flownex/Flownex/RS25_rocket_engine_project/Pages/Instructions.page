@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="yes"?>
+<IPS>
+  <Library Name="IPS" Version="8.14.1.4845" />
+  <Library Name="CapeOpenFluidGenerator" Version="1.0.8314.0" />
+  <Library Name="DCS" Version="8.14.1.0" />
+  <Library Name="ElectricalNetworkSolver" Version="8.14.1.0" />
+  <Library Name="Flownex" Version="8.14.1.0" />
+  <Library Name="ForceCalculations" Version="1.0.8314.0" />
+  <Library Name="IPS.Actions" Version="8.14.1.0" />
+  <Library Name="IPS.Alarms" Version="8.14.1.0" />
+  <Library Name="IPS.Ansys" Version="8.14.1.0" />
+  <Library Name="IPS.Backtracking" Version="8.14.1.0" />
+  <Library Name="IPS.CAESAR2Importer" Version="8.14.1.0" />
+  <Library Name="IPS.DataTransfer" Version="8.14.1.0" />
+  <Library Name="IPS.Designer" Version="8.14.1.0" />
+  <Library Name="IPS.EES" Version="8.14.1.0" />
+  <Library Name="IPS.Excel" Version="8.14.1.0" />
+  <Library Name="IPS.ExcelInputSheets" Version="8.14.1.0" />
+  <Library Name="IPS.ExcelReporting" Version="8.14.1.0" />
+  <Library Name="IPS.Exposers" Version="8.14.1.0" />
+  <Library Name="IPS.FMI" Version="8.14.1.0" />
+  <Library Name="IPS.GAOptimiser" Version="8.14.1.0" />
+  <Library Name="IPS.GlobalParameters" Version="8.14.1.0" />
+  <Library Name="IPS.Logger" Version="8.14.1.0" />
+  <Library Name="IPS.Mathcad" Version="8.14.1.0" />
+  <Library Name="IPS.OPCDriver" Version="8.14.1.0" />
+  <Library Name="IPS.ParameterDisplay" Version="8.14.1.0" />
+  <Library Name="IPS.PropertyMonitor" Version="8.14.1.0" />
+  <Library Name="IPS.Relap" Version="8.14.1.0" />
+  <Library Name="IPS.ROHR2Importer" Version="8.14.1.0" />
+  <Library Name="IPS.ROMBuilder" Version="8.14.1.0" />
+  <Library Name="IPS.ScaleDrawing" Version="8.14.1.0" />
+  <Library Name="IPS.Scheduler" Version="8.14.1.0" />
+  <Library Name="IPS.Scripting" Version="8.14.1.0" />
+  <Library Name="IPS.SensitivityAnalysis" Version="8.14.1.0" />
+  <Library Name="IPS.SixSigma" Version="8.14.1.0" />
+  <Library Name="IPS.TextFileLink" Version="8.14.1.0" />
+  <Library Name="IPS.Tools" Version="8.14.1.0" />
+  <Library Name="IPS.VideoRecorder" Version="1.0.0.0" />
+  <Library Name="IPS.Visualisation" Version="8.14.1.0" />
+  <Library Name="NistFluidGenerator" Version="1.0.8314.0" />
+  <IPS.Plugin.DrawingPageImpl>
+    <Properties>FitInstructorPage FitOperatorPage FloatByDefault FullscreenInstructorPage FullscreenOperatorPage GridSpacingX GridSpacingY Identifier InstructorFloatByDefault InstructorPage OperatorFloatByDefault OperatorPage Origin PersistedIdentifierWithTemplate ScaleX ScaleY Size StartupInstructorPage StartupOperatorPage StyleSelector SystemName TID UserDescription ViewPortOrigin </Properties>
+    <Values>  "False" "False" "False" "False" "False" "50" "50" "Pages\Instructions.page" "False" "False" "False" "False" "0, 0" "Pages\Instructions.page" "1" "1" "1000, 1500" "False" "False" "*F*Solid;Horizontal1;SpaceShuttle-Back.png;White;White;10*/F**S*DarkGray;Solid;1*/S**T*Black;Microsoft Sans Serif, 10pt;MiddleCenter;*/T*" "" "" "" "-135, 357" </Values>
+    <List Name="LayerDrawingDatas">
+      <IPS.Plugin.LayerDrawingDataImplList>
+        <ListItems>
+          <IPS.Plugin.LayerDrawingDataImpl>
+            <Properties>Active Identifier PersistedIdentifierWithTemplate TID UserDescription Visible VisibleToEngineersOnly zOrder </Properties>
+            <Item Index="0" Identifier="Default">
+              <Values>  "False" "Default" "Default" "" "" "True" "False" "0" </Values>
+              <List Name="ComponentDrawingDatas">
+                <IPS.Core.ComponentDrawingDataList>
+                  <ListItems>
+                    <IPS.Plugin.ComponentDrawingDataImpl>
+                      <Properties>Center ComponentUserName ConfigName DisplayOptionShown FlipX FlipY Identifier Image Merging PersistedIdentifierWithTemplate Rotation Size TID UserDescription WorldCoordinatesX WorldCoordinatesY WorldCoordinatesZ zOrder </Properties>
+                      <Item Index="0" Identifier="View1">
+                        <Values>  "494.072449, 103.561508" "Text Box - 1" "" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "546.875, 85.37698" "" "" "0 Length m" "0 Length m" "0 Length m" "0" </Values>
+                      </Item>
+                      <Item Index="1" Identifier="View1">
+                        <Values>  "483.125031, 209.625015" "Text Box - 2" "" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "806.250061, 96.74997" "" "" "0 Length m" "0 Length m" "0 Length m" "1" </Values>
+                      </Item>
+                      <Item Index="2" Identifier="View1">
+                        <Values>  "483.125031, 329.439484" "Text Box - 3" "" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "806.250061, 117.628967" "" "" "0 Length m" "0 Length m" "0 Length m" "2" </Values>
+                      </Item>
+                      <Item Index="3" Identifier="View1">
+                        <Values>  "267.9861, 457.1429" "Text Box - 4" "" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "375.138977, 117.628967" "" "" "0 Length m" "0 Length m" "0 Length m" "3" </Values>
+                      </Item>
+                      <Item Index="4" Identifier="View1">
+                        <Values>  "494.2708, 598.351" "Text Box - 5" "" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "810.3473, 132.570557" "" "" "0 Length m" "0 Length m" "0 Length m" "4" </Values>
+                      </Item>
+                      <Item Index="5" Identifier="View1">
+                        <Values>  "492.222229, 820.025269" "Text Box - 10" "" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "810.3473, 284.494873" "" "" "0 Length m" "0 Length m" "0 Length m" "5" </Values>
+                      </Item>
+                    </IPS.Plugin.ComponentDrawingDataImpl>
+                  </ListItems>
+                </IPS.Core.ComponentDrawingDataList>
+              </List>
+            </Item>
+          </IPS.Plugin.LayerDrawingDataImpl>
+        </ListItems>
+      </IPS.Plugin.LayerDrawingDataImplList>
+    </List>
+  </IPS.Plugin.DrawingPageImpl>
+</IPS>

@@ -1,0 +1,180 @@
+//script using directives
+//css_ref IPS.Core.dll;
+//css_ref IPS.PluginInterface.dll;
+//css_ref Flownex.dll;
+//css_ref Flownex.Resources.dll;
+//css_ref IPS.Units.dll;
+//css_ref IPS.Errors.dll;
+using System;
+using IPS.Properties;
+using IPS.Scripting;
+using IPS.Errors;
+using Flownex;
+using Flownex.DataReferences;
+
+//script must be derived from IComponentScript
+public class Script: IPS.Scripting.IComponentScript
+{
+	IPS.Properties.Double _D_p;
+	IPS.Properties.Double _D_o;
+	IPS.Properties.Double _K;
+	IPS.Properties.Double _K_o;
+	double _A_ratio1;
+	
+	//Call Chart Related Variables
+	IPS.Properties.DataReferenceProperty _ChartData;
+	Generic4DChart _GenericChart;
+
+	//do pre simulation initialisation here
+	public override void Initialise()
+	{
+    Execute(0.0);
+  	}
+  
+	//do post simulation cleanup here
+	public override void Cleanup()
+	{
+  }
+  
+  //script main execution function - called every cycle
+	unsafe public override void Execute(double Time)
+	{
+		if (_D_p.Value <= 0)
+		{
+			//Error
+			Flownex.Errors.FlownexErrorSystem.ReportElementError(Flownex.Resources.Flownex.CompoundErrorFormat("90302"), Parent, "Pipe diameter <= 0");
+		}
+		if (_D_o.Value <= 0)
+		{
+			//Error
+			Flownex.Errors.FlownexErrorSystem.ReportElementError(Flownex.Resources.Flownex.CompoundErrorFormat("90303"), Parent, "Throat diameter <= 0 ");
+		}
+		if (_D_p.Value <= _D_o.Value)
+		{
+			//Error
+			Flownex.Errors.FlownexErrorSystem.ReportElementError(Flownex.Resources.Flownex.CompoundErrorFormat("90304"), Parent, "Pipe diameter <= Throat diameter");
+		}
+		
+		double _A_ratio = Math.Pow((_D_o.Value/_D_p.Value),2);
+		
+		if (_A_ratio > 0.55)
+		{
+			//Warning
+			Flownex.Errors.FlownexErrorSystem.ReportElementWarning(Flownex.Resources.Flownex.CompoundErrorFormat("91100"), Parent, "Area ratio > 0.55. The nozzle differential flow meter loss coefficients chart is for the range 0.10 < Area ratio < 0.55.  The loss coefficient were clipped at a constant value for a area ratio of 0.55");
+			_A_ratio1 = 0.55;
+		}
+		else if (_A_ratio < 0.1)
+		{
+			//Warning
+			Flownex.Errors.FlownexErrorSystem.ReportElementWarning(Flownex.Resources.Flownex.CompoundErrorFormat("91101"), Parent, "Area ratio < 0.10. The nozzle differential flow meter loss coefficients chart is for the range 0.10 < Area ratio < 0.55.  The loss coefficient were clipped at a constant value for a area ratio of 0.10");
+			_A_ratio1 = 0.1;
+		}
+		else
+		{
+			_A_ratio1 = _A_ratio;
+		}
+		
+		//Calling Chart Data
+		{
+			_GenericChart = (Generic4DChart)_ChartData.Value;
+			{
+				//Loss coefficient for a smooth ball valve."
+				double l_dVar1 = 14.101;
+				double l_dVar2 = 2;
+				double l_dVar3 = _A_ratio1;
+				double l_dVar4 = 0.0;
+				_GenericChart.CalculateVariable4(l_dVar1, l_dVar2, l_dVar3, &l_dVar4);
+				_K.Value = l_dVar4;
+			}	
+		}
+		_K_o.Value = _K.Value * Math.Pow(_A_ratio,2);
+	}
+  
+  //any processing you want to do before steady state
+	public override void ExecuteBeforeSteadyState()
+	{
+    Execute(0.0);
+	}	
+   //any processing you want to do while solving steady state
+	public override void ExecuteSteadyState()
+	{
+    Execute(0.0);
+	}	  
+  
+  //any processing you want to do after steady state
+	public override void ExecuteAfterSteadyState()
+	{
+    Execute(0.0);
+	}	
+  
+	//constructer initialises parameters
+	public Script()
+	{
+		_D_p = new IPS.Properties.Double();
+		_D_o = new IPS.Properties.Double();
+		_K = new IPS.Properties.Double();
+		_K_o = new IPS.Properties.Double();
+		_D_p.Value = 0;
+		_D_o.Value = 0;
+		_K.Value = 0;
+		_K_o.Value = 0;
+		_D_p.SetDisplayUnit(IPS.Units.UnitGroup.Length);
+		_D_o.SetDisplayUnit(IPS.Units.UnitGroup.Length);
+		
+		//Call Chart
+		_ChartData = new IPS.Properties.DataReferenceProperty(null);
+		_ChartData.Types = new Type[]{typeof(Generic4DChart)};
+	}
+
+	//property declarations to make
+	//parameters visible to outside world
+	[GridOrderAttribute(1)]
+	[PropertyUsage(UseProperty.STATIC)]
+	public IPS.Properties.DataReferenceProperty Chart
+	{
+		get
+		{
+			return _ChartData;
+		}
+	}
+
+	[GridOrderAttribute(2)]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double Pipe_Diameter
+	{
+		get
+		{
+			return _D_p;
+		}
+	}
+	
+	[GridOrderAttribute(3)]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double Orifice_Throat_Diameter
+	{
+		get
+		{
+			return _D_o;
+		}
+	}
+	
+	[GridOrderAttribute(4)]
+	[PropertyUsage(UseProperty.RESULT)]
+	public IPS.Properties.Double Loss_Factor
+	{
+		get
+		{
+			return _K;
+		}
+	}
+	
+	[GridOrderAttribute(4)]
+	[PropertyUsage(UseProperty.RESULT)]
+	public IPS.Properties.Double Loss_Factor_Orifice_Area
+	{
+		get
+		{
+			return _K_o;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+problem
+	hp	p,bar=201.69326998341
+react
+	fuel=H2	wt=0.126411615497293	t,k=510.54593577915
+	fuel=H2O	wt=0.0939704332678419	t,k=510.54593577915
+	fuel=O2	wt=0.779617951234865	t,k=510.54593577915
+output massf
+output short
+output trace = 1E-05
+end

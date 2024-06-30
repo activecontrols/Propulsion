@@ -1,0 +1,272 @@
+//script using directives
+//css_ref IPS.Core.dll;
+//css_ref IPS.PluginInterface.dll;
+//css_ref Flownex.dll;
+using System;
+using IPS.Properties;
+using IPS.Scripting;
+
+
+//script must be derived from IFNXComponentScript
+public class Script: Flownex.Scripting.IFNXComponentScript
+{
+
+    IPS.Properties.Double _Setpoint;
+    IPS.Properties.Double _Sensed;
+    IPS.Properties.Double _Output;
+    IPS.Properties.Double _Convergence;
+    IPS.Properties.Integer _StartIteration;
+    IPS.Properties.Double _Relaxation;
+    IPS.Properties.Bool _Converged;
+    IPS.Properties.Double _OutputMin;
+    IPS.Properties.Double _OutputMax;
+    
+    double l_Output;
+    double integral_error;
+    double error;
+    double change_Output;
+    //do pre simulation initialisation here
+    public override void Initialise()
+    {
+        l_Output = 0.0835;//_Output.Value;
+        //integral_error = 0;
+        error = 0;
+        change_Output = 0;
+      }
+  
+    //do post simulation cleanup here
+    public override void Cleanup()
+    {
+      }
+  
+      //any calculations during each steady state pressure iteration
+    public override void SteadyStatePressureIteration(int iIterationNumber)
+    {
+        error = _Setpoint.Value - _Sensed.Value;
+    
+        if ( (iIterationNumber > _StartIteration.Value) && (Math.Abs(error) > _Convergence.Value))
+        {        
+            _Converged.Value = false;
+            
+            change_Output = _Relaxation.Value*error*_Output.Value;
+            change_Output = Math.Max(change_Output,-0.1*_Output.Value);
+            change_Output = Math.Min(change_Output,0.1*_Output.Value);
+            l_Output = _Output.Value - change_Output;                
+            l_Output = Math.Max(l_Output,_OutputMin.Value);
+            l_Output = Math.Min(l_Output,_OutputMax.Value);
+            
+            
+            _Output.Value = l_Output;
+            
+        }
+    }
+  
+      //any calculations during each transient pressure iteration
+    public override void TransientPressureIteration(int iIterationNumber, double Time)
+    {
+            SteadyStatePressureIteration(iIterationNumber);
+    }    
+
+    //any calculations during each steady state temperature iteration
+    public override void SteadyStateTemperatureIteration(int iIterationNumber)
+    {
+
+    }
+  
+      //any calculations during each transient temperature iteration
+    public override void TransientTemperatureIteration(int iIterationNumber, double Time)
+    {
+            SteadyStateTemperatureIteration(iIterationNumber);
+    }     
+  
+    //any calculations during each steady state concentration iteration
+    public override void SteadyStateConcentrationIteration(int iIterationNumber)
+    {
+
+    }
+  
+      //any calculations during each transient concentration iteration
+    public override void TransientConcentrationIteration(int iIterationNumber, double Time)
+    {
+            SteadyStateConcentrationIteration(iIterationNumber);
+    }     
+  
+      //return true if this script has own convergence parameter checking
+    //usually return false
+    public override bool NeedsAnotherPressureIteration()
+    {
+    	//stop iterating if setpoint is reached or limits are hit
+        if ((Math.Abs( _Setpoint.Value - _Sensed.Value) < _Convergence.Value) || (_Output.Value == _OutputMax.Value) || (Math.Abs(_Output.Value - _OutputMin.Value)< 1e-8))
+        {
+            if (Math.Abs( _Setpoint.Value - _Sensed.Value) < _Convergence.Value)
+            {
+            	_Converged.Value = true;
+            }
+            return false;
+        }
+        else
+        {
+            _Converged.Value = false;
+            return true;
+        }
+        
+    }
+  
+      //return true if this script has own convergence parameter checking
+    //usually return false
+    public override bool NeedsAnotherTemperatureIteration()
+    {
+        //if (Math.Abs( Setpoint.Value - Sensed.Value)<0.00001)
+            return false;
+        //else return true;
+    }    
+    
+     
+  
+      //return true if this script has own convergence parameter checking
+    //usually return false
+    public override bool NeedsAnotherConcentrationIteration()
+    {
+        return false;
+    }     
+
+    //constructer initialises parameters
+    public Script()
+    {
+
+        _Setpoint = new IPS.Properties.Double();
+        _Sensed = new IPS.Properties.Double();
+        _Output = new IPS.Properties.Double();
+        _Convergence = new IPS.Properties.Double();        
+        _Relaxation = new IPS.Properties.Double();        
+        _Converged = new IPS.Properties.Bool();
+        _StartIteration = new IPS.Properties.Integer();
+        _OutputMin = new IPS.Properties.Double();
+        _OutputMax = new IPS.Properties.Double();
+        
+        
+        _Setpoint.Value = 500;
+        _Sensed.Value = 500;
+        _Output.Value = 0.0835;
+        _Convergence.Value = 0.00001;
+        _Relaxation.Value = 0.005;
+        _Converged.Value = false;
+        _StartIteration.Value = 10;
+        _OutputMin.Value = 0;
+        _OutputMax.Value = 1;
+    }
+
+    //property declarations to make
+    //parameters visible to outside world
+
+    
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Setpoint")]
+    [GridCategory(new String[]{"Inputs"})]
+    [GridOrder(1)]
+    public IPS.Properties.Double Setpoint
+    {
+        get
+        {
+            return _Setpoint;
+        }
+    }
+    
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Sensed value")]
+    [GridCategory(new String[]{"Inputs"})]
+    [GridOrder(2)]
+    public IPS.Properties.Double Sensed
+    {
+        get
+        {
+            return _Sensed;
+        }
+    }
+
+        
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Output")]
+    [GridCategory(new String[]{"Results"})]
+    [GridOrder(10)]
+    public IPS.Properties.Double Output
+    {
+        get
+        {
+            return _Output;
+        }
+    }
+    
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Convergence")]
+    [GridCategory(new String[]{"Inputs", "Parameters"})]
+    [GridOrder(5)]
+    public IPS.Properties.Double Convergence
+    {
+        get
+        {
+            return _Convergence;
+        }
+    }
+    
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Relaxation")]
+    [GridCategory(new String[]{"Inputs", "Parameters"})]
+    [GridOrder(6)]
+    public IPS.Properties.Double Relaxation
+    {
+        get
+        {
+            return _Relaxation;
+        }
+    }
+
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Is converged")]
+    [GridCategory(new String[]{"Results"})]
+    [GridOrder(11)]
+    public IPS.Properties.Bool Converged
+    {
+        get
+        {
+            return _Converged;
+        }
+    }
+    
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Start iteration")]
+    [GridCategory(new String[]{"Inputs", "Parameters"})]
+    [GridOrder(7)]
+    public IPS.Properties.Integer StartIteration
+    {
+        get
+        {
+            return _StartIteration;
+        }
+    }
+    
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Output minimum")]
+    [GridCategory(new String[]{"Inputs", "Limits"})]
+    [GridOrder(3)]
+    public IPS.Properties.Double OutputMin
+    {
+        get
+        {
+            return _OutputMin;
+        }
+    }
+    
+    [PropertyUsage(UseProperty.DYNAMIC)]
+    [DisplayName("Output maximum")]
+    [GridCategory(new String[]{"Inputs", "Limits"})]
+    [GridOrder(4)]
+    public IPS.Properties.Double OutputMax
+    {
+        get
+        {
+            return _OutputMax;
+        }
+    }    
+    
+}

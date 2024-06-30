@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="yes"?>
+<IPS>
+  <Library Name="IPS" Version="8.14.1.4845" />
+  <Library Name="CapeOpenFluidGenerator" Version="1.0.8314.0" />
+  <Library Name="DCS" Version="8.14.1.0" />
+  <Library Name="ElectricalNetworkSolver" Version="8.14.1.0" />
+  <Library Name="Flownex" Version="8.14.1.0" />
+  <Library Name="ForceCalculations" Version="1.0.8314.0" />
+  <Library Name="IPS.Actions" Version="8.14.1.0" />
+  <Library Name="IPS.Alarms" Version="8.14.1.0" />
+  <Library Name="IPS.Ansys" Version="8.14.1.0" />
+  <Library Name="IPS.Backtracking" Version="8.14.1.0" />
+  <Library Name="IPS.CAESAR2Importer" Version="8.14.1.0" />
+  <Library Name="IPS.DataTransfer" Version="8.14.1.0" />
+  <Library Name="IPS.Designer" Version="8.14.1.0" />
+  <Library Name="IPS.EES" Version="8.14.1.0" />
+  <Library Name="IPS.Excel" Version="8.14.1.0" />
+  <Library Name="IPS.ExcelInputSheets" Version="8.14.1.0" />
+  <Library Name="IPS.ExcelReporting" Version="8.14.1.0" />
+  <Library Name="IPS.Exposers" Version="8.14.1.0" />
+  <Library Name="IPS.FMI" Version="8.14.1.0" />
+  <Library Name="IPS.GAOptimiser" Version="8.14.1.0" />
+  <Library Name="IPS.GlobalParameters" Version="8.14.1.0" />
+  <Library Name="IPS.Logger" Version="8.14.1.0" />
+  <Library Name="IPS.Mathcad" Version="8.14.1.0" />
+  <Library Name="IPS.OPCDriver" Version="8.14.1.0" />
+  <Library Name="IPS.ParameterDisplay" Version="8.14.1.0" />
+  <Library Name="IPS.PropertyMonitor" Version="8.14.1.0" />
+  <Library Name="IPS.Relap" Version="8.14.1.0" />
+  <Library Name="IPS.ROHR2Importer" Version="8.14.1.0" />
+  <Library Name="IPS.ROMBuilder" Version="8.14.1.0" />
+  <Library Name="IPS.ScaleDrawing" Version="8.14.1.0" />
+  <Library Name="IPS.Scheduler" Version="8.14.1.0" />
+  <Library Name="IPS.Scripting" Version="8.14.1.0" />
+  <Library Name="IPS.SensitivityAnalysis" Version="8.14.1.0" />
+  <Library Name="IPS.SixSigma" Version="8.14.1.0" />
+  <Library Name="IPS.TextFileLink" Version="8.14.1.0" />
+  <Library Name="IPS.Tools" Version="8.14.1.0" />
+  <Library Name="IPS.VideoRecorder" Version="1.0.0.0" />
+  <Library Name="IPS.Visualisation" Version="8.14.1.0" />
+  <Library Name="NistFluidGenerator" Version="1.0.8314.0" />
+  <IPS.Plugin.DrawingPageImpl>
+    <Properties>FitInstructorPage FitOperatorPage FloatByDefault FullscreenInstructorPage FullscreenOperatorPage GridSpacingX GridSpacingY Identifier InstructorFloatByDefault InstructorPage OperatorFloatByDefault OperatorPage Origin PersistedIdentifierWithTemplate ScaleX ScaleY Size StartupInstructorPage StartupOperatorPage StyleSelector SystemName TID UserDescription ViewPortOrigin </Properties>
+    <Values>  "False" "False" "False" "False" "False" "50" "50" "Pages\Drawing Page(1).page" "False" "False" "False" "False" "0, 0" "Pages\Drawing Page(1).page" "0" "0" "8400, 5920" "False" "False" "*F*Solid;Horizontal1;;White;White;100*/F**S*DarkGray;Solid;1*/S**T*Black;Microsoft Sans Serif, 10pt;MiddleCenter;*/T*" "" "" "" "0, 0" </Values>
+    <List Name="LayerDrawingDatas">
+      <IPS.Plugin.LayerDrawingDataImplList>
+        <ListItems>
+          <IPS.Plugin.LayerDrawingDataImpl>
+            <Properties>Active Identifier PersistedIdentifierWithTemplate TID UserDescription Visible VisibleToEngineersOnly zOrder </Properties>
+            <Item Index="0" Identifier="Default">
+              <Values>  "True" "Default" "Default" "" "" "True" "False" "0" </Values>
+            </Item>
+          </IPS.Plugin.LayerDrawingDataImpl>
+        </ListItems>
+      </IPS.Plugin.LayerDrawingDataImplList>
+    </List>
+  </IPS.Plugin.DrawingPageImpl>
+</IPS>

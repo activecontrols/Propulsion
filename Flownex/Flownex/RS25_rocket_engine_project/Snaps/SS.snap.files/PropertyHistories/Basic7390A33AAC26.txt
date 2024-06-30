@@ -1,0 +1,6 @@
+Basic Valve - 303
+
+{Basic Valve Data}Valve lift / Fraction opening
+Sample based. Number of Samples : 10000, SampleRate: 1
+Run  Time [s]          (0-1)
+000, 0.00000000E+000,  6.80000000E-001

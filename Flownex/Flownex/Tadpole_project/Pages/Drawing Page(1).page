@@ -1,0 +1,793 @@
+<?xml version="1.0" standalone="yes"?>
+<IPS>
+  <Library Name="IPS" Version="8.14.1.4845" />
+  <Library Name="CapeOpenFluidGenerator" Version="1.0.8314.0" />
+  <Library Name="DCS" Version="8.14.1.0" />
+  <Library Name="ElectricalNetworkSolver" Version="8.14.1.0" />
+  <Library Name="Flownex" Version="8.14.1.0" />
+  <Library Name="ForceCalculations" Version="1.0.8314.0" />
+  <Library Name="IPS.Actions" Version="8.14.1.0" />
+  <Library Name="IPS.Alarms" Version="8.14.1.0" />
+  <Library Name="IPS.Ansys" Version="8.14.1.0" />
+  <Library Name="IPS.Backtracking" Version="8.14.1.0" />
+  <Library Name="IPS.CAESAR2Importer" Version="8.14.1.0" />
+  <Library Name="IPS.DataTransfer" Version="8.14.1.0" />
+  <Library Name="IPS.Designer" Version="8.14.1.0" />
+  <Library Name="IPS.EES" Version="8.14.1.0" />
+  <Library Name="IPS.Excel" Version="8.14.1.0" />
+  <Library Name="IPS.ExcelInputSheets" Version="8.14.1.0" />
+  <Library Name="IPS.ExcelReporting" Version="8.14.1.0" />
+  <Library Name="IPS.Exposers" Version="8.14.1.0" />
+  <Library Name="IPS.FMI" Version="8.14.1.0" />
+  <Library Name="IPS.GAOptimiser" Version="8.14.1.0" />
+  <Library Name="IPS.GlobalParameters" Version="8.14.1.0" />
+  <Library Name="IPS.Logger" Version="8.14.1.0" />
+  <Library Name="IPS.Mathcad" Version="8.14.1.0" />
+  <Library Name="IPS.OPCDriver" Version="8.14.1.0" />
+  <Library Name="IPS.ParameterDisplay" Version="8.14.1.0" />
+  <Library Name="IPS.PropertyMonitor" Version="8.14.1.0" />
+  <Library Name="IPS.Relap" Version="8.14.1.0" />
+  <Library Name="IPS.ROHR2Importer" Version="8.14.1.0" />
+  <Library Name="IPS.ROMBuilder" Version="8.14.1.0" />
+  <Library Name="IPS.ScaleDrawing" Version="8.14.1.0" />
+  <Library Name="IPS.Scheduler" Version="8.14.1.0" />
+  <Library Name="IPS.Scripting" Version="8.14.1.0" />
+  <Library Name="IPS.SensitivityAnalysis" Version="8.14.1.0" />
+  <Library Name="IPS.SixSigma" Version="8.14.1.0" />
+  <Library Name="IPS.TextFileLink" Version="8.14.1.0" />
+  <Library Name="IPS.Tools" Version="8.14.1.0" />
+  <Library Name="IPS.VideoRecorder" Version="1.0.0.0" />
+  <Library Name="IPS.Visualisation" Version="8.14.1.0" />
+  <Library Name="NistFluidGenerator" Version="1.0.8314.0" />
+  <IPS.Plugin.DrawingPageImpl>
+    <Properties>FitInstructorPage FitOperatorPage FloatByDefault FullscreenInstructorPage FullscreenOperatorPage GridSpacingX GridSpacingY Identifier InstructorFloatByDefault InstructorPage OperatorFloatByDefault OperatorPage Origin PersistedIdentifierWithTemplate ScaleX ScaleY Size StartupInstructorPage StartupOperatorPage StyleSelector SystemName TID UserDescription ViewPortOrigin </Properties>
+    <Values>  "False" "False" "False" "False" "False" "50" "50" "Pages\Drawing Page(1).page" "False" "False" "False" "False" "0, 0" "Pages\Drawing Page(1).page" "0.6999999" "0.6999999" "8400, 5920" "False" "False" "*F*Solid;Horizontal1;;White;White;100*/F**S*DarkGray;Solid;1*/S**T*Black;Microsoft Sans Serif, 10pt;MiddleCenter;*/T*" "" "" "" "532, 471" </Values>
+    <List Name="LayerDrawingDatas">
+      <IPS.Plugin.LayerDrawingDataImplList>
+        <ListItems>
+          <IPS.Plugin.LayerDrawingDataImpl>
+            <Properties>Active Identifier PersistedIdentifierWithTemplate TID UserDescription Visible VisibleToEngineersOnly zOrder </Properties>
+            <Item Index="0" Identifier="Default">
+              <Values>  "True" "Default" "Default" "" "" "True" "False" "0" </Values>
+              <List Name="ComponentDrawingDatas">
+                <IPS.Core.ComponentDrawingDataList>
+                  <ListItems>
+                    <IPS.Plugin.ComponentDrawingDataImpl>
+                      <Properties>Center ComponentUserName ConfigName DisplayOptionShown FlipX FlipY Identifier Image Merging PersistedIdentifierWithTemplate Rotation Size TID UserDescription WorldCoordinatesX WorldCoordinatesY WorldCoordinatesZ zOrder </Properties>
+                      <Item Index="0" Identifier="View1">
+                        <Values>  "1049.99988, 193.75" "Pipe - 0" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "0" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "60, 0" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "-67.5, 0" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="1" Identifier="View1">
+                        <Values>  "1624.99988, 193.75" "Pipe - 1" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "1" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "-77.5, 0" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "67.5, 0" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="2" Identifier="View1">
+                        <Values>  "974.9999, 128.75" "Boundary Condition - 2" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "30, 30" "" "" "0 Length m" "0 Length m" "0 Length m" "2" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "BoundaryConditionFiber" "0, 57.5" "0, 50" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="3" Identifier="View1">
+                        <Values>  "974.9999, 193.75" "Node - 3" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "3" </Values>
+                      </Item>
+                      <Item Index="4" Identifier="View1">
+                        <Values>  "1699.99988, 115" "Boundary Condition - 4" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "30, 30" "" "" "0 Length m" "0 Length m" "0 Length m" "4" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "BoundaryConditionFiber" "0, 71.25" "0, 50" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="5" Identifier="View1">
+                        <Values>  "1699.99988, 193.75" "Node - 5" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "5" </Values>
+                      </Item>
+                      <Item Index="6" Identifier="View1">
+                        <Values>  "1199.99988, 468.75" "7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 16" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "6" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DFM S3 Downstream Fiber" "0, 67.5" "65, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "DFM R3 Upstream Fiber" "0, -67.5" "-65, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="7" Identifier="View1">
+                        <Values>  "1449.99988, 468.75" "7 Degree Half Angle Venturi Tube or Nozzle Differential Flow Meter - 20" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "7" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DFM S3 Downstream Fiber" "0, 67.5" "65, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "DFM R3 Upstream Fiber" "0, -82.5" "-65, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="8" Identifier="View1">
+                        <Values>  "1117.49988, 193.75" "Node - 24" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "8" </Values>
+                      </Item>
+                      <Item Index="9" Identifier="View1">
+                        <Values>  "1199.99988, 393.75" "Node - 25" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "9" </Values>
+                      </Item>
+                      <Item Index="10" Identifier="View1">
+                        <Values>  "1539.99988, 193.75" "Node - 26" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "10" </Values>
+                      </Item>
+                      <Item Index="11" Identifier="View1">
+                        <Values>  "1449.99988, 378.75" "Node - 27" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "11" </Values>
+                      </Item>
+                      <Item Index="12" Identifier="View1">
+                        <Values>  "1199.99988, 643.75" "Pipe - 28" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "12" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "25, 0" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "0, -92.5" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="13" Identifier="View1">
+                        <Values>  "1449.99988, 643.75" "Pipe - 29" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "13" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "25, 0" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "0, -92.5" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="14" Identifier="View1">
+                        <Values>  "1449.99988, 543.75" "Node - 30" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "14" </Values>
+                      </Item>
+                      <Item Index="15" Identifier="View1">
+                        <Values>  "1199.99988, 543.75" "Node - 31" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "15" </Values>
+                      </Item>
+                      <Item Index="16" Identifier="View1">
+                        <Values>  "1249.99988, 818.75" "Pipe - 41" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "20" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "94, 117.5" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "0, -75" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="17" Identifier="View1">
+                        <Values>  "1499.99988, 818.75" "Pipe - 42" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "21" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "-142.5, 118.75" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "0, -75" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="18" Identifier="View1">
+                        <Values>  "1349.99988, 943.75" "Node - 43" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "22" </Values>
+                      </Item>
+                      <Item Index="19" Identifier="View1">
+                        <Values>  "1349.99988, 1055.75" "Pipe - 44" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "23" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "0, 105.5" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "0, -104.5" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="20" Identifier="View1">
+                        <Values>  "1484.99988, 1043.75" "CEA Adiabatic Flame - 45" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "24" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "-127.5, 118.055542" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "-127.5, -94.44446" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="21" Identifier="View1">
+                        <Values>  "1349.99988, 1168.75" "Node - 46" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "25" </Values>
+                      </Item>
+                      <Item Index="22" Identifier="View1">
+                        <Values>  "1349.99988, 1268.75" "Exit Thrust Nozzle - 47" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "26" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "0, 117.5" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "0, -92.5" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="23" Identifier="View1">
+                        <Values>  "1424.99988, 1393.75" "Boundary Condition - 48" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "30, 30" "" "" "0 Length m" "0 Length m" "0 Length m" "27" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "BoundaryConditionFiber" "-67.5, 0" "0, 50" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="24" Identifier="View1">
+                        <Values>  "1349.99988, 1393.75" "Node - 49" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "15, 15" "" "" "0 Length m" "0 Length m" "0 Length m" "28" </Values>
+                      </Item>
+                      <Item Index="25" Identifier="View1">
+                        <Values>  "1249.99988, 718.75" "Flow Interface Primary - 39" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "18" </Values>
+                      </Item>
+                      <Item Index="26" Identifier="View1">
+                        <Values>  "1249.99988, 643.75" "Flow Interface Secondary - 37" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "16" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "FinnedTubeFiber" "0, 50" "0, 50" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="27" Identifier="View1">
+                        <Values>  "1499.99988, 718.75" "Flow Interface Primary - 40" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "19" </Values>
+                      </Item>
+                      <Item Index="28" Identifier="View1">
+                        <Values>  "1499.99988, 643.75" "Flow Interface Secondary - 38" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "17" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "FinnedTubeFiber" "0, 50" "0, 50" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="29" Identifier="View1">
+                        <Values>  "1164.99988, 718.75" "Boundary Condition - 3" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "30, 30" "" "" "0 Length m" "0 Length m" "0 Length m" "29" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "BoundaryConditionFiber" "60, 0" "0, 50" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="30" Identifier="View1">
+                        <Values>  "1614.99988, 718.75" "Boundary Condition - 5" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "30, 30" "" "" "0 Length m" "0 Length m" "0 Length m" "30" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "BoundaryConditionFiber" "-90, 0" "0, 50" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="31" Identifier="View1">
+                        <Values>  "1177.99988, 1268.75" "IO Box - 6" "" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "206, 17" "" "" "0 Length m" "0 Length m" "0 Length m" "31" </Values>
+                      </Item>
+                      <Item Index="32" Identifier="View1">
+                        <Values>  "1170.99988, 1293.75" "IO Box - 7" "" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "158, 17" "" "" "0 Length m" "0 Length m" "0 Length m" "32" </Values>
+                      </Item>
+                      <Item Index="33" Identifier="View1">
+                        <Values>  "1199.99988, 280.416656" "Basic Valve - 0" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "33" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "0, 105.833344" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "-75.3605957, -79.16666" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="34" Identifier="View1">
+                        <Values>  "1449.99988, 280.4167" "Basic Valve - 1" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "34" </Values>
+                        <List Name="FiberDrawingDatas">
+                          <IPS.Core.FiberDrawingDataList>
+                            <ListItems>
+                              <IPS.Plugin.FiberDrawingDataImpl>
+                                <Properties>ConnectedViewName FiberName Location OriginLocation </Properties>
+                                <Item Index="0">
+                                  <Values>  "View1" "DownstreamFiber" "0, 90.83331" "50, 0" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "View1" "UpstreamFiber" "82.5, -79.44446" "-50, 0" </Values>
+                                </Item>
+                              </IPS.Plugin.FiberDrawingDataImpl>
+                            </ListItems>
+                          </IPS.Core.FiberDrawingDataList>
+                        </List>
+                      </Item>
+                      <Item Index="35" Identifier="View1">
+                        <Values>  "939.090759, 457.386383" "2 Input Multiplier - 9" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "35" </Values>
+                      </Item>
+                      <Item Index="36" Identifier="View1">
+                        <Values>  "1137.99988, 1068.75" "Simple PID - 10" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "36" </Values>
+                      </Item>
+                      <Item Index="37" Identifier="View1">
+                        <Values>  "1074.99988, 310.416656" "Integrator - 14" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "38" </Values>
+                      </Item>
+                      <Item Index="38" Identifier="View1">
+                        <Values>  "1564.99988, 305.416656" "Integrator - 15" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "39" </Values>
+                      </Item>
+                      <Item Index="39" Identifier="View1">
+                        <Values>  "885.9999, 643.75" "Integrator - 20" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "42" </Values>
+                      </Item>
+                      <Item Index="40" Identifier="View1">
+                        <Values>  "1699.99988, 643.75" "Integrator - 21" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "43" </Values>
+                      </Item>
+                      <Item Index="41" Identifier="View1">
+                        <Values>  "1824.99988, 1168.75" "Line Graph - 26" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "400, 400" "" "" "0 Length m" "0 Length m" "0 Length m" "47" </Values>
+                      </Item>
+                      <Item Index="42" Identifier="View1">
+                        <Values>  "2050, 318.75" "Line Graph - 27" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "400.000122, 400" "" "" "0 Length m" "0 Length m" "0 Length m" "48" </Values>
+                      </Item>
+                      <Item Index="43" Identifier="View1">
+                        <Values>  "575, 400" "Line Graph - 1" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "400, 400" "" "" "0 Length m" "0 Length m" "0 Length m" "49" </Values>
+                      </Item>
+                      <Item Index="44" Identifier="View1">
+                        <Values>  "1000, 975" "Divide - 3" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "50" </Values>
+                      </Item>
+                      <Item Index="45" Identifier="View1">
+                        <Values>  "750, 1275" "Line Graph - 5" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "NORMAL" "View1" "0" "400, 400" "" "" "0 Length m" "0 Length m" "0 Length m" "52" </Values>
+                      </Item>
+                      <Item Index="46" Identifier="View1">
+                        <Values>  "775, 850" "Simple PID - 6" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "53" </Values>
+                      </Item>
+                      <Item Index="47" Identifier="View1">
+                        <Values>  "700, 750" "Integrator - 9" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "55" </Values>
+                      </Item>
+                      <Item Index="48" Identifier="View1">
+                        <Values>  "950, 350" "Advanced PID - 1" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "58" </Values>
+                      </Item>
+                      <Item Index="49" Identifier="View1">
+                        <Values>  "1675, 400" "Advanced PID - 2" "(Default)" "ChooseConfiguration" "False" "False" "View1" "" "MASTER" "View1" "0" "50, 50" "" "" "0 Length m" "0 Length m" "0 Length m" "59" </Values>
+                      </Item>
+                    </IPS.Plugin.ComponentDrawingDataImpl>
+                  </ListItems>
+                </IPS.Core.ComponentDrawingDataList>
+              </List>
+              <List Name="LinkDrawingDatas">
+                <IPS.Core.LinkDrawingDataList>
+                  <ListItems>
+                    <IPS.Plugin.LinkDrawingDataImpl>
+                      <Properties>ArrowSize Color EndShape FadeWidth Identifier IsAcrossPages IsBridge IsOnStartPage LinkType LinkUserName Pattern PersistedIdentifierWithTemplate Shadow ShadowColor ShadowScale ShadowXOffset ShadowYOffset StartShape TID UserDescription ViewFromName ViewToName Width zOrder </Properties>
+                      <Item Index="0" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 11" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "37" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1342.49988, 1165.21228" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1162.99988, 1080.54248" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="1" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 17" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "40" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1099.99988, 304.416656" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1174.99988, 286.416656" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="2" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 19" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "41" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1539.99988, 299.981873" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1474.99988, 285.851471" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="3" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 22" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "44" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1123.17639, 1043.75" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "900.8234, 668.75" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="4" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 23" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "45" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1162.99988, 1049.84436" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1674.99988, 662.6557" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="5" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 24" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "46" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "893.1218, 618.75" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "931.9688, 482.386383" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="6" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 4" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "51" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1342.49988, 944.4196" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1025, 972.7679" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="7" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 8" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "54" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "975, 961.1111" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "800, 863.8889" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="8" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 10" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "56" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "756.25, 825" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "718.75, 775" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="9" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 13" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "57" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "720.4272, 725" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "918.6636, 482.386383" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="10" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 3" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "60" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "941.6305, 432.386383" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "947.460266, 375" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="11" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 5" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "61" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1697.43579, 618.75" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1677.56409, 425" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="12" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 9" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "62" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "975, 342.0833" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1049.99988, 318.333344" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="13" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 12" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "63" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1650, 378.5038" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1589.99988, 326.912842" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="14" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 15" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "64" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1192.49988, 392.4375" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "975, 354.375" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                      <Item Index="15" Identifier="">
+                        <Values>  "5" "Black" "OpenedArrow" "2" "" "False" "False" "False" "POLY" "DataTransferLink - 16" "DashDot" "" "SOLID" "&amp;apos;Grey&amp;apos;" "1" "4" "4" "None" "" "" "View1" "View1" "1" "65" </Values>
+                        <List Name="Points">
+                          <System.Collections.Generic.List_HEX60_1>
+                            <ListItems>
+                              <System.Drawing.SizeF>
+                                <Properties>Value </Properties>
+                                <Item Index="0">
+                                  <Values>  "1457.49988, 379.458344" </Values>
+                                </Item>
+                                <Item Index="1">
+                                  <Values>  "1650, 397.6389" </Values>
+                                </Item>
+                              </System.Drawing.SizeF>
+                            </ListItems>
+                          </System.Collections.Generic.List_HEX60_1>
+                        </List>
+                      </Item>
+                    </IPS.Plugin.LinkDrawingDataImpl>
+                  </ListItems>
+                </IPS.Core.LinkDrawingDataList>
+              </List>
+            </Item>
+          </IPS.Plugin.LayerDrawingDataImpl>
+        </ListItems>
+      </IPS.Plugin.LayerDrawingDataImplList>
+    </List>
+  </IPS.Plugin.DrawingPageImpl>
+</IPS>

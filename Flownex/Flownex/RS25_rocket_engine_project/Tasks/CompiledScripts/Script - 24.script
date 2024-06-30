@@ -1,0 +1,248 @@
+//script using directives
+//css_ref IPS.Core.dll;
+//css_ref IPS.PluginInterface.dll;
+//css_ref IPS.Units.dll;
+//css_ref IPS.Utilities.CSharp.dll
+//css_ref Flownex.dll;
+using System;
+using System.Windows.Forms;
+using IPS.Properties;
+using IPS.Scripting;
+using Flownex.DataReferences.Materials;
+
+//script must be derived from IComponentScript
+public class Script: IPS.Scripting.IComponentScript
+{
+
+	IPS.Properties.DataReferenceProperty  _FluidDataReference;
+
+	IPS.Properties.Double _EnthalpyFromPQ;
+	IPS.Properties.Double _TemperatureFromPH;
+
+	//do pre simulation initialisation here
+	public override void Initialise()
+	{
+  	}
+
+	//do post simulation cleanup here
+	public override void Cleanup()
+	{
+  	}
+
+  	//script main execution function - called every cycle
+	public override void Execute(double Time)
+	{
+
+
+		if (_FluidDataReference.Value != null)
+		{
+			TwoPhaseFluids fluid = (TwoPhaseFluids)_FluidDataReference.Value;
+			_EnthalpyFromPQ.Value = fluid.GetEnthalpyFromPressureAndQuality(P, 1.0, Parent.Identifier.Value);
+	
+		}
+
+	
+	if (x_US == 1000.00)					//Supercritical
+	{
+		T_DS = _T_US;
+		Q_deficit.Value = 0.0; 
+	}
+	else if ( x_US >= 1)				//Superheated
+	{
+		T_DS = _T_US;
+		Q_deficit.Value = 0.0;
+	}
+	else if ((x_US <1.0) && (x_US >= 0.0))	//Two-phase region
+	{
+		T_DS = _T_US;
+		Q_deficit.Value = m_dot*(h_US - _EnthalpyFromPQ.Value);
+	}
+	else if (x_US < 0.0)					//Subcooled
+	{
+		Q_deficit.Value = m_dot*(h_US - _EnthalpyFromPQ.Value);
+
+		if (_FluidDataReference.Value != null)
+		{
+			TwoPhaseFluids fluid = (TwoPhaseFluids)_FluidDataReference.Value;
+			_TemperatureFromPH.Value = fluid.GetTemperatureFromPressureAndEnthalpy(P, _EnthalpyFromPQ.Value, Parent.Identifier.Value);
+		}
+	
+		T_DS.Value = _TemperatureFromPH.Value;
+	}
+	
+
+		
+	}
+
+//	any processing you want to do before steady state
+	public override void ExecuteBeforeSteadyState()
+	{
+   		Execute(0.0);
+	}	
+
+   	//any processing you want to do while solving steady state
+	public override void ExecuteSteadyState()
+	{
+    		Execute(0.0);
+	}	  
+  
+  	//any processing you want to do after steady state
+	public override void ExecuteAfterSteadyState()
+	{
+    		Execute(0.0);
+	}	
+  
+	//constructer initialises parameters
+	public Script()
+	{
+		_h_US = new IPS.Properties.Double();
+		_h_US.DisplayUnitGroup = IPS.Units.UnitGroup.Specific_Energy;
+		_x_US = new IPS.Properties.Double();
+		_P = new IPS.Properties.Double();
+		_P.DisplayUnitGroup = IPS.Units.UnitGroup.Pressure_Stress;
+		_T_US = new IPS.Properties.Double();
+		_T_US.DisplayUnitGroup = IPS.Units.UnitGroup.Temperature;
+		_m_dot = new IPS.Properties.Double();
+		_m_dot.DisplayUnitGroup = IPS.Units.UnitGroup.Flow_Rate_Mass;
+		_T_DS = new IPS.Properties.Double();
+		_T_DS.DisplayUnitGroup = IPS.Units.UnitGroup.Temperature;
+		_Q_deficit = new IPS.Properties.Double();
+		_Q_deficit.DisplayUnitGroup = IPS.Units.UnitGroup.Power;
+
+		_TemperatureFromPH = new IPS.Properties.Double();
+		_EnthalpyFromPQ = new IPS.Properties.Double();		
+		
+		_FluidDataReference = new IPS.Properties.DataReferenceProperty(null);
+		_FluidDataReference.Types = new Type[]{typeof(TwoPhaseFluids)};
+		
+		
+	}
+
+	
+	[PropertyUsage(UseProperty.STATIC)]
+	[DisplayName("Fluid")]
+	[GridOrder(1)]
+	public IPS.Properties.DataReferenceProperty FluidDataReference
+	{
+		get
+		{
+			return _FluidDataReference;
+		}
+	}
+	
+	
+	
+	IPS.Properties.Double _h_US;
+	[GridCategory(new String[]{"Inputs"})]
+	[GridOrder(1)]
+	[DisplayName("Enthalpy_US")]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double h_US
+	{
+		get
+		{
+			return _h_US;
+		}
+		set
+		{
+			h_US.Value = value.Value;
+		}
+	}
+	IPS.Properties.Double _x_US;
+	[GridCategory(new String[]{"Inputs"})]
+	[GridOrder(2)]
+	[DisplayName("Quality_US")]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double x_US
+	{
+		get
+		{
+			return _x_US;
+		}
+		set
+		{
+			x_US.Value = value.Value;
+		}
+	}
+	IPS.Properties.Double _P;
+	[GridCategory(new String[]{"Inputs"})]
+	[GridOrder(3)]
+	[DisplayName("Pressure_US")]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double P
+	{
+		get
+		{
+			return _P;
+		}
+		set
+		{
+			P.Value = value.Value;
+		}
+	}
+	IPS.Properties.Double _T_US;
+	[GridCategory(new String[]{"Inputs"})]
+	[GridOrder(4)]
+	[DisplayName("T_US")]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double T_US
+	{
+		get
+		{
+			return _T_US;
+		}
+		set
+		{
+			T_US.Value = value.Value;
+		}
+	}
+	IPS.Properties.Double _m_dot;
+	[GridCategory(new String[]{"Inputs"})]
+	[GridOrder(5)]
+	[DisplayName("Massflow")]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double m_dot
+	{
+		get
+		{
+			return _m_dot;
+		}
+		set
+		{
+			m_dot.Value = value.Value;
+		}
+	}
+	IPS.Properties.Double _T_DS;
+	[GridCategory(new String[]{"Outputs"})]
+	[GridOrder(6)]
+	[DisplayName("T_Downstream")]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double T_DS
+	{
+		get
+		{
+			return _T_DS;
+		}
+		set
+		{
+			T_DS.Value = value.Value;
+		}
+	}
+	IPS.Properties.Double _Q_deficit;
+	[GridCategory(new String[]{"Outputs"})]
+	[GridOrder(7)]
+	[DisplayName("Q_deficit")]
+	[PropertyUsage(UseProperty.DYNAMIC)]
+	public IPS.Properties.Double Q_deficit
+	{
+		get
+		{
+			return _Q_deficit;
+		}
+		set
+		{
+			Q_deficit.Value = value.Value;
+		}
+	}
+
+}

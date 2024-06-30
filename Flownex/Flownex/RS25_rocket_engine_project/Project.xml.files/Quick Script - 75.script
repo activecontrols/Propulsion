@@ -1,0 +1,7 @@
+if (_fluid.Value != null)
+{
+	TwoPhaseFluids hydrogen = (TwoPhaseFluids)_fluid.Value;
+	
+	T_crit.Value = hydrogen.GetCriticalTemperature();
+	T_crit_extra.Value = T_crit + 250.0;
+}

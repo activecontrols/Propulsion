@@ -1,0 +1,16 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 24/05/2024 15:09:09 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 24/05/2024 15:10:32 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 24/05/2024 15:10:37 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 24/05/2024 15:10:53 Simulation Time: 00h  00m  00s  000ms Execute server command: Run
+User:  Time: 24/05/2024 15:11:00 Simulation Time: 00h  00m  00s  700ms Open page: Pages\RS-25.page
+User:  Time: 24/05/2024 15:11:00 Simulation Time: 00h  00m  00s  700ms Select Simple PID - 17 - View1 on Pages\RS-25.page
+User:  Time: 24/05/2024 15:11:15 Simulation Time: 00h  00m  03s  200ms Execute server command: Pause
+User:  Time: 24/05/2024 23:57:09 Simulation Time: 00h  00m  03s  200ms Execute server command: Deactivate
+User:  Time: 24/05/2024 23:57:10 Simulation Time: 00h  00m  03s  200ms Open page: Pages\RS-25.page
+User:  Time: 24/05/2024 23:57:10 Simulation Time: 00h  00m  03s  200ms Open page: Pages\Instructions.page
+User:  Time: 24/05/2024 23:57:10 Simulation Time: 00h  00m  03s  200ms Close page: Pages\Instructions.page
+User:  Time: 24/05/2024 23:57:10 Simulation Time: 00h  00m  03s  200ms Open page: Pages\RS-25.page
+User:  Time: 24/05/2024 23:57:10 Simulation Time: 00h  00m  03s  200ms Close page: Pages\RS-25.page

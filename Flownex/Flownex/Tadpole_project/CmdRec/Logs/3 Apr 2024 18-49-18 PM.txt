@@ -1,0 +1,14 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 03/04/2024 18:50:11 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 03/04/2024 18:52:01 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 03/04/2024 18:52:03 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 03/04/2024 18:52:30 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 03/04/2024 18:52:48 Simulation Time: 00h  00m  00s  000ms Select Node - 46 - View1 on Pages\Drawing Page(1).page
+User:  Time: 03/04/2024 18:53:00 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 03/04/2024 18:54:03 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 03/04/2024 18:56:44 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 03/04/2024 18:57:21 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 04/04/2024 15:28:54 Simulation Time: 00h  00m  00s  000ms Open page: Pages\Drawing Page(1).page
+User:  Time: 04/04/2024 15:28:54 Simulation Time: 00h  00m  00s  000ms Close page: Pages\Drawing Page(1).page

@@ -1,0 +1,115 @@
+//script using directives
+//css_ref IPS.Core.dll;
+//css_ref IPS.PluginInterface.dll;
+//css_ref IPS.Units.dll;
+//css_ref IPS.Utilities.CSharp.dll;
+//css_ref Flownex.dll;
+
+using System;
+using System.Windows.Forms;
+using IPS.Properties;
+using IPS.Scripting;
+using Flownex.Components;
+using Flownex.DataReferences.Materials;
+
+//script must be derived from IComponentScript
+public class Script: IPS.Scripting.IComponentScript
+{
+
+	//do pre simulation initialisation here
+	public override void Initialise()
+	{
+	}
+
+	//do post simulation cleanup here
+	public override void Cleanup()
+	{
+	}
+
+	//script main execution function - called every cycle
+	public override void Execute(double Time)
+	{
+		double TimeStep = Project.TimeStep;
+		if (_fluid.Value != null)
+		{
+			TwoPhaseFluids hydrogen = (TwoPhaseFluids)_fluid.Value;
+			
+			T_crit.Value = hydrogen.GetCriticalTemperature();
+			T_crit_extra.Value = T_crit + 250.0;
+		}
+	}
+
+	//any processing you want to do before steady state
+	public override void ExecuteBeforeSteadyState()
+	{
+		Execute(0.0);
+	}	
+
+	//any processing you want to do while solving steady state
+	public override void ExecuteSteadyState()
+	{
+		Execute(0.0);
+	}	  
+
+	//any processing you want to do after steady state
+	public override void ExecuteAfterSteadyState()
+	{
+		Execute(0.0);
+	}	
+
+	//constructer initialises parameters
+	public Script()
+	{
+		_fluid = new IPS.Properties.DataReferenceProperty(null);
+		_fluid.Types = new Type[]{ typeof(Flownex.DataReferences.Materials.PureFluids), typeof(Flownex.DataReferences.Materials.MixedFluids), typeof(Flownex.DataReferences.Materials.TwoPhaseFluids)};
+		_T_crit = new IPS.Properties.Double();
+		_T_crit.DisplayUnitGroup = IPS.Units.UnitGroup.Temperature;
+		_T_crit_extra = new IPS.Properties.Double();
+		_T_crit_extra.DisplayUnitGroup = IPS.Units.UnitGroup.Temperature;
+
+	}
+
+	IPS.Properties.DataReferenceProperty _fluid;
+	[GridOrder(1)]
+	[PropertyUsage(UseProperty.STATIC)]
+	public IPS.Properties.DataReferenceProperty fluid
+	{
+		get
+		{
+			return _fluid;
+		}
+		set
+		{
+			fluid.Value = value.Value;
+		}
+	}
+	IPS.Properties.Double _T_crit;
+	[GridOrder(2)]
+	[PropertyUsage(UseProperty.RESULT)]
+	public IPS.Properties.Double T_crit
+	{
+		get
+		{
+			return _T_crit;
+		}
+		set
+		{
+			T_crit.Value = value.Value;
+		}
+	}
+	IPS.Properties.Double _T_crit_extra;
+	[GridOrder(3)]
+	[PropertyUsage(UseProperty.RESULT)]
+	public IPS.Properties.Double T_crit_extra
+	{
+		get
+		{
+			return _T_crit_extra;
+		}
+		set
+		{
+			T_crit_extra.Value = value.Value;
+		}
+	}
+
+}

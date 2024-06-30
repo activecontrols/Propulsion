@@ -1,0 +1,25 @@
+Operating system: Microsoft Windows 11 Home
+Logged in user name: janpa
+Machine name: LAPTOP-K9SDB2EI
+User:  Time: 27/05/2024 21:23:27 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 27/05/2024 21:24:39 Simulation Time: 00h  00m  00s  000ms Select Simple PID - 17 - View1 on Pages\RS-25.page
+User:  Time: 27/05/2024 21:24:46 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 27/05/2024 21:24:49 Simulation Time: 00h  00m  00s  000ms Select DataTransferLink - 2 -  on Pages\RS-25.page
+User:  Time: 27/05/2024 21:24:57 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 27/05/2024 21:24:57 Simulation Time: 00h  00m  00s  000ms Select Basic Valve - 97 - View1 on Pages\RS-25.page
+User:  Time: 27/05/2024 21:25:10 Simulation Time: 00h  00m  00s  000ms Select DataTransferLink - 2 -  on Pages\RS-25.page
+User:  Time: 27/05/2024 21:26:16 Simulation Time: 00h  00m  00s  000ms Open page: Pages\RS-25.page
+User:  Time: 27/05/2024 21:26:16 Simulation Time: 00h  00m  00s  000ms Deselect all on Pages\RS-25.page
+User:  Time: 27/05/2024 21:26:17 Simulation Time: 00h  00m  00s  000ms Select Simple PID - 17 - View1 on Pages\RS-25.page
+User:  Time: 27/05/2024 21:26:43 Simulation Time: 00h  00m  00s  000ms Execute server command: SolveSteadyState
+User:  Time: 27/05/2024 21:26:48 Simulation Time: 00h  00m  00s  000ms Execute server command: ResetTime
+User:  Time: 27/05/2024 21:26:52 Simulation Time: 00h  00m  00s  000ms Execute server command: Run
+User:  Time: 27/05/2024 21:27:32 Simulation Time: 00h  00m  05s  300ms Open page: Pages\RS-25.page
+User:  Time: 27/05/2024 21:27:34 Simulation Time: 00h  00m  05s  600ms Set property value: Simple PID - 17 ReverseActing False
+User:  Time: 27/05/2024 21:27:57 Simulation Time: 00h  00m  08s  600ms Set property value: Simple PID - 17 ReverseActing True
+User:  Time: 27/05/2024 23:56:57 Simulation Time: 00h  47m  19s  800ms Execute server command: Deactivate
+User:  Time: 27/05/2024 23:56:58 Simulation Time: 00h  47m  19s  800ms Open page: Pages\RS-25.page
+User:  Time: 27/05/2024 23:56:58 Simulation Time: 00h  47m  19s  800ms Open page: Pages\Instructions.page
+User:  Time: 27/05/2024 23:56:58 Simulation Time: 00h  47m  19s  800ms Close page: Pages\Instructions.page
+User:  Time: 27/05/2024 23:56:58 Simulation Time: 00h  47m  19s  800ms Open page: Pages\RS-25.page
+User:  Time: 27/05/2024 23:56:58 Simulation Time: 00h  47m  19s  800ms Close page: Pages\RS-25.page
