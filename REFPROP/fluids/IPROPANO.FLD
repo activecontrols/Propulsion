@@ -1,0 +1,138 @@
+isopropanol                           !short name
+67-63-0                               !CAS number
+2-propanol                            !full name
+C3H8O                                 !chemical formula
+isopropyl alcohol                     !synonym
+60.095             !molecular weight [g/mol]
+185.242            !triple point temperature [K]
+300.               !normal boiling point [K]
+508.27             !critical temperature [K]
+4755.10            !critical pressure [kPa]
+4.50               !critical density [mol/L]
+.663666            !acentric factor
+-1.                !dipole moment [Debye]
+NBP                !default reference state
+8.0                !version number
+
+
+! compiled at NIST Physical and Chemical Properties Division, Boulder, Colorado
+! 08-01-08 EWL, original version
+
+
+#EOS               !equation of state specification
+FEQ  Helmholtz equation of state
+?LITERATURE REFERENCE \
+?\
+!end of info section
+0.1     185.242                  !lower temperature limit [K]
+1000000000.   1000.              !upper temperature limit [K]
+10000000000000.   50000.         !upper pressure limit [kPa]
+1000.   15.                      !maximum density [mol/L]
+CPP                              !pointer to Cp0 model
+60.095                           !molecular weight [g/mol]
+0.1   185.242                    !triple point temperature [K]
+0.                                     !pressure at triple point [kPa]
+10.                                    !density at triple point [mol/L]
+300.                                   !normal boiling point temperature [K]
+.663666                                !acentric factor
+ 508.270000000  4755.100     4.5000000 !Tc [K], pc [kPa], rhoc [mol/L]
+ 508.270000000               4.5000000 !reducing parameters [K, mol/L]
+8.3144621                              !gas constant [J/mol-K]                     +-
+  10  5      7 12      0  0            !# terms, # coeff/term for:  "normal" terms, critical, spare
+  0.2403432900000D-01   1.000000000000  4.  0.  1.         !a(i),t(i),d(i),l(i)
+  0.2828459688290D+01   0.517674748489  1.  0.  1.
+ -0.4560190834628D+01   0.950905082231  1.  0.  1.
+ -0.2624288755508D+00   1.199597116097  2.  0.  1.
+  0.1391719558808D+00   0.272343237728  3.  0.  1.
+ -0.2362014340518D+01   2.438998489059  1.  2.  1.
+ -0.1223800480189D+01   3.376584588737  3.  2.  1.
+  0.1225780400711D+01   0.408583037002  2.  1.  1.
+ -0.2090755295474D+01   3.257887932966  2.  2.  1.
+ -0.5273453815513D-02   0.586795580299  7.  1.  1.
+  0.2015524717503D+01   3.172229912637  1.  2.  2.     -0.94018211      -4.8554841   1.081282094   1.034108817 0. 0. 0.
+  0.1926135680950D+01   1.356338522317  1.  2.  2.     -0.40297257      -2.0766791   0.927307354   0.201093087 0. 0. 0.
+ -0.4167095080141D+00   1.016130892154  3.  2.  2.     -0.64977659      -4.4983607   0.456208646   0.724323138 0. 0. 0.
+ -0.1251565652724D+01   1.803939329226  3.  2.  2.     -1.19340243      -5.6662506   1.128494189   0.601052107 0. 0. 0.
+ -0.3910997133729D+00   3.141563085888  2.  2.  2.     -1.38705454      -4.3868970   1.062005761   1.510911596 0. 0. 0.
+  0.4913016297648D+00   0.989021497715  1.  2.  2.     -0.82873905      -0.2472593   0.528399398   1.739600340 0. 0. 0.
+  0.8921249489400D-02   1.601510781720  3.  2.  2.     -1.90001076      -0.6595765   0.604472779   2.946516654 0. 0. 0.
+
+
+#AUX               !auxiliary model specification
+CPP  ideal gas heat capacity function
+?LITERATURE REFERENCE \
+?\
+!end of info section
+0.0                !lower temperature limit [K]
+5000.              !upper temperature limit [K]
+0.0                !upper pressure limit [kPa]
+0.0                !maximum density [mol/L]
+1.0          8.3144621                 !reducing parameters for T, Cp0
+  1  3    0  0    0  0  0              !Nterms:  polynomial, exponential, cosh, sinh
+ 0.397932390551D+01      0.00000000
+ 0.746415355888D+01   4230.88875906
+ 0.145870211608D+02   1504.16893793
+ 0.494462478771D+01    395.70262587
+
+
+#PS         !vapor pressure equation
+PS5  vapor pressure equation of Bell et al. (2015).
+?LITERATURE REFERENCE \
+?See EOS
+?\
+!end of info section
+185.242            !lower temperature limit [K]
+508.270            !upper temperature limit [K]
+0.0                !(dummy) upper pressure limit
+0.0                !(dummy) maximum density
+508.270 4755.1     !reducing parameters
+5 0 0 0 0 0        !number of terms in equation
+-0.830069331940D+01   1.0000000     !coefficients and exponents
+ 0.667979198417D+00   1.5000000
+ 0.240941204992D+02   7.0098170
+-0.732158277995D+01   2.6414796
+-0.270117560877D+02   8.0281405
+
+
+#DL         !saturated liquid density equation
+DL1  saturated liquid density equation of Bell et al. (2015).
+?LITERATURE REFERENCE \
+?See EOS
+?\
+!end of info section
+185.242            !lower temperature limit [K]
+508.270            !upper temperature limit [K]
+0.0                !(dummy) upper pressure limit
+0.0                !(dummy) maximum density
+508.270 4.5        !reducing parameters
+5 0 0 0 0 0        !number of terms in equation
+ 0.744602286678D+01   0.5186302     !coefficients and exponents
+-0.134946385389D+02   0.8622222
+ 0.172304969483D+02   1.3090483
+-0.102875412442D+02   1.8619275
+ 0.289785359056D+01   4.5709430
+
+
+#DV         !saturated vapor density equation
+DV3  saturated vapor density equation of Bell et al. (2015).
+?LITERATURE REFERENCE \
+?See EOS
+?\
+!end of info section
+185.242            !lower temperature limit [K]
+508.270            !upper temperature limit [K]
+0.0                !(dummy) upper pressure limit
+0.0                !(dummy) maximum density
+508.270 4.5        !reducing parameters
+6 0 0 0 0 0        !number of terms in equation
+-0.101006228998D+02   0.5685731     !coefficients and exponents
+-0.535975697767D+02   1.5283725
+ 0.525965740269D+02   2.2515636
+ 0.231992371822D+02   1.0298123
+-0.721630066221D+02   3.2555140
+-0.114990619527D+03   9.4742598
+
+
+@END
+c        1         2         3         4         5         6         7         8
+c2345678901234567890123456789012345678901234567890123456789012345678901234567890

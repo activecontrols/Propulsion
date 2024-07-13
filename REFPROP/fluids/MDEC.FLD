@@ -1,0 +1,208 @@
+1-methyldecahydronaphthalene          !short name
+2958-75-0                             !CAS number
+naphthalene, decahydro-, 1-methyl-    !full name
+C11H20                                !chemical formula
+alpha-methyldecalin                   !synonym
+152.2765           !molecular weight [g/mol]
+238.0              !triple point temperature [K]  estimated
+478.2              !normal boiling point [K]
+697.0              !critical temperature [K]
+2638.0             !critical pressure [kPa]
+1.819053           !critical density [mol/L]
+.322995            !acentric factor
+-1.                !dipole moment [Debye]
+NBP                !default reference state
+8.0                !version number
+
+
+! compiled at NIST Physical and Chemical Properties Division, Boulder, Colorado
+! 08-01-08 EWL, original version
+! 10-01-08 MLH, added transport
+! 02-07-09 MLH, revised thermal conductivity
+
+
+#EOS               !equation of state specification
+FEQ  Helmholtz equation of state
+?LITERATURE REFERENCE \
+?\
+!end of info section
+238.0              !lower temperature limit [K]
+1000.              !upper temperature limit [K]
+50000.             !upper pressure limit [kPa]
+10.                !maximum density [mol/L]
+CPP                                    !pointer to Cp0 model
+152.277                                !molecular weight [g/mol]
+238.0                                  !triple point temperature [K]
+0.                                     !pressure at triple point [kPa]
+10.                                    !density at triple point [mol/L]
+478.2                                  !normal boiling point temperature [K]
+.322995                                !acentric factor
+697.0000000000  2638.000   1.819053000 !Tc [K], pc [kPa], rhoc [mol/L]
+697.0000000000             1.819053000 !reducing parameters [K, mol/L]
+8.314472                               !gas constant [J/mol-K]
+  10  5      4 12      0  0            !# terms, # coeff/term for:  "normal" terms, critical, spare
+  0.4302940791963D-01   1.000000000000   4.00000000000   0.00000000000   1.00000000000                                 !a(i),t(i),d(i),l(i)
+  0.1386455932887D+01   0.316896610274   1.00000000000   0.00000000000   1.00000000000
+ -0.2473332318243D+01   0.960397506180   1.00000000000   0.00000000000   1.00000000000
+ -0.5542318584543D+00   1.117653219810   2.00000000000   0.00000000000   1.00000000000
+  0.2129867055092D+00   0.393268627581   3.00000000000   0.00000000000   1.00000000000
+ -0.8197414286591D+00   1.738090918901   1.00000000000   2.00000000000   1.00000000000
+ -0.3105427074412D+00   1.730634471023   3.00000000000   2.00000000000   1.00000000000
+  0.1655897920449D+01   1.476303559718   2.00000000000   1.00000000000   1.00000000000
+ -0.5750628113476D+00   2.280245947807   2.00000000000   2.00000000000   1.00000000000
+ -0.2394967998852D-01   0.900609676646   7.00000000000   1.00000000000   1.00000000000
+  0.6871379367736D+00   0.750075807531   1.000000  2.0  2.0   -1.02807332     -1.7237202   1.075080656   0.714886018 0. 0. 0.
+ -0.2456766456680D+00   1.630518109281   1.000000  2.0  2.0   -1.35510105     -1.9922806   0.671230780   0.902862657 0. 0. 0.
+ -0.1427086990233D+00   2.843456183271   3.000000  2.0  2.0   -1.04124400     -1.2372740   0.506850028   0.687163321 0. 0. 0.
+  0.2163341469991D-01   2.530437531616   3.000000  2.0  2.0   -7.40333711    -80.4581183   1.293111201   0.779498804 0. 0. 0.
+
+
+#AUX               !auxiliary model specification
+CPP  ideal gas heat capacity function
+?LITERATURE REFERENCE \
+?\
+!end of info section
+238.0              !lower temperature limit [K]
+5000.              !upper temperature limit [K]
+0.0                !upper pressure limit [kPa]
+0.0                !maximum density [mol/L]
+1.0          8.314472                  !reducing parameters for T, Cp0
+  1  3    0  0    0  0  0              !Nterms:  polynomial, exponential, cosh, sinh
+ 0.906386785570D+01      0.00000000
+ 0.317023175550D+02    962.73884251
+ 0.137749445373D+01   7211.12730000
+ 0.431233011425D+02   2455.03806343
+
+
+#TRN               !transport model specification
+ECS  Extended Corresponding States model (C12 reference); fit to extremely limited data.
+?LITERATURE REFERENCES \
+?Huber, M.L., Laesecke, A., and Perkins, R.A., Model for the viscosity
+? and thermal conductivity of refrigerants, including a new correlation
+? for the viscosity of R134a, Ind.Eng.Chem.Res. 42: 3163-3178 (2003).
+?\
+?DATA SOURCES FOR VISCOSITY\
+?The parameters for viscosity were based on the data of:\
+?
+?Gollis, M.H., Belenyessy, L.I., Gudzinowicz, B.J., Koch, S.D., Smith, J.O. and
+? Wineman, R.J., "Evaluation of Pure Hydrocarbons as Jet Fuels", JCED 7(2): 311-316 (1962).
+?
+?Average absolute deviations of the fit from the experimental data were:
+?   Gollis: 1 %
+?\
+?DATA SOURCES FOR THERMAL CONDUCTIVITY\
+?The parameters for viscosity were based on the data of:\
+?
+?Gollis, M.H., Belenyessy, L.I., Gudzinowicz, B.J., Koch, S.D., Smith, J.O. and
+? Wineman, R.J., "Evaluation of Pure Hydrocarbons as Jet Fuels", JCED 7(2): 311-316 (1962).
+?
+?Average absolute deviations of the fit from the experimental data were:
+?   Gollis: 5 %
+?
+?The Lennard-Jones parameters are estimated using the method of Chung.\
+?\
+!end of info section
+238.0              !lower temperature limit [K]
+1000.              !upper temperature limit [K]
+50000.             !upper pressure limit [kPa]
+10.                !maximum density [mol/L]
+FEQ c12.fld
+VS1                !model for reference fluid viscosity
+TC1                !model for reference fluid thermal conductivity
+1                  !Lennard-Jones flag (0 or 1) (0 => use estimates)
+0.6626d0           !Lennard-Jones coefficient sigma [nm] from method chung
+553.48d0           !Lennard-Jones coefficient epsilon/kappa [K] from chung method
+1  0  0            !number of terms in f_int term in Eucken correlation, spare1, spare 2
+ 1.3200d-3      0.0   0.0   0.0  !coeff, power of T, spare 1, spare 2
+3  0  0                          !number of terms in psi (visc shape factor): poly,spare1,spare2
+ 0.177764        0.0   0.0   0.0  !coeff, power of Tr, power of Dr, spare
+ 0.535403        0.0   1.0   0.0  !coeff, power of Tr, power of Dr, spare
+-8.31309d-2      0.0   2.0   0.0  !coeff, power of Tr, power of Dr, spare
+2  0  0                          !number of terms in phi (thermal cond. shape factor):poly,spare1,spare2
+ 0.7753          0.0   0.0   0.0  !coeff, power of Tr, power of Dr, spare
+ 2.1282d-2       0.0   1.0   0.0  !coeff, power of Tr, power of Dr, spare
+TK3                !pointer to critical enhancement auxiliary function
+
+
+#AUX               !thermal conductivity critical enhancement model
+TK3  simplified thermal conductivity critical enhancement of Olchowy and Sengers
+?LITERATURE REFERENCE \
+?Olchowy, G.A. and Sengers, J.V.,
+? "A simplified representation for the thermal conductivity of fluids in the
+? critical region,"
+? Int. J. Thermophysics, 10:417-426, 1989.
+?\
+?as applied to CO2 by:
+?\
+?Vesovic, V., Wakeham, W.A., Olchowy, G.A., Sengers, J.V., Watson, J.T.R.
+? and Millat, J.,
+? "The transport properties of carbon dioxide,"
+? J. Phys. Chem. Ref. Data, 19:763-808, 1990.
+?\
+!end of info section
+238.0              !lower temperature limit [K]
+1000.              !upper temperature limit [K]
+50000.             !upper pressure limit [kPa]
+10.                !maximum density [mol/L]
+9  0  0  0         !# terms:  CO2-terms, spare, spare, spare
+1.0     1.0     1.0      !reducing par for T, rho, tcx (mW/m-K)
+0.630d0            !gnu (universal exponent)
+1.239d0            !gamma (universal exponent)
+1.03d0             !R0 (universal amplitude)
+0.063d0            !z (universal exponent--not used for t.c., only viscosity)
+1.00d0             !c (constant in viscosity eqn = 1/[2 - (alpha + gamma)/(2*nu)], but often set to 1)
+0.194d-9           !xi0 (amplitude) [m]
+0.0496             !gam0 (amplitude) [-]
+5.d-09             !qd_inverse (modified effective cutoff parameter) [m] arbitrary guess
+1045.5d+00         !tref (reference temperature)=1.5*Tc [K]
+
+
+
+@ETA               !viscosity model specification
+VS5  pure fluid viscosity model of Chung et al.(1988).
+?LITERATURE REFERENCE \
+? T-H. Chung, Ajlan, M., Lee, L.L. and Starling, K.E.
+? "Generalized Multiparameter Correlation for Nonpolar and Polar Fluid Transport Properties"
+? Ind. Eng. Chem. Res. 1998, 27, 671-679.
+?
+!end of info section
+238.0              !lower temperature limit [K]
+1000.              !upper temperature limit [K]
+50000.             !upper pressure limit [kPa]
+10.                !maximum density [mol/L]
+1                  !number of terms associated with dilute-gas function
+NUL                !pointer to reduced effective collision cross-section model;not used
+0.6626d0           !Lennard-Jones coefficient sigma [nm] =0.809vc*(1/3)A
+553.48d0           !Lennard-Jones coefficient epsilon/kappa [K] =Tc/1.2593
+1.0d0   1.0d0      !reducing parameters for T, eta
+0.2635466d0       0.5d0  !=0.021357*SQRT(MW)  [Chapman-Enskog term]
+0                  !number of terms for initial density dependence; not yet used.
+0.322995d0         0.000000D+00            0.0d0  !w, mur, kappa for Chung
+0                  !additional parameters for Chung
+NUL                !pointer to critical enhancement auxiliary function (none used)
+
+
+@TCX               !thermal conductivity model specification
+TC5  pure fluid thermal conductivity model of Chung et al. (1988).
+?LITERATURE REFERENCE \
+? T-H. Chung, Ajlan, M., Lee, L.L. and Starling, K.E.
+? "Generalized Multiparameter Correlation for Nonpolar and Polar Fluid Transport Properties"
+? Ind. Eng. Chem. Res. 1998, 27, 671-679.
+?\
+!end of info section
+238.0              !lower temperature limit [K]
+1000.              !upper temperature limit [K]
+50000.             !upper pressure limit [kPa]
+10.                !maximum density [mol/L]
+0.6626d0           !Lennard-Jones coefficient sigma [nm] =0.809vc*(1/3)A
+553.48d0           !Lennard-Jones coefficient epsilon/kappa [K] =Tc/1.2593
+0.322995d0           0.000000D+00            0.0d0  !w, mur, kappa for Chung
+0                  !additional parameters for Chung
+TK3                !pointer to critical enhancement auxiliary function
+
+
+
+
+@END
+c        1         2         3         4         5         6         7         8
+c2345678901234567890123456789012345678901234567890123456789012345678901234567890
