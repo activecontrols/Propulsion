@@ -57,7 +57,7 @@ CEA_input_name = 'regenCEA';
 
 %% SIMULATION PARAMETERS (INPUTS)
 plots = 0; % Do ansys or not ???? Dumb name
-steps = 100; % Number of steps along chamber (Change resolution of simulation)
+steps = 5000; % Number of steps along chamber (Change resolution of simulation)
 qdot_tolerance = 0.0001; % set heat transfer convergence tolerance
 
 
@@ -76,8 +76,8 @@ total_length = chamber_length + converging_length + diverging_length; % total le
 % Propulsion Parameters
 P_c = 250; % chamber pressure [psi] 
 P_e = 17; % exit pressure [psi]
-m_dot = 1.5 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
-fuel = 'C3H8O,2propanol'; % fuel definition
+m_dot = 5 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+fuel = 'C3H8O,2propanol'; % fuel definition 
 oxidizer = 'O2(L)'; % oxidizer definition
 fuel_weight = 0; % ???  
 fuel_temp = 293.15; % [K]
@@ -96,12 +96,12 @@ roughness_table = readmatrix(pwd + "/bin/surface_roughness.xlsx",'Range','A12:E1
 e = [roughness_table(2,2), roughness_table(5,2)] .* 0.001; %Surface roughness (mm) [micrometer*conversion] [45, 90]
 yield_strength = properties(1:8,1:2);
 elongation_break = [properties(1:8,1) properties(1:8,5)];
-N = 557*4;
+N = 20*4;
 
 % Cooling channel inlet initialization
 coolant = 'Water'; %coolant definition
 inlet_temperature = 293.16; % inlet temperature [K]
-inlet_pressure = 400 * u.PSI2PA; % inlet pressure [PA]
+inlet_pressure = 300 * u.PSI2PA; % inlet pressure [PA]
 coolantdirection = 0; % 1: direction opposite of hot gas flow direction
                       % 0: direction same as hot flow gas direction
                         
@@ -360,20 +360,22 @@ MS_lowcycle = zeros(1,points);
 deltaT1 = zeros(1,points);
 deltaT2 = zeros(1,points);
 
-% call cea for all area ratios
-i = 1;
-% for sub = subsonic_area_ratios
-%     [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, 0, 2, 0, 0, CEA_input_name);
-%     i = i + 1;
-% end
-% i = size(subsonic_area_ratios, 2) + 1;
-% for sup = supersonic_area_ratios
-%     [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, sup, 2, 0, 0, CEA_input_name);
-%     i = i + 1;
-% end
-[c_star, ~, ~, ~, ~, P_g_tot, T_g_tot, ~, mu_g_tot, Pr_g_tot, ~, ~, ~, cp_g_tot] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, 0, 1, 0, 0, CEA_input_name);
-% c_star = c_star * cstar_eff;
+counter = zeros(1,points);
 
+%call cea for all area ratios
+i = 1;
+for sub = subsonic_area_ratios
+    [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, sub, 0, 2, 0, 0, CEA_input_name);
+    i = i + 1;
+end
+i = size(subsonic_area_ratios, 2) + 1;
+for sup = supersonic_area_ratios
+    [~, ~, ~, M(i), gamma(i), P_g(i), T_g(i), ~, mu_g(i), Pr_g(i), ~, ~, ~, cp_g(i)] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, sup, 2, 0, 0, CEA_input_name);
+    i = i + 1;
+end
+[c_star, ~, ~, ~, ~, P_g_tot, T_g_tot, ~, mu_g_tot, Pr_g_tot, ~, ~, ~, cp_g_tot] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, 0, 1, 0, 0, CEA_input_name);
+c_star = c_star * cstar_eff;
+tic
 % Steps 2 & 3: Set channel inlet properties
 P_l(1) = inlet_pressure;
 T_l(1) = inlet_temperature;
@@ -388,7 +390,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
     T_wg_mx = 1500; % maximum temperature bound [K]
 
     converged = 0; % wall temperature loop end condition
-    counter = 0; % counter for loop
+    %counter = 0; % counter for loop
     while ~(converged)
         % Step 5: Calculate gas film coefficient and gas-side convective heat flux
         sigma(i) = (.5 * T_wg(i) / T_g_tot * (1 + (gamma(i) - 1) / 2 * M(i) ^ 2) + .5) ^ -.68 * (1 + (gamma(i) - 1) / 2 * M(i) ^ 2) ^ -.12; % film coefficient correction factor [N/A] (Huzel & Huang 86).
@@ -441,7 +443,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
         qdot_l(i) = h_l(i) * (T_wl(i) - T_l(i)) + 2 * fin_q(i); % liquid convective heat flux [W/m^2] (Heister EQ 6.29).
 
         % Step 9: Check for convergence and continue loop / next step
-        if abs(qdot_g(i) - qdot_l(i)) > qdot_tolerance && counter < 250 % check for tolerance
+        if abs(qdot_g(i) - qdot_l(i)) > qdot_tolerance && counter(i) < 250 % check for tolerance
             
             % convergence loop
             if qdot_g(i) - qdot_l(i) > 0
@@ -451,7 +453,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
             end 
             T_wg(i) = (T_wg_mx + T_wg_mn) / 2;
     
-            counter = counter + 1;
+            counter(i) = counter(i) + 1;
         else
             if i < points
                 % Step 10: End step & update fluid properties
@@ -557,7 +559,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
         end
     end
 end
-
+toc
 %% FEA INPUTS
 ambient_chamber = [x; T_g]'; 
 ambient_water = [x; T_l]';
@@ -584,7 +586,7 @@ fprintf("Engine life (hot fires): %.02f\n", Engine_life)
 fprintf("Lowcycle Margin of safety for engine life of %0.0f hot fires: %.02f\n", N/4, overall_MS_lowcycle)
 fprintf("Engine life (hot fires) Lowcycle: %.02f\n", Engine_life_lowcycle)
 fprintf("Safety factor to yield: %.02f\n", yield_SF)
-fprintf("Max Wall Temp: %.02f\n", max(T_wg))
+fprintf("Max Wall Temp [K]: %.02f\n", max(T_wg))
 
 figure('Name', 'Temperature Plot');
 hold on;
@@ -834,6 +836,9 @@ legend("total effective strain", "total allowable cyclic strain", "effective pla
 figure("Name","Plastic Check")
 plot(x_plot.*1000, epsilon_pa, x_plot.*1000, epsilon_pt)
 legend("Plastic Axial strain","Plastic tangential strain")
+
+figure(20)
+plot(x_plot.*1000,T_g);
 
 
 %%

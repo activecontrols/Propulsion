@@ -1,0 +1,255 @@
+hydrogen peroxide       !short name
+7722-84-1		!ID number
+hydrogen peroxide	!full name
+H2O2			!chemical formula
+hydrogen dioxide	!synonym
+34.014			!molecular weight [g/mol]
+272.740328		!triple point temperature [K]
+424.209516137		!normal boiling point [K]
+727.983243473		!critical temperature [K]
+16201.745194		!critical pressure [kPa]
+13.6184747145		!critical density [mol/L]
+0.456			!acentric factor
+2.26049			!dipole moment [Debye]DIPPR Diadem, Oct 2012 version
+NBP			!default reference state
+9.1			!version number
+
+#EOS               !equation of state specification
+FEQ  Helmholtz equation of state
+?LITERATURE REFERENCE \
+?ThermoData Engine (TRC, NIST) July 2, 2013 version 8.0 beta
+?\
+!end of info section
+272.740328	!lower temperature limit [K]
+742.983243473	!upper temperature limit [K]
+20252.1814925	!upper pressure limit [kPa]
+50.0		!maximum density [mol/L]
+CPP                                    !pointer to Cp0 model
+34.014	!molecular weight [g/mol]
+272.740328	!triple point temperature [K]
+0.0414700145315	!pressure at triple point [kPa]
+60.0    	!density at triple point [mol/L]
+424.209514066	!normal boiling point [K]
+0.456229717163	!acentric factor
+727.983243473	16201.745194	13.6184747145	!Tc [K], pc [kPa], rhoc [mol/L]
+727.983243473	13.6184747145	!reducing parameters [K, mol/L]
+8.314472	!gas constant [J/mol-K]
+12	4	0	0	0	0	!# terms, # coeff/term for:  "normal" terms, critical, spare
+0.922482578696	0.25	1	0	
+-2.70246344687	1.25	1	0	
+0.404779269186	1.5	1	0	
+0.0776595821025	0.25	3	0	
+0.000237188376527	0.875	7	0	
+0.0716117362038	2.375	1	1	
+0.633120817809	2	2	1	
+-0.00644551140204	2.125	5	1	
+-0.441865959324	3.5	1	2	
+-0.0483551330782	6.5	1	2	
+-0.0885614891911	4.75	4	2	
+0.0037653907715	12.5	2	3	
+
+
+@EOS               !equation of state specification
+PRT  Peng-Robinson equation
+?LITERATURE REFERENCES \
+!end of info section
+272.740328	!lower temperature limit [K]
+742.983243473	!upper temperature limit [K]
+20252.1814925	!upper pressure limit [kPa]
+50.0		!maximum density [mol/L]
+CPP                !pointer to Cp0 model
+34.014             !molecular weight [g/mol]
+0.456              !acentric factor
+727.98             !critical temperature [K]
+16201.7            !critical pressure [kPa]
+13.6185            !critical density [mol/L]
+8.314472           !gas constant [J/mol-K]
+1                  !Number of parameters
+0.00
+
+
+#AUX               !auxiliary model specification
+CPP  ideal gas heat capacity function
+?LITERATURE REFERENCE \
+?ThermoData Engine (TRC, NIST)
+?\
+!end of info section
+100	!lower temperature limit [K]
+1000	!upper temperature limit [K]
+0	!upper pressure limit [kPa]
+0	!maximum density [mol/L]
+1	8.314472	!reducing parameters for T, Cp0
+5	0	0	0	0	0	0	!Nterms:  polynomial, exponential, cosh, sinh
+3.72742208444	0
+0.00585105582284	1
+-8.32182052036e-006	2
+1.88097558626e-008	3
+-1.43889027541e-011	4
+
+
+#TCX               !thermal conductivity model specification
+TC0  based on pure fluid thermal conductivity model of Huber et al. (2011) for water.
+?LITERATURE REFERENCE \
+? based on a scaling of the water equation.
+?
+? EXTREMELY LIMITED DATA AVAILABLE
+? Model is predictive only
+? ****   Estimated uncertainty can be up to 50%   ****
+?
+? based on water model :M. L. Huber, R. A. Perkins, D. G. Friend, J. V. Sengers
+? M. J. Assael, I. N. Metaxa, K. Miyagawa, R. Hellmann and E. Vogel,
+? "New International Formulation for the Thermal Conductivity of H2O",
+? J. Phys. Chem. Ref. Data Vol.41, No.3 (2012) pp. 1-23. [http://dx.doi.org/10.1063/1.4738955]
+?\
+!end of info section
+272.740328	!lower temperature limit [K]
+742.983243473	!upper temperature limit [K]
+20252.1814925	!upper pressure limit [kPa]
+50.0		!maximum density [mol/L]
+H2O                !pointer to hardcoded thermal conductivity model
+5 0 30 0 0 0 0 0   !number of terms for various pieces
+727.98  13.618   1.d-3    !reducing parameters for T, rho, tcx
+ 2.443221d-3     0.  0. 0. 0       !coeff, power in T
+ 1.323095d-2     1.  0. 0. 0
+ 6.770357d-3     2.  0. 0. 0
+-3.454586d-3     3.  0. 0. 0
+ 4.096266d-4     4.  0. 0. 0
+ 1.64            0.0   0.0   0.0   0   
+ 2.33771842      1.0   0.0   0.0   0
+ 2.19650529      2.0   0.0   0.0   0
+-1.21051378      3.0   0.0   0.0   0
+-2.72033700      4.0   0.0   0.0   0
+-0.646013523     0.0   1.0   0.0   0
+-2.78843778      1.0   1.0   0.0   0
+-4.54580785      2.0   1.0   0.0   0
+ 1.60812989      3.0   1.0   0.0   0
+ 4.57586331      4.0   1.0   0.0   0
+ 0.111443906     0.0   2.0   0.0   0
+ 1.53616167      1.0   2.0   0.0   0
+ 3.55777244      2.0   2.0   0.0   0
+-0.621178141     3.0   2.0   0.0   0
+-3.18369245      4.0   2.0   0.0   0
+ 0.102997357     0.0   3.0   0.0   0
+-0.463045512     1.0   3.0   0.0   0
+-1.40944978      2.0   3.0   0.0   0
+ 0.0716373224    3.0   3.0   0.0   0
+ 1.11683480      4.0   3.0   0.0   0
+-0.0504123634    0.0   4.0   0.0   0
+ 0.0832827019    1.0   4.0   0.0   0
+ 0.275418278     2.0   4.0   0.0   0
+ 0.00000000      3.0   4.0   0.0   0
+-0.19268305      4.0   4.0   0.0   0
+ 0.00609859258   0.0   5.0   0.0   0
+-0.00719201245   1.0   5.0   0.0   0
+-0.0205938816    2.0   5.0   0.0   0
+ 0.00000000      3.0   5.0   0.0   0
+ 0.012913842     4.0   5.0   0.0   0
+TK3                !pointer to critical enhancement auxiliary function
+
+
+
+#AUX               !thermal conductivity critical enhancement model
+TK3  simplified thermal conductivity critical enhancement of Olchowy & Sengers
+?LITERATURE REFERENCE \
+? based on water model of M. L. Huber, R. A. Perkins, D. G. Friend, J. V. Sengers
+? M. J. Assael, I. N. Metaxa, K. Miyagawa, R. Hellmann and E. Vogel,
+? "New International Formulation for the Thermal Conductivity of H2O",
+? J. Phys. Chem. Ref. Data Vol.41, No.3 (2012) pp. 1-23. [http://dx.doi.org/10.1063/1.4738955]
+?\
+!end of info section
+272.740328	!lower temperature limit [K]
+742.983243473	!upper temperature limit [K]
+20252.1814925	!upper pressure limit [kPa]
+50.0		!maximum density [mol/L]
+9  0  0  0         !# terms:  critical-terms, spare, spare, spare
+1.0     1.0     1.0     !reducing par for T, rho, tcx
+0.630d0              !gnu (universal exponent)
+1.239d0              !gamma (universal exponent)
+1.01d0               !R0 (universal amplitude)was 1.03 and 1.05 and 1.01
+0.068d0              !z (universal exponent--not used for t.c., only viscosity)was0.069
+1.00d0               !c (constant in viscosity eqn = 1/[2 - (alpha + gamma)/(2*nu)], but often set to 1)
+1.3d-10              !xi0 (amplitude) [m]was 1.094
+0.060d0              !gam0 (amplitude) [-] was 0.0496
+0.40D-09             !qd_inverse (modified effective cutoff parameter) [m] may 22 2010 new value from Jan
+1114.5d0             !tref (reference temperature) [= 1.5 * 743  K]
+
+
+#TRN               !transport model specification
+ECS  Extended Corresponding States model (nitrogen reference);     predictive mode.
+?LITERATURE REFERENCES \
+?
+? *** ESTIMATION METHOD--- NOT STANDARD REFERENCE QUALITY---
+?     EXTREMELY LIMITED DATA AVAILABLE
+? ****   Estimated uncertainty can be up to 50%   ***
+?
+? Uses method described in the following reference:
+? Huber, M.L., Laesecke, A., and Perkins, R.A.,
+? "Model for the Viscosity and Thermal Conductivity of Refrigerants,
+? Including a New Correlation for the Viscosity of R134a",
+? Ind. Eng. Chem. Res., 42:3163-3178, 2003.
+?\
+?Lennard-Jones parameters are from Reid, Sherwood & Prausnitz (1977), Appendix C
+?\
+?
+!end of info section
+272.740328	!lower temperature limit [K]
+742.983243473	!upper temperature limit [K]
+20252.1814925	!upper pressure limit [kPa]
+50.0		!maximum density [mol/L]
+FEQ nitrogen.fld
+VS1                !model for reference fluid viscosity
+TC1                !model for reference fluid thermal conductivity
+1                  !Lennard-Jones flag (0 or 1) (0 => use estimates)
+0.4196             !Lennard-Jones coefficient sigma [nm]
+289.3              !Lennard-Jones coefficient epsilon/kappa [K]
+1  0  0                       !number of terms in f_int term in Eucken correlation, spare1, spare2
+ 1.32d-3        0.0  0.0  0.0 !coeff, power of T, spare 1, spare 2
+1  0  0                       !number of terms in psi (visc shape factor): poly,spare1,spare2
+ 0.83           0.0  0.0  0.0 !coeff, power of Tr, power of Dr, spare
+1  0  0                       !number of terms in chi (t.c. shape factor): poly,spare1,spare2
+ 0.8            0.0  0.0  0.0 !coeff, power of Tr, power of Dr, spare
+NUL                           !pointer to critical enhancement auxiliary function
+
+
+
+
+
+@END
+c        1         2         3         4         5         6         7         8
+c2345678901234567890123456789012345678901234567890123456789012345678901234567890
+
+
+@ETA               !viscosity model specification
+VS4  pure fluid generalized friction theory viscosity model 
+?LITERATURE REFERENCE \
+? based on water equation of Quinones-Cisneros, S.E. and Deiters, U.K.
+? "Generalization of the Friction Theory for Viscosity Modeling,"
+? J. Phys. Chem. B, 110:12820-12834, 2006.
+?
+!end of info section
+272.740328	!lower temperature limit [K]
+742.983243473	!upper temperature limit [K]
+20252.1814925	!upper pressure limit [kPa]
+50.0		!maximum density [mol/L]
+5 0 0 0 0 0        !number of terms associated with dilute-gas function
+NUL                !pointer to reduced effective collision cross-section model;not used
+0.2641             !Lennard-Jones coefficient sigma [nm] for ECS method (not used)
+809.1              !Lennard-Jones coefficient epsilon/kappa [K] for ECS method (not used)
+727.98d0    1.0d0 !reducing parameters for T, eta
+ 0.0d0      0.5d0  !Chapman-Enskog term; not used here
+ 151.138d0  0.00d0 !empirical terms for eta0
+-444.318d0  0.25d0
+ 398.262d0  0.50d0
+-81.7008d0  0.75d0
+0                  !number of terms for initial density dependence; not yet used.
+-1.17407105202836d-05 -3.78854818708520d-07 3.56742875797909d-08 0.0d0 0.0d0 !a(0),a(1),a(2)
+ 1.62216397984014d-06 -8.36595322447571d-06 9.10862531286788d-08 0.0d0 0.0d0 !b(0),b(1),b(2)
+ 1.92706925578893d-05 -1.28679815491711d-05 0.00000000000000d+00 0.0d0 0.0d0 !c(0),c(1),c(2)
+-3.30144899918610d-10  0.00000000000000d+00 1.02931444103415d-11 0.0d0 0.0d0 !A(0),A(1),A(2)
+ 5.03139997945133d-10  1.82304182380560d-10 0.00000000000000d+00 0.0d0 0.0d0 !B(0),B(1),B(2)
+ 8.01449084635477d-10  5.65613687804585d-09 1.10163426018591d-10 0.0d0 0.0d0 !C(0),C(1),C(2)
+ 0.0d0                   0.0d0                  0.0d0            0.0d0 0.0d0 !D(0),D(1),D(2)
+ 0.0d0                   0.0d0                  0.0d0            0.0d0 0.0d0 !E(0),E(1),E(2)
+NUL                !pointer to critical enhancement auxiliary function (none used)
+
+
