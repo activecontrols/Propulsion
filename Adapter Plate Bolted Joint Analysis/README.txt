@@ -1,0 +1,1 @@
+Folder for bolted joint analysis for adapter plate(s).
