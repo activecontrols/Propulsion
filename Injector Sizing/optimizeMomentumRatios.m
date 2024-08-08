@@ -20,7 +20,7 @@ function [] = optimizeMomentumRatios(radialDensity, annularDensity, radialVeloci
     TMR = 1;
     outerRadius = 0.785/2; % m
 
-    annularArea = (TMR .* massFlowRateAnnular.^2) ./ (annularDensity .* massFlowRateRadial .* radialVelocity); % m^2
+    annularArea = (TMR .* massFlowRateAnnular.^2) ./ (annularDensity .* massFlowRateRadial .* radialVelocity) % m^2
 
     radialArea = (massFlowRateRadial .^ 2 * annularDensity .* annularArea)./(massFlowRateAnnular.^2 .*radialDensity .* TMR); % m^2
 
