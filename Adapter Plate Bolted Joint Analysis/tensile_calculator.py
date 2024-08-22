@@ -1,5 +1,5 @@
 import csv
-from utils import max_bolt_shear, max_bolt_tensile, max_internal_shear, torque
+from utils import max_bolt_thread_shear, max_bolt_tensile, max_internal_thread_shear, torque
 from collections import OrderedDict
 from pprint import pprint
 
@@ -36,8 +36,8 @@ with open("ASME_B1_1_1989_Bolt_Specs.csv") as bolt_specs:
         D1 = float(row[5])
         bolt_strengths[(name, D)] = [
             max_bolt_tensile(D, pitch, PROOF_STRENGTH, SAFETY_FACTOR),
-            max_bolt_shear(D, pitch, PROOF_STRENGTH, LENGTH_ENGAGEMENT, D1, D2, SAFETY_FACTOR),
-            max_internal_shear(D, pitch, PROOF_STRENGTH, LENGTH_ENGAGEMENT, D2, SAFETY_FACTOR)
+            max_bolt_thread_shear(D, pitch, PROOF_STRENGTH, LENGTH_ENGAGEMENT, D1, D2, SAFETY_FACTOR),
+            max_internal_thread_shear(D, pitch, PROOF_STRENGTH, LENGTH_ENGAGEMENT, D2, SAFETY_FACTOR)
         ]
 
 failure_modes = ("bolt tensile", "bolt thread shear", "internal thread shear")

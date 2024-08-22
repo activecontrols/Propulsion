@@ -28,14 +28,17 @@ def max_bolt_tensile(D, pitch, proof_strength, safety_factor):
     return (proof_strength * area)/safety_factor
 
 
-def max_bolt_shear(D, pitch, proof_strength, length_engagement, D1, d2, safety_factor):
+def max_bolt_thread_shear(D, pitch, proof_strength, length_engagement, D1, d2, safety_factor):
     area = ((length_engagement * D1 * math.pi)/pitch) * ((pitch/2) + math.tan(math.pi/6)*(d2 - D1))
     return (0.5 * proof_strength * area)/safety_factor
 
 
-def max_internal_shear(d, pitch, yield_strength, length_engagement, D2, safety_factor):
+def max_internal_thread_shear(d, pitch, yield_strength, length_engagement, D2, safety_factor):
     area = ((length_engagement * d * math.pi) / pitch) * ((pitch/2) + math.tan(math.pi/6) * (d - D2))
     return (0.5 * yield_strength * area) / safety_factor
+
+def max_bolt_shear(D, pitch, proof_strength, safety_factor):
+    return 0.6 * max_bolt_tensile(D, pitch, proof_strength, safety_factor)  # common approximation !? 
 
 
 def torque(K, load, D, safety_factor):
