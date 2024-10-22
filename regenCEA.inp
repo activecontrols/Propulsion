@@ -3,7 +3,7 @@ problem rocket fr
     o/f = 1.2
     sup = 1
 reac
-    fuel = C3H8O,2propanol t(K) = 293.150
+    fuel = C3H8O,2propanol t(K) = 293.150 wt% = 100.000
     ox = O2(L) t(K) = 90.170
 outp trans
 end

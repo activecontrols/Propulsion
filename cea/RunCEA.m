@@ -56,13 +56,13 @@ end
 
 % propellant inputs
 inp('fuel') = fuel; % fuel name from thermo.inp
-if fuel_weight(1) ~= 0
-    inp('fuel_wt%') = fuel_weight;
-end
+%if fuel_weight(1) ~= 0
+inp('fuel_wt%') = fuel_weight;
+%end
 inp('ox') = oxidizer; % ox name from thermo.inp
-if fuel_temp(1) 
-    inp('fuel_t') = fuel_temp;
-end
+%if fuel_temp(1) 
+inp('fuel_t') = fuel_temp;
+%end
 if oxidizer_temp(1)
     inp('ox_t') = oxidizer_temp;
 end
