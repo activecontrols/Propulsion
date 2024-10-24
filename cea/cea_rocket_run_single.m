@@ -391,7 +391,7 @@ if ispc()
     % open a command prompt window which will close. It has to be this way
     % in order to change the directory for FCEA2.exe to operate properly.
     if ~strcmp(pwd(), cea_location)
-
+        pause(0.5);
         copyfile(file_name, [cea_location '\' file_name]) % <-- ORIGINAL
 %         copyfile(new_file_name, [cea_location '\' better_file_name]);
     end

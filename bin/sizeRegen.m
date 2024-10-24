@@ -1,7 +1,7 @@
 % %% HELP Regenerative Cooling Sizing Code
-% % Authors: Kamon Blong (kamon.blong@gmail.com), Jan Ayala, Andrew Radulovich, Alex Suppiah
+% % Authors: Kamon Blong (kamon.blong@gmail.com), Jan Ayala, Andrew Radulovich, Alex Suppiah, Zach Hodgdon
 % % First Created: 10/23/2022
-% % Last Updated: 04/15/2023
+% % Last Updated: 10/22/2024
 
    %{ 
     Description:
@@ -49,7 +49,7 @@
    %}
 
 %% INITIALIZATION
-% clear;
+clear;
 clc; 
 close all;
 u = convertUnits;
@@ -57,7 +57,7 @@ CEA_input_name = 'regenCEA';
 
 %% SIMULATION PARAMETERS (INPUTS)
 plots = 0; % Do ansys or not ???? Dumb name
-steps = 5000; % Number of steps along chamber (Change resolution of simulation)
+steps = 100; % Number of steps along chamber (Change resolution of simulation)
 qdot_tolerance = 0.0001; % set heat transfer convergence tolerance
 
 
@@ -76,30 +76,30 @@ total_length = chamber_length + converging_length + diverging_length; % total le
 % Propulsion Parameters
 P_c = 250; % chamber pressure [psi] 
 P_e = 17; % exit pressure [psi]
-m_dot = 5 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
-fuel = 'C3H8O,2propanol'; % fuel definition 
+m_dot = 1.236 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+fuel = {'C3H8O,2propanol'};%,'H2O(L)'}; % fuel definition 
 oxidizer = 'O2(L)'; % oxidizer definition
-fuel_weight = 0; % ???  
-fuel_temp = 293.15; % [K]
+fuel_weight = 100;%[75,25]; % weight of each fuel used (if only 1 fuel, set to 100)  
+fuel_temp = 293.15;%[293.15,293.15]; % [K]
 oxidizer_temp = 90.17; % [K]
 OF = 1.2; % oxidizer/fuel ratio
 cstar_eff = 0.92;  % C* efficiency;
 
 % material properties
-properties = readmatrix(pwd + "/bin/material_properties.xlsx");
+properties = readmatrix(pwd + "/bin/Inconel718.xlsx");
 k_w = properties(13:end,1:2); % thermal conductivity [W/m-K]
-E = [properties(1:6, 9) properties(1:6,10)];
-CTE = [properties(1:5,1) properties(1:5,3)]; % [ppm]
+E = [properties(1:6, 9) properties(1:6,10)]; %youngs modulus
+CTE = [properties(1:7,1) properties(1:7,3)]; % [ppm]
 nu = 0.3; % poissons ratio (guess)
 %e = 24 * 0.001; % surface roughness (mm) [micrometer*conversion]
 roughness_table = readmatrix(pwd + "/bin/surface_roughness.xlsx",'Range','A12:E16');
 e = [roughness_table(2,2), roughness_table(5,2)] .* 0.001; %Surface roughness (mm) [micrometer*conversion] [45, 90]
-yield_strength = properties(1:8,1:2);
-elongation_break = [properties(1:8,1) properties(1:8,5)];
+yield_strength = properties(1:7,1:2);
+elongation_break = [properties(1:7,1) properties(1:7,5)];
 N = 20*4;
 
 % Cooling channel inlet initialization
-coolant = 'Water'; %coolant definition
+coolant = 'ethanol'; %coolant definition
 inlet_temperature = 293.16; % inlet temperature [K]
 inlet_pressure = 300 * u.PSI2PA; % inlet pressure [PA]
 coolantdirection = 0; % 1: direction opposite of hot gas flow direction
@@ -482,7 +482,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
                 epsilon_emax(i) = ((yield(i)*1000000)/ E_current(i));
 
                 deltaT1(i) = T_wg(i) - T_wl(i);
-                deltaT2(i) = ((T_wg(i) + T_wl(i))/2) - T_l(i);
+                deltaT2(i) = ((T_wg(i) + T_wl(i))/2) - T_l(i); %*** look into what deltaT2 is being used for
 
                 sigma_tp(i) = ( ((P_l(i)-P_g(i))/2).*((w_c_x(i)./t_w_x(i)).^2) );
                 sigma_tp_cold(i) =  ( ((P_l(i))/2).*((w_c_x(i)./t_w_x(i)).^2) );
