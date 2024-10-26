@@ -195,6 +195,25 @@ xlabel('Time (s)')
 ylabel('Mass flow rate (kg/s)')
 legend('O2','H2 sleeve','H2 core', 'H2 Upstream')
 
+%Plot OF ratio
+t = LFMB.time.Value;
+figure()
+OF_tot = mdot_ox ./ (mdot_h2_sleeve + mdot_h2_core);
+OF_core = mdot_ox ./ mdot_h2_core;
+plot(t, OF_tot, 'r') % , total OF
+title('Total OF Ratio')
+grid on
+legend on
+xlabel('Time (s)')
+ylabel('OF Ratio')
+
+figure()
+plot(t, OF_core, 'b') % , t, core OF
+title('Total OF Ratio')
+grid on
+legend on
+xlabel('Time (s)')
+ylabel('OF Ratio')
 
 function mdot = compute_mdot(Cd, A, gamma, P0, R, T0)
 
