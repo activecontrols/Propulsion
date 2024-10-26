@@ -2,10 +2,10 @@ clear all; close all
 
 testid = 1;
 saveData =true;
-TDMSLoc = '..\hotfire1'; %where you are saving  directory
+TDMSLoc = '..\coldflow2'; %where you are saving  directory
 addpath(cd)
 
-dataFileNameMB = 'DataLog_2024-1019-1155-54_PSPAC_Data_Wiring.tdms'; %file name
+dataFileNameMB = 'DataLog_2024-1019-1139-00_PSPAC_Data_Wiring.tdms'; %file name
 
 TOR = 'AC Test 1'; %Label of test
 
