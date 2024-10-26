@@ -2,10 +2,10 @@ clear all; close all
 
 testid = 1;
 saveData =true;
-TDMSLoc = '..\coldflow2'; %where you are saving  directory
+TDMSLoc = '..\hotfire2'; %where you are saving  directory
 addpath(cd)
 
-dataFileNameMB = 'DataLog_2024-1019-1139-00_PSPAC_Data_Wiring.tdms'; %file name
+dataFileNameMB = 'DataLog_2024-1026-1302-09_PSPAC_Data_Wiring.tdms'; %file name
 
 TOR = 'AC Test 1'; %Label of test
 
@@ -140,8 +140,8 @@ plot(LFMB.time.Value,LFMB.pt_igox_07.Value,'r','DisplayName',LFMB.pt_igox_07.Nam
 R_u = 8.314; % J/mol/K
 
 % ox mdot
-Cd = 0.79;
-A = pi*(0.032)^2/4; % put in in^2
+Cd = 0.76;
+A = pi*(0.04)^2/4; % put in in^2
 gamma = 1.4; 
 P0 = LFMB.pt_igox_04.Value;
 MW = 0.032; % kg/mol
@@ -161,7 +161,7 @@ mdot_h2_core = compute_mdot(Cd, A, gamma, P0, R, T0); % mdot using sensors upstr
 
 % h2 sleeve mdot
 Cd = 0.75;
-A = pi*(0.063)^2/4;
+A = pi*(0.055)^2/4;
 gamma = 1.4;
 P0 = LFMB.pt_igfu_02.Value;
 MW = 0.002; % kg/mol
