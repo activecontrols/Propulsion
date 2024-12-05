@@ -1,0 +1,19 @@
+Methanol-LOX Chamber Sizing
+Adam Grendys, agrendy@purdue.edu
+12/5/2024
+
+Assumptions:
+% Quasi 1-D 
+% Isentropic
+% Frozen
+% Stagnation Temperature = Chamber Temperature (Tc = To)
+% Stagnation Pressure = Chamber Pressure (Pc = Po)
+% 80% Bell Contour
+% Theta_n = ~23 degrees (From NASA SP-8120)
+% Theta_e = ~12.5 degrees (From NASA SP-8120)
+
+Inputs:
+% Thrust = 550lbf
+% Chamber Pressure = 250psi
+% Exit Pressure = 17 psi (100% throttle)
+% Chamber Diameter = 3.75 in (Tadpole Rev1 Compatibility)
