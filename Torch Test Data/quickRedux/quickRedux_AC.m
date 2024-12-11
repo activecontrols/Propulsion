@@ -2,10 +2,10 @@ clear all; close all
 
 testid = 1;
 saveData =true;
-TDMSLoc = '..\hotfire2'; %where you are saving  directory
+TDMSLoc = 'C:\Users\janpa\Documents\GitHub\Propulsion\Torch Test Data\hotfire2'; %where you are saving  directory
 addpath(cd)
 
-dataFileNameMB = 'DataLog_2024-1026-1302-09_PSPAC_Data_Wiring.tdms'; %file name
+dataFileNameMB = 'DataLog_2024-1026-1413-00_PSPAC_Data_Wiring.tdms'; %file name
 
 TOR = 'AC Test 1'; %Label of test
 
@@ -16,7 +16,12 @@ LFmatFilename = sprintf('Test_%d_Data.mat',testid);
    % Package and Save
     if saveData% && ZeroSave
         fprintf('Saving Low Frequency Data...\n')
-        save([TDMSLoc,'\',LFmatFilename],'LFMB')
+        dataNames = fieldnames(LFMB);
+        for i = 1:numel(dataNames)
+            dataMatrix(:, i) = LFMB.(dataNames{i}).Value;
+        end
+        dataTable = array2table(dataMatrix, 'VariableNames', dataNames);
+        writetable(dataTable, [dataFileNameMB, '.csv']) 
         fprintf('Low Frequency Data Saved.\n\n')
     end
 
@@ -89,30 +94,12 @@ figure()
 title([ TOR ' H2 Sleeve'])
 hold on
 grid on
-legend on
+fieldnames(LFMB);legend on
 xlabel('Time (s)'); xlim([0 5])
 yyaxis left 
 ylabel('Pressure (psia)'); xlim([0 5])
 plot(LFMB.time.Value,LFMB.pt_igfu_05.Value,'k','DisplayName',LFMB.pt_igfu_05.Name)
-
-figure()
-title([ TOR ' H2 Core'])
-hold on
-grid on
-legend on
-xlabel('Time (s)'); xlim([0 5])
-yyaxis left 
-ylabel('Pressure (psia)');
 plot(LFMB.time.Value,LFMB.pt_igfu_06.Value,'b','DisplayName',LFMB.pt_igfu_06.Name)
-
-figure()
-title([ TOR ' Igniter Ox'])
-hold on
-grid on
-legend on
-xlabel('Time (s)');
-yyaxis left 
-ylabel('Pressure (psia)');xlim([0 5])
 plot(LFMB.time.Value,LFMB.pt_igox_07.Value,'r','DisplayName',LFMB.pt_igox_07.Name)
 %%
 % 
@@ -210,5 +197,4 @@ function mdot = compute_mdot(Cd, A, gamma, P0, R, T0)
 
         mdot(i) = mdot_i;
     end
-
 end
