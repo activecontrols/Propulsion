@@ -1,11 +1,16 @@
+%AC Data Redux Code, based on Zucrow ZL3 Data redux Code
+%Authors: Vishal Ravi, Jan Ayala
+%TODO: Add a way to mass convert data
+%      Automatic upload to sift
+
 clear all; close all
 
 testid = 1;
-saveData =true;
-TDMSLoc = 'C:\Users\janpa\Documents\GitHub\Propulsion\Torch Test Data\hotfire2'; %where you are saving  directory
+saveData = true;
+TDMSLoc = 'C:\Users\janpa\Documents\GitHub\Propulsion\Torch Test Data\hotfire3'; %where you are saving  directory
 addpath(cd)
 
-dataFileNameMB = 'DataLog_2024-1026-1413-00_PSPAC_Data_Wiring.tdms'; %file name
+dataFileNameMB = 'DataLog_2024-1207-1459-20_PSPAC_Data_Wiring.tdms'; %file name
 
 TOR = 'AC Test 1'; %Label of test
 
