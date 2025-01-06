@@ -1,0 +1,9 @@
+problem rocket fr
+    p(psi) = 275
+    o/f = 0.5
+    pip = 18.7075
+reac
+    fuel = CH3OH t(K) = 273.150 wt% = 0.000
+    ox = O2(L) t(K) = 90.190
+outp trans
+end
