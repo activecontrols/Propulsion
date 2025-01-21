@@ -7,10 +7,10 @@ clear all; close all
 
 testid = 1;
 saveData = true;
-TDMSLoc = 'C:\Users\janpa\Documents\GitHub\Propulsion\Torch Test Data\hotfire3'; %where you are saving  directory
+TDMSLoc = 'C:\Users\Andrew Radulovich\Documents\GitHub\Propulsion\Torch Test Data\hotfire4'; %where you are saving  directory
 addpath(cd)
 
-dataFileNameMB = 'DataLog_2024-1207-1459-20_PSPAC_Data_Wiring.tdms'; %file name
+dataFileNameMB = 'DataLog_2024-1215-0026-08_PSPAC_Data_Wiring.tdms'; %file name
 
 TOR = 'AC Test 1'; %Label of test
 
