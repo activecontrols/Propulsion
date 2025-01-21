@@ -13,3 +13,28 @@ Throttle/Throttle CEA/throttle.out
 cea/throttle.inp
 throttle.inp
 throttle.out
+bin/sizeRegen.m
+bin/sizeRegen.m
+Torch Sizing/main.m
+Torch Sizing/otherguessingmachine.m
+/bin
+Torch Test Data/hotfire4/DataLog_2024-1214-1705-39_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire4/DataLog_2024-1214-1705-44_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire4/DataLog_2024-1214-1728-58_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire4/DataLog_2024-1215-0001-47_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire4/DataLog_2024-1215-0026-00_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire4/DataLog_2024-1215-0026-08_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire5/DataLog_2025-0111-2127-17_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire6/DataLog_2025-0112-0208-20_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire6/DataLog_2025-0112-0215-03_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire7/DataLog_2025-0112-0325-03_PSPAC_Data_Wiring.tdms
+Torch Test Data/coldflow6/Test_1_Data.mat
+Torch Test Data/hotfire3/Test_1_Data.mat
+Torch Test Data/hotfire4/Test_1_Data.mat
+Torch Test Data/hotfire5/Test_1_Data.mat
+Torch Test Data/coldflow6/DataLog_2025-0111-1951-52_PSPAC_Data_Wiring.tdms
+Torch Test Data/coldflow3/DataLog_2024-1207-1459-20_PSPAC_Data_Wiring.tdms
+Torch Test Data/coldflow3/Test_1_Data.mat
+Torch Test Data/coldflow6/DataLog_2025-0111-1952-00_PSPAC_Data_Wiring.tdms
+Torch Test Data/hotfire6/Test_1_Data.mat
+Torch Test Data/hotfire7/Test_1_Data.mat

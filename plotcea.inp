@@ -1,0 +1,9 @@
+problem rocket fr
+    p(psi) = 250
+    o/f = 0.5
+    pip = 17.0068
+reac
+    fuel = C3H8O,2propanol t(K) = 273.150 wt% = 0.000
+    ox = O2(L) t(K) = 90.190
+outp trans
+end

@@ -1,6 +1,6 @@
 %% CEA Function
 % Author: Yash Amin
-%
+%   
 % This function will return the entire CEA output to make runtimes faster
 % and have a universal CEA run function
 %

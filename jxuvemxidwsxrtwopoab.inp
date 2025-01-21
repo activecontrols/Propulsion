@@ -1,6 +1,7 @@
 problem rocket fr
-    p(psi) = 255.6682
-    o/f = 2
+    p(psi) = 375.9766
+    o/f = 1
+    sup = 1.6469
 reac
     fuel = H2 t(K) = 297.000 wt% = 100.000
     ox = O2 t(K) = 297.000 wt% = 100.000

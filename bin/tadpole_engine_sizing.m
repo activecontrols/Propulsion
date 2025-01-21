@@ -1,25 +1,63 @@
-% Tadpole Sizing Author: Andrew Radulovich
+%% Tadpole Chamber Sizing Code
+% Author: Andrew Radulovich
+% Last Updated: 
+%{ 
+Description: This Code is used to determine the performance parameters of 
+the tadpole engine given relevant design parameters for its mission. 
+These calculations include throttle performance to a set percentage of 
+nominal thrust.Optionally this code can call a seperate function to 
+generate the chamber geometry.
+
+Inputs: 
+    - Nominal Thrust 
+    - Chamber Pressure
+    - Propellant Combination
+    - Oxidizer Fuel Ratio
+    - Nominal Exit Pressure
+    - Atmospheric Pressure
+    - Minimum Throttle thrust percentage
+    - Cstar efficiency 
+    - Cf efficiency 
+    - L star 
+    - Frozen or Equilibrium CEA Option
+Outputs: 
+    - Nominal Performance Parameters
+    - Throttle Performance Parameters (Optional)
+    - Chamber geometry Parameters (Optional) 
+    - Chamber contour output (Optional) 
+
+Assumptions: Uses NASA CEA for chemical equilibrium calculations thus
+assumptions stated in the User Manual apply. Steady State, 
+characteristics are uniform at any point along an axial slice of
+the engine. 
+%}
+
 clear; clc; close all
+%% inputs
+% File directory
 filename = "Tadpole_Sizing_Parameters.txt";
-throttlebool = 0;
-% inputs
+% Calculation Options
+throttlebool = 0; % 1: Perform Throttle Calculations
+geobool = 1; 
+numpoints = 5;
+tolerance = .01; % Can run into convergence issues if tolerance is lowered
+maxiter = 50; 
+% Engine Desin Input Parameters
 Tf = 550; % Thrust [lbf]
-minthrottle_percent = 40 * .01;
-Pc = 250; % Chamber Pressure [psi]
-Pe = 16.5; 
+minthrottle_percent = 40; % Minimum thrust percentage of nominal %
+Pc = 250; % Nominal Chamber Pressure [psi]
+Pe = 16.5; % Nominal Exit Pressure [psi]
 %fuel = 'C3H8O,2propanol';
 fuel = 'CH3OH'; % fuel
 ox = 'O2(L)'; % Oxidizer
-Lstar = 45; 
+Lstar = 49; % Characteristic Length [in]
 OF = 1.05; % OF ratio
-cstareff = .92;
-cfeff = .95;
-numpoints = 100;
-tolerance = .01; % Can run into convergence issues if tolerance is lowered
-maxiter = 50; 
-Pa = 14.7;
+cstareff = .92; % Cstar efficiency 
+cfeff = .95; % Cf efficiency
+Pa = 14.7; % Atmospheric Pressure
 
-% initalization and precalculations
+%% initalization and precalculations
+minthrottle_percent = minthrottle_percent * .01;
 converge_vector = ones(1,numpoints);
 PcPe = Pc/Pe;
 g = 9.80665;
@@ -29,11 +67,10 @@ cf_vector = ones(1,numpoints);
 Pc_vector = ones(1,numpoints);
 Pe_vector = ones(1,numpoints);
 gamma_vector = ones(1,numpoints);
-
 thrust_vector = linspace(Tf, Tf*minthrottle_percent,numpoints);
 
 
-% Nominal (Max) Thrust Sizing
+%% Nominal (Max) Thrust Sizing
 [out2] = callCEA('fr', Pc, 'psi', 'o/f', OF,'pip',PcPe,fuel,'K',293.15,100,ox,'K',90.18,100);
 cstar_out = squeeze(out2('cstar'));
 cstar = cstar_out(1) * cstareff;
@@ -55,13 +92,14 @@ mdot = Tf/Isp;
 At = (cstar*mdot)/ (g * Pc);
 Dt = 2*(At/pi())^(1/2);
 rt = Dt/2; 
-
+Ae = At * epsilon;
+De = 2*(Ae/pi())^(1/2);
 % Engine Geometry 
 Vc = Lstar * At; 
 
 
 
-%Throttle Thrust Sizing
+%% Throttle Thrust Sizing
 if throttlebool
     Pc_guess = Pc;
     j = 1;
@@ -150,7 +188,14 @@ if throttlebool
     xlim([220,550]);
 end
 
-
+if geobool 
+    R_t = Dt/2;
+    Ac = (pi*((3.75/2)^2));
+    con_ratio = Ac/At;
+    conv_angle = 37;
+    theta_i = 15;
+    [x_contour, r_contour, L_c, L_total, L_seg] = engineContour("conical", .8, R_t, epsilon, con_ratio, conv_angle, theta_i, 1.3,Lstar, 100,100);
+end
 
 
 

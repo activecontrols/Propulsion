@@ -1,5 +1,5 @@
-% %% HELP Regenerative Cooling Sizing Code
-% % Authors: Kamon Blong (kamon.blong@gmail.com), Jan Ayala, Andrew Radulovich, Alex Suppiah, Zach Hodgdon
+% %%PSP AC Regenerative Cooling Sizing Code
+% % Authors: Andrew Radulovich (aradulov@purdue.edu), Alex Suppiah, Jan Ayala, Kamon Blong, Zach Hodgdon
 % % First Created: 10/23/2022
 % % Last Updated: 10/22/2024
 
@@ -62,21 +62,33 @@ qdot_tolerance = 0.0001; % set heat transfer convergence tolerance
 
 
 %% ENGINE DEFINITION (INPUTS)
-
+% Engine Def 
+R_t = .7335;
+exp_ratio = 2.8153;
+con_ratio = 6.5343;
+conv_angle = 45;
+conical_half_angle = 15; 
+L_star = 45; 
+R_fillets = [.75,1.5,.382];
 % Engine Contour
-contour = readmatrix('contour_100pts.xlsx'); % import engine contour
-r_contour = (contour(:,2) * u.IN2M)'; % contour radius [m]
-x_contour = (contour(:,1) * u.IN2M)'; % contour x-axis [m]
-[R_t, t_local] = min(r_contour); % throat radius, throat location [m]
-chamber_length = u.IN2M * 5.205; % chamber length (m) [conversion * in]
-converging_length = u.IN2M * 1.8251; %  converging length (m) [conversion * in]
-diverging_length = u.IN2M * 1.8557; % diverging length (m) [conversion * in]
-total_length = chamber_length + converging_length + diverging_length; % total length (mm) 
+% contour = readmatrix('contour_100pts.xlsx'); % import engine contour
+% r_contour = (contour(:,2) * u.IN2M)'; % contour radius [m]
+% x_contour = (contour(:,1) * u.IN2M)'; % contour x-axis [m]
+% [R_t, t_local] = min(r_contour); % throat radius, throat location [m]
+% chamber_length = u.IN2M * 5.205; % chamber length (m) [conversion * in]
+% converging_length = u.IN2M * 1.8251; %  converging length (m) [conversion * in]
+% diverging_length = u.IN2M * 1.8557; % diverging length (m) [conversion * in]
+% total_length = chamber_length + converging_length + diverging_length; % total length (mm) 
+%chamber_length = u.IN2M * 6.2847; % chamber length (m) [conversion * in]
+%converging_length = u.IN2M * 2.2515; %  converging length (m) [conversion * in]
+% diverging_length = u.IN2M * 1.9627; % diverging length (m) [conversion * in]
+% total_length = chamber_length + converging_length + diverging_length; % total length (mm) 
 
 % Propulsion Parameters
 P_c = 250; % chamber pressure [psi] 
 P_e = 17; % exit pressure [psi]
-m_dot = 1.236 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+%m_dot = 1.236 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+m_dot = 7 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
 fuel = {'C3H8O,2propanol'};%,'H2O(L)'}; % fuel definition 
 oxidizer = 'O2(L)'; % oxidizer definition
 fuel_weight = 100;%[75,25]; % weight of each fuel used (if only 1 fuel, set to 100)  
@@ -86,30 +98,36 @@ OF = 1.2; % oxidizer/fuel ratio
 cstar_eff = 0.92;  % C* efficiency;
 
 % material properties
-properties = readmatrix(pwd + "/bin/Inconel718.xlsx");
+%properties = readmatrix(pwd + "/bin/Inconel718.xlsx");
+properties = readmatrix(pwd + "/bin/material_properties.xlsx");
 k_w = properties(13:end,1:2); % thermal conductivity [W/m-K]
-E = [properties(1:6, 9) properties(1:6,10)]; %youngs modulus
-CTE = [properties(1:7,1) properties(1:7,3)]; % [ppm]
+%E = [properties(1:6, 9) properties(1:6,10)]; %youngs modulus
+%CTE = [properties(1:7,1) properties(1:7,3)]; % [ppm]
+E = [properties(1:6, 9) properties(1:6,10)];
+CTE = [properties(1:5,1) properties(1:5,3)]; % [ppm]
 nu = 0.3; % poissons ratio (guess)
 %e = 24 * 0.001; % surface roughness (mm) [micrometer*conversion]
 roughness_table = readmatrix(pwd + "/bin/surface_roughness.xlsx",'Range','A12:E16');
 e = [roughness_table(2,2), roughness_table(5,2)] .* 0.001; %Surface roughness (mm) [micrometer*conversion] [45, 90]
-yield_strength = properties(1:7,1:2);
-elongation_break = [properties(1:7,1) properties(1:7,5)];
-N = 20*4;
+%yield_strength = properties(1:7,1:2);
+%elongation_break = [properties(1:7,1) properties(1:7,5)];
+yield_strength = properties(1:8,1:2);
+elongation_break = [properties(1:8,1) properties(1:8,5)];
+N = 20*4;   
 
 % Cooling channel inlet initialization
-coolant = 'ethanol'; %coolant definition
+%coolant = 'ethanol'; %coolant definition
+coolant = 'water';
 inlet_temperature = 293.16; % inlet temperature [K]
-inlet_pressure = 300 * u.PSI2PA; % inlet pressure [PA]
+inlet_pressure = 500 * u.PSI2PA; % inlet pressure [PA]
 coolantdirection = 0; % 1: direction opposite of hot gas flow direction
                       % 0: direction same as hot flow gas direction
                         
 % channel geometry: (1: chamber) (min: throat) (2: nozzle end)
 t_w = [.001 .00075 .001];
-% h_c = [.003 .0025 .003]; % channel height [1 min 2] [m]    
-% w_c = [.005 .002 .003];% channel width [1 min 2] [m]
-% num_channels = 34; 
+% h_c = [.0015 .001 .0023];  % 23channel height [1 min 2] [m]    
+% w_c = [.003 .001 .0015];% 30channel width [1 min 2] [m]
+% num_channels = 62; 
 h_c = [.003 .002 .0025]; % channel height [1 min 2] [m]    
 w_c = [.0045 .0015 .0025];% channel width [1 min 2] [m]
 num_channels = 42; 
@@ -118,19 +136,54 @@ num_channels = 42;
 %t_h_c = .003 ; % channel height at torch igniter
 h_c_extra = .0025;
 w_c_extra = .002;
+%h_c_extra = .002;
+%w_c_extra = .0015;
 offset_extra = 0.02;
-inter_length =  converging_length - offset_extra; % Length where wall thickness will interpolate between chamber and nozzle
+
 %extra_loc = [chamber_length, chamber_length + converging_length - .011547, chamber_length + converging_length];
-extra_loc = [chamber_length, chamber_length + converging_length - offset_extra, chamber_length + converging_length];
+%extra_loc = [chamber_length, chamber_length + converging_length - offset_extra, chamber_length + converging_length];
 t_w_c = w_c(1) ; % channel width at torch igniter
 t_h_c =  h_c(1); % channel height at torch igniter
 torch_loc = [2.2 3.2 3.7] .* 0.0254; % location of torch changing area [mm] [inch * conversion] [1 min 2]
 
 heatflux_factor = 1;
 
+%% Generate Engine Contour 
+arc_bool = 0;
+gen_bool = 1;
+if gen_bool 
+    [x_contour, r_contour, chamber_length,total_length,converging_length,diverging_length,deltax] = engineContour('conical',.8,R_t,exp_ratio,con_ratio,conv_angle,conical_half_angle,0,L_star,R_fillets,arc_bool,steps); 
+    x = 0:deltax:total_length; % length vector
+    r_interpolated = r_contour;
+else
+% read Engine Contour
+    contour = readmatrix('contour_100pts.xlsx'); % import engine contour
+    r_contour = (contour(:,2))'; % contour radius [in]
+    x_contour = (contour(:,1) )'; % contour x-axis [in]
+    [R_t, t_local] = min(r_contour); % throat radius, throat location (in)
+    chamber_length = 5.205; % chamber length (in) [in]
+    converging_length = 1.8251; %  converging length (in)
+    diverging_length = 1.8557; % diverging length (in) 
+    total_length = chamber_length + converging_length + diverging_length; % total length (in) 
+    chamber_length = 6.2847; % chamber length (in) 
+    
+    deltax = (total_length/(steps-1)); % change in distance per step [in]
+    x = 0:deltax:total_length;
+    x_interpolated = x - converging_length - chamber_length; 
+    r_interpolated = interp1(x_contour,r_contour,x_interpolated,'linear','extrap'); % linearly interpolate radius vector  
+    gay = r_interpolated;   
+    x_contour = x_interpolated;
+end
 %% Parse variables && initial calculations
-
 % Convert imperial units to metric
+r_interpolated = r_interpolated *u.IN2M;
+chamber_length = chamber_length * u.IN2M;
+total_length = total_length * u.IN2M; 
+x = x .* u.IN2M;
+deltax = deltax * u.IN2M;
+converging_length = converging_length *u.IN2M; 
+diverging_length = diverging_length * u.IN2M;
+R_t = R_t * u.IN2M;
 A_t = (R_t ^ 2) * pi; % throat area [m^2]
 P_c = P_c * u.PSI2PA; % chamber pressure [Pa]
 P_e = P_e * u.PSI2PA; % exit pressure [Pa]
@@ -141,10 +194,12 @@ R_of_curve = 1.5 * D_t / 2; % [m]
 A_local = pi * (R_t) ^ 2; % local cross sectional areas of engine
         
 % Discretize Chamber Length 
-deltax = (total_length/(steps-1)); % change in distance per step [m]
+extra_loc = [chamber_length, chamber_length + converging_length - offset_extra, chamber_length + converging_length];
+inter_length =  converging_length - offset_extra; % Length where wall thickness will interpolate between chamber and nozzle
+%deltax = (total_length/(steps-1)); % change in distance per step [m]
 points = steps; % number of points along chamber
-x = 0:deltax:total_length; % length vector
-x_plot = (x - chamber_length - converging_length); % length vector adjusted so that 0 is at the throat (mm)
+%x = 0:deltax:total_length; % length vector
+%x_plot = (x - chamber_length - converging_length); % length vector adjusted so that 0 is at the throat (mm)
 
 % Parse engine section length vectors
 torch_conv_length = torch_loc(2) - torch_loc(1);
@@ -186,6 +241,7 @@ end
 
 % parse channel geometry [1 min 2]
 A = w_c .* h_c; % channel cross-sectional area (m^2) [1 min 2]
+
 p_wet = 2*w_c + 2*h_c; % wetted perimeter of the pipe (m) [1 min 2]
 hydraulic_D = (4.*A)./p_wet; % hydraulic diameter (m) [1 min 2]
 
@@ -268,16 +324,20 @@ t_w_nozzle = ((t_w(3)-t_w(2))/(diverging_length)).*(x_nozzle_wall -x_nozzle_wall
 t_w_x = [t_w_chamber t_w_inter t_w_min_wall_section t_w_nozzle];
 
 
+
 %% CHAMBER HEAT TRANSFER CALCULATIONS
 
 % Step 1: Prescribe initial properties
 
 % Prescribe area ratios
-r_interpolated = interp1(x_contour,r_contour,x_plot,'linear','extrap'); % linearly interpolate radius vector  
-subsonic_area_ratios = (pi * r_interpolated(x_plot < 0) .^ 2) / A_t; % subsonic area ratios on discretized points
-supersonic_area_ratios = (pi * r_interpolated(x_plot > 0) .^ 2) / A_t; %  supersonic area ratios on discretized points
+%r_interpolated = interp1(x_contour,r_contour,x_contour,'linear','extrap'); % linearly interpolate radius vector  
+subsonic_area_ratios = (pi * r_interpolated(x_contour < 0) .^ 2) / A_t; % subsonic area ratios on discretized points
+supersonic_area_ratios = (pi * r_interpolated(x_contour > 0) .^ 2) / A_t; %  supersonic area ratios on discretized points
 A_ratio = [subsonic_area_ratios, supersonic_area_ratios]; % area ratio vector [sub, sup]
 
+%c = pi .* (95.25+t_w_x.*2);
+%frac_area = (w_c_x./c);
+%A2 = (pi.*(r_interpolated + t_w_x + h_c_x).^2 - pi.*(r_interpolated).^2) .*frac_area;
 % initialize property matrices
 % axial coolant property matrices
 P_l = zeros(1, points); % coolant pressure
@@ -293,6 +353,7 @@ T_wg = zeros(1, points);    % gas wall temperature
 h_g = zeros(1, points);     % gas film coefficient
 sigma = zeros(1, points);   % film coefficient correction factor
 h_l = zeros(1, points);     % liquid film coefficient
+Nu_l = zeros(1,points);     % Nusselt Number
 
 % % axial combustion property matrices
 % c_star = zeros(1, points);  % characteristic velocity
@@ -400,7 +461,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
         qdot_g(i) = h_g(i) * (T_r - T_wg(i)); % gas convective heat flux [W/m^2] (Heister EQ 6.16).
     
         % Step 6: Calculate liquid wall temperature
-        k_w_current(i) = interp1(k_w(:,1), k_w(:,2), T_wg(i), 'nearest', 'extrap');
+        k_w_current(i) = interp1(k_w(:,1), k_w(:,2), T_wg(i), 'linear', 'extrap');
         T_wl(i) = T_wg(i) - qdot_g(i) * t_w_x(i) / k_w_current(i); % liquid wall temperature calculated via conduction through wall [K] (Heister EQ 6.29).
 
         % Step 7: Calculate liquid film coefficient
@@ -409,7 +470,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
         mu_lb = py.CoolProp.CoolProp.PropsSI('V','T', T_l(i), 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
         cp_l = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l(i), 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
         k_l = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l(i), 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
-        rho_l(i) = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [???]
+        rho_l(i) = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [kg/m^3]
         v(i) = m_dot_CHANNEL / rho_l(i) / A_x(i); % velocity at step [m/s]
        
         Re_l = (rho_l(i) * v(i) * hydraulic_D_x(i)) / mu_lb; % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
@@ -424,13 +485,14 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
             %ed = e/(hydraulic_D_x(i)*1000); % relative roughness
             f = moody(ed, Re_l); % friction factor
 
-        % Nu_l = 0.023 * (Re_l ^ .8) * (Pr_l ^ .4) * (T_wl / T_l) ^ -.3; % nusselt number [N/A] - applicable for Re > 10,000, .7 < Pr < 160 (Heister EQ 6.19). ****
-        Nu_l = (f / 8) * (Re_l - 1000) * Pr_l / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
-        h_l(i) = (Nu_l * k_l) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
+        %Nu_l = 0.023 * (Re_l ^ .8) * (Pr_l ^ .4) * (T_wl / T_l) ^ -.3; % nusselt number [N/A] - applicable for Re > 10,000, .7 < Pr < 160 (Heister EQ 6.19). ****
+        Nu_l(i) = (f / 8) * (Re_l - 1000) * Pr_l / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
+        h_l(i) = (Nu_l(i) * k_l) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
         
         % Step 7.5: Fin heat transfer, adiabatic tip
         T_base = T_wl(i); % Temperature at fin base
-        rib_thickness(i) = ((pi * (r_interpolated(i) + t_w_x(i) + h_c_x(i)) ^ 2 - pi * (r_interpolated(i) + t_w_x(i)) ^ 2 - h_c_x(i) * w_c_x(i) * num_channels) / num_channels) / h_c_x(i);
+        rib_thickness(i) = ((pi * (r_interpolated(i) + t_w_x(i) + h_c_x(i)) ^ 2 - pi * (r_interpolated(i) + t_w_x(i)) ^ 2 - h_c_x(i) * w_c_x(i) * num_channels) / num_channels) / h_c_x(i); %% REDO THIS PLEASE
+        rib_thickness2(i) = (2*pi*(r_interpolated(i)+t_w_x(i)) - w_c_x(i)*num_channels)/num_channels; %Assumes arced channel geometry, Rinterpolated is in MM so this is WRONG!!!
         P_fin = 2 * deltax; % Fin perimeter (step distance & channel width)
         A_c_fin(i) = rib_thickness(i) * deltax; % Fin area at current step
         m_fin = sqrt(h_l(i) * P_fin / (k_w_current(i) * A_c_fin(i))); % Fin m
@@ -443,7 +505,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
         qdot_l(i) = h_l(i) * (T_wl(i) - T_l(i)) + 2 * fin_q(i); % liquid convective heat flux [W/m^2] (Heister EQ 6.29).
 
         % Step 9: Check for convergence and continue loop / next step
-        if abs(qdot_g(i) - qdot_l(i)) > qdot_tolerance && counter(i) < 250 % check for tolerance
+        if abs(qdot_g(i) - qdot_l(i)) > qdot_tolerance && counter(i) < 400 % check for tolerance
             
             % convergence loop
             if qdot_g(i) - qdot_l(i) > 0
@@ -476,8 +538,8 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
             if i <= points % structural calculations
                 yield(i) = interp1(yield_strength(:,1), yield_strength(:,2), T_wg(i), 'linear', 'extrap');
                 E_current(i) = interp1(E(:,1), E(:,2), T_wg(i), 'linear', 'extrap');
-                CTE_current(i) = interp1(CTE(:,1), CTE(:,2), T_wg(i), 'nearest', 'extrap');
-                CTE_liq_side(i) = interp1(CTE(:,1), CTE(:,2), T_wl(i), 'nearest', 'extrap');
+                CTE_current(i) = interp1(CTE(:,1), CTE(:,2), T_wg(i), 'linear', 'extrap');
+                CTE_liq_side(i) = interp1(CTE(:,1), CTE(:,2), T_wl(i), 'linear', 'extrap');
                 elong(i) = interp1(elongation_break(:,1), elongation_break(:,2), T_wg(i),'linear','extrap');
                 epsilon_emax(i) = ((yield(i)*1000000)/ E_current(i));
 
@@ -561,14 +623,14 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
 end
 toc
 %% FEA INPUTS
-ambient_chamber = [x; T_g]'; 
-ambient_water = [x; T_l]';
-gas_h = [x; h_g]';
-liquid_h = [x; h_l]';
-gas_p = [x; P_g]';
-liquid_p = [x; P_l]';
-FEA_inputs = [x; T_g; h_g; P_g; T_l; h_l; P_l];
-% 
+% ambient_chamber = [x; T_g]'; 
+% ambient_water = [x; T_l]';
+% gas_h = [x; h_g]';
+% liquid_h = [x; h_l]';
+% gas_p = [x; P_g]';
+% liquid_p = [x; P_l]';
+% FEA_inputs = [x; T_g; h_g; P_g; T_l; h_l; P_l];
+% % 
 % delete('FEA_regen_large.xls');
 % writematrix(h_c, 'FEA_regen_large.xls');
 % writematrix(w_c, 'FEA_regen_large.xls', 'WriteMode', 'append');
@@ -588,30 +650,32 @@ fprintf("Engine life (hot fires) Lowcycle: %.02f\n", Engine_life_lowcycle)
 fprintf("Safety factor to yield: %.02f\n", yield_SF)
 fprintf("Max Wall Temp [K]: %.02f\n", max(T_wg))
 
+% Temperature Plot
 figure('Name', 'Temperature Plot');
 hold on;
 set(gca, 'FontName', 'Times New Roman')
 % temperature plot
 % subplot(2,1,1)
 yyaxis left
-plot(x_plot .* 1000, T_wg, 'red', 'LineStyle', '-');
-plot(x_plot .* 1000, T_wl, 'magenta', 'LineStyle', '-');
-plot(x_plot .* 1000, T_l, 'blue', 'LineStyle', '-');
+plot(x_contour, T_wg, 'red', 'LineStyle', '-');
+plot(x_contour, T_wl, 'magenta', 'LineStyle', '-');
+plot(x_contour, T_l, 'blue', 'LineStyle', '-');
 ylabel('Temperature [K]')
 set(gca, 'Ycolor', 'k')
 grid on
 
 yyaxis right
 %plot(x_contour .* 1000, r_contour .* 1000, 'black', 'LineStyle', '-');
-plot(x_plot .* 1000, r_interpolated .* 1000, 'black', 'LineStyle', '-');
-ylabel('Radius [mm]')
+plot(x_contour, r_interpolated, 'black', 'LineStyle', '-');
+ylabel('Radius [in]')
 set(gca, 'Ycolor', 'k')
 axis auto;
 
 legend('T_w_g', 'T_w_l', 'T_l', 'Chamber Contour', 'Location', 'southoutside', 'Orientation', 'horizontal','Location','best')
 title('Temperature Distribution')
-xlabel('Location [mm]')
-%%
+xlabel('Location [in]')
+
+% Heat Transfer Plot
 figure('Name', 'Heat Transfer Plots');
 subplot(2,2,[1,2])
 hold on;
@@ -619,48 +683,49 @@ set(gca, 'FontName', 'Times New Roman')
 % heat flux plot
 %subplot(2,1,2)
 yyaxis left
-plot(x_plot .* 1000, qdot_g ./ 1000, 'red', 'LineStyle', '-');
+plot(x_contour, qdot_g ./ 1000, 'red', 'LineStyle', '-');
 ylabel('Heat Flux [kW/m^2]')
 set(gca, 'Ycolor', 'k')
 grid on
 
 yyaxis right
-plot(x_plot .* 1000, r_interpolated .* 1000, 'black', 'LineStyle', '-');
-ylabel('Radius [mm]')
+plot(x_contour, r_interpolated, 'black', 'LineStyle', '-');
+ylabel('Radius [in]')
 set(gca, 'Ycolor', 'k')
 axis equal;
 
 legend('Convective Heat Flux', 'Chamber Contour','Location','best')
 title('Heat Flux Distribution')
-xlabel('Location [mm]')
+xlabel('Location [in]')
 
 subplot(2,2,3)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.*1000, h_g)
+plot(x_contour, h_g)
 title("Gas Film Coeffcient [W/m^2-K]")
-xlabel("Location [mm]");
+xlabel("Location [in]");
 grid on
 subplot(2,2,4)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.*1000, h_l)
+plot(x_contour, h_l)
 title("Liquid Film Coefficient [W/m^2-K]")
 grid on
 
 
+% Coolant/ Water Flow Plot
 figure('Name','Water Flow')
 subplot(2,2,[1,2])
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, P_l * 1/6894.757)
-plot(x_plot.*1000, P_g *1/6894.757, 'y')
+plot(x_contour, P_l * 1/6894.757)
+plot(x_contour, P_g *1/6894.757, 'y')
 title("Liquid Pressure Loss")
-xlabel("Location [mm]")
+xlabel("Location [in]")
 ylabel("Pressure [PSI]")
 yyaxis right
-plot(x_plot .* 1000, r_interpolated .* 1000, 'black', 'LineStyle', '-');
-ylabel('Radius [mm]')
+plot(x_contour, r_interpolated, 'black', 'LineStyle', '-');
+ylabel('Radius [in]')
 set(gca, 'Ycolor', 'k')
 axis equal;
 legend("Pressure Curve","Gas Pressure"," Chamber Contour",'Location','best')
@@ -669,34 +734,35 @@ grid on
 subplot(2,2,3)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, v);
+plot(x_contour, v);
 title("Coolant Velocity [m/s]")
-xlabel("Location [mm]")
+xlabel("Location [in]")
 grid on
 subplot(2,2,4)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.*1000, T_l)
+plot(x_contour, T_l)
 title("Coolant Temperature [K]");
 grid on
 
 
-
+% Channel Geometry Plot
 
 figure('Name','Channel Geometry');
 subplot(2,2,[1,2]);
 hold on
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, w_c_x .*1000);
-plot(x_plot.*1000, h_c_x .*1000);
-plot(x_plot.*1000, t_w_x .* 1000);
-plot(x_plot.*1000, rib_thickness .*1000);
+plot(x_contour, w_c_x .*1000);
+plot(x_contour, h_c_x .*1000);
+plot(x_contour, t_w_x .* 1000);
+plot(x_contour, rib_thickness .*1000);
+%plot(x_contour.*1000, rib_thickness2 .*1000);
 title("Channel Dimensions");
-xlabel("Location [mm]");
-ylabel("Channel Dimensions [mm]")
+xlabel("Location [in]");
+ylabel("Channel Dimensions [in]")
 yyaxis right
-plot(x_plot .* 1000, r_interpolated .* 1000, 'black', 'LineStyle', '-');
-ylabel('Chamber Contour [mm]')
+plot(x_contour, r_interpolated, 'black', 'LineStyle', '-');
+ylabel('Chamber Contour [in]')
 set(gca, 'Ycolor', 'k')
 axis equal;
 legend('Channel Width', 'Channel Height', 'Wall Thickness', 'Fin Thickness', 'Chamber Contour','Location','northwest')
@@ -705,31 +771,31 @@ grid on
 subplot(2,2,3);
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.*1000, h_c_x./rib_thickness);
-title("Fin Aspect Ratio [mm]");
-xlabel("Location [mm]");
+plot(x_contour, h_c_x./rib_thickness);
+title("Fin Aspect Ratio");
+xlabel("Location [in]");
 grid on
 subplot(2,2,4);
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, AR_channel);
+plot(x_contour, AR_channel);
 title("Channel Aspect Ratio");
-xlabel("Location [mm]");
+xlabel("Location [in]");
 grid on
 
-    
+% Structural Calcs Plot
 figure('Name', 'Structural results (Stress)')
 subplot(2,2,[1,2])
 hold on
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, sigma_vl*0.000001,'g',x_plot.* 1000, sigma_vc*0.000001)
-plot(x_plot.* 1000, yield)
+plot(x_contour, sigma_vl*0.000001,'g',x_contour, sigma_vc*0.000001)
+plot(x_contour, yield)
 title("Von Mises Stress")
-xlabel("Location [mm]")
+xlabel("Location [in]")
 ylabel("[MPA]")
 yyaxis right
-plot(x_plot .* 1000, r_interpolated .* 1000, 'black', 'LineStyle', '-');
-ylabel('Radius [mm]')
+plot(x_contour, r_interpolated, 'black', 'LineStyle', '-');
+ylabel('Radius [in]')
 set(gca, 'Ycolor', 'k')
 axis equal;
 legend('Von Mises Stress (Lands)','Von Mises Stress (Channels)', 'Yield Stress at Temperature', 'Chamber Contour','Location','best')
@@ -738,9 +804,9 @@ subplot(2,2,3)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
 hold on
-plot(x_plot.* 1000, sigma_t*0.000001,"b");
-plot(x_plot.* 1000, sigma_tp*0.000001,"m");
-plot(x_plot.* 1000, sigma_tt*0.000001,"r");
+plot(x_contour, sigma_t*0.000001,"b");
+plot(x_contour, sigma_tp*0.000001,"m");
+plot(x_contour, sigma_tt*0.000001,"r");
 legend("Total Stress", "Pressure contribution", "Thermal Contribution",'Location','best')
 title("Tangential Stress (MPA)")
 hold off
@@ -748,26 +814,28 @@ grid on
 subplot(2,2,4)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, sigma_lc*0.000001,x_plot.* 1000, sigma_ll*0.000001);
+plot(x_contour, sigma_lc*0.000001,x_contour, sigma_ll*0.000001);
 title("Longitudinal Stress (MPA)")
 legend("At the channel", "At the lands",'Location','best');
-xlabel("Location [mm]")
+xlabel("Location [in]")
 grid on
 % subplot(2,2,3)
 % plot(x_plot.* 1000, sigmab*0.000001)
 % title("Buckling Stress (MPA)")
 % xlabel("Location [mm]")
+
+% Strain Plots
 figure('Name', 'Structural results (Strain)')
 subplot(2,2,[1,2])
 hold on
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, epsilon_vl*100,'g',x_plot.* 1000, epsilon_vc*100)
+plot(x_contour, epsilon_vl*100,'g',x_contour, epsilon_vc*100)
 title("Von Mises Strain [%]")
-xlabel("Location [mm]")
+xlabel("Location [in]")
 ylabel("[%]")
 yyaxis right
-plot(x_plot .* 1000, r_interpolated .* 1000, 'black', 'LineStyle', '-');
-ylabel('Radius [mm]')
+plot(x_contour, r_interpolated, 'black', 'LineStyle', '-');
+ylabel('Radius [in]')
 set(gca, 'Ycolor', 'k')
 axis equal;
 legend('Von Mises Strain (Lands)','Von Mises Strain (Channels)', 'Chamber Contour','Location','best')
@@ -776,9 +844,9 @@ subplot(2,2,3)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
 hold on
-plot(x_plot.* 1000, epsilon_t*100,"b");
-plot(x_plot.* 1000, epsilon_tp*100,"m");
-plot(x_plot.* 1000, epsilon_tt*100,"r");
+plot(x_contour, epsilon_t*100,"b");
+plot(x_contour, epsilon_tp*100,"m");
+plot(x_contour, epsilon_tt*100,"r");
 legend("Total Strain", "Pressure contribution", "Thermal Contribution",'Location','best')
 title("Tangential Strain (%)")
 hold off
@@ -786,23 +854,24 @@ grid on
 subplot(2,2,4)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, epsilon_lc*100,x_plot.* 1000, epsilon_ll*100);
+plot(x_contour, epsilon_lc*100,x_contour, epsilon_ll*100);
 title("Longitudinal Strain (%)")
 legend("At the channel", "At the lands",'Location','best');
-xlabel("Location [mm]")
+xlabel("Location [in]")
 grid on
 
+% Fin Heat Transfer
 figure('Name', 'Fin results')
 subplot(2,2,[1,2])
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, fin_q / 1000,'g')
+plot(x_contour, fin_q / 1000,'g')
 title("Heat Flux")
-xlabel("Location [mm]")
+xlabel("Location [in]")
 ylabel("[kW/m^2]")
 yyaxis right
-plot(x_plot .* 1000, r_interpolated .* 1000, 'black', 'LineStyle', '-');
-ylabel('Radius [mm]')
+plot(x_contour, r_interpolated, 'black', 'LineStyle', '-');
+ylabel('Radius [in]')
 set(gca, 'Ycolor', 'k')
 axis equal;
 legend('Fin Heat Flux', 'Chamber Contour','Location','best')
@@ -810,41 +879,45 @@ grid on
 subplot(2,2,[3,4])
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_plot.* 1000, eta_fin);
-plot(x_plot.* 1000, h_c_x./rib_thickness);
+plot(x_contour, eta_fin);
+plot(x_contour, h_c_x./rib_thickness);
 title("Fin Efficiency")
 legend("Fin Efficiency", "Aspect Ratio",'Location','best');
-xlabel("Location [mm]")
+xlabel("Location [in]")
 hold off
 grid on
 
+
+% Pressing Stress Calcs
+
 figure("Name","pressing")
 hold on 
-plot(x_plot.*1000, sigma_tp_cold*0.000001);
-plot(x_plot.* 1000, yield)
+plot(x_contour, sigma_tp_cold*0.000001);
+plot(x_contour, yield)
 title("Cold water pressing stress")
 ylabel("MPA");
-xlabel("Location [mm]");
+xlabel("Location [in]");
 legend("Water Channel Press Stress", "Yield Stress")
 
+% Fix this stuff later
 figure("Name","comparison")
-plot(x_plot.*1000, epsilon_ll, x_plot.*1000, epsilon_tota)
+plot(x_contour.*1000, epsilon_ll, x_contour.*1000, epsilon_tota)
 legend("Definition1","Definition2")
 figure("Name","effl")
-plot(x_plot.*1000, epsilon_toteff, x_plot.*1000, epsilon_cs_tot, x_plot.*1000, epsilon_peff, x_plot.*1000, epsilon_cs, x_plot.*1000, epsilon_eeff+epsilon_peff)
+plot(x_contour.*1000, epsilon_toteff, x_contour.*1000, epsilon_cs_tot, x_contour.*1000, epsilon_peff, x_contour.*1000, epsilon_cs, x_contour.*1000, epsilon_eeff+epsilon_peff)
 legend("total effective strain", "total allowable cyclic strain", "effective plastic strain", "allowable cyclic plastic strain ", "Adding comp")
 figure("Name","Plastic Check")
-plot(x_plot.*1000, epsilon_pa, x_plot.*1000, epsilon_pt)
+plot(x_contour.*1000, epsilon_pa, x_contour.*1000, epsilon_pt)
 legend("Plastic Axial strain","Plastic tangential strain")
 
 figure(20)
-plot(x_plot.*1000,T_g);
+plot(x_contour.*1000,T_g);
 
 
 %%
 figure
 grid on 
-plot(x_plot.*1000, epsilon_toteff*100, 'LineWidth', 2)
+plot(x_contour.*1000, epsilon_toteff*100, 'LineWidth', 2)
 title("Total Effective Strain")
 ylabel("Strain [%]");
 xlabel("Location [mm]");

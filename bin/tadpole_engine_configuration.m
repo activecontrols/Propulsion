@@ -1,5 +1,5 @@
 %% Tadpole Configuration Calculations
-% Tadpole Sizing Author: Andrew Radulovich
+% Author: Andrew Radulovich
 clear; clc; close all
 
 % Inputs
