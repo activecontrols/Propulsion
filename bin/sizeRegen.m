@@ -1,4 +1,6 @@
+
 % %%PSP AC Regenerative Cooling Sizing Code
+% %% HELP Regenerative Cooling Sizing Code
 % % Authors: Andrew Radulovich (aradulov@purdue.edu), Alex Suppiah, Jan Ayala, Kamon Blong, Zach Hodgdon
 % % First Created: 10/23/2022
 % % Last Updated: 10/22/2024

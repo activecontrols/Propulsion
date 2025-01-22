@@ -8,11 +8,15 @@ clear all; close all
 testid = 1;
 saveData = true;
 TDMSLoc = 'C:\Users\Andrew Radulovich\Documents\GitHub\Propulsion\Torch Test Data\hotfire4'; %where you are saving  directory
+saveData =true;
+excelsheet = true; % Export data to excel sheet
+excelfilename = 'hotfire4_data.xlsx';
+TDMSLoc = '..\hotfire4'; %where you are saving  directory
 addpath(cd)
 
 dataFileNameMB = 'DataLog_2024-1215-0026-08_PSPAC_Data_Wiring.tdms'; %file name
 
-TOR = 'AC Test 1'; %Label of test
+TOR = 'AC Test 1'; %Label of test   
 
 LFmatFilename = sprintf('Test_%d_Data.mat',testid);
 
@@ -29,6 +33,26 @@ LFmatFilename = sprintf('Test_%d_Data.mat',testid);
         writetable(dataTable, [dataFileNameMB, '.csv']) 
         fprintf('Low Frequency Data Saved.\n\n')
     end
+    % 
+    % if excelsheet 
+    %     time = LFMB.time.Value;
+    %     pt_pdox_083 = LFMB.pt_pdox_083.Value;
+    %     pt_n2_026 = LFMB.pt_n2_026.Value;
+    %     pt_ch_058 = LFMB.pt_ch_058.Value;
+    %     pt_n2_076 = LFMB.pt_n2_076.Value;
+    %     pt_igox_04 = LFMB.pt_igox_04.Value;
+    %     pt_igfu_02 = LFMB.pt_igfu_02.Value;
+    %     pt_igfu_05 = LFMB.pt_igfu_05.Value;
+    %     pt_igfu_06 = LFMB.pt_igfu_06.Value;
+    %     pt_igox_07 = LFMB.pt_igox_07.Value;
+    %     pv_pdfu_059_fb = LFMB.pv_pdfu_059_fb.Value;
+    %     pv_pdox_087_fb = LFMB.pv_pdox_087_fb.Value;
+    %     pv_n2_077_fb = LFMB.pv_n2_077_fb.Value;
+    %     tc_igfu_01 = LFMB.tc_igfu_01.Value;
+    %     tc_igox_03 = LFMB.tc_igox_03.Value;
+    %     T = table(pt_pdox_083,pt_n2_026,pt_ch_058,pt_n2_076,pt_igox_04,pt_igfu_02,pt_igfu_05,pt_igfu_06,pt_igox_07,pv_pdfu_059_fb,pv_pdox_087_fb,pv_n2_077_fb,tc_igfu_01,tc_igox_03);
+    %     writetable(T,excelfilename,'Sheet',1,'Range','A1')
+    % end 
 
 allData.LFMB = LFMB;
 
@@ -142,8 +166,8 @@ T0 = LFMB.tc_igox_03.Value;
 mdot_ox = compute_mdot(Cd, A, gamma, P0, R, T0); % mdot using sensors upstream of ox orifice, assuming ideal gas
 
 % h2 core mdot
-Cd = 0.85;
-A = pi*(0.01)^2/4;
+Cd = 0.73;
+A = pi*(0.016)^2/4;
 gamma = 1.4;
 P0 = LFMB.pt_igfu_02.Value;
 MW = 0.002; % kg/mol
