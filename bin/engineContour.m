@@ -81,8 +81,8 @@ if geometry_type == "conical" || geometry_type == "bell"
     vol_converging_linear = pi / 3 * (max(x_converging_linear) - min(x_converging_linear)) * (R_c ^ 2 + R_c*R_t + R_t ^ 2);
     vol_converging_throat = pi * trapz(fliplr((double(x_converging_throat)) .^ 2), fliplr((double(y_converging_throat)) .^ 2));
     
-    %vol_converging = vol_converging_chamber + vol_converging_linear + vol_converging_throat;       % volume of converging section [in^3]
-    vol_converging = 13.11;
+    vol_converging = vol_converging_chamber + vol_converging_linear + vol_converging_throat;       % volume of converging section [in^3]
+    %vol_converging = 13.11;
     vol_cylindrical = vol_chamber - vol_converging;                                                % volume of cylindrical section [in^3]
     L_c = vol_cylindrical / (pi * R_c ^ 2);                                                        % chamber length [in]
     

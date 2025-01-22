@@ -88,7 +88,7 @@ R_fillets = [.75,1.5,.382];
 
 % Propulsion Parameters
 P_c = 250; % chamber pressure [psi] 
-P_e = 17; % exit pressure [psi]
+P_e = 16.5; % exit pressure [psi]
 %m_dot = 1.236 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
 m_dot = 7 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
 fuel = {'C3H8O,2propanol'};%,'H2O(L)'}; % fuel definition 
@@ -152,7 +152,7 @@ heatflux_factor = 1;
 
 %% Generate Engine Contour 
 arc_bool = 0;
-gen_bool = 1;
+gen_bool = 0;
 if gen_bool 
     [x_contour, r_contour, chamber_length,total_length,converging_length,diverging_length,deltax] = engineContour('conical',.8,R_t,exp_ratio,con_ratio,conv_angle,conical_half_angle,0,L_star,R_fillets,arc_bool,steps); 
     x = 0:deltax:total_length; % length vector
@@ -167,7 +167,6 @@ else
     converging_length = 1.8251; %  converging length (in)
     diverging_length = 1.8557; % diverging length (in) 
     total_length = chamber_length + converging_length + diverging_length; % total length (in) 
-    chamber_length = 6.2847; % chamber length (in) 
     
     deltax = (total_length/(steps-1)); % change in distance per step [in]
     x = 0:deltax:total_length;
