@@ -4,7 +4,7 @@
 % First Created: 7/17/2022
 % Last Updated: 10/23/2022
 
-function [x_contour, r_contour, L_c, L_total, L_seg] = engineContour(geometry_type, bell_pct, R_t, exp_ratio, con_ratio, conv_angle, conical_half_angle, L_crude_throat, L_star, bar_size, resolution)
+function [x_contour, r_contour, L_c, L_total, L_converging, L_nozzle, L_seg] = engineContour(geometry_type, bell_pct, R_t, exp_ratio, con_ratio, conv_angle, conical_half_angle, L_crude_throat, L_star, R_fillets, arc_bool, resolution)
 
 %{ 
 Description: 
@@ -18,7 +18,7 @@ Outputs:
 
 debug = 0;
 L_seg = 0;
-
+bar_size = 0;
 % interpolate initial and exit rao angles
 [theta_i, theta_e] = raoAngleInterpolation(exp_ratio, debug); 
 
@@ -33,9 +33,9 @@ theta_e = theta_e * pi / 180;          % nozzle exit angle [rad]
 conv_angle = conv_angle * pi /180;     % convergence angle [rad]
 
 % set default converging/diverging fillets (do not change unless you know what you're doing)
-R_converging_fillet = 1.5;             % radius modifier for converging fillet [in]
-R_diverging_fillet = .382;             % radius modifier for diverging fillet [in]
-R_chamber_fillet = .75;                 % radius modifier for chamber fillet [in]
+R_converging_fillet = R_fillets(2);             % radius modifier for converging fillet [in]
+R_diverging_fillet = R_fillets(3);             % radius modifier for diverging fillet [in]
+R_chamber_fillet = R_fillets(1);                 % radius modifier for chamber fillet [in]
 
 % perform intermediate geometry calculations
 A_t = (R_t) .^ 2 .* pi;                % throat area [in^2]
@@ -81,7 +81,8 @@ if geometry_type == "conical" || geometry_type == "bell"
     vol_converging_linear = pi / 3 * (max(x_converging_linear) - min(x_converging_linear)) * (R_c ^ 2 + R_c*R_t + R_t ^ 2);
     vol_converging_throat = pi * trapz(fliplr((double(x_converging_throat)) .^ 2), fliplr((double(y_converging_throat)) .^ 2));
     
-    vol_converging = vol_converging_chamber + vol_converging_linear + vol_converging_throat;       % volume of converging section [in^3]
+    %vol_converging = vol_converging_chamber + vol_converging_linear + vol_converging_throat;       % volume of converging section [in^3]
+    vol_converging = 13.11;
     vol_cylindrical = vol_chamber - vol_converging;                                                % volume of cylindrical section [in^3]
     L_c = vol_cylindrical / (pi * R_c ^ 2);                                                        % chamber length [in]
     
@@ -223,4 +224,4 @@ hold off
 
 %% Discretize into equal spaced points
 
-[x_contour, r_contour, L_seg] = splitContour(x_total, r_total, resolution, debug);
+[x_contour, r_contour, L_seg] = splitContour(x_total, r_total, L_total, L_c, L_converging, resolution, arc_bool, debug);
