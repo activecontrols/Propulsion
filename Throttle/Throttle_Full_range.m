@@ -8,7 +8,7 @@ CEA_input_name = 'throttle';
 
 
 %% System Constants
-breakpoints = 10;
+breakpoints = 200;
 
 R_t = 0.7335/39.37; % throat radius [m]
 At =  pi*R_t^2; % Throat Area [meters]
@@ -17,7 +17,7 @@ Pc_max = 250;   % Max Throttle Chamber Pressure [psi]
 Pe_max = 17;    % Max Throttle Exit Pressure [psi]
 cstar_eff = 0.92;   % C* efficency
 cf_eff = 0.95;  % Cf efficiency;
-throttle_pct = linspace(0.35, 0.375, breakpoints);
+throttle_pct = linspace(0.4, 1, breakpoints);
 thrust_max = 2446.52;   % Max Thrust [N]
 g = 9.81;   % Gravity [m/s^2]
 g_imperial = 32.2 * 12;            % in/s^2

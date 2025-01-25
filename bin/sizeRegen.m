@@ -65,13 +65,26 @@ qdot_tolerance = 0.0001; % set heat transfer convergence tolerance
 
 %% ENGINE DEFINITION (INPUTS)
 % Engine Def 
-R_t = .7335;
-exp_ratio = 2.8153;
-con_ratio = 6.5343;
-conv_angle = 45;
+% R_t = 0.73439;
+% exp_ratio = 2.8152;
+% con_ratio = 6.5185;
+% conv_angle = 37.5;
+% conical_half_angle = 15; 
+% L_star = 45; 
+% R_fillets = [1.5,1.5,.5];
+R_t = 0.73217;
+exp_ratio = 2.9525;
+con_ratio = 6.558;
+conv_angle = 37.5;
 conical_half_angle = 15; 
 L_star = 45; 
-R_fillets = [.75,1.5,.382];
+R_fillets = [1.5,1.5,.5];
+
+material = 0; %0: 6061-RAM2 1: 718 inco
+backsideheat = 1;
+T_amb = 293; %Atmospheric temp Kelvin
+filmprop = 0;
+
 % Engine Contour
 % contour = readmatrix('contour_100pts.xlsx'); % import engine contour
 % r_contour = (contour(:,2) * u.IN2M)'; % contour radius [m]
@@ -90,72 +103,96 @@ R_fillets = [.75,1.5,.382];
 P_c = 250; % chamber pressure [psi] 
 P_e = 16.5; % exit pressure [psi]
 %m_dot = 1.236 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
-m_dot = 7 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
-fuel = {'C3H8O,2propanol'};%,'H2O(L)'}; % fuel definition 
+m_dot = 1.51638 * u.LB2KG;
+%m_dot = 7 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+%fuel = {'C3H8O,2propanol'};%,'H2O(L)'}; % fuel definition 
+fuel = {'CH3OH'};%,'H2O(L)'}; % fuel definition 
 oxidizer = 'O2(L)'; % oxidizer definition
 fuel_weight = 100;%[75,25]; % weight of each fuel used (if only 1 fuel, set to 100)  
 fuel_temp = 293.15;%[293.15,293.15]; % [K]
 oxidizer_temp = 90.17; % [K]
-OF = 1.2; % oxidizer/fuel ratio
+OF = .8; % oxidizer/fuel ratio
 cstar_eff = 0.92;  % C* efficiency;
 
 % material properties
 %properties = readmatrix(pwd + "/bin/Inconel718.xlsx");
-properties = readmatrix(pwd + "/bin/material_properties.xlsx");
-k_w = properties(13:end,1:2); % thermal conductivity [W/m-K]
+if material == 0 
+
+    properties = readmatrix(pwd + "/bin/al6061_RAM2.xlsx");
+    k_w = properties(17:26,1:2); % thermal conductivity [W/m-K]
 %E = [properties(1:6, 9) properties(1:6,10)]; %youngs modulus
 %CTE = [properties(1:7,1) properties(1:7,3)]; % [ppm]
-E = [properties(1:6, 9) properties(1:6,10)];
-CTE = [properties(1:5,1) properties(1:5,3)]; % [ppm]
+    E = [properties(17:23, 8) properties(17:23,9)];
+    CTE = [properties(17:22,4) properties(17:22,5)]; % [ppm]
+    yield_strength = properties(2:13,1:2);
+    elongation_break = [properties(2:13,1) properties(2:13,3)];
+end 
+if material == 1 
+    properties = readmatrix(pwd + "/bin/Inconel718.xlsx");
+    k_w = properties(13:end,1:2); % thermal conductivity [W/m-K]
+    yield_strength = properties(1:7,1:2);
+    elongation_break = [properties(1:7,1) properties(1:7,5)];
+    E = [properties(1:6, 9) properties(1:6,10)]; %youngs modulus
+    CTE = [properties(1:7,1) properties(1:7,3)]; % [ppm]
+end
+if material == 2 
+    properties = readmatrix(pwd + "/bin/material_properties.xlsx");
+    k_w = properties(13:end,1:2); % thermal conductivity [W/m-K]
+    yield_strength = properties(1:8,1:2);
+    elongation_break = [properties(1:8,1) properties(1:8,5)];
+    E = [properties(1:6, 9) properties(1:6,10)];
+    CTE = [properties(1:5,1) properties(1:5,3)]; % [ppm]
+end
 nu = 0.3; % poissons ratio (guess)
 %e = 24 * 0.001; % surface roughness (mm) [micrometer*conversion]
 roughness_table = readmatrix(pwd + "/bin/surface_roughness.xlsx",'Range','A12:E16');
 e = [roughness_table(2,2), roughness_table(5,2)] .* 0.001; %Surface roughness (mm) [micrometer*conversion] [45, 90]
-%yield_strength = properties(1:7,1:2);
-%elongation_break = [properties(1:7,1) properties(1:7,5)];
-yield_strength = properties(1:8,1:2);
-elongation_break = [properties(1:8,1) properties(1:8,5)];
-N = 20*4;   
+N = 144*4;   
 
 % Cooling channel inlet initialization
-%coolant = 'ethanol'; %coolant definition
-coolant = 'water';
+coolant = 'methanol'; %coolant definition
+%coolant = 'water';
+
 inlet_temperature = 293.16; % inlet temperature [K]
-inlet_pressure = 500 * u.PSI2PA; % inlet pressure [PA]
-coolantdirection = 0; % 1: direction opposite of hot gas flow direction
+inlet_pressure = 400 * u.PSI2PA; % inlet pressure [PA]
+coolantdirection = 1; % 1: direction opposite of hot gas flow direction
                       % 0: direction same as hot flow gas direction
                         
 % channel geometry: (1: chamber) (min: throat) (2: nozzle end)
 t_w = [.001 .00075 .001];
-% h_c = [.0015 .001 .0023];  % 23channel height [1 min 2] [m]    
-% w_c = [.003 .001 .0015];% 30channel width [1 min 2] [m]
-% num_channels = 62; 
-h_c = [.003 .002 .0025]; % channel height [1 min 2] [m]    
-w_c = [.0045 .0015 .0025];% channel width [1 min 2] [m]
-num_channels = 42; 
+h_c = [.0015 .001 .0023];  % 23channel height [1 min 2] [m]    
+w_c = [.003 .001 .0015];% 30channel width [1 min 2] [m]
+num_channels = 62; 
+% h_c = [.003 .002 .0025]; % channel height [1 min 2] [m]    
+% w_c = [.0045 .0015 .0025];% channel width [1 min 2] [m]
+% num_channels = 42; 
 
 %t_w_c = .001778 ; % channel width at torch igniter
 %t_h_c = .003 ; % channel height at torch igniter
-h_c_extra = .0025;
-w_c_extra = .002;
-%h_c_extra = .002;
-%w_c_extra = .0015;
+%h_c_extra = .0025;
+%w_c_extra = .002;
+h_c_extra = .001;
+w_c_extra = .001;
 offset_extra = 0.02;
 
 %extra_loc = [chamber_length, chamber_length + converging_length - .011547, chamber_length + converging_length];
 %extra_loc = [chamber_length, chamber_length + converging_length - offset_extra, chamber_length + converging_length];
 t_w_c = w_c(1) ; % channel width at torch igniter
 t_h_c =  h_c(1); % channel height at torch igniter
-torch_loc = [2.2 3.2 3.7] .* 0.0254; % location of torch changing area [mm] [inch * conversion] [1 min 2]
+torch_loc = [1 1.5 2] .* 0.0254; % location of torch changing area [mm] [inch * conversion] [1 min 2]
 
 heatflux_factor = 1;
 
 %% Generate Engine Contour 
 arc_bool = 0;
-gen_bool = 0;
+gen_bool = 1;
 if gen_bool 
     [x_contour, r_contour, chamber_length,total_length,converging_length,diverging_length,deltax] = engineContour('conical',.8,R_t,exp_ratio,con_ratio,conv_angle,conical_half_angle,0,L_star,R_fillets,arc_bool,steps); 
-    x = 0:deltax:total_length; % length vector
+    if arc_bool
+        x = x_contour + chamber_length + converging_length;
+    else
+        x = 0:deltax:total_length; % length vector
+    end
     r_interpolated = r_contour;
 else
 % read Engine Contour
@@ -198,7 +235,6 @@ A_local = pi * (R_t) ^ 2; % local cross sectional areas of engine
 extra_loc = [chamber_length, chamber_length + converging_length - offset_extra, chamber_length + converging_length];
 inter_length =  converging_length - offset_extra; % Length where wall thickness will interpolate between chamber and nozzle
 %deltax = (total_length/(steps-1)); % change in distance per step [m]
-points = steps; % number of points along chamber
 %x = 0:deltax:total_length; % length vector
 %x_plot = (x - chamber_length - converging_length); % length vector adjusted so that 0 is at the throat (mm)
 
@@ -341,20 +377,22 @@ A_ratio = [subsonic_area_ratios, supersonic_area_ratios]; % area ratio vector [s
 %A2 = (pi.*(r_interpolated + t_w_x + h_c_x).^2 - pi.*(r_interpolated).^2) .*frac_area;
 % initialize property matrices
 % axial coolant property matrices
-P_l = zeros(1, points); % coolant pressure
-T_l = zeros(1, points); % coolant temp
-rho_l = zeros(1, points); % coolant density
-v = zeros(1, points); % coolant ???
+P_l = zeros(1, steps); % coolant pressure
+T_l = zeros(1, steps); % coolant temp
+rho_l = zeros(1, steps); % coolant density
+v = zeros(1, steps); % coolant ???
 
 % axial cooling property matrices
-qdot_l = zeros(1, points);  % liquid convective heat flux
-qdot_g = zeros(1, points);  % gas convective heat flux
-T_wl = zeros(1, points);    % liquid wall temperature
-T_wg = zeros(1, points);    % gas wall temperature
-h_g = zeros(1, points);     % gas film coefficient
-sigma = zeros(1, points);   % film coefficient correction factor
-h_l = zeros(1, points);     % liquid film coefficient
-Nu_l = zeros(1,points);     % Nusselt Number
+qdot_l = zeros(1, steps);  % liquid convective heat flux
+qdot_g = zeros(1, steps);  % gas convective heat flux
+qdot_back = zeros(1,steps); %backside wall heat flux
+T_wl = zeros(1, steps);    % liquid wall temperature
+T_wg = zeros(1, steps);    % gas wall temperature
+T_back = zeros(1,steps); %Back wall temperature
+h_g = zeros(1, steps);     % gas film coefficient
+sigma = zeros(1, steps);   % film coefficient correction factor
+h_l = zeros(1, steps);     % liquid film coefficient
+Nu_l = zeros(1,steps);     % Nusselt Number
 
 % % axial combustion property matrices
 % c_star = zeros(1, points);  % characteristic velocity
@@ -367,62 +405,62 @@ Nu_l = zeros(1,points);     % Nusselt Number
 % cp_g = zeros(1, points);    % combustion coefficient of pressure ???
 
 % fin matricies
-rib_thickness = zeros(1,points);
-A_c_fin = zeros(1,points);
-fin_q = zeros(1,points);
-eta_fin = zeros(1,points);
-biot_fin = zeros(1,points);
+rib_thickness = zeros(1,steps);
+A_c_fin = zeros(1,steps);
+fin_q = zeros(1,steps);
+eta_fin = zeros(1,steps);
+biot_fin = zeros(1,steps);
 
 % stress matricies
-k_w_current = zeros(1,points);
-yield = zeros(1,points);
-elong = zeros(1,points);
-E_current = zeros(1,points);
-CTE_current = zeros(1,points);
-CTE_liq_side = zeros(1,points);
+k_w_current = zeros(1,steps);
+yield = zeros(1,steps);
+elong = zeros(1,steps);
+E_current = zeros(1,steps);
+CTE_current = zeros(1,steps);
+CTE_liq_side = zeros(1,steps);
 
-epsilon_emax = zeros(1,points);
-sigma_t = zeros(1,points); % tangential stress
-sigma_tp = zeros(1,points); % tangential stress pressure
-sigma_tt = zeros(1,points); % tangential stress temp
-sigma_l = zeros(1,points); % longitudinal stress
-sigma_ll = zeros(1,points); % longitudinal stress
-sigma_lc = zeros(1,points); % longitudinal stress
-sigmab = zeros(1,points); % buckling stress
-sigma_v = zeros(1,points); % von mises stress
-sigma_vl = zeros(1,points); % von mises stress
-sigma_vc = zeros(1,points); % von mises stress
-sigma_tp_cold = zeros(1,points); % Pressing channels before hotfire
-epsilon_lc = zeros(1,points);
-epsilon_ll = zeros(1,points); 
-epsilon_t = zeros(1,points);
-epsilon_vc = zeros(1,points);
-epsilon_vl = zeros(1,points);
-epsilon_tp = zeros(1,points);
-epsilon_tt = zeros(1,points);
+epsilon_emax = zeros(1,steps);
+sigma_t = zeros(1,steps); % tangential stress
+sigma_tp = zeros(1,steps); % tangential stress pressure
+sigma_tt = zeros(1,steps); % tangential stress temp
+sigma_l = zeros(1,steps); % longitudinal stress
+sigma_ll = zeros(1,steps); % longitudinal stress
+sigma_lc = zeros(1,steps); % longitudinal stress
+sigmab = zeros(1,steps); % buckling stress
+sigma_v = zeros(1,steps); % von mises stress
+sigma_vl = zeros(1,steps); % von mises stress
+sigma_vc = zeros(1,steps); % von mises stress
+sigma_tp_cold = zeros(1,steps); % Pressing channels before hotfire
+epsilon_lc = zeros(1,steps);
+epsilon_ll = zeros(1,steps); 
+epsilon_t = zeros(1,steps);
+epsilon_vc = zeros(1,steps);
+epsilon_vl = zeros(1,steps);
+epsilon_tp = zeros(1,steps);
+epsilon_tt = zeros(1,steps);
 
-epsilon_tota = zeros(1,points);
-epsilon_tott = zeros(1,points);
-epsilon_pa = zeros(1,points);
-epsilon_pt = zeros(1,points);
-epsilon_peff = zeros(1,points);
-epsilon_cs = zeros(1,points);
-MS = zeros(1,points);
-num_fires = zeros(1,points);
-num_fires_lowcycle = zeros(1,points);
-epsilon_toteff = zeros(1,points);
-epsilon_emaxeff = zeros(1,points);
-epsilon_eeff = zeros(1,points);
-sigma_eff = zeros(1,points);
-sigma_a = zeros(1,points);
-sigma_t2 = zeros(1,points);
-epsilon_cs_tot = zeros(1,points);
-MS_lowcycle = zeros(1,points);
+epsilon_tota = zeros(1,steps);
+epsilon_tott = zeros(1,steps);
+epsilon_pa = zeros(1,steps);
+epsilon_pt = zeros(1,steps);
+epsilon_peff = zeros(1,steps);
+epsilon_cs = zeros(1,steps);
+MS = zeros(1,steps);
+num_fires = zeros(1,steps);
+num_fires_lowcycle = zeros(1,steps);
+epsilon_toteff = zeros(1,steps);
+epsilon_emaxeff = zeros(1,steps);
+epsilon_eeff = zeros(1,steps);
+sigma_eff = zeros(1,steps);
+sigma_a = zeros(1,steps);
+sigma_t2 = zeros(1,steps);
+epsilon_cs_tot = zeros(1,steps);
+MS_lowcycle = zeros(1,steps);
 
-deltaT1 = zeros(1,points);
-deltaT2 = zeros(1,points);
+deltaT1 = zeros(1,steps);
+deltaT2 = zeros(1,steps);
 
-counter = zeros(1,points);
+counter = zeros(1,steps);
 
 %call cea for all area ratios
 i = 1;
@@ -439,15 +477,25 @@ end
 c_star = c_star * cstar_eff;
 tic
 % Steps 2 & 3: Set channel inlet properties
-P_l(1) = inlet_pressure;
-T_l(1) = inlet_temperature;
+if coolantdirection 
+    P_l(steps) = inlet_pressure;
+    T_l(steps) = inlet_temperature;
 
-% Step 4: Take hot wall temperature guess and initialize loop
-T_wg(1) = 1000; % initial guess of wall side temperature [K]
+    % Step 4: Take hot wall temperature guess and initialize loop
+    T_wg(steps) = 1000; % initial guess of wall side temperature [K]
+    points = 1:steps;
+    points = steps +1 - points
+else 
+    P_l(1) = inlet_pressure;
+    T_l(1) = inlet_temperature;
+
+    % Step 4: Take hot wall temperature guess and initialize loop
+    T_wg(1) = 1000; % initial guess of wall side temperature [K]
+    points = 1:steps;
+end
 
 %% perform cooling loop along the chamber
-for i = 1:points % where i is the position along the chamber (1 = injector, end = nozzle)
-
+for i = points % where i is the position along the chamber (1 = injector, end = nozzle)
     T_wg_mn = 280; % minimum temperature bound [K]
     T_wg_mx = 1500; % maximum temperature bound [K]
 
@@ -467,15 +515,23 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
 
         % Step 7: Calculate liquid film coefficient
         % run coolprop to get coolant properties
-        T_film = (T_wl(i) + T_l(i)) / 2;
-        mu_lb = py.CoolProp.CoolProp.PropsSI('V','T', T_l(i), 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
-        cp_l = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l(i), 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
-        k_l = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l(i), 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
-        rho_l(i) = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+        T_film = (T_wl(i) + T_l(i)) / 2; % Use this for properties?
+        if filmprop 
+            T_prop = T_film;
+        else 
+            T_prop = T_l(i);
+        end
+        mu_lb(i) = py.CoolProp.CoolProp.PropsSI('V','T', T_prop, 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
+        cp_l(i) = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_prop, 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
+        k_l(i) = py.CoolProp.CoolProp.PropsSI('L', 'T', T_prop, 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
+        rho_l(i) = py.CoolProp.CoolProp.PropsSI('D','T', T_prop,'P', P_l(i), coolant); % density of the coolant [kg/m^3]
         v(i) = m_dot_CHANNEL / rho_l(i) / A_x(i); % velocity at step [m/s]
-       
-        Re_l = (rho_l(i) * v(i) * hydraulic_D_x(i)) / mu_lb; % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
-        Pr_l = (cp_l * mu_lb) / k_l; % prantl number [N/A] (Huzel and Huang, pg 90) 
+        phase(i) = py.CoolProp.CoolProp.PropsSI('PHASE','T', T_l(i),'P', P_l(i), coolant); % phase of the coolant 
+
+
+
+        Re_l = (rho_l(i) * v(i) * hydraulic_D_x(i)) / mu_lb(i); % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
+        Pr_l = (cp_l(i) * mu_lb(i)) / k_l(i); % prantl number [N/A] (Huzel and Huang, pg 90) 
 
             % Use moody diagram to find coefficient of friction
             if (i < size(x_chamber1,2)) || (((size(x_to_chamber2,2)) <= i) && (i < size(x_to_converging,2)))
@@ -488,7 +544,7 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
 
         %Nu_l = 0.023 * (Re_l ^ .8) * (Pr_l ^ .4) * (T_wl / T_l) ^ -.3; % nusselt number [N/A] - applicable for Re > 10,000, .7 < Pr < 160 (Heister EQ 6.19). ****
         Nu_l(i) = (f / 8) * (Re_l - 1000) * Pr_l / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
-        h_l(i) = (Nu_l(i) * k_l) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
+        h_l(i) = (Nu_l(i) * k_l(i)) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
         
         % Step 7.5: Fin heat transfer, adiabatic tip
         T_base = T_wl(i); % Temperature at fin base
@@ -518,25 +574,73 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
     
             counter(i) = counter(i) + 1;
         else
-            if i < points
-                % Step 10: End step & update fluid properties
-                wall_area = (w_c_x(i) + 2 * h_c_x(i)) * deltax;
-                T_l(i+1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l)) * qdot_g(i) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
-                
-                cf = f/4; % friction coefficient
+            if coolantdirection
+                icount = steps + 1 - i;
+                if icount < steps
+                    % Step 10: End step & update fluid properties
+                    wall_area = (w_c_x(i) + 2 * h_c_x(i)) * deltax;
+                    if backsideheat
+                        mu_lb_back = py.CoolProp.CoolProp.PropsSI('V','T', T_l(i), 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
+                        cp_l_back = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l(i), 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
+                        k_l_back = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l(i), 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
+                        rho_l_back = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+                        Re_l_back = (rho_l_back * v(i) * hydraulic_D_x(i)) / mu_lb_back; % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
+                        Pr_l_back = (cp_l_back * mu_lb_back) / k_l_back; % prantl number [N/A] (Huzel and Huang, pg 90) 
+                        Nu_l_back = (f / 8) * (Re_l_back - 1000) * Pr_l_back / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l_back ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
+                        h_l_back = (Nu_l_back * k_l_back) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
+                        T_back(i) = (T_l(i) + T_amb)/2;  % ROUGH ESTIMATE
+                        qdot_back(i) = h_l_back * (T_l(i)- T_back(i));
+                        T_l(i-1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l(i))) * (qdot_g(i) - qdot_back(i)) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
+                    else
+                        T_l(i-1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l(i))) * qdot_g(i) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
+                    end
+                    cf = f/4; % friction coefficient
+    
+                    if icount > 1
+                        deltaP = (2*cf*(deltax/(hydraulic_D_x(i))) * rho_l(i) *(v(i))^(2)  + .5 * ((v(i)^2) -(v(i+1)^2))); % change in pressure (Bernoulli's equation)
+                    else
+                        deltaP = (2*cf*(deltax/(hydraulic_D_x(i))) * rho_l(i) *(v(i))^(2)); % change in pressure (Heister 6.36)
+                    end
+                    
+                    % prepare for next step
+                    P_l(i-1) = P_l(i) - deltaP; % Update pressure for next iteration
+                    T_wg(i-1) = T_wg(i);  % new gas wall temp guess based on current temp
+                end  
+   
+            else
+                if i < steps
+                    % Step 10: End step & update fluid properties
+                    wall_area = (w_c_x(i) + 2 * h_c_x(i)) * deltax;
+                    if backsideheat
+                        mu_lb_back = py.CoolProp.CoolProp.PropsSI('V','T', T_l(i), 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
+                        cp_l_back = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l(i), 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
+                        k_l_back = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l(i), 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
+                        rho_l_back = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+                        Re_l_back = (rho_l_back * v(i) * hydraulic_D_x(i)) / mu_lb_back; % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
+                        Pr_l_back = (cp_l_back * mu_lb_back) / k_l_back; % prantl number [N/A] (Huzel and Huang, pg 90) 
+                        Nu_l_back = (f / 8) * (Re_l_back - 1000) * Pr_l_back / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l_back ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
+                        h_l_back = (Nu_l_back * k_l_back) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
+                        T_back(i) = (T_l(i) + T_amb)/2;  % ROUGH ESTIMATE
+                        qdot_back(i) = h_l_back * (T_l(i)- T_back);
+                        T_l(i+1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l_back)) * (qdot_g(i) - qdot_back(i)) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
+                    else
+                        T_l(i+1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l_back)) * qdot_g(i) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
+                    end
+                    cf = f/4; % friction coefficient
+    
+                    if i > 1
+                        deltaP = (2*cf*(deltax/(hydraulic_D_x(i))) * rho_l(i) *(v(i))^(2)  + .5 * ((v(i)^2) -(v(i-1)^2))); % change in pressure (Bernoulli's equation)
+                    else
+                        deltaP = (2*cf*(deltax/(hydraulic_D_x(i))) * rho_l(i) *(v(i))^(2)); % change in pressure (Heister 6.36)
+                    end
+                    
+                    % prepare for next step
+                    P_l(i+1) = P_l(i) - deltaP; % Update pressure for next iteration
+                    T_wg(i+1) = T_wg(i);  % new gas wall temp guess based on current temp
+                end  
+            end
 
-                if i > 1
-                    deltaP = (2*cf*(deltax/(hydraulic_D_x(i))) * rho_l(i) *(v(i))^(2)  + .5 * ((v(i)^2) -(v(i-1)^2))); % change in pressure (Bernoulli's equation)
-                else
-                    deltaP = (2*cf*(deltax/(hydraulic_D_x(i))) * rho_l(i) *(v(i))^(2)); % change in pressure (Heister 6.36)
-                end
-                
-                % prepare for next step
-                P_l(i+1) = P_l(i) - deltaP; % Update pressure for next iteration
-                T_wg(i+1) = T_wg(i);  % new gas wall temp guess based on current temp
-            end  
-
-            if i <= points % structural calculations
+            if i <= steps % structural calculations
                 yield(i) = interp1(yield_strength(:,1), yield_strength(:,2), T_wg(i), 'linear', 'extrap');
                 E_current(i) = interp1(E(:,1), E(:,2), T_wg(i), 'linear', 'extrap');
                 CTE_current(i) = interp1(CTE(:,1), CTE(:,2), T_wg(i), 'linear', 'extrap');
@@ -602,21 +706,19 @@ for i = 1:points % where i is the position along the chamber (1 = injector, end 
                 epsilon_peff(i) = (2/sqrt(3)) * sqrt(((epsilon_pt(i)^2) + epsilon_pt(i)*epsilon_pa(i) + (epsilon_pa(i))^2));
                 epsilon_cs(i) = ((elong(i)/2)*((N)^(-1/2)));
                 %epsilon_cs_tot(i) = epsilon_cs(i) + epsilon_emax(i); % Total strain after N # of hotfires
+                
                 epsilon_cs_tot(i) = epsilon_cs(i) + epsilon_eeff(i)/2; % Total strain after N # of hotfires
                 MS_lowcycle(i) = epsilon_cs(i) / (epsilon_peff(i));
                 MS(i) = epsilon_cs_tot(i) / (epsilon_toteff(i));
-                %num_fires(i) = 1/4 * ((2*epsilon_toteff(i)/elong(i))- ((4 * epsilon_emax(i))/(elong(i))))^(-2);
-                %num_fires(i) = 1/4 * ((2/elong(i))* (epsilon_toteff(i)- epsilon_emax(i)))^(-2);
                 num_fires(i) = 1/4 * ((2/elong(i))* (epsilon_toteff(i)- (epsilon_eeff(i)/2)))^(-2);
-%                 num_fires(i) = 1/4 * ((elong(i)/(4*(epsilon_peff(i))))^(2));
-                %num_fires(i) = 1/4 * 1/2 * (epsilon_peff(i) / elong(i)) ^(-2);
                 num_fires_lowcycle(i) = 1/4* ((2*epsilon_peff(i))/elong(i))^(-2);
 
                 sigma_eff(i) = E_current(i) * epsilon_toteff(i);
                 sigma_a(i) = E_current(i) * epsilon_tota(i);
                 sigma_t2(i) = E_current(i) * epsilon_tott(i);
-              
+
             end
+                
 
             converged = 1;
         end
@@ -715,7 +817,29 @@ grid on
 
 
 % Coolant/ Water Flow Plot
-figure('Name','Water Flow')
+
+figure('Name','Coolant Flow')
+liquid_phasex = [];  % liquid convective heat flux
+gas_phasex = [];  % gas convective heat flux
+supercrit_phasex = []; 
+Tl_liq = [];
+Tl_gas= [];
+Tl_crit = [];
+
+for i = 1:steps
+    if phase(i) == 0 
+        liquid_phasex = [liquid_phasex, x_contour(i)]; 
+        Tl_liq = [Tl_liq, T_l(i)];
+    elseif phase(i) == 5 
+        gas_phasex = [gas_phasex, x_contour(i)];
+        Tl_gas = [Tl_gas, T_l(i)];
+    else 
+        supercrit_phasex = [supercrit_phasex, x_contour(i)];
+        Tl_crit = [Tl_crit, T_l(i)];
+    end
+end
+
+    
 subplot(2,2,[1,2])
 hold on 
 set(gca, 'FontName', 'Times New Roman')
@@ -742,7 +866,9 @@ grid on
 subplot(2,2,4)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-plot(x_contour, T_l)
+%plot(x_contour, T_l)
+plot(liquid_phasex, Tl_liq, 'g', gas_phasex, Tl_gas, 'y', supercrit_phasex, Tl_crit, 'r')
+legend('liquid', 'gas', 'supercritical gas')
 title("Coolant Temperature [K]");
 grid on
 
@@ -888,6 +1014,7 @@ xlabel("Location [in]")
 hold off
 grid on
 
+% Material Property Plots
 
 % Pressing Stress Calcs
 

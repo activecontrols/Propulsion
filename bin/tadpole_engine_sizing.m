@@ -50,11 +50,12 @@ Pe = 16.5; % Nominal Exit Pressure [psi]
 %fuel = 'C3H8O,2propanol';
 fuel = 'CH3OH'; % fuel
 ox = 'O2(L)'; % Oxidizer
-Lstar = 49; % Characteristic Length [in]
-OF = 1.05; % OF ratio
+Lstar = 45; % Characteristic Length [in]
+OF = .8; % OF ratio
 cstareff = .92; % Cstar efficiency 
 cfeff = .95; % Cf efficiency
 Pa = 14.7; % Atmospheric Pressure
+R_fillets = [1.5,1.5,.5];
 
 %% initalization and precalculations
 minthrottle_percent = minthrottle_percent * .01;
@@ -71,7 +72,7 @@ thrust_vector = linspace(Tf, Tf*minthrottle_percent,numpoints);
 
 
 %% Nominal (Max) Thrust Sizing
-[out2] = callCEA('fr', Pc, 'psi', 'o/f', OF,'pip',PcPe,fuel,'K',293.15,100,ox,'K',90.18,100);
+[out2] = callCEA('fr', Pc, 'psi', 'o/f', OF,'pip',PcPe,fuel,'K',440,100,ox,'K',90.18,100);
 cstar_out = squeeze(out2('cstar'));
 cstar = cstar_out(1) * cstareff;
 cf_out = squeeze(out2('cf'));
@@ -194,7 +195,7 @@ if geobool
     con_ratio = Ac/At;
     conv_angle = 37;
     theta_i = 15;
-    [x_contour, r_contour, L_c, L_total, L_seg] = engineContour("conical", .8, R_t, epsilon, con_ratio, conv_angle, theta_i, 1.3,Lstar, 100,100);
+    [x_contour, r_contour, L_c, L_total, L_converging, L_diverging, L_seg] = engineContour("conical", .8, R_t, epsilon, con_ratio, conv_angle, theta_i, 0,Lstar, R_fillets, 1,100);
 end
 
 
