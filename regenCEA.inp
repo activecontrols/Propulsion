@@ -1,7 +1,7 @@
 problem rocket fr
     p(bar) = 17.2369
     o/f = 0.8
-    sup = 1
+    sub = 6.4064
 reac
     fuel = CH3OH t(K) = 293.150 wt% = 100.000
     ox = O2(L) t(K) = 90.170
