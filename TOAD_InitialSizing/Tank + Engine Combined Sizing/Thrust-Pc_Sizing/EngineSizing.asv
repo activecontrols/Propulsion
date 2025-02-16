@@ -1,0 +1,11 @@
+% Engine Sizing from Vehicle Mass 
+% Adam Grendys
+% 2/16/2025
+
+% REQUIREMENTS DOC: https://docs.google.com/document/d/1jfazxSt6x4ROGItLOiyNnKDVktDiXMh2lE0mhNGMsWU/edit?usp=sharing
+
+clear
+clc
+close all
+
+toad_mass = linspace(200, 800, 1); % TOAD mass lbs
