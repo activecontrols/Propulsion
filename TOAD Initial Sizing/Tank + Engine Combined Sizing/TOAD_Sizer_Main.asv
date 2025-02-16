@@ -1,0 +1,34 @@
+% TOAD Sizer Main
+% Adam Grendys
+% Last Edited: 2/16/2025
+
+%% ASSUMPTIONS
+% Using IPA-LOx
+% Rev1 Tadpole Capabilites and Geometry
+% 304 Stainless Steel Tanks
+
+%% TOAD REFERENCES
+% REQUIREMENTS DOC: https://docs.google.com/document/d/1jfazxSt6x4ROGItLOiyNnKDVktDiXMh2lE0mhNGMsWU/edit?usp=sharing
+% SRR SLIDES: https://docs.google.com/presentation/d/151O5GhhcqatCP30IASsYGC5Nq8DB6PMOI8nIIVgjrB0/edit?usp=sharing
+
+clear
+clc
+close all
+
+%% INPUT
+selection;
+
+while selection ~= (1 || 2)
+    selection = input("Default Parameters (1) or Custom (2): ");
+    if selection == 1
+        mdot = input("Input Total Mdot (lbm/s): "); % Total mass flow rate (lbm/s)
+        OF = input("\nInput OF Ratio: "); % Desired OF Ratio
+        flight_time = input("\nFlight time (s): "); % Flight Duration (s)
+
+%% INITIALIATION
+
+
+%% CALCULATIONS
+
+
+%% FORMMATED OUTPUT
