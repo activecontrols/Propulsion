@@ -1,22 +1,27 @@
-% TOAD Sizer Main
-% Adam Grendys
+%% TOAD Sizer Main
+% Description: An iterative method to determine foundational TOAD
+% parameters: Required Thrust, Required Chamber Pressure, TOAD
+% mass. Be sure to add the "functions" folder to path.
+% Author: Adam Grendys
 % Last Edited: 2/16/2025
 
 %% ASSUMPTIONS
-% Using IPA-LOx
-% Rev1 Tadpole Capabilites and Geometry
+% IPA-LOx
 % 304 Stainless Steel Tanks
+% Rev1 Tadpole Capabilites and Geometry
+% 10% Fuel/Ox Reserves by mass
+% 10% Ullage volume 
 
 %% TOAD REFERENCES
 % REQUIREMENTS DOC: https://docs.google.com/document/d/1jfazxSt6x4ROGItLOiyNnKDVktDiXMh2lE0mhNGMsWU/edit?usp=sharing
 % SRR SLIDES: https://docs.google.com/presentation/d/151O5GhhcqatCP30IASsYGC5Nq8DB6PMOI8nIIVgjrB0/edit?usp=sharing
+
 clear
 clc
 close all
 
 %% USER INPUT
 selection = NaN;
-
 while selection ~= 1 && selection ~= 2
     selection = input("Default Parameters (1) or Custom (2): ");
     if selection == 1
@@ -33,12 +38,11 @@ while selection ~= 1 && selection ~= 2
 end
 
 %% INITIALIATION
-mass_multiplier = 1.5; % ESTIMATE, percent of TOAD mass on top of tanks+propellant
+mass_multiplier = 1.5; % ESTIMATE, percent of TOAD mass excluding tanks and prop.
 
 % Engine Parameters (From Tadpole Rev1)
 r_t =  1.4352 / 2; % Radius of throat (in) (From Tadpole CMM)
 CF = 1.32; % Thrust Coefficient (95% ηcf)
-
 
 %% CALCULATIONS
 TankProp_mass = tank_sizer(mdot, OF, flight_time);

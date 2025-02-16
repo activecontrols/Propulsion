@@ -13,7 +13,7 @@ max_radius_lox = 0.66; % ft
 min_radius_lox = 0.25; % ft
 max_height_lox = 5; % ft
 
-tank_wall_thickness = 1/8 / 12; % Tank wall thickness (ft)
+tank_wall_thickness = 1/8 / 12; % Tank wall thickness (1/8" to ft)
 
 %% INITIALZATION
 density_ipa = 49.0684; % lbm/ft^3 @ 293.15K
@@ -29,7 +29,7 @@ mdot_LOX = mdot - mdot_IPA;
 ipa_mass = fuel_reserves_coef * (mdot_IPA * flight_time); % Total IPA mass (lbm)
 ipa_vol = ullage_vol_coef * (ipa_mass / density_ipa); % Volume (ft^3)
 lox_mass = fuel_reserves_coef * (mdot_LOX * flight_time); % Total LOX mass (lbm)
-lox_vol = ullage_vol_coef * (lox_mass / density_ipa); % Volume (ft^3)
+lox_vol = ullage_vol_coef * (lox_mass / density_lox); % Volume (ft^3)
 
 %% FORMATTED OUTPUT
 fprintf("\nIPA Tank Volume: %.4f ft^3\n", ipa_vol);
@@ -55,22 +55,15 @@ new_height_lox = new_cyl_lox_height + (2 * cap_height_lox);
 % Ensure heights don’t exceed max_height
 valid_indices_ipa = new_height_ipa <= max_height_ipa; % Logical mask for valid region
 radius_valid_ipa = ipa_radius(valid_indices_ipa); % Keep only valid radii
-height_valid_ipa = new_height_ipa(valid_indices_ipa); % Keep only valid heights
 
 valid_indices_lox = new_height_lox <= max_height_lox; % Logical mask for valid region
 radius_valid_lox = lox_radius(valid_indices_lox); % Keep only valid radii
-height_valid_lox = new_height_lox(valid_indices_lox); % Keep only valid heights
 
 % Minimum Tank Mass Calculations
-min_radius_IPA = min(radius_valid_ipa);
-min_radius_LOX = min(radius_valid_lox);
-min_height_IPA = min(height_valid_ipa);
-min_height_LOX = min(height_valid_lox);
-
-min_IPA_vol = min(pi * ((radius_valid_ipa + 2 * tank_wall_thickness).^2 - (radius_valid_ipa.^2)));
-min_LOX_vol = min(pi * ((radius_valid_lox + 2 * tank_wall_thickness).^2 - (radius_valid_lox.^2)));
-tank_mass_IPA = density_stainless * min_IPA_vol;
-tank_mass_LOX = density_stainless * min_LOX_vol;
+min_IPA_tank_vol = min(pi * ((radius_valid_ipa + 2 * tank_wall_thickness).^2 - (radius_valid_ipa.^2)));
+min_LOX_tank_vol = min(pi * ((radius_valid_lox + 2 * tank_wall_thickness).^2 - (radius_valid_lox.^2)));
+tank_mass_IPA = density_stainless * min_IPA_tank_vol;
+tank_mass_LOX = density_stainless * min_LOX_tank_vol;
 
 total_mass = tank_mass_LOX + lox_mass + tank_mass_IPA + ipa_mass;
 

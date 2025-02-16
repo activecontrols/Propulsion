@@ -1,17 +1,8 @@
-
-
+function [total_mass] = tank_sizer(mdot, OF, flight_time)
 % TOAD Tank Sizer
 % Author: Jacob Metcalf
 % Reviewer: Adam Grendys
 % Last Edited: 2/16/2025
-clear
-clc
-close all
-
-%% USER INPUT
-mdot = input("Input Total Mdot (lbm/s): "); % Total mass flow rate (lbm/s)
-OF = input("\nInput OF Ratio: "); % Desired OF Ratio
-flight_time = input("\nFlight time (s): "); % Flight Duration (s)
 
 %%%% ADJUSTABLE VARIABLES FOR TANK SIZING %%%%%%%%%%%
 max_radius_ipa = 0.66; % ft
@@ -64,65 +55,19 @@ new_height_lox = new_cyl_lox_height + (2 * cap_height_lox);
 % Ensure heights don’t exceed max_height
 valid_indices_ipa = new_height_ipa <= max_height_ipa; % Logical mask for valid region
 radius_valid_ipa = ipa_radius(valid_indices_ipa); % Keep only valid radii
-height_valid_ipa = new_height_ipa(valid_indices_ipa); % Keep only valid heights
 
 valid_indices_lox = new_height_lox <= max_height_lox; % Logical mask for valid region
 radius_valid_lox = lox_radius(valid_indices_lox); % Keep only valid radii
-height_valid_lox = new_height_lox(valid_indices_lox); % Keep only valid heights
 
 % Minimum Tank Mass Calculations
-min_radius_IPA = min(radius_valid_ipa);
-min_radius_LOX = min(radius_valid_lox);
-min_height_IPA = min(height_valid_ipa);
-min_height_LOX = min(height_valid_lox);
+min_IPA_tank_vol = min(pi * ((radius_valid_ipa + 2 * tank_wall_thickness).^2 - (radius_valid_ipa.^2)));
+min_LOX_tank_vol = min(pi * ((radius_valid_lox + 2 * tank_wall_thickness).^2 - (radius_valid_lox.^2)));
+tank_mass_IPA = density_stainless * min_IPA_tank_vol;
+tank_mass_LOX = density_stainless * min_LOX_tank_vol;
 
 
 
-tank_mass_IPA = density_stainless * min_IPA_vol;
-tank_mass_LOX = density_stainless * min_LOX_vol;
 
 total_mass = tank_mass_LOX + lox_mass + tank_mass_IPA + ipa_mass;
-
-fprintf("\nTOTAL MASS: %.2f (lbm)", total_mass)
-
-%% IPA PLOT
-figure()
-plot(ipa_radius, new_height_ipa, 'b', 'LineWidth', 2)
-grid on
-hold on
-% Constraint Lines
-xline(max_radius_ipa, 'r--', 'Max Radius', 'LabelHorizontalAlignment', 'left')
-yline(max_height_ipa, 'r--', 'Max Height', 'LabelVerticalAlignment', 'middle')
-% Labels and Formatting
-xlabel('Radius (ft)')
-ylabel('Height (ft)')
-title('Valid IPA Dimensions')
-legend('h = Vol / (\pi r^2)', 'Height Constraint', 'Location', 'NorthEast')
-xlim([min_radius_ipa - 0.05, max_radius_ipa + 0.05])
-ylim([0 max_height_ipa + 2])
-% Fill the region between the curve and max_height
-fill([radius_valid_ipa, fliplr(radius_valid_ipa)], [height_valid_ipa, ones(size(radius_valid_ipa)) * max_height_ipa], ...
-    'r', 'FaceAlpha', 0.2, 'EdgeColor', 'none')
-hold off
-
-%% LOX PLOT
-figure()
-plot(lox_radius, new_height_lox, 'b', 'LineWidth', 2)
-hold on
-grid on
-% Constraint Lines
-xline(max_radius_lox, 'r--', 'Max Radius', 'LabelHorizontalAlignment', 'left')
-yline(max_height_lox, 'r--', 'Max Height', 'LabelVerticalAlignment', 'middle')
-% Labels and Formatting
-xlabel('Radius (ft)')
-ylabel('Height (ft)')
-title('Valid LOX Dimensions')
-legend('h = Vol / (\pi r^2)', 'Height Constraint', 'Location', 'NorthEast')
-xlim([min_radius_lox - 0.05, max_radius_lox + 0.05])
-ylim([0 max_height_lox + 2])
-% Fill the region between the curve and max_height
-fill([radius_valid_lox, fliplr(radius_valid_lox)], [height_valid_lox, ones(size(radius_valid_lox)) * max_height_lox], ...
-    'r', 'FaceAlpha', 0.2, 'EdgeColor', 'none')
-hold off
 
 
