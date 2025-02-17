@@ -18,7 +18,7 @@ tank_wall_thickness = 1/8 / 12; % Tank wall thickness (1/8" to ft)
 %% INITIALZATION
 density_ipa = 49.0684; % lbm/ft^3 @ 293.15K
 density_lox = 71.23030301738; % lbm/ft^3 @ 90K
-density_stainless = 495.053727; % lbm/ft^3 @ 293.15K
+density_tanks = 168.5555; % lbm/ft^3 (Aluminium 6061 @ 293.15K)
 ullage_vol_coef = 1.1; % 10% Ullage volume
 fuel_reserves_coef = 1.1; % 10% Fuel excess Fuel and Oxidizer mass
 
@@ -62,8 +62,8 @@ radius_valid_lox = lox_radius(valid_indices_lox); % Keep only valid radii
 % Minimum Tank Mass Calculations
 min_IPA_tank_vol = min(pi * ((radius_valid_ipa + 2 * tank_wall_thickness).^2 - (radius_valid_ipa.^2)));
 min_LOX_tank_vol = min(pi * ((radius_valid_lox + 2 * tank_wall_thickness).^2 - (radius_valid_lox.^2)));
-tank_mass_IPA = density_stainless * min_IPA_tank_vol;
-tank_mass_LOX = density_stainless * min_LOX_tank_vol;
+tank_mass_IPA = density_tanks * min_IPA_tank_vol;
+tank_mass_LOX = density_tanks * min_LOX_tank_vol;
 
 total_mass = tank_mass_LOX + lox_mass + tank_mass_IPA + ipa_mass;
 
