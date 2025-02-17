@@ -7,7 +7,7 @@
 
 %% ASSUMPTIONS
 % IPA-LOx
-% 304 Stainless Steel Tanks
+% 6061-T6 Tank Material
 % Rev1 Tadpole Capabilites and Geometry
 % 10% Fuel/Ox Reserves by mass
 % 10% Ullage volume 
@@ -54,5 +54,3 @@ TOAD_mass = TankProp_mass * mass_multiplier;
 fprintf("\nTOAD Mass: %.3f lbm", TOAD_mass)
 fprintf("\n\nRequired Thrust: %.3f lbf", thrust_req)
 fprintf("\nRequired Chamber Pressure: %.3f psia", Pc_req)
-
-

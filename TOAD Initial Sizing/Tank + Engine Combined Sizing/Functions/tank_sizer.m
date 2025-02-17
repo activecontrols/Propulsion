@@ -70,5 +70,3 @@ tank_mass_IPA = density_tanks * min_IPA_tank_vol;
 tank_mass_LOX = density_tanks * min_LOX_tank_vol;
 
 total_mass = tank_mass_LOX + lox_mass + tank_mass_IPA + ipa_mass;
-
-

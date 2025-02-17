@@ -16,5 +16,3 @@ TWR_min = 2; % SSR Slide 18
 A_t = pi * r_t^2;
 thrust_req = max(min_thrust, TWR_min * toad_mass);
 Pc_req = thrust_req / (CF * A_t);
-
-
