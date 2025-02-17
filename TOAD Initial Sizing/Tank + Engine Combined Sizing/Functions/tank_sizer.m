@@ -4,6 +4,10 @@ function [total_mass] = tank_sizer(mdot, OF, flight_time)
 % Reviewer: Adam Grendys
 % Last Edited: 2/16/2025
 
+%% TOAD REFERENCES
+% REQUIREMENTS DOC: https://docs.google.com/document/d/1jfazxSt6x4ROGItLOiyNnKDVktDiXMh2lE0mhNGMsWU/edit?usp=sharing
+% SRR SLIDES: https://docs.google.com/presentation/d/151O5GhhcqatCP30IASsYGC5Nq8DB6PMOI8nIIVgjrB0/edit?usp=sharing
+
 %%%% ADJUSTABLE VARIABLES FOR TANK SIZING %%%%%%%%%%%
 max_radius_ipa = 0.66; % ft
 min_radius_ipa = 0.25; % ft
