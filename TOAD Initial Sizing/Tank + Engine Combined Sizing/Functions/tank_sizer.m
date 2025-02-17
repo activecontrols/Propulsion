@@ -18,7 +18,7 @@ tank_wall_thickness = 1/8 / 12; % Tank wall thickness (1/8" to ft)
 %% INITIALZATION
 density_ipa = 49.0684; % lbm/ft^3 @ 293.15K
 density_lox = 71.23030301738; % lbm/ft^3 @ 90K
-density_tanks = 168.5555; % lbm/ft^3 (Aluminium 6061 @ 293.15K)
+density_tanks = 168.5555; % lbm/ft^3 (Aluminium 6061-T6 @ 293.15K)
 ullage_vol_coef = 1.1; % 10% Ullage volume
 fuel_reserves_coef = 1.1; % 10% Fuel excess Fuel and Oxidizer mass
 
