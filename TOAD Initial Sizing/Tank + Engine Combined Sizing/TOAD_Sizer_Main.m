@@ -5,12 +5,13 @@
 % Author: Adam Grendys
 % Last Edited: 2/16/2025
 
-%% ASSUMPTIONS
+%% ASSUMPTIONS/DECISIONS
 % IPA-LOx
 % 6061-T6 Tank Material
 % Rev1 Tadpole Capabilites and Geometry
 % 10% Fuel/Ox Reserves by mass
-% 10% Ullage volume 
+% 10% Tank Ullage volume 
+% Spherical Endcaps
 
 %% TOAD REFERENCES
 % REQUIREMENTS DOC: https://docs.google.com/document/d/1jfazxSt6x4ROGItLOiyNnKDVktDiXMh2lE0mhNGMsWU/edit?usp=sharing
@@ -38,19 +39,19 @@ while selection ~= 1 && selection ~= 2
 end
 
 %% INITIALIATION
-mass_multiplier = 1.5; % ESTIMATE, percent of TOAD mass excluding tanks and prop.
-
 % Engine Parameters (From Tadpole Rev1)
 r_t =  1.4352 / 2; % Radius of throat (in) (From Tadpole CMM)
 CF = 1.32; % Thrust Coefficient (95% ηcf)
 
+prop_massFraction = 0.5613; % ESTIMATE, derived from Masten's XODIAC Lander
+
 %% CALCULATIONS
-TankProp_mass = tank_sizer(mdot, OF, flight_time);
-TOAD_mass = TankProp_mass * mass_multiplier;
+[TankProp_mass, Prop_mass] = tank_sizer(mdot, OF, flight_time);
+TOAD_mass = Prop_mass / prop_massFraction;
 
 [thrust_req, Pc_req] = ThrustPc_Sizer(TOAD_mass, CF, r_t);
 
 %% FORMMATED OUTPUT
 fprintf("\nTOAD Mass: %.3f lbm", TOAD_mass)
-fprintf("\n\nRequired Thrust: %.3f lbf", thrust_req)
+fprintf("\nRequired Thrust: %.3f lbf", thrust_req)
 fprintf("\nRequired Chamber Pressure: %.3f psia", Pc_req)
