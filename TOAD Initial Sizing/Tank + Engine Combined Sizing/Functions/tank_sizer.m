@@ -10,7 +10,7 @@ function [total_mass, prop_mass] = tank_sizer(mdot, OF, flight_time)
 
 %%%% ADJUSTABLE VARIABLES FOR TANK SIZING %%%%%%%%%%%
 % Bechtel Limits us to max external diameter of 16".
-tank_wall_thickness = 1/8 / 12; % Tank wall thickness (1/8" to ft)
+tank_wall_thickness = .5 / 12; % Tank wall thickness (1/2" to ft)
 
 max_radius_ipa = 8/12 - tank_wall_thickness; % ft
 min_radius_ipa = 1/12; % ft
@@ -43,11 +43,11 @@ cyl_height_ipa = (ipa_vol - 4/3 * pi * ipa_radius.^3) ./ (pi * ipa_radius.^2); %
 cyl_height_lox = (lox_vol - 4/3 * pi * lox_radius.^3) ./ (pi * lox_radius.^2); % Spherical Endcaps
 
 % Ensure heights don’t exceed max_height
-valid_indices_ipa = cyl_height_ipa <= max_height_ipa; % Logical mask for valid region
+valid_indices_ipa = (cyl_height_ipa + ipa_radius + tank_wall_thickness) <= max_height_ipa; % Logical mask for valid region
 ipa_radius = ipa_radius(valid_indices_ipa); % Keep only valid radii
 cyl_height_ipa = cyl_height_ipa(valid_indices_ipa);
 
-valid_indices_lox = cyl_height_lox <= max_height_lox; % Logical mask for valid region
+valid_indices_lox = (cyl_height_lox + lox_radius + tank_wall_thickness) <= max_height_lox; % Logical mask for valid region
 lox_radius = lox_radius(valid_indices_lox); % Keep only valid radii
 cyl_height_lox = cyl_height_lox(valid_indices_lox);
 
