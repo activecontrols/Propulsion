@@ -28,7 +28,7 @@ while selection ~= 1 && selection ~= 2
     if selection == 1
         mdot = 2.2; % Total mass flow rate (lbm/s)
         OF = 1.2; % Desired OF Ratio
-        flight_time = 75; % Flight Duration (s)
+        flight_time = 60; % Flight Duration (s)
     elseif selection == 2
         mdot = input("Input Total Mdot (lbm/s): "); % Total mass flow rate (lbm/s)
         OF = input("\nInput OF Ratio: "); % Desired OF Ratio

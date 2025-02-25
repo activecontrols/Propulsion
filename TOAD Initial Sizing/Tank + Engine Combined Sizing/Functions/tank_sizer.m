@@ -10,7 +10,7 @@ function [total_mass, prop_mass] = tank_sizer(mdot, OF, flight_time)
 
 %%%% ADJUSTABLE VARIABLES FOR TANK SIZING %%%%%%%%%%%
 % Bechtel Limits us to max external diameter of 16".
-tank_wall_thickness = .5 / 12; % Tank wall thickness (1/2" to ft)
+tank_wall_thickness = .125 / 12; % Tank wall thickness (1/2" to ft)
 
 max_radius_ipa = 8/12 - tank_wall_thickness; % ft
 min_radius_ipa = 1/12; % ft
