@@ -59,7 +59,7 @@ CEA_input_name = 'regenCEA';
 
 %% SIMULATION PARAMETERS (INPUTS)
 plots = 0; % Do ansys or not ???? Dumb name
-steps = 100; % Number of steps along chamber (Change resolution of simulation)
+steps = 200; % Number of steps along chamber (Change resolution of simulation)
 qdot_tolerance = 0.0001; % set heat transfer convergence tolerance
 
 
@@ -100,18 +100,20 @@ filmprop = 0;
 % total_length = chamber_length + converging_length + diverging_length; % total length (mm) 
 
 % Propulsion Parameters
-P_c = 250; % chamber pressure [psi] 
-P_e = 16.5; % exit pressure [psi]
+%P_c = 250; % chamber pressure [psi] 
+P_c = 116.2; % chamber pressure [psi]
+%P_e = 16.5; % exit pressure [psi]
+P_e = 7.7; % exit pressure [psi]
 %m_dot = 1.236 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
-m_dot = 1.51638 * u.LB2KG;
-%m_dot = 7 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
-%fuel = {'C3H8O,2propanol'};%,'H2O(L)'}; % fuel definition 
-fuel = {'CH3OH'};%,'H2O(L)'}; % fuel definition 
+%m_dot = 1.51638 * u.LB2KG;
+m_dot = 6 * u.LB2KG; % Coolant/fuel mass flow [kg/s]
+fuel = {'C3H8O,2propanol'};%,'H2O(L)'}; % fuel definition 
+%fuel = {'CH3OH'};%,'H2O(L)'}; % fuel definition 
 oxidizer = 'O2(L)'; % oxidizer definition
 fuel_weight = 100;%[75,25]; % weight of each fuel used (if only 1 fuel, set to 100)  
 fuel_temp = 293.15;%[293.15,293.15]; % [K]
 oxidizer_temp = 90.17; % [K]
-OF = .8; % oxidizer/fuel ratio
+OF = 1.2; % oxidizer/fuel ratio
 cstar_eff = 0.92;  % C* efficiency;
 
 % material properties
@@ -147,32 +149,34 @@ nu = 0.3; % poissons ratio (guess)
 %e = 24 * 0.001; % surface roughness (mm) [micrometer*conversion]
 roughness_table = readmatrix(pwd + "/bin/surface_roughness.xlsx",'Range','A12:E16');
 e = [roughness_table(2,2), roughness_table(5,2)] .* 0.001; %Surface roughness (mm) [micrometer*conversion] [45, 90]
-N = 144*4;   
+N = 20*4;   
 
 % Cooling channel inlet initialization
-coolant = 'methanol'; %coolant definition
+%coolant = 'methanol'; %coolant definition
 %coolant = 'water';
+%coolant = 'isopropyl alcohol';
+coolant = 'ethanol'
 
 inlet_temperature = 293.16; % inlet temperature [K]
-inlet_pressure = 400 * u.PSI2PA; % inlet pressure [PA]
-coolantdirection = 1; % 1: direction opposite of hot gas flow direction
+inlet_pressure = 380 * u.PSI2PA; % inlet pressure [PA]
+coolantdirection = 0; % 1: direction opposite of hot gas flow direction
                       % 0: direction same as hot flow gas direction
                         
 % channel geometry: (1: chamber) (min: throat) (2: nozzle end)
 t_w = [.001 .00075 .001];
-h_c = [.0015 .001 .0023];  % 23channel height [1 min 2] [m]    
-w_c = [.003 .001 .0015];% 30channel width [1 min 2] [m]
-num_channels = 62; 
-% h_c = [.003 .002 .0025]; % channel height [1 min 2] [m]    
-% w_c = [.0045 .0015 .0025];% channel width [1 min 2] [m]
-% num_channels = 42; 
+%h_c = [.0015 .001 .0023];  % 23channel height [1 min 2] [m]    
+%w_c = [.003 .001 .0015];% 30channel width [1 min 2] [m]
+%num_channels = 62; 
+h_c = [.003 .002 .0025]; % channel height [1 min 2] [m]    
+w_c = [.0045 .0015 .0025];% channel width [1 min 2] [m]
+num_channels = 42; 
 
 %t_w_c = .001778 ; % channel width at torch igniter
 %t_h_c = .003 ; % channel height at torch igniter
-%h_c_extra = .0025;
-%w_c_extra = .002;
-h_c_extra = .001;
-w_c_extra = .001;
+h_c_extra = .0025;
+w_c_extra = .002;
+%h_c_extra = .001;
+%w_c_extra = .001;
 offset_extra = 0.02;
 
 %extra_loc = [chamber_length, chamber_length + converging_length - .011547, chamber_length + converging_length];
@@ -185,7 +189,7 @@ heatflux_factor = 1;
 
 %% Generate Engine Contour 
 arc_bool = 0;
-gen_bool = 1;
+gen_bool = 0;
 if gen_bool 
     [x_contour, r_contour, chamber_length,total_length,converging_length,diverging_length,deltax] = engineContour('conical',.8,R_t,exp_ratio,con_ratio,conv_angle,conical_half_angle,0,L_star,R_fillets,arc_bool,steps); 
     if arc_bool
@@ -500,7 +504,6 @@ end
 for i = points % where i is the position along the chamber (1 = injector, end = nozzle)
     T_wg_mn = 280; % minimum temperature bound [K]
     T_wg_mx = 1500; % maximum temperature bound [K]
-
     converged = 0; % wall temperature loop end condition
     %counter = 0; % counter for loop
     while ~(converged)
@@ -523,17 +526,21 @@ for i = points % where i is the position along the chamber (1 = injector, end = 
         else 
             T_prop = T_l(i);
         end
-        mu_lb(i) = py.CoolProp.CoolProp.PropsSI('V','T', T_prop, 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
-        cp_l(i) = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_prop, 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
-        k_l(i) = py.CoolProp.CoolProp.PropsSI('L', 'T', T_prop, 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
-        rho_l(i) = py.CoolProp.CoolProp.PropsSI('D','T', T_prop,'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+        if coolant == "isopropyl alcohol" 
+            [mu_lb(i), k_l(i), rho_l(i), cp_l(i), ~, ~] = IPA_properties(T_prop, P_l(i));
+            [~,~,~,~,~,phase(i)] = IPA_properties(T_l(i), P_l(i));
+            cp_l(i) = cp_l(i) * 1000;
+        else
+            mu_lb(i) = py.CoolProp.CoolProp.PropsSI('V','T', T_prop, 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
+            cp_l(i) = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_prop, 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
+            k_l(i) = py.CoolProp.CoolProp.PropsSI('L', 'T', T_prop, 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
+            rho_l(i) = py.CoolProp.CoolProp.PropsSI('D','T', T_prop,'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+            phase(i) = py.CoolProp.CoolProp.PropsSI('PHASE','T', T_l(i),'P', P_l(i), coolant); % phase of the coolant 
+        end
         v(i) = m_dot_CHANNEL / rho_l(i) / A_x(i); % velocity at step [m/s]
-        phase(i) = py.CoolProp.CoolProp.PropsSI('PHASE','T', T_l(i),'P', P_l(i), coolant); % phase of the coolant 
 
-
-
-        Re_l = (rho_l(i) * v(i) * hydraulic_D_x(i)) / mu_lb(i); % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
-        Pr_l = (cp_l(i) * mu_lb(i)) / k_l(i); % prantl number [N/A] (Huzel and Huang, pg 90) 
+        Re_l(i) = (rho_l(i) * v(i) * hydraulic_D_x(i)) / mu_lb(i); % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
+        Pr_l(i) = (cp_l(i) * mu_lb(i)) / k_l(i); % prantl number [N/A] (Huzel and Huang, pg 90) 
 
             % Use moody diagram to find coefficient of friction
             if (i < size(x_chamber1,2)) || (((size(x_to_chamber2,2)) <= i) && (i < size(x_to_converging,2)))
@@ -542,10 +549,10 @@ for i = points % where i is the position along the chamber (1 = injector, end = 
                 ed = e(1)/(hydraulic_D_x(i)*1000); % 45 degrees
             end
             %ed = e/(hydraulic_D_x(i)*1000); % relative roughness
-            f = moody(ed, Re_l); % friction factor
+            f = moody(ed, Re_l(i)); % friction factor
 
         %Nu_l = 0.023 * (Re_l ^ .8) * (Pr_l ^ .4) * (T_wl / T_l) ^ -.3; % nusselt number [N/A] - applicable for Re > 10,000, .7 < Pr < 160 (Heister EQ 6.19). ****
-        Nu_l(i) = (f / 8) * (Re_l - 1000) * Pr_l / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
+        Nu_l(i) = (f / 8) * (Re_l(i) - 1000) * Pr_l(i) / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l(i) ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
         h_l(i) = (Nu_l(i) * k_l(i)) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
         
         % Step 7.5: Fin heat transfer, adiabatic tip
@@ -582,17 +589,22 @@ for i = points % where i is the position along the chamber (1 = injector, end = 
                     % Step 10: End step & update fluid properties
                     wall_area = (w_c_x(i) + 2 * h_c_x(i)) * deltax;
                     if backsideheat
-                        mu_lb_back = py.CoolProp.CoolProp.PropsSI('V','T', T_l(i), 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
-                        cp_l_back = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l(i), 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
-                        k_l_back = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l(i), 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
-                        rho_l_back = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+                        if coolant == "isopropyl alcohol"
+                            [mu_lb_back, k_l_back, rho_l_back, cp_l_back, ~, ~] = IPA_properties(T_l(i), P_l(i)); 
+                            cp_l(i) = cp_l_back(i) * 1000;
+                        else
+                            mu_lb_back = py.CoolProp.CoolProp.PropsSI('V','T', T_l(i), 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
+                            cp_l_back = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l(i), 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
+                            k_l_back = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l(i), 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
+                            rho_l_back = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+                        end
                         Re_l_back = (rho_l_back * v(i) * hydraulic_D_x(i)) / mu_lb_back; % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
                         Pr_l_back = (cp_l_back * mu_lb_back) / k_l_back; % prantl number [N/A] (Huzel and Huang, pg 90) 
                         Nu_l_back = (f / 8) * (Re_l_back - 1000) * Pr_l_back / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l_back ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
                         h_l_back = (Nu_l_back * k_l_back) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
                         T_back(i) = (T_l(i) + T_amb)/2;  % ROUGH ESTIMATE
                         qdot_back(i) = h_l_back * (T_l(i)- T_back(i));
-                        T_l(i-1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l(i))) * (qdot_g(i) - qdot_back(i)) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
+                        T_l(i-1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l(i))) * (qdot_g(i) - qdot_back(i)) * wall_area; % new liquid temperature [K] (Heister EQ 6.39) %Thoughts on updating coolant empalthy instead and getting temperature from coolprop?
                     else
                         T_l(i-1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l(i))) * qdot_g(i) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
                     end
@@ -614,16 +626,21 @@ for i = points % where i is the position along the chamber (1 = injector, end = 
                     % Step 10: End step & update fluid properties
                     wall_area = (w_c_x(i) + 2 * h_c_x(i)) * deltax;
                     if backsideheat
-                        mu_lb_back = py.CoolProp.CoolProp.PropsSI('V','T', T_l(i), 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
-                        cp_l_back = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l(i), 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
-                        k_l_back = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l(i), 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
-                        rho_l_back = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+                        if coolant == "isopropyl alcohol"
+                            [mu_lb_back, k_l_back, rho_l_back, cp_l_back, ~, ~] = IPA_properties(T_l(i), P_l(i));
+                            cp_l_back = cp_l_back * 1000;
+                        else
+                            mu_lb_back = py.CoolProp.CoolProp.PropsSI('V','T', T_l(i), 'P', P_l(i), coolant); % viscosity of bulk coolant [Pa-s]
+                            cp_l_back = py.CoolProp.CoolProp.PropsSI('C' , 'T', T_l(i), 'P', P_l(i), coolant); % specific heat of coolant [J/kg-k] 
+                            k_l_back = py.CoolProp.CoolProp.PropsSI('L', 'T', T_l(i), 'P', P_l(i), coolant); % thermal conductivity of coolant [W/m-K]
+                            rho_l_back = py.CoolProp.CoolProp.PropsSI('D','T', T_l(i),'P', P_l(i), coolant); % density of the coolant [kg/m^3]
+                        end
                         Re_l_back = (rho_l_back * v(i) * hydraulic_D_x(i)) / mu_lb_back; % reynolds number for channel flow [N/A] (Huzel and Huang , pg 90)
                         Pr_l_back = (cp_l_back * mu_lb_back) / k_l_back; % prantl number [N/A] (Huzel and Huang, pg 90) 
                         Nu_l_back = (f / 8) * (Re_l_back - 1000) * Pr_l_back / (1 + 12.7 * (f / 8) ^ 0.5 * (Pr_l_back ^ (2/3) - 1)); % Gnielinksy correlation nusselt number [N/A] - 0.5 < Pr < 2000, 3000 < Re < 5e6
                         h_l_back = (Nu_l_back * k_l_back) / hydraulic_D_x(i); % liquid film coefficient [W/m^2-K] (Heister EQ 6.19)
                         T_back(i) = (T_l(i) + T_amb)/2;  % ROUGH ESTIMATE
-                        qdot_back(i) = h_l_back * (T_l(i)- T_back);
+                        qdot_back(i) = h_l_back * (T_l(i)- T_back(i));
                         T_l(i+1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l_back)) * (qdot_g(i) - qdot_back(i)) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
                     else
                         T_l(i+1) = T_l(i) + (1 / (m_dot_CHANNEL * cp_l_back)) * qdot_g(i) * wall_area; % new liquid temperature [K] (Heister EQ 6.39)
@@ -722,7 +739,7 @@ for i = points % where i is the position along the chamber (1 = injector, end = 
 
             end
                 
-
+            
             converged = 1;
         end
     end
@@ -829,17 +846,19 @@ supercrit_phasex = [];
 Tl_liq = [];
 Tl_gas= [];
 Tl_crit = [];
+if coolant ~= "isopropyl alcohol"
 
-for i = 1:steps
-    if phase(i) == 0 
-        liquid_phasex = [liquid_phasex, x_contour(i)]; 
-        Tl_liq = [Tl_liq, T_l(i)];
-    elseif phase(i) == 5 
-        gas_phasex = [gas_phasex, x_contour(i)];
-        Tl_gas = [Tl_gas, T_l(i)];
-    else 
-        supercrit_phasex = [supercrit_phasex, x_contour(i)];
-        Tl_crit = [Tl_crit, T_l(i)];
+    for i = 1:steps
+        if phase(i) == 0 
+            liquid_phasex = [liquid_phasex, x_contour(i)]; 
+            Tl_liq = [Tl_liq, T_l(i)];
+        elseif phase(i) == 5 
+            gas_phasex = [gas_phasex, x_contour(i)];
+            Tl_gas = [Tl_gas, T_l(i)];
+        else 
+            supercrit_phasex = [supercrit_phasex, x_contour(i)];
+            Tl_crit = [Tl_crit, T_l(i)];
+        end
     end
 end
 
@@ -870,8 +889,11 @@ grid on
 subplot(2,2,4)
 hold on 
 set(gca, 'FontName', 'Times New Roman')
-%plot(x_contour, T_l)
-plot(liquid_phasex, Tl_liq, 'g', gas_phasex, Tl_gas, 'y', supercrit_phasex, Tl_crit, 'r')
+if coolant == "isopropyl alcohol"
+    plot(x_contour, T_l)
+else
+    plot(liquid_phasex, Tl_liq, 'g', gas_phasex, Tl_gas, 'y', supercrit_phasex, Tl_crit, 'r')
+end
 legend('liquid', 'gas', 'supercritical gas')
 title("Coolant Temperature [K]");
 grid on

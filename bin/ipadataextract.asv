@@ -50,8 +50,8 @@ for i = 1:length(T_prop)
     IPA_fit4(i) = IPA_fit3(i)*exp(alpha*(P_l2-14.7));
     IPA_fit5(i) = IPA_fit3(i)*exp(alpha*(P_l6-14.7));
      
-    [u1(i), k1(i), state1(i), bp1(i)] = IPA_transportprop(T_prop(i),P_l6)
-    [u2(i),k2(i), state2(i),bp2(i)] = IPA_transportprop(T_prop(i),P_l1)
+    [u1(i), k1(i), state1(i)] = IPA_transportprop(T_prop(i),P_l6)
+    [u2(i),k2(i), s] = IPA_transportprop(T_prop(i),P_l1)
     
 end
 figure(1)

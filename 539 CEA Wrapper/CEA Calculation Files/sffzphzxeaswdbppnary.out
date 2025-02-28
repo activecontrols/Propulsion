@@ -10,9 +10,9 @@
 
 
  problem rocket fr
-     p(psi) = 206.9248
+     p(psi) = 252.7677
      o/f = 1.2
-     sup = 2.8152
+     sup = 2.904
  reac
      fuel = C3H8O,2propanol t(K) = 293.150 wt% = 100.000
      ox = O2(L) t(K) = 90.180 wt% = 100.000
@@ -24,13 +24,13 @@
 
  TRACE= 0.00E+00  S/R= 0.000000E+00  H/R= 0.000000E+00  U/R= 0.000000E+00
 
- Pc,BAR =    14.266907
+ Pc,BAR =    17.427652
 
  Pc/P =
 
  SUBSONIC AREA RATIOS =
 
- SUPERSONIC AREA RATIOS =     2.8152
+ SUPERSONIC AREA RATIOS =     2.9040
 
  NFZ=  1  Mdot/Ac= 0.000000E+00  Ac/At= 0.000000E+00
 
@@ -128,7 +128,7 @@
   *O                   0.16640314E-01      0.62502344E-01      0.41655967E-01
 
  POINT ITN      T            C           H           O 
-   1   20    2663.826     -12.847      -9.539     -19.208
+   1   20    2667.791     -12.659      -9.442     -19.194
 
 
 
@@ -136,7 +136,7 @@
 
            THEORETICAL ROCKET PERFORMANCE ASSUMING FROZEN COMPOSITION
 
- Pin =   206.9 PSIA
+ Pin =   252.8 PSIA
  CASE =                
 
              REACTANT                    WT FRACTION      ENERGY      TEMP
@@ -147,45 +147,45 @@
  O/F=    1.20000  %FUEL= 45.454545  R,EQ.RATIO= 1.815773  PHI,EQ.RATIO= 1.996763
 
                  CHAMBER   THROAT     EXIT
- Pinf/P            1.0000   1.7966   15.157
- P, BAR            14.267   7.9409  0.94129
- T, K             2663.83  2380.10  1548.91
- RHO, KG/CU M    1.2112 0 7.5451-1 1.3743-1
- H, KJ/KG        -2287.25 -2940.07 -4769.87
- U, KJ/KG        -3465.18 -3992.53 -5454.79
- G, KJ/KG        -36963.1 -33922.6 -24932.5
- S, KJ/(KG)(K)    13.0173  13.0173  13.0173
+ Pinf/P            1.0000   1.7965   15.890
+ P, BAR            17.428   9.7008   1.0968
+ T, K             2667.79  2383.82  1536.39
+ RHO, KG/CU M    1.4779 0 9.2062-1 1.6150-1
+ H, KJ/KG        -2287.25 -2940.76 -4805.24
+ U, KJ/KG        -3466.50 -3994.49 -5484.38
+ G, KJ/KG        -36778.7 -33760.7 -24669.0
+ S, KJ/(KG)(K)    12.9288  12.9288  12.9288
 
- M, (1/n)          18.803   18.803   18.803
- Cp, KJ/(KG)(K)    2.3199   2.2806   2.1035
- GAMMAs            1.2355   1.2405   1.2662
- SON VEL,M/SEC     1206.4   1142.6    931.2
- MACH NUMBER        0.000    1.000    2.393
+ M, (1/n)          18.810   18.810   18.810
+ Cp, KJ/(KG)(K)    2.3203   2.2810   2.0997
+ GAMMAs            1.2353   1.2404   1.2667
+ SON VEL,M/SEC     1207.0   1143.2    927.5
+ MACH NUMBER        0.000    1.000    2.420
 
  TRANSPORT PROPERTIES (GASES ONLY)
    CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
 
- VISC,MILLIPOISE  0.84576  0.77950  0.57097
+ VISC,MILLIPOISE  0.84664  0.78036  0.56759
 
   WITH FROZEN REACTIONS
 
- Cp, KJ/(KG)(K)    2.3199   2.2806   2.1035
- CONDUCTIVITY      3.3426   3.0111   2.0053
- PRANDTL NUMBER    0.5870   0.5904   0.5989
+ Cp, KJ/(KG)(K)    2.3203   2.2810   2.0997
+ CONDUCTIVITY      3.3458   3.0142   1.9889
+ PRANDTL NUMBER    0.5871   0.5906   0.5992
 
  PERFORMANCE PARAMETERS
 
- Ae/At                      1.0000   2.8152
- CSTAR, M/SEC               1654.8   1654.8
- CF                         0.6905   1.3465
- Ivac, M/SEC                2063.7   2535.7
- Isp, M/SEC                 1142.6   2228.3
+ Ae/At                      1.0000   2.9040
+ CSTAR, M/SEC               1655.8   1655.8
+ CF                         0.6904   1.3553
+ Ivac, M/SEC                2064.9   2546.7
+ Isp, M/SEC                 1143.2   2244.1
 
  MOLE FRACTIONS
 
- *CO             0.36645   *CO2            0.06020   *H              0.00682
- *H2             0.27015   H2O             0.29432   *O              0.00003
- *OH             0.00201   *O2             0.00001
+ *CO             0.36665   *CO2            0.06016   *H              0.00627
+ *H2             0.27037   H2O             0.29465   *O              0.00003
+ *OH             0.00185   *O2             0.00001
 
   * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
 

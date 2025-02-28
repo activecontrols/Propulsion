@@ -11,10 +11,10 @@
 
  problem rocket fr
      p(bar) = 17.2369
-     o/f = 0.8
-     sub = 6.4064
+     o/f = 1.2
+     sup = 1
  reac
-     fuel = CH3OH t(K) = 293.150 wt% = 100.000
+     fuel = C3H8O,2propanol t(K) = 293.150 wt% = 0.000
      ox = O2(L) t(K) = 90.170
  outp trans
  end
@@ -28,9 +28,9 @@
 
  Pc/P =
 
- SUBSONIC AREA RATIOS =     6.4064
+ SUBSONIC AREA RATIOS =
 
- SUPERSONIC AREA RATIOS =
+ SUPERSONIC AREA RATIOS =     1.0000
 
  NFZ=  1  Mdot/Ac= 0.000000E+00  Ac/At= 0.000000E+00
 
@@ -39,8 +39,8 @@
 
     REACTANT          WT.FRAC   (ENERGY/R),K   TEMP,K  DENSITY
         EXPLODED FORMULA
- F: CH3OH            1.000000  -0.241938E+05   293.15  0.0000
-          C  1.00000  H  4.00000  O  1.00000
+ F: C3H8O,2propanol  0.000000  -0.328516E+05   293.15  0.0000
+          C  3.00000  H  8.00000  O  1.00000
  O: O2(L)            1.000000  -0.156101E+04    90.17  0.0000
           O  2.00000
 
@@ -119,85 +119,26 @@
      O               O2              
 
 
- O/F =   0.800000
+ O/F =   1.200000
 
                        EFFECTIVE FUEL     EFFECTIVE OXIDANT        MIXTURE
  ENTHALPY                  h(2)/R              h(1)/R               h0/R
- (KG-MOL)(K)/KG       -0.75506785E+03     -0.48783267E+02     -0.44116359E+03
+ (KG-MOL)(K)/KG        0.00000000E+00     -0.48783267E+02     -0.26609055E+02
 
  KG-FORM.WT./KG             bi(2)               bi(1)               b0i
-  *C                   0.31209174E-01      0.00000000E+00      0.17338430E-01
-  *H                   0.12483670E+00      0.00000000E+00      0.69353721E-01
-  *O                   0.31209174E-01      0.62502344E-01      0.45117250E-01
+  *C                   0.00000000E+00      0.00000000E+00      0.00000000E+00
+  *H                   0.00000000E+00      0.00000000E+00      0.00000000E+00
+  *O                   0.00000000E+00      0.62502344E-01      0.34092188E-01
 
  POINT ITN      T            C           H           O 
-   1   21    2661.185     -13.692      -9.566     -18.552
 
+  50 ITERATIONS DID NOT SATISFY CONVERGENCE
+                REQUIREMENTS FOR THE POINT    1 (EQLBRM)
 
+ LOW TEMPERATURE IMPLIES A CONDENSED SPECIES SHOULD HAVE BEEN INSERTED,
+ RESTART WITH insert DATASET (EQLBRM)
 
-
-
-           THEORETICAL ROCKET PERFORMANCE ASSUMING FROZEN COMPOSITION
-
- Pin =   250.0 PSIA
- CASE =                
-
-             REACTANT                    WT FRACTION      ENERGY      TEMP
-                                          (SEE NOTE)     KJ/KG-MOL      K  
- FUEL        CH3OH                        1.0000000   -201159.411    293.150
- OXIDANT     O2(L)                        1.0000000    -12979.000     90.170
-
- O/F=    0.80000  %FUEL= 55.555556  R,EQ.RATIO= 1.537189  PHI,EQ.RATIO= 1.872480
-
-                 CHAMBER   THROAT     EXIT
- Pinf/P            1.0000   1.7837   1.0052
- P, BAR            17.237   9.6637   17.147
- T, K             2661.18  2400.30  2658.73
- RHO, KG/CU M    1.4912 0 9.2686-1 1.4848 0
- H, KJ/KG        -3668.06 -4303.72 -3674.09
- U, KJ/KG        -4824.00 -5346.34 -4828.97
- G, KJ/KG        -38452.1 -35677.7 -38426.0
- S, KJ/(KG)(K)    13.0709  13.0709  13.0709
-
- M, (1/n)          19.141   19.141   19.141
- Cp, KJ/(KG)(K)    2.4570   2.4147   2.4567
- GAMMAs            1.2148   1.2193   1.2148
- SON VEL,M/SEC     1185.0   1127.5   1184.5
- MACH NUMBER        0.000    1.000    0.093
-
- TRANSPORT PROPERTIES (GASES ONLY)
-   CONDUCTIVITY IN UNITS OF MILLIWATTS/(CM)(K)
-
- VISC,MILLIPOISE  0.87765  0.81378  0.87705
-
-  WITH FROZEN REACTIONS
-
- Cp, KJ/(KG)(K)    2.4570   2.4147   2.4567
- CONDUCTIVITY      3.3691   3.0546   3.3661
- PRANDTL NUMBER    0.6401   0.6433   0.6401
-
- PERFORMANCE PARAMETERS
-
- Ae/At                      1.0000   6.4064
- CSTAR, M/SEC               1649.4   1649.4
- CF                         0.6836   0.0666
- Ivac, M/SEC                2052.2  10621.3
- Isp, M/SEC                 1127.5    109.9
-
- MOLE FRACTIONS
-
- *CO             0.25144   *CO2            0.08043   *H              0.00543
- *H2             0.21143   H2O             0.44806   *O              0.00005
- *OH             0.00310   *O2             0.00004
-
-  * THERMODYNAMIC PROPERTIES FITTED TO 20000.K
-
-    PRODUCTS WHICH WERE CONSIDERED BUT WHOSE MOLE FRACTIONS
-    WERE LESS THAN 5.000000E-06 FOR ALL ASSIGNED CONDITIONS
-
-
-
- NOTE. WEIGHT FRACTION OF FUEL IN TOTAL FUELS AND OF OXIDANT IN TOTAL OXIDANTS
+ CALCULATIONS STOPPED AFTER POINT  0(EQLBRM)
 
 
 

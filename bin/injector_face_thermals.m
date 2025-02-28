@@ -6,14 +6,14 @@ F_max = 550;
 R_t = 0.7335 * u.IN2M;
 A_t = pi * R_t ^ 2;
 P_c = 250;
-P_e = 17;
+P_e = 16.5;
 fuel = 'C3H8O,2propanol';
-fuel_weight = 0;
+fuel_weight = 100;
 fuel_temp = 293.15;
 oxidizer = 'O2(L)';
 oxidizer_temp = 90.17;
 OF = 1.2;
-CEA_input_name = 'test';
+CEA_input_name = 'regenCEA';
 
 % Engine geometry definition
 D_t = R_t * 2; 
@@ -41,7 +41,8 @@ distance = 0.143764;
 delta_x = distance/steps; 
 
 % wall material properties
-k_w = 45; % Thermal Conductivity of Wall [W/m-K]
+%k_w = 45; % Thermal Conductivity of Wall [W/m-K]
+k_w = 38.42;
 
 % CEA
 P_c = P_c * u.PSI2PA;
@@ -49,6 +50,10 @@ P_c = P_c * u.PSI2PA;
 % [c_star, ~, ~, M, gamma, P_g, T_g, ~, mu_g, Pr_g, ~, ~, ~, cp_g] = RunCEA(P_c, P_e, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, 0, 2, 0, 0, CEA_input_name); 
 
 qdot_tolerance = 0.0001;
+
+heatflux_factor = 1.2;
+
+%M = .025;
 
 for i = 1:steps
     converged = 0;
@@ -58,7 +63,7 @@ for i = 1:steps
     while ~(converged)
         % Step 5: Calculate gas film coefficient and gas-side convective heat flux
         sigma = (.5 * T_wg / Tc_ns * (1 + (gamma - 1) / 2 * M ^ 2) + .5) ^ -.68 * (1 + (gamma - 1) / 2 * M ^ 2) ^ -.12; % film coefficient correction factor [N/A] (Huzel & Huang 86).
-        h_g = (0.026 / D_t ^ 0.2) * (mu_g ^ 0.2 * cp_g / Pr_g ^ 0.6) * (P_c / c_star) ^ 0.8 * (D_t / R_of_curve) ^ 0.1 * (A_t / A_c) ^ .9 * sigma; % gas film coefficient [W/m^2-K] - bartz equation (Huzel & Huang 86).
+        h_g = heatflux_factor * (0.026 / D_t ^ 0.2) * (mu_g ^ 0.2 * cp_g / Pr_g ^ 0.6) * (P_c / c_star) ^ 0.8 * (D_t / R_of_curve) ^ 0.1 * (A_t / A_c) ^ .9 * sigma; % gas film coefficient [W/m^2-K] - bartz equation (Huzel & Huang 86).
         r = Pr_g ^ (1 / 3); % recovery factor for a turbulent free boundary layer [N/A] - biased towards larger engines, very small engines should use Pr^.5 (Heister Table 6.2).
         T_r = Tc_ns * (1 + (gamma - 1) / 2 * r * M ^ 2); % recovery temperature [K] - corrects for compressible boundry layers (Heister EQ 6.15). 
         qdot_g = h_g * (T_r - T_wg); % gas convective heat flux [W/m^2] (Heister EQ 6.16).
