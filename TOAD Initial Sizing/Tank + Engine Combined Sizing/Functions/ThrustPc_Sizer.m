@@ -10,7 +10,7 @@ function [thrust_req, Pc_req] = ThrustPc_Sizer(toad_mass, CF, r_t)
 %% INITIALIZATION
 g_o = 32.174049; % (ft/sec^2)
 min_thrust = 100; % (lbf) (Req. 8.4)
-TWR_min = 1.4; % SSR Slide 18
+TWR_min = 1.4; % SSR Slide 18 = 2
 
 %% CALCULATIONS
 A_t = pi * r_t^2;
