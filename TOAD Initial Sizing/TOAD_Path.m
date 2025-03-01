@@ -19,8 +19,10 @@ fullyLoadedMass = thrust(end) / TWR; %Fully loaded mass of lander, in lbs
 
 throttleDown = minThrottle:0.01:(fullyLoadedMass / thrust(end)); % Max throttle to descend
 
-timeAscent = 0:0.1:10; % Time interval for the ascent phase (seconds)
-timeDescent = 10.1:0.1:20; % Time interval for the descent phase (seconds)
+breakTime = 10; % Seconds splitting up ascent and descent
+
+timeAscent = 0:0.01:breakTime; % Time interval for the ascent phase (seconds)
+timeDescent = breakTime+0.1:0.01:15; % Time interval for the descent phase (seconds)
 
 
 propellantMassFraction = 0.51; % Smaller than Masten Xodiac - Jan's calculation in slack
@@ -36,6 +38,8 @@ endAscentMass = 0; % Dummy variable to find maximum mass at end of ascent (least
 
 idealThrottleProfile = zeros(1, (length(timeAscent) + length(timeDescent))); %Ideal Throttle Profile for ascent
 
+velocityToad = zeros(1, (length(timeAscent) + length(timeDescent)));
+accelerationToad = zeros(1, (length(timeAscent) + length(timeDescent)));
 
 %Looping through all possible throttle, time of throttling up
 %combinations to find best combination for fuel efficiency and target
@@ -60,7 +64,7 @@ for i = 1:length(throttleDown)
         ascentPositionFull = cumtrapz(ascentTimeIntervalFull, ascentVelocityFull);
 
         %Throttled down acceleration calculations
-        ascentMassDown = ascentMassFull(end) - mdot(i) .* timeAscent(j:end);
+        ascentMassDown = ascentMassFull(1) - mdot(i) .* ascentTimeIntervalDown;
         ascentForceDown = thrust(i) - ascentMassDown;
         ascentAccelerationDown = ascentForceDown ./ (ascentMassDown ./ gravity);
         
@@ -72,14 +76,14 @@ for i = 1:length(throttleDown)
         %Finding max height
         [maxHeight, idxMax] = max(ascentPositionDown);
 
-        fprintf("%f\n", maxHeight);
+        
         %Conditions for max height met? (50-55 m)
         if((164.042 < maxHeight) && (maxHeight < 180.4462))
             velocityAtMax = ascentVelocityDown(idxMax);
-            
+            fprintf("%f\n", maxHeight);
             %Conditions for velocity at apogee met?
             if (-1.5 < velocityAtMax) && (velocityAtMax < 1.5)
-                
+                fprintf("Velocity: %f\n", velocityAtMax);
                 %Highest mass calculated out of "accepted throttle profiles"
                 if((ascentMassDown(end) > endAscentMass))
                     
@@ -99,6 +103,11 @@ for i = 1:length(throttleDown)
 
                     massToad(1:j) = ascentMassFull;
                     massToad(j:length(timeAscent)) = ascentMassDown;
+
+
+                    accelerationToad(1:j) = ascentAccelerationFull;
+                    accelerationToad(j:length(timeAscent)) = ascentAccelerationDown;
+
 
                 end
             end
@@ -126,7 +135,7 @@ for i = 1:length(throttleUp)
 
         % Calculate acceleration with mass flow rates of TADPOLE Engine
         % (throttled down)
-        descentMassDown = endAscentMass - mdot(1) .* descentTimeIntervalDown;
+        descentMassDown = endAscentMass - mdot(1) .* (descentTimeIntervalDown - breakTime);
         descentForceDown = thrust(1) - descentMassDown;
         descentAccelerationDown = descentForceDown ./ (descentMassDown ./ gravity);
 
@@ -135,7 +144,7 @@ for i = 1:length(throttleUp)
         descentPositionDown = endPos + cumtrapz(descentTimeIntervalDown, descentVelocityDown);
 
         %Throttled up acceleration calculations
-        descentMassFull = descentMassDown(end) - mdot(i) .* timeDescent(j:end);
+        descentMassFull = descentMassDown(1) - mdot(i) .* (descentTimeIntervalFull - breakTime);
         descentForceFull = thrust(i) - descentMassFull;
         descentAccelerationFull = descentForceFull ./ (descentMassFull ./ gravity);
 
@@ -146,12 +155,12 @@ for i = 1:length(throttleUp)
 
         %Finding min height
         [minHeight, idxMin] = min(descentPositionFull);
-        %fprintf("%f\n", minHeight);
         
         %Conditions for min height met? (0-0.5 m)
         if((0 < minHeight) && (minHeight < 1.5))
             velocityAtMin = descentVelocityFull(idxMin);
-            
+            fprintf("Min height: %f\n", minHeight);
+            fprintf("Min Velocity: %f", velocityAtMin);
             %Conditions for velocity at bottom met?
             if (-0.5 < velocityAtMin) && (velocityAtMin < 0.5)
 
@@ -168,8 +177,12 @@ for i = 1:length(throttleUp)
                     %Height & mass of toad found throughout descent
                     heightToad(length(timeAscent)+1:length(timeAscent)+j) = descentPositionDown;
                     heightToad(length(timeAscent)+j:end) = descentPositionFull;
+
                     massToad(length(timeAscent)+1:length(timeAscent)+j) = descentMassDown;
                     massToad(length(timeAscent)+j:end) = descentMassFull;
+
+                    accelerationToad(length(timeAscent)+1:length(timeAscent)+j) = descentAccelerationDown;
+                    accelerationToad(length(timeAscent)+j:end) = descentAccelerationFull;
 
                     %Find when to cut off engine for graph
                     tolerance = 1e-6;
@@ -201,6 +214,22 @@ if cutoffTime ~= -1
     xlabel("Time (s)")
     ylabel("Altitude (feet)")
     title('Time (s) vs. Altitude (feet)')
+    hold off
+
+    figure;
+    plot(time, accelerationToad(1:idx+1), "-b", LineWidth=2);
+    grid on;
+    xlabel("Time (s)")
+    ylabel("Acceleration (feet/s^2)")
+    title('Time (s) vs. Acceleration (feet/s^2)')
+    hold off
+
+    figure;
+    plot(time, massToad(1:idx+1), "-r", LineWidth=2);
+    grid on;
+    xlabel("Time (s)")
+    ylabel("Mass of TOAD (lbm)")
+    title('Time (s) vs. Mass of TOAD (lbm)')
     hold off
     
     propellantMassFinal = propellantMass - (fullyLoadedMass - finalMass);
