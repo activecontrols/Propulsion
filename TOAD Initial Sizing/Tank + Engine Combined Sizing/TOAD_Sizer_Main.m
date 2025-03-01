@@ -46,7 +46,8 @@ CF = 1.32; % Thrust Coefficient (95% ηcf)
 prop_massFraction = 0.5613; % ESTIMATE, derived from Masten's XODIAC Lander
 
 %% CALCULATIONS
-[TankProp_mass, Prop_mass] = tank_sizer(mdot, OF, flight_time);
+% [TankProp_mass, Prop_mass] = tank_sizer(mdot, OF, flight_time);
+[Prop_mass] = TOAD_Path(mdot);
 TOAD_mass = Prop_mass / prop_massFraction;
 
 [thrust_req, Pc_req] = ThrustPc_Sizer(TOAD_mass, CF, r_t);
