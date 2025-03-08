@@ -38,7 +38,7 @@ while selection ~= 1 && selection ~= 2
         min_throttle = input("\nInput Min Throttle: ");
         TWR = input("\nInput TWR: ");
     else
-        fprintf("\nINVALID SELECTION\n")
+        fprintf("\nINVALID SELECTION\n", 2)
     end
 end
 
@@ -51,12 +51,11 @@ prop_massFraction = 0.50; % ESTIMATE
 
 %% CALCULATIONS
 % [TankProp_mass, Prop_mass] = tank_sizer(mdot, OF, flight_time);
-TOAD_mass = max_thrust / TWR;
 [prop_mass, flight_time] = Variable_Throttle(TWR, mdot, min_throttle, max_thrust); 
+TOAD_mass = Prop_mass / prop_massFraction;
 
-[tank_mass] = tank_sizer(prop_mass, OF);
-[thrust_req, Pc_req] = ThrustPc_Sizer(max_thrust, CF, r_t);
 
+[thrust_req, Pc_req] = ThrustPc_Sizer(TOAD_mass, CF, r_t);
 
 %% FORMMATED OUTPUT
 fprintf("\nTOAD Mass: %.3f lbm", TOAD_mass)

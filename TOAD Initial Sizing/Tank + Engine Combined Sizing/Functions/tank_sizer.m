@@ -1,4 +1,4 @@
-function [total_mass, prop_mass] = tank_sizer(mdot, OF, flight_time)
+function [tank_mass] = tank_sizer(prop_mass, OF)
 % TOAD Tank Sizer
 % Author: Jacob Metcalf
 % Reviewer: Adam Grendys
@@ -10,7 +10,7 @@ function [total_mass, prop_mass] = tank_sizer(mdot, OF, flight_time)
 
 %%%% ADJUSTABLE VARIABLES FOR TANK SIZING %%%%%%%%%%%
 % Bechtel Limits us to max external diameter of 16".
-tank_wall_thickness = .125 / 12; % Tank wall thickness (1/2" to ft)
+tank_wall_thickness = .5 / 12; % Tank wall thickness (1/2" to ft)
 
 max_radius_ipa = 8/12 - tank_wall_thickness; % ft
 min_radius_ipa = 1/12; % ft
@@ -28,12 +28,12 @@ ullage_vol_coef = 1.1; % 10% Ullage volume
 fuel_reserves_coef = 1.1; % 10% Fuel excess Fuel and Oxidizer mass
 
 %% CALCULATIONS
-mdot_IPA = mdot / (OF + 1);
-mdot_LOX = mdot - mdot_IPA;
+ipa_mass = prop_mass / (1 + OF);
+lox_mass = prop_mass - ipa_mass;
 
-ipa_mass = fuel_reserves_coef * (mdot_IPA * flight_time); % Total IPA mass (lbm)
+ipa_mass = fuel_reserves_coef * ipa_mass; % Total IPA mass (lbm)
 ipa_vol = ullage_vol_coef * (ipa_mass / density_ipa); % Volume (ft^3)
-lox_mass = fuel_reserves_coef * (mdot_LOX * flight_time); % Total LOX mass (lbm)
+lox_mass = fuel_reserves_coef * lox_mass; % Total LOX mass (lbm)
 lox_vol = ullage_vol_coef * (lox_mass / density_lox); % Volume (ft^3)
 
 % Define Radius and Height Ranges
@@ -58,20 +58,19 @@ cyl_height_lox = cyl_height_lox(valid_indices_lox);
 tank_mass_IPA = density_tanks * min_IPA_tank_vol;
 tank_mass_LOX = density_tanks * min_LOX_tank_vol;
 
-prop_mass = lox_mass + ipa_mass;
-total_mass = tank_mass_LOX + lox_mass + tank_mass_IPA + ipa_mass;
+tank_mass = tank_mass_LOX + tank_mass_IPA;
 
 % Calculating Total Heights
 total_height_ipa = cyl_height_ipa(ipa_index) + ipa_radius(ipa_index) + tank_wall_thickness;
 total_height_lox = cyl_height_lox(ipa_index) + lox_radius(lox_index) + tank_wall_thickness;
 
 %% FORMATTED OUTPUT
-fprintf("\nIPA Tank Volume: %.4f ft^3\n", ipa_vol);
-fprintf("LOX Tank Volume: %.4f ft^3\n", lox_vol);
-fprintf("IPA mass: %.02f lbm\n", ipa_mass);
-fprintf("LOX mass: %.02f lbm\n", lox_mass);
+fprintf("\n\nIPA Tank Volume: %.4f ft^3\n", ipa_vol);
+fprintf("LOX Tank Volume: %.4f ft^3", lox_vol);
+fprintf("\nIPA Tank Mass: %.4f lbm", tank_mass_IPA)
+fprintf("\nLOX Tank Mass: %.4f lbm", tank_mass_LOX)
 
-fprintf("\nWall Thickness (INPUT): %.4f ft (%.4f in.)\n", tank_wall_thickness, tank_wall_thickness * 12);
+fprintf("\n\nWall Thickness (INPUT): %.4f ft (%.4f in.)\n", tank_wall_thickness, tank_wall_thickness * 12);
 fprintf("IPA Internal Radius: %.4f ft (%.4f in.)\n", ipa_radius(ipa_index), ipa_radius(ipa_index) * 12);
 fprintf("LOx Internal Radius: %.4f ft (%.4f in.)\n", lox_radius(lox_index), lox_radius(lox_index) * 12);
 fprintf("IPA Height: %.2f ft (%.4f in.)\n", total_height_ipa, total_height_ipa * 12);

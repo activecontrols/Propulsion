@@ -1,11 +1,13 @@
+function [propellantMass, totalTime] = Variable_Throttle(start_TWR, mdot, min_throttle, maxThrust)
 %% TOAD Flight
 % Description: Flight Profile with Variable Throttle
 % PD controlled profile follower targeting positions and velocities
 % Author: Adam Grendys
 % Last Edited: 3/5/2025
 
-clc
-clear
+%% TOAD REFERENCES
+% REQUIREMENTS DOC: https://docs.google.com/document/d/1jfazxSt6x4ROGItLOiyNnKDVktDiXMh2lE0mhNGMsWU/edit?usp=sharing
+% SRR SLIDES: https://docs.google.com/presentation/d/151O5GhhcqatCP30IASsYGC5Nq8DB6PMOI8nIIVgjrB0/edit?usp=sharing
 close all
 
 %% INITIALIZATION
@@ -15,14 +17,7 @@ Drag_Coef = .25; % Drag Coeffcient of TOAD (GUESS)
 Cross_area = 5; % TOAD Cross sectional area (ft^2) (GUESS)
 resolution = 1000;
 
-start_TWR = 1.4;
-min_throttle = 0.4;
-max_throttle = 1;
-maxThrust = 550;
-mdot = 2.72;
-OF = 1.5;
-
-tolerance = .01; % Acceptable Plus or Minus from referenced value (Deadband)
+tolerance = 0; % Acceptable Plus or Minus from referenced value (Deadband)
 increment = 0; % Calculated change in throttle 
 P_Gain = 0.01; % Gain for velocity error
 D_Gain = 0.01; % Gain for acceleration error
@@ -31,11 +26,11 @@ D_Gain = 0.01; % Gain for acceleration error
 % Defining Profile Parameters
 flightTime = 120; % Iterative Variable for Profile flight time (s)
 time_hover = 5; % Hover time at apogee (s)
-heightApogee = 150; % Apogee target height(ft)
+heightApogee = 165; % Apogee target height(ft)
 UpSpeed = 15; % Ascent target speed (ft/s)
 DownSpeed = -10; % Descent target speed (ft/s)
 MaxLandingSpeed = 1.5; % Maximum allowable landing speed (ft/s) (1mph = ~1.5ft/s)
-heightLanding = 1.1 * abs(DownSpeed); % Landing throttle taget start height (ft)
+heightLanding = abs(DownSpeed); % Landing throttle taget start height (ft)
 Status = 'Ascent'; % Flight Status String (Ascent, Hover, Descent, Landing)
 
 indexHover = NaN;
@@ -63,10 +58,8 @@ while loopTrue
     % THROTTLE DETERMINATION
     switch Status
         case 'Ascent'
-            disp("ASCENT")
-
+            %disp("ASCENT")
             increment = P_Gain * (UpSpeed - velocity(i - 1)) + D_Gain * (0 - acceleration(i - 1));
-            disp(increment)
 
             if (velocity(i - 1) <= UpSpeed + tolerance) && (velocity(i - 1) >= UpSpeed - tolerance)
                 throttle(i) = throttle(i - 1);
@@ -74,9 +67,9 @@ while loopTrue
             else
                 throttle(i) = throttle(i - 1) + increment;
                 if increment > 0
-                    disp("UNDER")
+                    %disp("UNDER")
                 else
-                    disp("OVER")
+                    %disp("OVER")
                 end
             end
 
@@ -85,19 +78,17 @@ while loopTrue
                 Status = 'Hover';
             end
         case 'Hover'
-            disp("HOVER")
-            
+            %disp("HOVER")
             increment = P_Gain * (0 - velocity(i - 1)) + D_Gain * (0 - acceleration(i - 1));
-            disp(increment)
 
             if (velocity(i - 1) <= 0 + tolerance) && (velocity(i - 1) >= 0 - tolerance)
                 throttle(i) = throttle(i - 1);
             else
                 throttle(i) = throttle(i - 1) + increment;
                 if increment > 0
-                    disp("UNDER")
+                    %disp("UNDER")
                 else
-                    disp("OVER")
+                    %disp("OVER")
                 end
             end
 
@@ -106,18 +97,17 @@ while loopTrue
                 Status = 'Descent';
             end
         case 'Descent'
-            disp("DESCENT")
+            %disp("DESCENT")
             increment = P_Gain * (DownSpeed - velocity(i - 1)) + D_Gain * (0 - acceleration(i - 1));
-            disp(increment)
 
             if (velocity(i - 1) <= DownSpeed + tolerance) && (velocity(i - 1) >= DownSpeed - tolerance)
                 throttle(i) = throttle(i - 1);
             else
                 throttle(i) = throttle(i - 1) + increment;
                 if increment > 0
-                    disp("UNDER")
+                    %disp("UNDER")
                 else
-                    disp("OVER")
+                    %disp("OVER")
                 end
             end
 
@@ -126,18 +116,17 @@ while loopTrue
                 Status = 'Landing';
             end
         case 'Landing'
-            disp("LANDING")
+            %disp("LANDING")
             increment = P_Gain * (0 - velocity(i - 1)) + D_Gain * (0 - acceleration(i - 1));
-            disp(increment)
 
             if (velocity(i - 1) <= 0 + tolerance) && (velocity(i - 1) >= 0 - tolerance)
                 throttle(i) = throttle(i - 1) - dt/10;
             else
                 throttle(i) = throttle(i - 1) + increment;
                 if increment > 0
-                    disp("UNDER")
+                    %disp("UNDER")
                 else
-                    disp("OVER")
+                    %disp("OVER")
                 end
             end
 
@@ -157,7 +146,7 @@ while loopTrue
     thrust_current = maxThrust * throttle(i);
     mass_current = mass_current - mdot_current * dt;
 
-    force(i) = (thrust_current - mass_current) + ... 
+    force(i) = (thrust_current - mass_current) - ... 
         1/2 * rho_air * velocity(i - 1)^2 * Drag_Coef * Cross_area;
     acceleration(i) = (force(i) / mass_current) * g_o;
     velocity = cumtrapz(time, acceleration);
