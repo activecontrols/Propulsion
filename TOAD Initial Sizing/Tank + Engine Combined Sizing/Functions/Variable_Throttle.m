@@ -1,4 +1,4 @@
-function [propellantMass, totalTime] = Variable_Throttle(start_TWR, mdot, min_throttle, maxThrust)
+function [propellantMass, totalTime] = Variable_Throttle(TOAD_mass, OF, max_mdot, min_throttle, maxThrust)
 %% TOAD Flight
 % Description: Flight Profile with Variable Throttle
 % PD controlled profile follower targeting positions and velocities
@@ -38,18 +38,20 @@ indexDescent = NaN;
 indexLanding = NaN;
 
 % Defining Physics Parameters
-mass_start = maxThrust / start_TWR;
-mass_current = mass_start; % Iterative Variable for TOAD mass (lbm)
+mass_start = TOAD_mass;
 throttle = zeros(1, resolution); % Throttle percentage 40 to 100%
 force = zeros(1, resolution); % (lbf)
 position = zeros(1, resolution); % (ft)
 velocity = zeros(1, resolution); % (ft/s)
 acceleration = zeros(1, resolution); % (ft/s^2)
 time = linspace(0, flightTime, resolution); % (s)
+mass = linspace(0, flightTime, resolution); % (lbm)
+mdot = linspace(0, flightTime, resolution); % (lbm/s)
 
 i = 1;
 loopTrue = 1;
 throttle(i) = 1 - increment;
+mass(i) = mass_start;
 
 while loopTrue
     i = i + 1;
@@ -135,6 +137,7 @@ while loopTrue
             end
     end
 
+    % Throttle Contraint
     if throttle(i) > 1
         throttle(i) = 1;
     elseif throttle(i) < min_throttle
@@ -142,17 +145,17 @@ while loopTrue
     end
 
     % PHYSICS LOOP
-    mdot_current = mdot * throttle(i);
+    mdot(i) = max_mdot * throttle(i);
     thrust_current = maxThrust * throttle(i);
-    mass_current = mass_current - mdot_current * dt;
+    mass(i) = mass(i - 1) - mdot(i - 1) * dt;
 
-    force(i) = (thrust_current - mass_current) - ... 
+    force(i) = (thrust_current - mass(i)) - ... 
         1/2 * rho_air * velocity(i - 1)^2 * Drag_Coef * Cross_area;
-    acceleration(i) = (force(i) / mass_current) * g_o;
+    acceleration(i) = (force(i) / mass(i)) * g_o;
     velocity = cumtrapz(time, acceleration);
     position = cumtrapz(time, velocity);
 
-    % LOOP END CHECKS
+    % LOOP-END CHECKS
     if position(i) <= 0 
         if abs(velocity(i)) > MaxLandingSpeed
             loopTrue = 0;
@@ -170,10 +173,14 @@ while loopTrue
 end
 
 i = i - 1;
-propellantMass = mass_start - mass_current;
+propellantMass = mass_start - mass(i);
 totalTime = time(i);
 
+fuel_mdot = mdot(1:i) ./ (1 + OF);
+ox_mdot = mdot(1:i) - fuel_mdot;
+
 %% FORMATTED OUTPUT
+% Flight Profile Plots
 figure(1)
 subplot(2,2,1)
 sgtitle("TOAD Controlled Hop Profile")
@@ -215,3 +222,32 @@ grid on
 fprintf("\nTotal Time: %.3f s", totalTime)
 fprintf("\nPropellant Mass: %.3f lbm", propellantMass)
 
+% Mass Flow Plots
+figure(2)
+subplot(3,1,1)
+sgtitle("TOAD Controlled Hop Propellants")
+plot(time(1:i), mass(1:i))
+xline(time(indexHover), 'r--')
+xline(time(indexDescent), 'r--')
+xline(time(indexLanding), 'r--')
+ylabel("TOAD Mass (lbm)")
+xlabel("Time (s)")
+grid on
+
+subplot(3,1,2)
+plot(time(1:i), ox_mdot)
+xline(time(indexHover), 'r--')
+xline(time(indexDescent), 'r--')
+xline(time(indexLanding), 'r--')
+ylabel("Oxidizer Mass Flow Rate (lbm/s)")
+xlabel("Time (s)")
+grid on
+
+subplot(3,1,3)
+plot(time(1:i), fuel_mdot)
+xline(time(indexHover), 'r--')
+xline(time(indexDescent), 'r--')
+xline(time(indexLanding), 'r--')
+ylabel("Fuel Mass Flow Rate (lbm/s)")
+xlabel("Time (s)")
+grid on

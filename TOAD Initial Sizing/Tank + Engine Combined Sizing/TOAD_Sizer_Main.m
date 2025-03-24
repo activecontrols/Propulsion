@@ -48,15 +48,17 @@ r_t =  1.4352 / 2; % Radius of throat (in) (From Tadpole CMM)
 CF = 1.32; % Thrust Coefficient (95% ηcf)
 
 prop_massFraction = 0.50; % ESTIMATE
+TOAD_mass = max_thrust / TWR;
 
 %% CALCULATIONS
-% [TankProp_mass, Prop_mass] = tank_sizer(mdot, OF, flight_time);
-TOAD_mass = max_thrust / TWR;
-[prop_mass, flight_time] = Variable_Throttle(TWR, mdot, min_throttle, max_thrust); 
+% Flight Profile
+[prop_mass, flight_time] = Variable_Throttle(TOAD_mass, OF, mdot, min_throttle, max_thrust); 
 
+% Tank Sizing
 [tank_mass] = tank_sizer(prop_mass, OF);
-[thrust_req, Pc_req] = ThrustPc_Sizer(max_thrust, CF, r_t);
 
+% Engine Sizing
+[thrust_req, Pc_req] = ThrustPc_Sizer(max_thrust, CF, r_t);
 
 %% FORMMATED OUTPUT
 fprintf("\nTOAD Mass: %.3f lbm", TOAD_mass)
