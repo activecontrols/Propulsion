@@ -21,6 +21,7 @@ tolerance = 0; % Acceptable Plus or Minus from referenced value (Deadband)
 increment = 0; % Calculated change in throttle 
 P_Gain = 0.01; % Gain for velocity error
 D_Gain = 0.01; % Gain for acceleration error
+apogeeGain = 15; % Gain for slowing down prior to apogee
 
 %% CALCULATIONS
 % Defining Profile Parameters
@@ -38,7 +39,6 @@ indexDescent = NaN;
 indexLanding = NaN;
 
 % Defining Physics Parameters
-mass_start = TOAD_mass;
 throttle = zeros(1, resolution); % Throttle percentage 40 to 100%
 force = zeros(1, resolution); % (lbf)
 position = zeros(1, resolution); % (ft)
@@ -50,8 +50,8 @@ mdot = linspace(0, flightTime, resolution); % (lbm/s)
 
 i = 1;
 loopTrue = 1;
-throttle(i) = 1 - increment;
-mass(i) = mass_start;
+throttle(i) = 1;
+mass(i) = TOAD_mass;
 
 while loopTrue
     i = i + 1;
@@ -75,7 +75,7 @@ while loopTrue
                 end
             end
 
-            if position(i - 1) >= heightApogee - 8 * (velocity(i - 1) * dt - 1/2 * acceleration(i - 1) * dt^2)
+            if position(i - 1) >= heightApogee - apogeeGain * ((velocity(i - 1) * dt - 1/2 * acceleration(i - 1) * dt^2))
                 indexHover = i;
                 Status = 'Hover';
             end
@@ -173,7 +173,7 @@ while loopTrue
 end
 
 i = i - 1;
-propellantMass = mass_start - mass(i);
+propellantMass = TOAD_mass - mass(i);
 totalTime = time(i);
 
 fuel_mdot = mdot(1:i) ./ (1 + OF);
@@ -184,7 +184,7 @@ ox_mdot = mdot(1:i) - fuel_mdot;
 figure(1)
 subplot(2,2,1)
 sgtitle("TOAD Controlled Hop Profile")
-plot(time(1:i), position(1:i))
+plot(time(1:i), position(1:i), LineWidth=2)
 xline(time(indexHover), 'r--')
 xline(time(indexDescent), 'r--')
 xline(time(indexLanding), 'r--')
@@ -193,7 +193,7 @@ xlabel("Time (s)")
 grid on
 
 subplot(2,2,2)
-plot(time(1:i), velocity(1:i))
+plot(time(1:i), velocity(1:i), LineWidth=2)
 xline(time(indexHover), 'r--')
 xline(time(indexDescent), 'r--')
 xline(time(indexLanding), 'r--')
@@ -202,7 +202,7 @@ ylabel("Velocity (ft/s)")
 grid on
 
 subplot(2,2,3)
-plot(time(1:i), acceleration(1:i))
+plot(time(1:i), acceleration(1:i), LineWidth=2)
 xline(time(indexHover), 'r--')
 xline(time(indexDescent), 'r--')
 xline(time(indexLanding), 'r--')
@@ -211,12 +211,13 @@ ylabel("Acceleration (ft/s^2)")
 grid on
 
 subplot(2,2,4)
-plot(time(1:i), throttle(1:i) * 100)
+plot(time(1:i), throttle(1:i) * 100, LineWidth=2)
 xline(time(indexHover), 'r--')
 xline(time(indexDescent), 'r--')
 xline(time(indexLanding), 'r--')
 xlabel("Time (s)")
 ylabel("Throttle (%)")
+ylim([35, 105])
 grid on
 
 fprintf("\nTotal Time: %.3f s", totalTime)
@@ -226,7 +227,7 @@ fprintf("\nPropellant Mass: %.3f lbm", propellantMass)
 figure(2)
 subplot(3,1,1)
 sgtitle("TOAD Controlled Hop Propellants")
-plot(time(1:i), mass(1:i))
+plot(time(1:i), mass(1:i), LineWidth=2)
 xline(time(indexHover), 'r--')
 xline(time(indexDescent), 'r--')
 xline(time(indexLanding), 'r--')
@@ -235,7 +236,7 @@ xlabel("Time (s)")
 grid on
 
 subplot(3,1,2)
-plot(time(1:i), ox_mdot)
+plot(time(1:i), ox_mdot, LineWidth=2)
 xline(time(indexHover), 'r--')
 xline(time(indexDescent), 'r--')
 xline(time(indexLanding), 'r--')
@@ -244,7 +245,7 @@ xlabel("Time (s)")
 grid on
 
 subplot(3,1,3)
-plot(time(1:i), fuel_mdot)
+plot(time(1:i), fuel_mdot, LineWidth=2)
 xline(time(indexHover), 'r--')
 xline(time(indexDescent), 'r--')
 xline(time(indexLanding), 'r--')
