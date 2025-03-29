@@ -119,10 +119,12 @@ clear inputfcn;
 tspan = [0 45];
 
 % Solve using ODE45 and nonlinear dynamics
-[tsim, xsim] = ode45(@(tsim, xsim) odefcn2(tsim, xsim, inputfcn(K, xsim, tsim), constants), tspan, x_0);
+[tsim, xsim] = ode113(@(tsim, xsim) odefcn2(tsim, xsim, inputfcn(K, xsim, tsim), constants), tspan, x_0);
 
 % Solve for inputs
 u = zeros(size(xsim,1 ), 2);
+clear ref_generator;
+clear inputfcn;
 for i = 1:1:size(xsim, 1)
     x_i = xsim(i,1:7).';
     t_i = tsim(i);
@@ -130,7 +132,6 @@ for i = 1:1:size(xsim, 1)
 end
 %% OUTPUTS
 EndIndex = find(xsim(100:end,2) < 0.1 & abs(xsim(100:end,4)) < 10);
-MaxAccel = 0.5*g;
 if isempty(EndIndex)
     PropMass = 0;
     FlightTime = 0;
@@ -139,9 +140,11 @@ else
     EndIndex = EndIndex(1) + 100;
     PropMass = mass_i - xsim(EndIndex, 7);
     FlightTime = tsim(EndIndex);
-    Accel = (xsim(2:end,2) - xsim(1:end-1,2)) ./ (tsim(2:end) - tsim(1:end-1));
+    AccelVert = (xsim(2:end,2) - xsim(1:end-1,2)) ./ (tsim(2:end) - tsim(1:end-1));
+    AccelLat = (xsim(2:end,1) - xsim(1:end-1,1)) ./ (tsim(2:end) - tsim(1:end-1));
+    AccelTot = (AccelVert.^2 + AccelLat.^2).^(1/2);
 
-    ThrustDev = u(:,1) - 0.7 * thrust_max;
+    ThrustDev = u(1:EndIndex,1) - 0.7 * thrust_max;
     ThrustDev = sum(ThrustDev.^2);
 end
 

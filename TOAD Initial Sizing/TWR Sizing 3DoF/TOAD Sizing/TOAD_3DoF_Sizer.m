@@ -3,7 +3,7 @@
 % Simulation Loop
 clear;
 addpath("lib\");
-res = 25;
+res = 20;
 minTWR = 1;
 maxTWR = 2.2;
 TWRVec = linspace(minTWR, maxTWR, res);
