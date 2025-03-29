@@ -30,7 +30,7 @@ while selection ~= 1 && selection ~= 2
         OF = 1.2; % Desired OF Ratio
         min_throttle = 0.4; 
         max_thrust = 550; % lbf
-        TWR = 1.6;
+        TWR = 1.7;
     elseif selection == 2
         mdot = input("Input Total Mdot (lbm/s): "); % Total mass flow rate (lbm/s)
         OF = input("\nInput OF Ratio: "); % Desired OF Ratio

@@ -147,12 +147,13 @@ while loopTrue
     elseif throttle(i) < min_throttle
         throttle(i) = min_throttle;
     end
-    % 
+    
     % if (throttle(i) - throttle(i - 1)) > throttleRate_cap * dt
     %    throttle(i) = throttle(i - 1) + throttleRate_cap * dt;
     % elseif (throttle(i) - throttle(i - 1)) < throttleRate_cap * dt
     %     throttle(i) = throttle(i - 1) - throttleRate_cap * dt;
     % end
+    disp(thro)
 
     % PHYSICS LOOP
     mdot(i) = max_mdot * throttle(i);
