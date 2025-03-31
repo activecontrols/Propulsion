@@ -3,7 +3,7 @@
 % parameters: Required Thrust, Required Chamber Pressure, TOAD
 % mass. Be sure to add the "functions" folder to path.
 % Author: Adam Grendys
-% Last Edited: 2/16/2025
+% Last Edited: 3/30/2025
 
 %% ASSUMPTIONS/DECISIONS
 % IPA-LOx
