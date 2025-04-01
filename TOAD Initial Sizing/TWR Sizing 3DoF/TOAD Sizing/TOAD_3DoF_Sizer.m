@@ -14,7 +14,7 @@ ThrustDev = zeros(1,res);
 i = 1;
 
 for TWR = TWRVec
-    [PropMass(i), FlightTime(i), ThrustDev(i)] = TOAD_3DoF_SIM(TWR, 0);
+    [PropMass(i), FlightTime(i), ThrustDev(i)] = TOAD_3DoF_SIM(TWR, 1);
     i = i + 1;
 end
 
