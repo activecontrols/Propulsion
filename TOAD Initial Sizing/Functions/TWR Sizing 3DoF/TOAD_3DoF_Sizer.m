@@ -13,19 +13,21 @@ ThrustDev = zeros(1,res);
 
 i = 1;
 
+% Set second parameter to 0 for no flight profile graph generation 
 for TWR = TWRVec
     [PropMass(i), FlightTime(i), ThrustDev(i)] = TOAD_3DoF_SIM(TWR, 1);
     i = i + 1;
 end
 
 
-%%
+%% Costs
 weights = [1/3, 1/3, 1/3];
 weights = weights / norm(weights);
 cost = weights(1)*PropMass / max(PropMass) +...
        weights(2)*FlightTime / max(FlightTime) +...
        weights(3)*(ThrustDev / max(ThrustDev)).^2;
 
+%% Plots
 figure(3);
 subplot(1,2,1);
 plot(TWRVec, cost, 'g', 'LineWidth',1);
