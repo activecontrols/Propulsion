@@ -1,5 +1,5 @@
 function [PropMass, FlightTime, ThrustDev] = TOAD_3DoF_SIM(TWR, plotmode)
-addpath("lib\")
+%addpath("lib\")
 %Variable set-up
 syms r_1 r_2 v_1 v_2 theta theta_dot m m_dot thrust alpha_ang
 %Constants
@@ -118,7 +118,7 @@ clear ref_generator;
 clear inputfcn;
 tspan = [0 45];
 
-% Solve using ODE45 and nonlinear dynamics
+% Solve using ODE113 and nonlinear dynamics
 [tsim, xsim] = ode113(@(tsim, xsim) odefcn2(tsim, xsim, inputfcn(K, xsim, tsim), constants), tspan, x_0);
 
 % Solve for inputs
