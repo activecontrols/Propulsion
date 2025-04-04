@@ -1,4 +1,4 @@
-function [tank_mass] = tank_sizer(prop_mass, OF)
+function [tank_mass] = PropellantTank_Sizer(prop_mass, OF)
 % TOAD Tank Sizer
 % Author: Jacob Metcalf
 % Reviewer: Adam Grendys

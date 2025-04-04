@@ -1,4 +1,4 @@
-function [propellantMass, totalTime] = Variable_Throttle(TOAD_mass, OF, max_mdot, min_throttle, maxThrust)
+function [propellantMass, totalTime] = FlightProfile_1DoF(TOAD_mass, OF, max_mdot, min_throttle, maxThrust)
 %% TOAD Flight
 % Description: Flight Profile with Variable Throttle
 % PD controlled profile follower targeting positions and velocities

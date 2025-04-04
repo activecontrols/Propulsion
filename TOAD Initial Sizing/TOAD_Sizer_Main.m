@@ -52,13 +52,13 @@ TOAD_mass = max_thrust / TWR;
 
 %% CALCULATIONS
 % Flight Profile
-[prop_mass, flight_time] = Variable_Throttle(TOAD_mass, OF, mdot, min_throttle, max_thrust); 
+[prop_mass, flight_time] = FlightProfile_1DoF(TOAD_mass, OF, mdot, min_throttle, max_thrust); 
 
 % Tank Sizing
-[tank_mass] = tank_sizer(prop_mass, OF);
+[tank_mass] = PropellantTank_Sizer(prop_mass, OF);
 
 % Engine Sizing
-[thrust_req, Pc_req] = ThrustPc_Sizer(max_thrust, CF, r_t);
+[thrust_req, Pc_req] = ThrustChamber_Sizer(max_thrust, CF, r_t);
 
 %% FORMMATED OUTPUT
 fprintf("\nTOAD Mass: %.3f lbm", TOAD_mass)
