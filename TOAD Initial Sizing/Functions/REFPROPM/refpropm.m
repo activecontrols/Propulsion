@@ -205,7 +205,8 @@ if ~loaded || isempty(RefpropLoadedState)
 
         otherwise
             if strcmp(computer, 'PCWIN64')
-                BasePath = 'C:/Program Files (x86)/REFPROP/';
+                %BasePath = 'C:/Program Files (x86)/REFPROP/';
+                BasePath = 'C:\Users\rugve\OneDrive\Documents\MATLAB\Useful Scripts\REFPROPM\';
                 dllName = 'REFPRP64.dll';
             else
                 if strcmp(computer, 'PCWIN32') || strcmp(computer, 'PCWIN')
