@@ -3,7 +3,7 @@
 % parameters: Required Thrust, Required Chamber Pressure, TOAD
 % mass. Be sure to add the "functions" folder to path.
 % Author: Adam Grendys
-% Last Edited: 3/30/2025
+% Last Edited: 6/7/2025
 
 %% ASSUMPTIONS/DECISIONS
 % IPA-LOx
@@ -30,7 +30,7 @@ while selection ~= 1 && selection ~= 2
         OF = 1.2; % Desired OF Ratio
         min_throttle = 0.4; 
         max_thrust = 550; % lbf
-        TWR = 1.7;
+        TWR = 1.44;
     elseif selection == 2
         mdot = input("Input Total Mdot (lbm/s): "); % Total mass flow rate (lbm/s)
         OF = input("\nInput OF Ratio: "); % Desired OF Ratio
@@ -43,18 +43,18 @@ while selection ~= 1 && selection ~= 2
 end
 
 %% INITIALIATION
-% Engine Parameters (From Tadpole Rev1)
+% Engine Parameters (From Tadpole Rev1)1
 r_t =  1.4352 / 2; % Radius of throat (in) (From Tadpole CMM)
 CF = 1.32; % Thrust Coefficient (95% ηcf)
 
 prop_massFraction = 0.50; % ESTIMATE
 TOAD_mass = max_thrust / TWR;
 
-%% CALCULATIONS
+%% CALCULATIONS1
 % Flight Profile
 [prop_mass, flight_time] = FlightProfile_1DoF(TOAD_mass, OF, mdot, min_throttle, max_thrust); 
 
-% Tank Sizing
+% Tank Sizing1
 [tank_mass] = PropellantTank_Sizer(prop_mass, OF);
 
 % Engine Sizing

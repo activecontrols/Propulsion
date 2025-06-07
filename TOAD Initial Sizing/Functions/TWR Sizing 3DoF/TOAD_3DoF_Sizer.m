@@ -1,6 +1,7 @@
 %% SIZING
 
 % Simulation Loop
+clc
 clear;
 addpath("lib\");
 res = 20;
