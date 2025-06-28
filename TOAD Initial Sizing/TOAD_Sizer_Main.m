@@ -26,7 +26,7 @@ selection = NaN;
 while selection ~= 1 && selection ~= 2
     selection = input("Default Parameters (1) or Custom (2): ");
     if selection == 1
- 1       mdot = 2.72; % Total mass flow rate (lbm/s)
+        mdot = 2.72; % Total mass flow rate (lbm/s)
         OF = 1.2; % Desired OF Ratio
         min_throttle = 0.4; 
         max_thrust = 550; % lbf
