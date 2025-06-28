@@ -14,7 +14,7 @@ function [tank_mass] = PropellantTank_Sizer(prop_mass, OF)
 wall_thickness = 1/4; % Tank wall thickness (in)
 tank_OD = 12; % Tank outer diameters (in)
 tank_pressure = 550; % Internal tank pressure (psia)
-saftey_factor = 2; % Tank design saftey factor
+safety_factor = 2; % Tank design safety factor
 
 %% INITIALZATION
 s_y = (276*10^6) / (6894.76); % 6061-T6 Yield Stress (psi)
@@ -42,8 +42,8 @@ s_h = (tank_pressure * tank_radius) / wall_thickness; % Hoop stress (psi) (same 
 s_a = (tank_pressure * tank_radius) / (2 * wall_thickness); % Axial stress (psi) (same for IPA and LOx)
 s_v = sqrt(s_h^2 + s_a^2 - s_h * s_a); % Von Mises stress (psi) (same for IPA and LOx)
 
-M_y = s_y / (saftey_factor * s_h) - 1; % Margin to yield
-M_u = s_u / (saftey_factor * s_h) - 1; % Margin to ultimate
+M_y = s_y / (safety_factor * s_h) - 1; % Margin to yield
+M_u = s_u / (safety_factor * s_h) - 1; % Margin to ultimate
 
 % Tank Dimensions
 h_ipa = (ipa_vol * 12^3) / (pi * tank_radius^2);
@@ -83,7 +83,7 @@ if output
     fprintf("LOx Tank Mass: %.3f lbs\n", lox_tank_mass)    
     
     fprintf("\nSTRESS VALUES\n")
-    fprintf("Saftey Factor: %.2f\n", saftey_factor)
+    fprintf("Safety Factor: %.2f\n", safety_factor)
     fprintf("Von Mises: %.3f psi\n", s_v)
     fprintf("Margin to Yield: %.3f\n", M_y)
     fprintf("Margin to Ultimate: %.3f\n", M_u)
