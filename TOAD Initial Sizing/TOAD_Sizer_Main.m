@@ -26,7 +26,7 @@ selection = NaN;
 while selection ~= 1 && selection ~= 2
     selection = input("Default Parameters (1) or Custom (2): ");
     if selection == 1
-        mdot = 2.72; % Total mass flow rate (lbm/s)
+ 1       mdot = 2.72; % Total mass flow rate (lbm/s)
         OF = 1.2; % Desired OF Ratio
         min_throttle = 0.4; 
         max_thrust = 550; % lbf
@@ -50,11 +50,11 @@ CF = 1.32; % Thrust Coefficient (95% ηcf)
 prop_massFraction = 0.50; % ESTIMATE
 TOAD_mass = max_thrust / TWR;
 
-%% CALCULATIONS1
+%% CALCULATIONS
 % Flight Profile
 [prop_mass, flight_time] = FlightProfile_1DoF(TOAD_mass, OF, mdot, min_throttle, max_thrust); 
 
-% Tank Sizing1
+% Tank Sizing
 [tank_mass] = PropellantTank_Sizer(prop_mass, OF);
 
 % Engine Sizing
