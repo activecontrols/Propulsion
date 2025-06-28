@@ -20,7 +20,7 @@ function ref = ref_generator(x, t)
     dt = t - prevTime;
     prevTime = t;
 
-    TargetX1 = [5, 0, 0];
+    TargetX1 = [0.5, 0, 0];
     TargetX2 = [50, 0, 0];
     TargetX5 = [0, 0, 0];
 
