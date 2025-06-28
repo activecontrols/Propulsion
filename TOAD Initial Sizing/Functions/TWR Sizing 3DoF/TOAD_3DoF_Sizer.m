@@ -16,7 +16,7 @@ i = 1;
 
 % Set second parameter to 0 for no flight profile graph generation 
 for TWR = TWRVec
-    [PropMass(i), FlightTime(i), ThrustDev(i)] = TOAD_3DoF_SIM(TWR, 1);
+    [PropMass(i), FlightTime(i), ThrustDev(i)] = TOAD_3DoF_SIM(TWR, 0);
     i = i + 1;
 end
 
