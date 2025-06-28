@@ -1,4 +1,3 @@
-function [propellantMass, totalTime] = Variable_Throttle(TOAD_mass, OF, max_mdot, min_throttle, maxThrust)
 %% TOAD Flight
 % Description: Flight Profile with Variable Throttle
 % PD controlled profile follower targeting positions and velocities
@@ -9,8 +8,18 @@ function [propellantMass, totalTime] = Variable_Throttle(TOAD_mass, OF, max_mdot
 % REQUIREMENTS DOC: https://docs.google.com/document/d/1jfazxSt6x4ROGItLOiyNnKDVktDiXMh2lE0mhNGMsWU/edit?usp=sharing
 % SRR SLIDES: https://docs.google.com/presentation/d/151O5GhhcqatCP30IASsYGC5Nq8DB6PMOI8nIIVgjrB0/edit?usp=sharing
 close all
+clear
+clc
 
 %% INITIALIZATION
+% Inputs
+maxThrust = 550;
+OF = 1.2;
+max_mdot = 2.72;
+min_throttle = 0.4;
+TWR = 1.44;
+TOAD_mass = maxThrust / TWR;
+
 g_o = 32.174049; % (ft/sec^2)
 rho_air = 0.0765; % (lb/ft^3)
 Drag_Coef = .25; % Drag Coeffcient of TOAD (GUESS)
@@ -18,11 +27,12 @@ Cross_area = 5; % TOAD Cross sectional area (ft^2) (GUESS)
 resolution = 1000;
 
 tolerance = 0; % Acceptable Plus or Minus from referenced value (Deadband)
+landTolerance = 1; % Maximum allowable landing speed (ft/s) (1mph = ~1.5ft/s) and position (ft)
 increment = 0; % Calculated change in throttle 
-P_Gain = 0.01; % Gain for velocity error
-D_Gain = 0.01; % Gain for acceleration error
+P_Gain = 0.006; % Gain for velocity error
+D_Gain = 0.006; % Gain for acceleration error
 apogeeGain = 15; % Gain for slowing down prior to apogee
-throttleRate_cap = 0.6 / 1.2; % Maximum throttle per second
+throttleRate_cap = 50; % Maximum throttle rate in PERCENT per second
 
 %% CALCULATIONS
 % Defining Profile Parameters
@@ -31,8 +41,7 @@ time_hover = 5; % Hover time at apogee (s)
 heightApogee = 165; % Apogee target height(ft)
 UpSpeed = 15; % Ascent target speed (ft/s)
 DownSpeed = -10; % Descent target speed (ft/s)
-MaxLandingSpeed = 1.5; % Maximum allowable landing speed (ft/s) (1mph = ~1.5ft/s)
-heightLanding = abs(DownSpeed); % Landing throttle taget start height (ft)
+heightLanding = 1.1 * abs(DownSpeed); % Landing throttle taget start height (ft)
 Status = 'Ascent'; % Flight Status String (Ascent, Hover, Descent, Landing)
 
 indexHover = NaN;
@@ -57,12 +66,19 @@ mass(i) = TOAD_mass;
 while loopTrue
     i = i + 1;
     dt = time(i) - time(i - 1);
+    throttleCap = throttleRate_cap * dt / 100;
 
     % THROTTLE DETERMINATION
     switch Status
         case 'Ascent'
             %disp("ASCENT")
             increment = P_Gain * (UpSpeed - velocity(i - 1)) + D_Gain * (0 - acceleration(i - 1));
+            
+            if increment > throttleCap
+                increment = throttleCap;
+            elseif increment < -1 * (throttleCap)
+                increment = -throttleCap;
+            end
 
             if (velocity(i - 1) <= UpSpeed + tolerance) && (velocity(i - 1) >= UpSpeed - tolerance)
                 throttle(i) = throttle(i - 1);
@@ -84,6 +100,12 @@ while loopTrue
             %disp("HOVER")
             increment = P_Gain * (0 - velocity(i - 1)) + D_Gain * (0 - acceleration(i - 1));
 
+            if increment > throttleCap
+                increment = throttleCap;
+            elseif increment < -1 * (throttleCap)
+                increment = -throttleCap;
+            end
+
             if (velocity(i - 1) <= 0 + tolerance) && (velocity(i - 1) >= 0 - tolerance)
                 throttle(i) = throttle(i - 1);
                 %disp("IN")
@@ -103,6 +125,12 @@ while loopTrue
         case 'Descent'
             %disp("DESCENT")
             increment = P_Gain * (DownSpeed - velocity(i - 1)) + D_Gain * (0 - acceleration(i - 1));
+
+            if increment > throttleCap
+                increment = throttleCap;
+            elseif increment < -1 * (throttleCap)
+                increment = -throttleCap;
+            end
 
             if (velocity(i - 1) <= DownSpeed + tolerance) && (velocity(i - 1) >= DownSpeed - tolerance)
                 throttle(i) = throttle(i - 1);
@@ -124,9 +152,15 @@ while loopTrue
             %disp("LANDING")
             increment = P_Gain * (0 - velocity(i - 1)) + D_Gain * (0 - acceleration(i - 1));
 
+            if increment > throttleCap
+                increment = throttleCap;
+            elseif increment < -1 * (throttleCap)
+                increment = -throttleCap;
+            end
+
             if (velocity(i - 1) <= 0 + tolerance) && (velocity(i - 1) >= 0 - tolerance)
-                throttle(i) = throttle(i - 1);
-                %disp("IN"")
+                throttle(i) = throttle(i - 1) - dt*start_TWR;
+                %disp("IN")
             else
                 throttle(i) = throttle(i - 1) + increment;
                 if increment > 0
@@ -136,23 +170,18 @@ while loopTrue
                 end
             end
 
-            if position(i - 1) <= 0 + tolerance && abs(velocity(i - 1)) < tolerance
+            if position(i - 1) <= 0 + landTolerance && abs(velocity(i - 1)) < landTolerance
                 loopTrue = 0;
             end
     end
-
-    % Throttle Contraintas
+    
+    % Throttle Contraints
     if throttle(i) > 1
         throttle(i) = 1;
     elseif throttle(i) < min_throttle
         throttle(i) = min_throttle;
     end
-    % 
-    % if (throttle(i) - throttle(i - 1)) > throttleRate_cap * dt
-    %    throttle(i) = throttle(i - 1) + throttleRate_cap * dt;
-    % elseif (throttle(i) - throttle(i - 1)) < throttleRate_cap * dt
-    %     throttle(i) = throttle(i - 1) - throttleRate_cap * dt;
-    % end
+    disp(throttle(i) * 100)
 
     % PHYSICS LOOP
     mdot(i) = max_mdot * throttle(i);
@@ -166,11 +195,11 @@ while loopTrue
     position = cumtrapz(time, velocity);
 
     % LOOP-END CHECKS
-    if position(i) <= 0 
-        if abs(velocity(i)) > MaxLandingSpeed
+    if position(i) <= 0
+        if abs(velocity(i)) > landTolerance && Status == "Landing"
             loopTrue = 0;
             fprintf("\nCRASH!")
-        elseif abs(velocity(i)) < MaxLandingSpeed && Status == "Landing"
+        elseif abs(velocity(i)) < landTolerance && Status == "Landing"
             loopTrue = 0;
             fprintf("\nWOAH GOOD!")
         end
@@ -188,6 +217,8 @@ totalTime = time(i);
 
 fuel_mdot = mdot(1:i) ./ (1 + OF);
 ox_mdot = mdot(1:i) - fuel_mdot;
+
+disp(throttleCap)
 
 %% FORMATTED OUTPUT
 % Flight Profile Plots
@@ -212,12 +243,12 @@ ylabel("Velocity (ft/s)")
 grid on
 
 subplot(2,2,3)
-plot(time(1:i), acceleration(1:i), LineWidth=2)
+plot(time(1:i), acceleration(1:i) / g_o, LineWidth=2)
 xline(time(indexHover), 'r--')
 xline(time(indexDescent), 'r--')
 xline(time(indexLanding), 'r--')
 xlabel("Time (s)")
-ylabel("Acceleration (ft/s^2)")
+ylabel("Acceleration (G's)")
 grid on
 
 subplot(2,2,4)

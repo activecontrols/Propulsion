@@ -3,7 +3,7 @@
 % parameters: Required Thrust, Required Chamber Pressure, TOAD
 % mass. Be sure to add the "functions" folder to path.
 % Author: Adam Grendys
-% Last Edited: 3/30/2025
+% Last Edited: 6/7/2025
 
 %% ASSUMPTIONS/DECISIONS
 % IPA-LOx
@@ -26,11 +26,11 @@ selection = NaN;
 while selection ~= 1 && selection ~= 2
     selection = input("Default Parameters (1) or Custom (2): ");
     if selection == 1
-        mdot = 2.72; % Total mass flow rate (lbm/s)
+ 1       mdot = 2.72; % Total mass flow rate (lbm/s)
         OF = 1.2; % Desired OF Ratio
         min_throttle = 0.4; 
         max_thrust = 550; % lbf
-        TWR = 1.7;
+        TWR = 1.44;
     elseif selection == 2
         mdot = input("Input Total Mdot (lbm/s): "); % Total mass flow rate (lbm/s)
         OF = input("\nInput OF Ratio: "); % Desired OF Ratio
@@ -43,7 +43,7 @@ while selection ~= 1 && selection ~= 2
 end
 
 %% INITIALIATION
-% Engine Parameters (From Tadpole Rev1)
+% Engine Parameters (From Tadpole Rev1)1
 r_t =  1.4352 / 2; % Radius of throat (in) (From Tadpole CMM)
 CF = 1.32; % Thrust Coefficient (95% ηcf)
 
@@ -52,13 +52,13 @@ TOAD_mass = max_thrust / TWR;
 
 %% CALCULATIONS
 % Flight Profile
-[prop_mass, flight_time] = Variable_Throttle(TOAD_mass, OF, mdot, min_throttle, max_thrust); 
+[prop_mass, flight_time] = FlightProfile_1DoF(TOAD_mass, OF, mdot, min_throttle, max_thrust); 
 
 % Tank Sizing
-[tank_mass] = tank_sizer(prop_mass, OF);
+[tank_mass] = PropellantTank_Sizer(prop_mass, OF);
 
 % Engine Sizing
-[thrust_req, Pc_req] = ThrustPc_Sizer(max_thrust, CF, r_t);
+[thrust_req, Pc_req] = ThrustChamber_Sizer(max_thrust, CF, r_t);
 
 %% FORMMATED OUTPUT
 fprintf("\nTOAD Mass: %.3f lbm", TOAD_mass)

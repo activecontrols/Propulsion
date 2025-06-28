@@ -1,0 +1,192 @@
+5-methylnonane                        !short name                                                                                                                                                                                                              
+15869-85-9                            !CAS number                                                                                                                                                                                                              
+nonane, 5-methyl-				  !full name                                                                                                                                                                                                               
+C10H22                                !chemical formula                                                                                                                                                                                                        
+5-methylnonane                        !synonym                                                                                                                                                                                                                 
+142.28162          !molecular weight [g/mol]                                                                                                                                                                                                                   
+186.742            !triple point temperature [K]                                                                                                                                                                                                               
+438.34             !normal boiling point [K]                                                                                                                                                                                                                   
+608.3              !critical temperature [K]                                                                                                                                                                                                                   
+2116.0             !critical pressure [kPa]                                                                                                                                                                                                                    
+1.667815           !critical density [mol/L]                                                                                                                                                                                                                   
+.45371             !acentric factor                                                                                                                                                                                                                            
+-1.                !dipole moment [Debye]                                                                                                                                                                                                                      
+NBP                !default reference state                                                                                                                                                                                                                    
+8.0                !version number                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                               
+! compiled at NIST Physical and Chemical Properties Division, Boulder, Colorado                                                                                                                                                                                
+! 08-01-08 EWL, original version                                                                                                                                                                                                                               
+! 09-11-08 MLH, added transport                                                                                                                                                                                                                                                               
+ 
+                                                                                                                                                                                                                                                              
+#EOS               !equation of state specification                                                                                                                                                                                                            
+FEQ  Helmholtz equation of state                                                                                                                                                                                                                               
+?LITERATURE REFERENCE \                                                                                                                                                                                                                                        
+?\                                                                                                                                                                                                                                                             
+!end of info section                                                                                                                                                                                                                                           
+186.742            !lower temperature limit [K]                                                                                                                                                                                                                
+1000.              !upper temperature limit [K]                                                                                                                                                                                                                
+50000.             !upper pressure limit [kPa]                                                                                                                                                                                                                 
+10.                !maximum density [mol/L]                                                                                                                                                                                                                    
+CPP                                    !pointer to Cp0 model                                                                                                                                                                                                   
+142.282                                !molecular weight [g/mol]                                                                                                                                                                                               
+186.742                                !triple point temperature [K]                                                                                                                                                                                           
+0.                                     !pressure at triple point [kPa]                                                                                                                                                                                         
+10.                                    !density at triple point [mol/L]                                                                                                                                                                                        
+438.34                                 !normal boiling point temperature [K]                                                                                                                                                                                   
+.45371                                 !acentric factor                                                                                                                                                                                                        
+608.3000000000  2116.000   1.667815000 !Tc [K], pc [kPa], rhoc [mol/L]                                                  
+608.3000000000             1.667815000 !reducing parameters [K, mol/L]                                                  
+8.314472                               !gas constant [J/mol-K]                                                                                                                                                                                                 
+  10  5      4 12      0  0            !# terms, # coeff/term for:  "normal" terms, critical, spare                                                                                                                                                           
+  0.4421929913496D-01   1.000000000000   4.00000000000   0.00000000000   1.00000000000                                 !a(i),t(i),d(i),l(i)                                                                                                                                                                                                                                           
+  0.1738049797835D+01   0.301027961828   1.00000000000   0.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+ -0.2620163890234D+01   0.947126666753   1.00000000000   0.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+ -0.6514514482063D+00   1.079592561017   2.00000000000   0.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+  0.2281955948761D+00   0.438372651524   3.00000000000   0.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+ -0.1084831778367D+01   1.693950877638   1.00000000000   2.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+ -0.3250450510136D+00   1.508667940090   3.00000000000   2.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+  0.1362834296009D+01   1.351613238711   2.00000000000   1.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+ -0.4228772210301D+00   2.099202729264   2.00000000000   2.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+ -0.2434860479288D-01   0.971347503641   7.00000000000   1.00000000000   1.00000000000                                                                                                                                                                                                                                                                                                
+  0.8478197450164D+00   0.817412643069   1.000000  2.0  2.0   -1.02294837     -1.6960156   1.096155129   0.713433428 0. 0. 0.
+ -0.3924358868362D+00   2.053938084954   1.000000  2.0  2.0   -1.38307932     -1.5532084   0.642059249   0.917326058 0. 0. 0.
+ -0.1364549845240D+00   2.447751004289   3.000000  2.0  2.0   -0.99600153     -1.0725397   0.498472804   0.688069217 0. 0. 0.
+ -0.7367239541049D+00   4.176619897763   3.000000  2.0  2.0   -7.03845800    -87.1675081   1.259885647   0.748061690 0. 0. 0.
+                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                               
+#AUX               !auxiliary model specification                                                                                                                                                                                                              
+CPP  ideal gas heat capacity function                                                                                                                                                                                                                          
+?LITERATURE REFERENCE \                                                                                                                                                                                                                                        
+?\                                                                                                                                                                                                                                                             
+!end of info section                                                                                                                                                                                                                                           
+186.742            !lower temperature limit [K]                                                                                                                                                                                                                
+5000.              !upper temperature limit [K]                                                                                                                                                                                                                
+0.0                !upper pressure limit [kPa]                                                                                                                                                                                                                 
+0.0                !maximum density [mol/L]                                                                                                                                                                                                                    
+1.0          8.314472                  !reducing parameters for T, Cp0                                                                                                                                                                                         
+  1  3    0  0    0  0  0              !Nterms:  polynomial, exponential, cosh, sinh                                                                                                                                                                           
+ 0.703093913685D+01      0.00000000                                                                                                                                                                                                                            
+ 0.219078443107D+02    556.64081574                                                                                                                                                                                                                            
+ 0.292171629160D+02   2793.19537820                                                                                                                                                                                                                            
+ 0.250207043320D+02   1464.57981776                                                                                                                                                                                                                            
+ 
+
+#TRN               !transport model specification
+ECS  Extended Corresponding States model (C12 reference); predictive mode.
+?LITERATURE REFERENCES \
+?Huber, M.L., Laesecke, A., and Perkins, R.A., Model for the viscosity
+? and thermal conductivity of refrigerants, including a new correlation
+? for the viscosity of R134a, Ind.Eng.Chem.Res. 42: 3163-3178 (2003).
+?\
+?DATA SOURCES FOR VISCOSITY\
+?Experimental data was not found. Values based on estimation method of
+? extended corresponding states; Estimated uncertainty approximately 10-50%
+?
+?DATA SOURCES FOR THERMAL CONDUCTIVITY\
+?Experimental data was not found. Values based on estimation method of
+? extended corresponding states; Estimated uncertainty approximately 10-20%
+?\
+?The Lennard-Jones parameters are estimated using the Chung method.\
+?\
+!end of info section
+186.742            !lower temperature limit [K]                                                                                                                                                                                                                
+1000.              !upper temperature limit [K]                                                                                                                                                                                                                
+50000.             !upper pressure limit [kPa]                                                                                                                                                                                                                 
+10.                !maximum density [mol/L]                                                                                                                                                                                                                    
+FEQ c12.fld
+VS1                !model for reference fluid viscosity
+TC1                !model for reference fluid thermal conductivity
+1                  !Lennard-Jones flag (0 or 1) (0 => use estimates)
+0.7063             !Lennard-Jones coefficient sigma [nm] from method chung
+483.046            !Lennard-Jones coefficient epsilon/kappa [K] from chung method
+1  0  0            !number of terms in f_int term in Eucken correlation, spare1, spare 2
+ 1.3200d-3      0.0   0.0   0.0  !coeff, power of T, spare 1, spare 2
+1  0  0                          !number of terms in psi (visc shape factor): poly,spare1,spare2
+ 1.001           0.0   0.0   0.0  !coeff, power of Tr, power of Dr, spare
+1  0  0                          !number of terms in phi (thermal cond. shape factor):poly,spare1,spare2
+ 0.915          0.0   0.0   0.0  !coeff, power of Tr, power of Dr, spare
+TK3                !pointer to critical enhancement auxiliary function
+
+
+#AUX               !thermal conductivity critical enhancement model
+TK3  simplified thermal conductivity critical enhancement of Olchowy and Sengers
+?LITERATURE REFERENCE \
+?Olchowy, G.A. and Sengers, J.V.,
+? "A simplified representation for the thermal conductivity of fluids in the
+? critical region,"
+? Int. J. Thermophysics, 10:417-426, 1989.
+?\
+?as applied to CO2 by:
+?\
+?Vesovic, V., Wakeham, W.A., Olchowy, G.A., Sengers, J.V., Watson, J.T.R.
+? and Millat, J.,
+? "The transport properties of carbon dioxide,"
+? J. Phys. Chem. Ref. Data, 19:763-808, 1990.
+?\
+!end of info section
+186.742            !lower temperature limit [K]                                                                                                                                                                                                                
+1000.              !upper temperature limit [K]                                                                                                                                                                                                                
+50000.             !upper pressure limit [kPa]                                                                                                                                                                                                                 
+10.                !maximum density [mol/L]                                                                                                                                                                                                                    
+9  0  0  0         !# terms:  CO2-terms, spare, spare, spare
+1.0     1.0     1.0      !reducing par for T, rho, tcx (mW/m-K)
+0.630d0            !gnu (universal exponent)
+1.239d0            !gamma (universal exponent)
+1.03d0             !R0 (universal amplitude)
+0.063d0            !z (universal exponent--not used for t.c., only viscosity)
+1.00d0             !c (constant in viscosity eqn = 1/[2 - (alpha + gamma)/(2*nu)], but often set to 1)
+0.194d-9           !xi0 (amplitude) [m]
+0.0496             !gam0 (amplitude) [-]
+1.5d-9            !qd_inverse (modified effective cutoff parameter) [m] arbitrary guess
+912.4d+00        !tref (reference temperature)=1.5*Tc [K]
+
+     
+                                                                                                                                                                                                                                                         
+@ETA               !viscosity model specification
+VS5  pure fluid viscosity model of Chung et al.(1988).
+?LITERATURE REFERENCE \
+? T-H. Chung, Ajlan, M., Lee, L.L. and Starling, K.E.
+? "Generalized Multiparameter Correlation for Nonpolar and Polar Fluid Transport Properties"
+? Ind. Eng. Chem. Res. 1998, 27, 671-679.
+?
+!end of info section
+186.742            !lower temperature limit [K]                                                                                                                                                                                                                
+1000.              !upper temperature limit [K]                                                                                                                                                                                                                
+50000.             !upper pressure limit [kPa]                                                                                                                                                                                                                 
+10.                !maximum density [mol/L]                                                                                                                                                                                                                    
+1                  !number of terms associated with dilute-gas function
+NUL                !pointer to reduced effective collision cross-section model;not used
+0.6822d0           !Lennard-Jones coefficient sigma [nm] =0.809vc*(1/3)A
+483.046d0          !Lennard-Jones coefficient epsilon/kappa [K] =Tc/1.2593
+1.0d0   1.0d0      !reducing parameters for T, eta
+0.25475d0       0.5d0  !=0.021357*SQRT(MW)  [Chapman-Enskog term] 
+0                  !number of terms for initial density dependence; not yet used. 
+0.45371d0         0.000000D+00            0.0d0  !w, mur, kappa for Chung
+0                  !additional parameters for Chung
+NUL                !pointer to critical enhancement auxiliary function (none used)   
+
+
+@TCX               !thermal conductivity model specification
+TC5  pure fluid thermal conductivity model of Chung et al. (1988).
+?LITERATURE REFERENCE \
+? T-H. Chung, Ajlan, M., Lee, L.L. and Starling, K.E.
+? "Generalized Multiparameter Correlation for Nonpolar and Polar Fluid Transport Properties"
+? Ind. Eng. Chem. Res. 1998, 27, 671-679.
+?\
+!end of info section
+186.742            !lower temperature limit [K]                                                                                                                                                                                                                
+1000.              !upper temperature limit [K]                                                                                                                                                                                                                
+50000.             !upper pressure limit [kPa]                                                                                                                                                                                                                 
+10.                !maximum density [mol/L]                                                                                                                                                                                                                    
+0.6822d0           !Lennard-Jones coefficient sigma [nm] =0.809vc*(1/3)A
+483.046d0          !Lennard-Jones coefficient epsilon/kappa [K] =Tc/1.2593
+0.45371d0           0.000000D+00            0.0d0  !w, mur, kappa for Chung
+0                  !additional parameters for Chung
+TK3                !pointer to critical enhancement auxiliary function 
+
+                                                                                                                                                                                                                                                                 
+@END                                                                                                                                                                                                                                                           
+c        1         2         3         4         5         6         7         8                                                                                                                                                                               
+c2345678901234567890123456789012345678901234567890123456789012345678901234567890                                                                                                                                                                               

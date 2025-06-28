@@ -43,14 +43,14 @@ prop_name = 'oxygen'; %Name of propellant
 
 % Press System Properties
 P1 = 4950; %Initial COPV pressure, psia
-P_setpoint = 600; %Desired prop tank pressure, psia
+P_setpoint = 500; %Desired prop tank pressure, psia
 T1 = 294.261; %Initial COPV gas temp, K
 T2 = 90.14; %Initial propellant temp, K
-V1 = 550; %Internal volume of COPV, in^3
+V1 = 0.4558 * 12^3; %Internal volume of COPV, in^3
 
 % Propellant Properties
-m2_tot = 100; %Total propellant mass, lb
-mdot_prop = 1; %Mass flow rate exiting prop tank, lb/s
+m2_tot = 26.73; %Total propellant mass, lb
+mdot_prop = 2.72 - 2.72/(1+1.2); %Mass flow rate exiting prop tank, lb/s
 
 %% Model Setup
 

@@ -1,4 +1,4 @@
-function [thrust_req, Pc_req] = ThrustPc_Sizer(max_thrust, CF, r_t)
+function [thrust_req, Pc_req] = ThrustChamber_Sizer(max_thrust, CF, r_t)
 % Engine Size from Vehicle Mass
 % Adam Grendys
 % Last Edited: 2/16/2025
