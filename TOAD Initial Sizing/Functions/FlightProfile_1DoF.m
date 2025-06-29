@@ -209,8 +209,6 @@ totalTime = time(i);
 fuel_mdot = mdot(1:i) ./ (1 + OF);
 ox_mdot = mdot(1:i) - fuel_mdot;
 
-disp(throttleCap)
-
 %% FORMATTED OUTPUT
 % Flight Profile Plots
 figure(1)
@@ -252,6 +250,7 @@ ylabel("Throttle (%)")
 ylim([35, 105])
 grid on
 
+fprintf("\n\nFLIGHT PROFILE")
 fprintf("\nTotal Time: %.3f s", totalTime)
 fprintf("\nPropellant Mass: %.3f lbm", propellantMass)
 
