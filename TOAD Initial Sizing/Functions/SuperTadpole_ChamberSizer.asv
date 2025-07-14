@@ -63,15 +63,20 @@ m_dot_ox = m_dot - m_dot_fuel;
 % Geometry Calculations
 At = m_dot * C_star(2) / P(1); % Throat Area (in^2)
 Dt = sqrt(4 * At / pi); % Throat Diameter (in)
-Vcon = 1/3 * pi * (Dc/2 - Dt/2)*tand(Convergence_angle) * ((Dt/2)^2 + (Dt/2)*(Dc/2) + (Dc/2)^2); % Converging Section Volume (in^3)
-Vc = L_star * At; % Total Chamber Volume (in^3)
+Vc = L_star * At; % Chamber Volume (in^3)
+Vcon = 1/3 * pi * 
 Ac = pi * Dc^2 / 4; % Chamber Area (in^2)
-Lc = (Vc - Vcon) / Ac; % Chamber Length (in)
+Lc = Vc / (1.1 * Ac); % Chamber Length (in)
 CR = Ac / At; % Convergence Ratio
 Ae = At * ER; % Exit Area (in^2)
 De = sqrt(4 * Ae / pi); % Exit Diameter (in^2)
 Lcon = (Dc - Dt) / (2 * tand(Convergence_angle)); % Length of Converging Section (in)
 Ldiv = (De - Dt) / (2 * tand(Divergence_angle)); % Length of Diverging Section (in)
+
+
+%truncated cone
+V = 1/3 * pi * h * (r^2 + r * R + R^2);
+h = 
 
 %% FORMATTED OUTPUT
 fprintf("OF: %.2f", OF);

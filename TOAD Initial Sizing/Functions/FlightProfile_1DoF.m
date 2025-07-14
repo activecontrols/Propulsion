@@ -205,6 +205,7 @@ end
 i = i - 1;
 propellantMass = TOAD_mass - mass(i);
 totalTime = time(i);
+mean_throttle = mean(throttle(1:i));
 
 fuel_mdot = mdot(1:i) ./ (1 + OF);
 ox_mdot = mdot(1:i) - fuel_mdot;
@@ -253,6 +254,7 @@ grid on
 fprintf("\n\nFLIGHT PROFILE")
 fprintf("\nTotal Time: %.3f s", totalTime)
 fprintf("\nPropellant Mass: %.3f lbm", propellantMass)
+fprintf("\nMean Throttle: %.3f", mean_throttle * 100)
 
 % Mass Flow Plots
 figure(2)
