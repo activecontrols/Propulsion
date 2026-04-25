@@ -8,33 +8,39 @@ CEA_input_name = 'throttle';
 
 
 %% System Constants
-breakpoints = 200;
+breakpoints = 20;
 
-R_t = 0.7335/39.37; % throat radius [m]
+R_t = (1.45 / 2) / (12 * 3.281); % throat radius [m]
 At =  pi*R_t^2; % Throat Area [meters]
-exp_ratio = 2.8153; % Expansion ratio;
+exp_ratio = 2.74; % Expansion ratio;
 Pc_max = 250;   % Max Throttle Chamber Pressure [psi]
 Pe_max = 17;    % Max Throttle Exit Pressure [psi]
-cstar_eff = 0.92;   % C* efficency
+cstar_eff = 0.90;   % C* efficency
 cf_eff = 0.95;  % Cf efficiency;
-throttle_pct = linspace(0.4, 1, breakpoints);
-thrust_max = 2446.52;   % Max Thrust [N]
+throttle_pct = linspace(0.5, 1, breakpoints);
+thrust_max = 550 * 4.448;   % Max Thrust [N]
 g = 9.81;   % Gravity [m/s^2]
-g_imperial = 32.2 * 12;            % in/s^2
+g_imperial = 32.2 * 12;  % in/s^2
 Pa = 14.7;  % Atmospheric Pressure [P]
 
 
 %% Injector Geometry
 injector_type = "pintle";   % injector type (i.e. pintle, impinging, coax shear, ect.)
 pintle_center = "OX";       % which propellant is centered (injected through the holes on the pintle post)
-hole_diameter = 0.031;  % in 
-hole_number = 66;           % number of holes on pintle tip
-A_OX = pi * hole_diameter ^ 2 / 4 * hole_number;              % ox orifice area [in^2]
-A_FUEL = 0.040310068980444;             % fuel orifice area [in^2]
-cd_OX = .7;                % ox orifice discharge coefficient [N/A]
-cd_FUEL = .7;              % fuel orifice discharge coefficient [N/A]
-annulus_width = 0.017;     % annulus width [in]
+primary_hole_diameter = 0.0370;  % in 
+secondary_hole_diameter = 0.0260;  % in 
+primary_hole_number = 28;  % number of holes on pintle tip
+secondary_hole_number = 28;
 
+primary_area = pi/4 * primary_hole_diameter^2 * primary_hole_number;
+secondary_area = pi/4 * secondary_hole_diameter^2 * secondary_hole_number;
+A_OX = primary_area + secondary_area;  % ox orifice area [in^2]
+
+annular_gap = 0.0227; % in
+pintle_dia = 0.7; % in
+A_FUEL = pi/4 * (pintle_dia + 2 * annular_gap)^2 - pi()/4 * pintle_dia^2;   % fuel orifice area [in^2]
+cd_OX = .66;   % ox orifice discharge coefficient [N/A]
+cd_FUEL = .749;  % fuel orifice discharge coefficient [N/A]
 
 %% Propellant Values
 fuel_temp = 293.15; % [K]
@@ -43,10 +49,9 @@ fuel = 'C3H8O,2propanol'; % fuel definition
 fuel_weight = 100; % 
 oxidizer = 'O2(L)'; % oxidizer definition
 OF = 1.2; % oxidizer/fuel ratio
-mdot = 1.2566; % Propellant mass flow rate [kg/s]
+mdot = 1.2198321156; % Propellant mass flow rate [kg/s]
 rho_FUEL = 49.06838 / 12^3; % fuel density [lbm/in^3]
 rho_OX = 56.34 / 12^3;      % oxidizer density [lbm/in^3]
-
 
 %% Matrix Initialization
 
@@ -179,7 +184,7 @@ title("Isp","Interpreter","latex")
 xlabel("Throttle [%]","Interpreter","latex")
 ylabel("Isp [s]","Interpreter","latex")
 
-exportgraphics(f,'Chamber_throttle.png','Resolution',600)
+%exportgraphics(f,'Chamber_throttle.png','Resolution',600)
 
 % Throttle results for injector
 f=figure('Name', 'Injector Throttle Results');
@@ -224,7 +229,7 @@ title("Fuel Stiffness","Interpreter","latex")
 xlabel("Throttle [%]","Interpreter","latex")
 ylabel("Stiffness [%]","Interpreter","latex")
 
-exportgraphics(f,'Injector_throttle.png','Resolution',600)
+%exportgraphics(f,'Injector_throttle.png','Resolution',600)
 
 % Mass flows
 f=figure('Name', 'Throttle Massflows');
@@ -258,6 +263,6 @@ plot(throttle_pct*100, ox_massflow_rate, "Linewidth", 2)
 title("Oxidizer Massflow Rate","Interpreter","latex")
 ylabel("Mass Flow [lbm/s]","Interpreter","latex")
 xlabel("Throttle [%]","Interpreter","latex")
-exportgraphics(f,'MassFlow_throttle.png','Resolution',600)
+%exportgraphics(f,'MassFlow_throttle.png','Resolution',600)
 
 fclose all;

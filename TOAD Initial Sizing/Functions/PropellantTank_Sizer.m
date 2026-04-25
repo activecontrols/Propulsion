@@ -47,7 +47,7 @@ M_y = s_y / ((safety_factor + weld_factor) * s_h) - 1; % Margin to yield
 M_u = s_u / ((safety_factor + weld_factor) * s_h) - 1; % Margin to ultimate
 
 % Tank Dimensions
-bulkhead_inner_vol = 4/3 * pi * tank_radius^2 * sqrt(tank_radius); % Ellipsoildal tank bulkhead volume (ft^3)
+bulkhead_inner_vol = 4/3 * pi * tank_radius^2 * tank_radius/sqrt(2); % Ellipsoildal tank bulkhead volume (in^3)
 h_ipa = (ipa_vol * 12^3 - bulkhead_inner_vol) / (pi * tank_radius^2); % Cylindrical section height (in)
 h_lox = (lox_vol * 12^3 - bulkhead_inner_vol) / (pi * tank_radius^2); % Cylindrical section height (in)
 
@@ -58,7 +58,7 @@ if h_lox < 0 || h_ipa < 0
 else
     output = 1;
 
-    bulkhead_vol = 4/3 * pi * (tank_radius + wall_thickness)^2 * sqrt(tank_radius + wall_thickness) - 4/3 * pi * tank_radius^2 * sqrt(tank_radius); % Tank material volume of bulkheads (in^3)
+    bulkhead_vol = (4/3 * pi * (tank_radius + wall_thickness)^2 * (tank_radius + wall_thickness)/sqrt(2)) - (4/3 * pi * tank_radius^2 * tank_radius/sqrt(2)); % Tank material volume of bulkheads (in^3)
     clyinder_vol_ipa = pi * h_ipa * ((tank_radius + wall_thickness)^2 - (tank_radius)^2); % IPA tank material volume of cylinder section (in^3)
     clyinder_vol_lox = pi * h_lox * ((tank_radius + wall_thickness)^2 - (tank_radius)^2); % LOx tank material volume of cylinder section (in^3)
 
@@ -68,6 +68,9 @@ else
     lox_tank_mass = lox_total_tank * density_tanks; % LOx dry tank mass (lbm)
 
     tank_mass = ipa_tank_mass + lox_tank_mass;
+
+    ipa_total_tank_height = h_ipa + 2 * (tank_radius + wall_thickness)/sqrt(2); % Cylinder and bulkhead heights (in)
+    lox_total_tank_height = h_lox + 2 * (tank_radius + wall_thickness)/sqrt(2); % Cylinder and bulkhead heights (in)
 end
 
 %% FORMATTED OUTPUT
@@ -75,8 +78,8 @@ if output
     fprintf("\n\nTANK DIMENSIONS\n")
     fprintf("Wall Thickness: %.3f in\n", wall_thickness)
     fprintf("Tank Radii: %.3f in\n", tank_radius)
-    fprintf("IPA Height: %.3f in\n", h_ipa + 2 * sqrt(tank_radius + wall_thickness))
-    fprintf("LOx Height: %.3f in\n", h_lox + 2 * sqrt(tank_radius + wall_thickness))
+    fprintf("Total IPA Height: %.3f in\n", ipa_total_tank_height)
+    fprintf("Total LOx Height: %.3f in\n", lox_total_tank_height)
 
     fprintf("\nTANK MASSES\n")
     fprintf("IPA Tank Volume: %.3f ft^3\n", ipa_vol)

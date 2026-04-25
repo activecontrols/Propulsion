@@ -39,7 +39,7 @@ while ~(converged)
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Enter CEA Call
-    [cstar_cea,cf_cea, ~, ~, ~, ~, Pe_cea, ~, ~, ~, ~, ~, ~, ~, ~] = RunCEA(Pc_throttle_guess,0, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, exp_ratio, 2, 1, 0, CEA_input_name);
+    [cstar_cea,cf_cea, ~, ~, ~, ~, Pe_cea, ~, ~, ~, ~, ~, ~, ~, ~] = throttleCEA(Pc_throttle_guess,0, fuel, fuel_weight, fuel_temp, oxidizer, oxidizer_temp, OF, 0, exp_ratio, 2, 1, 0, CEA_input_name);
     Pc_throttle_guess_SI = Pc_throttle_guess*6895;%[Pa]
     Pe_cea = Pe_cea / 6895; %Convert the CEA Pa to PSI
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,7 +51,7 @@ while ~(converged)
     thrust_guess = cf_guess_actual*(Pc_throttle_guess_SI)*At;
 
     if abs(thrust_guess - Target_thrust) > 1 && counter < 250 % check for tolerance
-        
+
         % convergence loop
         if thrust_guess - Target_thrust > 0
             Pc_Max = Pc_throttle_guess;

@@ -8,7 +8,7 @@
 % Frozen 
 % Stagnation Temperature = Chamber Temperature (Tc = To)
 % Stagnation Pressure = Chamber Pressure (Pc = Po)
-% Conical Nozzle
+% 80% Bell Nozzle 
 
 clear
 clc
@@ -46,8 +46,8 @@ P = [17.011, 9.4720, 1.1568] .* 14.696; % Pressure (psia)
 R = R_prime / M(1);
 
 % Effcicency Additons
-eta_cf = 0.95;
-eta_cstar = 0.92;
+eta_cf = 0.92;
+eta_cstar = 0.90;
 
 C_star = C_star .* eta_cstar;
 Cf = Cf + (Pe / P(1) - Patm / P(1)) * ER;
@@ -71,7 +71,7 @@ CR = Ac / At; % Convergence Ratio
 Ae = At * ER; % Exit Area (in^2)
 De = sqrt(4 * Ae / pi); % Exit Diameter (in^2)
 Lcon = (Dc - Dt) / (2 * tand(Convergence_angle)); % Length of Converging Section (in)
-Ldiv = (De - Dt) / (2 * tand(Divergence_angle)); % Length of Diverging Section (in)
+Ldiv = 0.8 * (De - Dt) / (2 * tand(Divergence_angle)); % Length of Diverging Section (in)
 
 %% FORMATTED OUTPUT
 fprintf("OF: %.2f", OF);
